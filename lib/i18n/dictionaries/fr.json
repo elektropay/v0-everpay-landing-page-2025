@@ -1,0 +1,22 @@
+{
+  "common": {
+    "getStarted": "Commencer",
+    "signIn": "Se connecter",
+    "tryForFree": "Essayer gratuitement",
+    "contactUs": "Contactez-nous"
+  },
+  "footer": {
+    "selectCountry": "Sélectionnez votre pays",
+    "copyright": "© {year} Everpay Corp. Tous droits réservés.",
+    "legal": {
+      "cookieSettings": "Paramètres des cookies",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfService": "Conditions d'utilisation",
+      "security": "Sécurité"
+    },
+    "disclaimer": {
+      "banking": "Les services bancaires sont fournis par les partenaires bancaires d'Everpay, membres de la FDIC. La carte Everpay est émise par les partenaires bancaires d'Everpay conformément aux licences de Visa U.S.A. Inc. et Mastercard International.",
+      "regulation": "Les services Everpay sont réglementés en tant que Money Services Business par FinCEN. Everpay est certifié PCI DSS Niveau 1, le plus haut niveau de certification de sécurité dans l'industrie des paiements."
+    }
+  }
+}
