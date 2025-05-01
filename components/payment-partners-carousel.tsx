@@ -2,8 +2,13 @@
 
 import Image from "next/image"
 
+interface Partner {
+  name: string
+  logo: string
+}
+
 export function PaymentPartnersCarousel() {
-  const partners = [
+  const partners: Partner[] = [
     { name: "Visa", logo: "https://cdn.worldvectorlogo.com/logos/visa.svg" },
     { name: "Mastercard", logo: "https://cdn.worldvectorlogo.com/logos/mastercard.svg" },
     { name: "PayPal", logo: "https://cdn.worldvectorlogo.com/logos/paypal.svg" },
