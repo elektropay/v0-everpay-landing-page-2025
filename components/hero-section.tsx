@@ -19,14 +19,14 @@ export function HeroSection() {
             <h1 className="mb-8 text-6xl font-bold leading-tight">
               Smart
               <br />
-              financial
+              Payment
               <br />
-              service
+              solutions
             </h1>
 
             <div className="mb-12">
               <p className="text-sm text-black/70">
-                Modern banking solutions for all of your financial needs in every way
+                Modern payment solutions for all of your financial needs in every way
               </p>
             </div>
 
