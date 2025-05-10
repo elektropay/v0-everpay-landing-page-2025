@@ -6,8 +6,8 @@ interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
   size?: "sm" | "md" | "lg"
 }
 
-export function Avatar({ src, alt, size = "md", className = "", ...props }: AvatarProps) {
-  const sizeClasses: Record<string, string> = {
+export function Avatar({ src, alt, size = "md", className, ...props }: AvatarProps) {
+  const sizeClasses = {
     sm: "h-8 w-8",
     md: "h-10 w-10",
     lg: "h-12 w-12",

@@ -3,96 +3,84 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-rgb: 184, 200, 207;
+  --foreground-rgb: 8, 24, 30;
+  --background-rgb: 248, 249, 249;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-rgb));
-  font-family: "Inter", sans-serif;
 }
 
-.grid-layout {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 160 74% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142 71% 45%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 160 74% 36%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 142 71% 45%;
+  }
 }
 
-.grid-cell {
-  padding: 2rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.card-pros {
-  background-color: #c2e861;
-  position: relative;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.card-pros::before {
-  content: "";
-  position: absolute;
-  right: -30px;
-  top: -30px;
-  width: 180px;
-  height: 180px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180' fill='none'%3E%3Cpath d='M1 1C67.6667 1 180 40.6 180 180M1 45.25C67.6667 45.25 180 73.45 180 180M1 89.5C67.6667 89.5 180 106.3 180 180M1 133.75C67.6667 133.75 180 139.15 180 180M45.25 1C45.25 67.6667 73.45 180 180 180M89.5 1C89.5 67.6667 106.3 180 180 180M133.75 1C133.75 67.6667 139.15 180 180 180' stroke='black' stroke-opacity='0.2'/%3E%3C/svg%3E");
-  opacity: 0.8;
-}
-
-.globe {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-}
-
-.globe::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none'%3E%3Cpath d='M1 1C45.1111 1 120 27.0667 120 120M1 30.5C45.1111 30.5 120 49.1333 120 120M1 60C45.1111 60 120 71.2 120 120M1 89.5C45.1111 89.5 120 93.2667 120 120M30.5 1C30.5 45.1111 49.1333 120 120 120M60 1C60 45.1111 71.2 120 120 120M89.5 1C89.5 45.1111 93.2667 120 120 120' stroke='black' stroke-opacity='0.2'/%3E%3C/svg%3E");
-}
-
-.button-arrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: 9999px;
-  background-color: #000;
-  color: white;
-  font-weight: 500;
-}
-
-.button-arrow::after {
-  content: "→";
-  margin-left: 0.5rem;
-}
-
-.nav-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #000;
-  margin: 0 8px;
-}
-
-.nav-dot.active {
-  background-color: #000;
-}
-
-.nav-dot.inactive {
-  background-color: rgba(0, 0, 0, 0.2);
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
