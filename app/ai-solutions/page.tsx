@@ -1,5 +1,4 @@
 import { AiSolutionFinder } from "@/components/ai-solution-finder"
-import { PersonalizedSolutionGenerator } from "@/components/personalized-solution-generator"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -19,11 +18,6 @@ export default function AiSolutionsPage() {
           <div className="space-y-12">
             <section>
               <AiSolutionFinder />
-            </section>
-
-            <section>
-              <h2 className="text-2xl font-bold text-center mb-6">Get a Detailed Personalized Recommendation</h2>
-              <PersonalizedSolutionGenerator />
             </section>
           </div>
         </div>

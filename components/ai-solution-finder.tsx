@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { generatePaymentDescription } from "@/app/actions/ai-actions"
 
 export function AiSolutionFinder() {
   const [businessType, setBusinessType] = useState("")
@@ -15,8 +14,11 @@ export function AiSolutionFinder() {
 
     setIsLoading(true)
     try {
-      const result = await generatePaymentDescription(businessType)
-      setDescription(result)
+      // Simulate API call
+      await new Promise((resolve) => setTimeout(resolve, 1500))
+      setDescription(
+        `Based on your ${businessType} business, we recommend our Integrated Payment Platform which includes online payments, point-of-sale integration, and fraud protection tailored for your industry.`,
+      )
     } catch (error) {
       console.error("Failed to generate description:", error)
     } finally {

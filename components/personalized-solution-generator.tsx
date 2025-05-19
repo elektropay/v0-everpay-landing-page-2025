@@ -1,117 +1,109 @@
 "use client"
 
+import type React from "react"
+
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { generatePersonalizedCopy } from "@/app/actions/ai-actions"
-
-const industries = [
-  "Retail",
-  "E-commerce",
-  "Healthcare",
-  "Hospitality",
-  "Education",
-  "Finance",
-  "Technology",
-  "Manufacturing",
-]
-
-const regions = ["North America", "Europe", "Asia-Pacific", "Latin America", "Middle East", "Africa", "Australia"]
 
 export function PersonalizedSolutionGenerator() {
-  const [businessSize, setBusinessSize] = useState<"small" | "medium" | "enterprise" | null>(null)
+  const [businessSize, setBusinessSize] = useState("")
   const [industry, setIndustry] = useState("")
   const [region, setRegion] = useState("")
-  const [copy, setCopy] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [recommendation, setRecommendation] = useState("")
 
-  const handleGenerate = async () => {
-    if (!businessSize || !industry || !region) return
-
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
     setIsLoading(true)
-    try {
-      const result = await generatePersonalizedCopy({
-        businessSize,
-        industry,
-        region,
-      })
-      setCopy(result)
-    } catch (error) {
-      console.error("Failed to generate personalized copy:", error)
-    } finally {
-      setIsLoading(false)
-    }
-  }
 
-  const isFormComplete = businessSize && industry && region
+    // Simulate API call
+    setTimeout(() => {
+      setRecommendation(
+        `Personalized payment solution for ${businessSize} businesses in the ${industry} industry, optimized for the ${region} market.`,
+      )
+      setIsLoading(false)
+    }, 1500)
+  }
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle className="text-2xl">Personalized Payment Solution</CardTitle>
+        <CardTitle className="text-2xl">Personalized Solution Generator</CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
-        <div className="space-y-4">
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">Business Size</label>
-            <Select onValueChange={(value) => setBusinessSize(value as any)}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select business size" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="small">Small Business</SelectItem>
-                <SelectItem value="medium">Medium Business</SelectItem>
-                <SelectItem value="enterprise">Enterprise</SelectItem>
-              </SelectContent>
-            </Select>
+            <label htmlFor="business-size" className="block text-sm font-medium text-gray-700">
+              Business Size
+            </label>
+            <select
+              id="business-size"
+              className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#4CAF50] focus:outline-none focus:ring-1 focus:ring-[#4CAF50]"
+              value={businessSize}
+              onChange={(e) => setBusinessSize(e.target.value)}
+              required
+            >
+              <option value="">Select size</option>
+              <option value="Small">Small</option>
+              <option value="Medium">Medium</option>
+              <option value="Enterprise">Enterprise</option>
+            </select>
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">Industry</label>
-            <Select onValueChange={setIndustry}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select industry" />
-              </SelectTrigger>
-              <SelectContent>
-                {industries.map((ind) => (
-                  <SelectItem key={ind} value={ind}>
-                    {ind}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <label htmlFor="industry" className="block text-sm font-medium text-gray-700">
+              Industry
+            </label>
+            <select
+              id="industry"
+              className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#4CAF50] focus:outline-none focus:ring-1 focus:ring-[#4CAF50]"
+              value={industry}
+              onChange={(e) => setIndustry(e.target.value)}
+              required
+            >
+              <option value="">Select industry</option>
+              <option value="Retail">Retail</option>
+              <option value="E-commerce">E-commerce</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="Hospitality">Hospitality</option>
+              <option value="Professional Services">Professional Services</option>
+            </select>
           </div>
 
           <div className="space-y-2">
-            <label className="block text-sm font-medium text-gray-700">Region</label>
-            <Select onValueChange={setRegion}>
-              <SelectTrigger className="w-full">
-                <SelectValue placeholder="Select region" />
-              </SelectTrigger>
-              <SelectContent>
-                {regions.map((reg) => (
-                  <SelectItem key={reg} value={reg}>
-                    {reg}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <label htmlFor="region" className="block text-sm font-medium text-gray-700">
+              Region
+            </label>
+            <select
+              id="region"
+              className="w-full rounded-md border border-gray-300 px-4 py-2 focus:border-[#4CAF50] focus:outline-none focus:ring-1 focus:ring-[#4CAF50]"
+              value={region}
+              onChange={(e) => setRegion(e.target.value)}
+              required
+            >
+              <option value="">Select region</option>
+              <option value="North America">North America</option>
+              <option value="Europe">Europe</option>
+              <option value="Asia Pacific">Asia Pacific</option>
+              <option value="Latin America">Latin America</option>
+              <option value="Middle East & Africa">Middle East & Africa</option>
+            </select>
           </div>
-        </div>
 
-        <Button
-          onClick={handleGenerate}
-          className="w-full bg-[#4CAF50] hover:bg-[#45a049]"
-          disabled={isLoading || !isFormComplete}
-        >
-          {isLoading ? "Generating..." : "Generate Personalized Solution"}
-        </Button>
+          <Button
+            type="submit"
+            className="w-full bg-[#4CAF50] hover:bg-[#45a049]"
+            disabled={isLoading || !businessSize || !industry || !region}
+          >
+            {isLoading ? "Generating..." : "Generate Recommendation"}
+          </Button>
+        </form>
 
-        {copy && (
-          <div className="mt-4 rounded-md bg-gray-50 p-4">
-            <h3 className="mb-2 font-medium">Your Personalized Solution:</h3>
-            <p className="text-gray-700">{copy}</p>
+        {recommendation && (
+          <div className="mt-6 rounded-md bg-gray-50 p-4">
+            <h3 className="mb-2 font-medium">Your Personalized Recommendation:</h3>
+            <p className="text-gray-700">{recommendation}</p>
           </div>
         )}
       </CardContent>
