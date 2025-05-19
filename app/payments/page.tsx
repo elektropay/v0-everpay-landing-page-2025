@@ -39,7 +39,7 @@ export default function PaymentsPage() {
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
                 <Image
-                  src="/placeholder.svg?height=400&width=600"
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
                   alt="Modern payment system"
                   fill
                   className="object-cover"
@@ -82,17 +82,17 @@ export default function PaymentsPage() {
                   {
                     title: "In-Person Payments",
                     description: "Accept all major cards, contactless, and mobile payments with our secure terminals.",
-                    image: "/placeholder.svg?height=300&width=400",
+                    image: "https://images.unsplash.com/photo-1556740758-90de374c12ad",
                   },
                   {
                     title: "Online Payments",
                     description: "Seamlessly integrate payments into your website or mobile app with our APIs.",
-                    image: "/placeholder.svg?height=300&width=400",
+                    image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30e",
                   },
                   {
                     title: "Mobile Payments",
                     description: "Turn any smartphone into a payment terminal with our mobile card reader.",
-                    image: "/placeholder.svg?height=300&width=400",
+                    image: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49",
                   },
                 ].map((feature, index) => (
                   <div key={index} className="relative group overflow-hidden rounded-lg">

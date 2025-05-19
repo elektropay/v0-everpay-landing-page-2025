@@ -4,9 +4,9 @@ import Image from "next/image"
 
 export function PaymentPartnersCarousel() {
   const partners = [
-    { name: "Visa", logo: "/placeholder.svg?height=40&width=120" },
-    { name: "Mastercard", logo: "/placeholder.svg?height=40&width=120" },
-    { name: "PayPal", logo: "/placeholder.svg?height=40&width=120" },
+    { name: "Visa", logo: "https://cdn.worldvectorlogo.com/logos/visa.svg" },
+    { name: "Mastercard", logo: "https://cdn.worldvectorlogo.com/logos/mastercard.svg" },
+    { name: "PayPal", logo: "https://cdn.worldvectorlogo.com/logos/paypal.svg" },
   ]
 
   return (

@@ -41,7 +41,7 @@ export function CheckoutProtectionSection() {
           </div>
           <div className="relative">
             <Image
-              src="/placeholder.svg?height=400&width=600"
+              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
               alt="Security Features"
               width={600}
               height={400}

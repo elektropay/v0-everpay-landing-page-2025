@@ -1,134 +1,65 @@
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-
 export default function AboutPage() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">Transforming Global Commerce Through Innovation</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                We're building the future of digital payments, enabling businesses worldwide to thrive in the digital
-                economy.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div className="min-h-screen bg-white">
+      <header className="bg-white border-b border-gray-200 py-4">
+        <div className="container mx-auto px-4">
+          <h1 className="text-2xl font-bold text-gray-900">Everpay</h1>
+        </div>
+      </header>
 
-        {/* Mission Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-                <p className="text-gray-600 mb-6">
-                  To empower businesses of all sizes with innovative payment solutions that drive growth and enable
-                  seamless commerce across borders.
-                </p>
-                <div className="grid grid-cols-2 gap-8">
-                  <div>
-                    <div className="text-3xl font-bold text-[#4CAF50] mb-2">150+</div>
-                    <p className="text-gray-600">Countries Served</p>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-[#4CAF50] mb-2">$2B+</div>
-                    <p className="text-gray-600">Processed Annually</p>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-[#4CAF50] mb-2">50K+</div>
-                    <p className="text-gray-600">Merchants</p>
-                  </div>
-                  <div>
-                    <div className="text-3xl font-bold text-[#4CAF50] mb-2">99.99%</div>
-                    <p className="text-gray-600">Uptime</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative h-[400px]">
-                <Image
-                  src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?auto=format&fit=crop&q=80"
-                  alt="Team collaboration"
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
+      <main className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">About Us</h2>
 
-        {/* Values Section */}
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Values</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Innovation First",
-                  description: "Constantly pushing boundaries to create cutting-edge payment solutions.",
-                },
-                {
-                  title: "Customer Success",
-                  description: "Your growth is our priority. We succeed when you succeed.",
-                },
-                {
-                  title: "Global Mindset",
-                  description: "Building solutions that work seamlessly across borders and cultures.",
-                },
-              ].map((value, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                  <p className="text-gray-600">{value.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Leadership</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[1, 2, 3].map((leader) => (
-                <div key={leader} className="text-center">
-                  <div className="relative w-48 h-48 mx-auto mb-4">
-                    <Image
-                      src={`https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80`}
-                      alt="Leadership team member"
-                      fill
-                      className="object-cover rounded-full"
-                    />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-1">John Smith</h3>
-                  <p className="text-gray-600 mb-2">Chief Executive Officer</p>
-                  <p className="text-sm text-gray-500">20+ years of experience in fintech and payments</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Join Us in Shaping the Future of Payments</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Whether you're a small business or a large enterprise, we have the solutions to help you grow.
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 mb-6">
+              Everpay is a leading provider of payment solutions for businesses of all sizes. Founded in 2020, we've
+              been helping companies streamline their payment processes and improve their bottom line.
             </p>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
-                Get Started
-              </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                Contact Sales
-              </Button>
+
+            <p className="text-lg text-gray-600 mb-6">
+              Our mission is to make payments simple, secure, and accessible for everyone. We believe that businesses
+              should be able to focus on what they do best, without worrying about payment processing.
+            </p>
+
+            <div className="mt-12">
+              <h3 className="text-2xl font-bold mb-4">Our Values</h3>
+
+              <div className="grid gap-6 md:grid-cols-2">
+                {[
+                  {
+                    title: "Security First",
+                    description: "We prioritize the security of your transactions above all else.",
+                  },
+                  {
+                    title: "Customer Focus",
+                    description: "Our customers' success is our success.",
+                  },
+                  {
+                    title: "Innovation",
+                    description: "We're constantly improving our solutions to meet evolving needs.",
+                  },
+                  {
+                    title: "Transparency",
+                    description: "We believe in clear, honest communication with our customers.",
+                  },
+                ].map((value, index) => (
+                  <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                    <h4 className="text-xl font-semibold mb-2">{value.title}</h4>
+                    <p className="text-gray-600">{value.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </section>
+        </div>
       </main>
+
+      <footer className="bg-white border-t border-gray-200 py-8">
+        <div className="container mx-auto px-4">
+          <p className="text-center text-gray-600">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
   )
 }
