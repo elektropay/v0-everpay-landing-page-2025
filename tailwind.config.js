@@ -1,12 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-    "*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}", "*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     container: {
       center: true,
@@ -23,10 +18,8 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#4CAF50",
-          dark: "#388E3C",
-          light: "#A5D6A7",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "#c2e861",
+          foreground: "#000000",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -53,12 +46,18 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      fontFamily: {
+        sans: ["var(--font-open-sans)", "sans-serif"],
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        subtle: "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 }

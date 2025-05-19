@@ -1,15 +1,21 @@
-interface AvatarProps {
-  src?: string
+import type * as React from "react"
+
+interface AvatarProps extends React.HTMLAttributes<HTMLDivElement> {
+  src: string
   alt: string
-  className?: string
+  size?: "sm" | "md" | "lg"
 }
 
-export function Avatar({ alt, className = "" }: AvatarProps) {
+export function Avatar({ src, alt, size = "md", className = "", ...props }: AvatarProps) {
+  const sizeClasses: Record<string, string> = {
+    sm: "h-8 w-8",
+    md: "h-10 w-10",
+    lg: "h-12 w-12",
+  }
+
   return (
-    <div className={`relative h-10 w-10 overflow-hidden rounded-full bg-gray-200 ${className}`}>
-      <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-medium">
-        {alt.charAt(0).toUpperCase()}
-      </div>
+    <div className={`relative overflow-hidden rounded-full bg-gray-200 ${sizeClasses[size]} ${className}`} {...props}>
+      <img src={src || "/placeholder.svg"} alt={alt} className="h-full w-full object-cover" />
     </div>
   )
 }

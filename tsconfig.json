@@ -5,7 +5,6 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
@@ -21,7 +20,20 @@
     ],
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    // Stricter type checking options
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "alwaysStrict": true
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

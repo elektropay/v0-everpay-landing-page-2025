@@ -1,6 +1,8 @@
 import type { Locale } from "./types"
 
-const dictionaries = {
+type Dictionary = Record<string, any>
+
+const dictionaries: Record<Locale, () => Promise<Dictionary>> = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
   es: () => import("./dictionaries/es.json").then((module) => module.default),
   fr: () => import("./dictionaries/fr.json").then((module) => module.default),
@@ -8,4 +10,4 @@ const dictionaries = {
   zh: () => import("./dictionaries/zh.json").then((module) => module.default),
 }
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+export const getDictionary = async (locale: Locale): Promise<Dictionary> => dictionaries[locale]()

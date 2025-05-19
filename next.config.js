@@ -8,8 +8,9 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    domains: ["images.unsplash.com", "cdn.worldvectorlogo.com", "placeholder.svg"],
     unoptimized: true,
   },
 }
 
-export default nextConfig
+module.exports = nextConfig
