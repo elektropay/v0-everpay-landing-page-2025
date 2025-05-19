@@ -27,7 +27,7 @@ export function BusinessTypesSection() {
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-2">{business.title}</h3>
                 <p className="text-gray-600 mb-4">{business.description}</p>
-                <button className="text-blue-600 hover:text-blue-700">Learn more →</button>
+                <button className="text-blue-600 hover:text-blue-700">Learn more &rarr;</button>
               </div>
             </div>
           ))}

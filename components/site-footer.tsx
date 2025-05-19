@@ -1,74 +1,49 @@
 export function SiteFooter() {
   return (
-    <footer className="border-t border-gray-200 bg-white py-12">
+    <footer className="border-t border-gray-200 bg-white py-8">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid md:grid-cols-3 gap-8">
           <div>
-            <h3 className="mb-4 text-lg font-bold">Everpay</h3>
-            <p className="text-sm text-gray-600">Empowering businesses with innovative payment solutions since 2020.</p>
+            <h3 className="text-lg font-bold mb-4">Everpay</h3>
+            <p className="text-gray-600">Modern payment solutions for businesses</p>
           </div>
-
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Products</h3>
+            <h3 className="text-lg font-bold mb-4">Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/products/gateway" className="text-sm text-gray-600 hover:text-gray-900">
-                  Payment Gateway
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  About
                 </a>
               </li>
               <li>
-                <a href="/products/pos" className="text-sm text-gray-600 hover:text-gray-900">
-                  POS Systems
-                </a>
-              </li>
-              <li>
-                <a href="/products/checkout" className="text-sm text-gray-600 hover:text-gray-900">
-                  Online Checkout
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="mb-4 text-sm font-semibold">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/about" className="text-sm text-gray-600 hover:text-gray-900">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/careers" className="text-sm text-gray-600 hover:text-gray-900">
-                  Careers
-                </a>
-              </li>
-              <li>
-                <a href="/contact" className="text-sm text-gray-600 hover:text-gray-900">
+                <a href="#" className="text-gray-600 hover:text-gray-900">
                   Contact
                 </a>
               </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Careers
+                </a>
+              </li>
             </ul>
           </div>
-
           <div>
-            <h3 className="mb-4 text-sm font-semibold">Legal</h3>
+            <h3 className="text-lg font-bold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="/privacy" className="text-sm text-gray-600 hover:text-gray-900">
-                  Privacy Policy
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Privacy
                 </a>
               </li>
               <li>
-                <a href="/terms" className="text-sm text-gray-600 hover:text-gray-900">
-                  Terms of Service
+                <a href="#" className="text-gray-600 hover:text-gray-900">
+                  Terms
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-200 pt-8 text-center">
-          <p className="text-sm text-gray-600">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
-        </div>
+        <p className="text-center text-gray-600 mt-8">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
       </div>
     </footer>
   )

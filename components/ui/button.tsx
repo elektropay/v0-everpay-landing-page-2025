@@ -1,19 +1,12 @@
-import * as React from "react"
+import type React from "react"
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className = "", children, ...props }, ref) => {
-    return (
-      <button
-        ref={ref}
-        className={`inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 ${className}`}
-        {...props}
-      >
-        {children}
-      </button>
-    )
-  },
-)
-
-Button.displayName = "Button"
+export function Button({ children, className = "", ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  return (
+    <button
+      className={`inline-flex items-center justify-center rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 ${className}`}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
