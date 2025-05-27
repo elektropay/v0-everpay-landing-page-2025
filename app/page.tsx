@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <header className="bg-white border-b border-gray-200 py-4">
         <div className="container mx-auto px-4">
           <h1 className="text-2xl font-bold text-gray-900">Everpay</h1>
@@ -53,6 +53,28 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Welcome Section */}
+        <div className="p-4">
+          <h1 className="text-2xl font-bold">Everpay</h1>
+          <p className="mt-2">Welcome to Everpay - Your Payment Solution</p>
+        </div>
+
+        {/* Contact Section */}
+        <div className="p-4">
+          <h2 className="text-2xl font-bold">Contact</h2>
+          <p className="mt-2">Get in touch with us today!</p>
+        </div>
+
+        {/* Our Services Section */}
+        <div className="p-4" style={{ marginTop: "20px" }}>
+          <h2 className="text-2xl font-bold">Our Services</h2>
+          <ul>
+            <li>Secure Payment Processing</li>
+            <li>Easy Integration</li>
+            <li>24/7 Support</li>
+          </ul>
+        </div>
       </main>
 
       <footer className="bg-white border-t border-gray-200 py-8">
