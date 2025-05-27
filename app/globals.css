@@ -9,10 +9,10 @@
 
 body {
   font-family: Arial, sans-serif;
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
+  color: #333;
+  background: #fff;
   margin: 0;
-  padding: 0;
+  padding: 20px;
   line-height: 1.6;
 }
 
@@ -22,12 +22,13 @@ h1 {
 }
 
 h2 {
-  color: #666;
+  color: #333;
   margin-top: 20px;
   margin-bottom: 10px;
 }
 
 p {
+  color: #666;
   margin-bottom: 10px;
 }
 

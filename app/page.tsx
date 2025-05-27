@@ -57,7 +57,7 @@ export default function Home() {
         {/* Welcome Section */}
         <div className="p-4">
           <h1 className="text-2xl font-bold">Everpay</h1>
-          <p className="mt-2">Welcome to Everpay - Your Payment Solution</p>
+          <p className="mt-2">Payment Solutions</p>
         </div>
 
         {/* Contact Section */}
