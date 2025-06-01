@@ -9,7 +9,7 @@ export default function Home() {
       <body style={{ fontFamily: "Arial, sans-serif", margin: 0, padding: "20px", lineHeight: 1.6 }}>
         <div>
           <h1 style={{ color: "#333", marginBottom: "10px" }}>Everpay</h1>
-          <p style={{ color: "#666", marginBottom: "10px" }}>Payment Solutions for Modern Businesses</p>
+          <p style={{ color: "#666", marginBottom: "10px" }}>Payment Solutions</p>
 
           <div style={{ marginTop: "20px" }}>
             <h2 style={{ color: "#666", marginTop: "20px", marginBottom: "10px" }}>Our Services</h2>
