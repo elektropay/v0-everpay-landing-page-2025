@@ -1,27 +1,8 @@
-import { SiteHeader } from "@/components/site-header"
-import { HeroSection } from "@/components/hero-section"
-import { StatsSection } from "@/components/stats-section"
-import { FeaturesSection } from "@/components/features-section"
-import { CheckoutProtectionSection } from "@/components/checkout-protection-section"
-import { BusinessTypesSection } from "@/components/business-types-section"
-import { CTASection } from "@/components/cta-section"
-import { SiteFooter } from "@/components/site-footer"
-import { DynamicCarousel } from "@/components/dynamic-carousel"
-
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <SiteHeader />
-      <main>
-        <HeroSection />
-        <StatsSection />
-        <DynamicCarousel />
-        <FeaturesSection />
-        <CheckoutProtectionSection />
-        <BusinessTypesSection />
-        <CTASection />
-      </main>
-      <SiteFooter />
+    <div>
+      <h1>Everpay</h1>
+      <p>Welcome to our payment platform.</p>
     </div>
   )
 }

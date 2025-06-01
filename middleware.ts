@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
-// Simplified middleware that won't cause issues
+// Simple middleware that just passes through requests
 export function middleware(request: NextRequest) {
-  // Basic middleware functionality
   return NextResponse.next()
 }
 
