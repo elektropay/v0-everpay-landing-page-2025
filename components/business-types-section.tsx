@@ -7,17 +7,17 @@ const businessTypes = [
   {
     title: "Enterprise",
     description: "Scalable solutions for large organizations",
-    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     title: "Small Business",
     description: "Perfect for growing companies",
-    image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee0c",
+    image: "/placeholder.svg?height=200&width=300",
   },
   {
     title: "Startups",
     description: "Launch fast and scale with confidence",
-    image: "https://images.unsplash.com/photo-1573164713988-8665fc963095",
+    image: "/placeholder.svg?height=200&width=300",
   },
 ]
 

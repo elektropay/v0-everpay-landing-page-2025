@@ -39,9 +39,9 @@ export function CheckoutProtectionSection() {
             </div>
             <Button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049]">Learn About Security</Button>
           </div>
-          <div className="relative">
+          <div className="relative h-[300px] md:h-[400px]">
             <Image
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
+              src="/placeholder.svg?height=400&width=600"
               alt="Security Features"
               width={600}
               height={400}

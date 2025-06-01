@@ -1,17 +1,15 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
 
+// Simplified middleware that won't cause issues
 export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
-
-  // If the pathname is the root, redirect to /en
-  if (pathname === "/") {
-    return NextResponse.redirect(new URL("/en", request.url))
-  }
-
+  // Basic middleware functionality
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    // Skip all internal paths
+    "/((?!api|_next/static|_next/image|favicon.ico).*)",
+  ],
 }
