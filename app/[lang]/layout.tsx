@@ -1,30 +1,26 @@
-import type { Metadata } from "next"
 import type React from "react"
-import { Open_Sans } from "next/font/google"
-import "../globals.css"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/types"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
-// Initialize the Open Sans font
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-open-sans",
-  display: "swap",
-})
-
-export const metadata: Metadata = {
-  title: "Everpay - Innovative Payment Solutions",
-  description: "Empowering businesses with seamless payment processing solutions",
-}
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { lang },
 }: {
   children: React.ReactNode
+  params: { lang: Locale }
 }) {
+  const dictionary = await getDictionary(lang)
+
   return (
-    <html lang="en" className={openSans.variable}>
-      <body className="min-h-screen bg-white font-sans">
-        <div className="flex min-h-screen flex-col">{children}</div>
+    <html lang={lang}>
+      <body>
+        <div className="flex min-h-screen flex-col">
+          <SiteHeader dictionary={dictionary} />
+          <main className="flex-1">{children}</main>
+          <SiteFooter dictionary={dictionary} />
+        </div>
       </body>
     </html>
   )
