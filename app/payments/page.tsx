@@ -241,7 +241,7 @@ export default function PaymentsPage() {
                     },
                     {
                       title: "Card-Not-Present",
-                      rate: "2.9% + $0.30",
+                      rate: "3.49% + $0.30",
                       description: "For online payments",
                       features: ["Online payments", "Recurring billing", "Payment links", "Invoice payments"],
                     },
