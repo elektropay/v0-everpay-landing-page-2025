@@ -1,5 +1,3 @@
-import { redirect } from "next/navigation"
-
 export default function Home() {
-  redirect("/en")
+  return <h1>Everpay</h1>
 }
