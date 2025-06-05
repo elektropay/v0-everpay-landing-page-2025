@@ -4,12 +4,13 @@ import { HeroSection } from "@/components/hero-section"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
-export default function HomePage() {
+export default function LangPage() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1">
         <HeroSection />
+
         {/* Payment Gateway Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
@@ -363,6 +364,35 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Language Page Content */}
+        <div className="py-16">
+          <div className="container mx-auto px-4">
+            <h1 className="mb-4 text-3xl font-bold leading-tight">Language Page</h1>
+            <p className="mb-6 text-gray-600">This is the language-specific page.</p>
+          </div>
+        </div>
+
+        {/* Our Features Section */}
+        <section className="py-16 bg-gray-100">
+          <div className="container mx-auto px-4">
+            <h2 className="mb-12 text-center text-3xl font-bold">Our Features</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="text-center">
+                <h3 className="mb-4 text-2xl font-bold">Secure Payments</h3>
+                <p className="text-gray-600">Industry-leading security protocols</p>
+              </div>
+              <div className="text-center">
+                <h3 className="mb-4 text-2xl font-bold">Easy Integration</h3>
+                <p className="text-gray-600">Simple API integration</p>
+              </div>
+              <div className="text-center">
+                <h3 className="mb-4 text-2xl font-bold">24/7 Support</h3>
+                <p className="text-gray-600">Round-the-clock customer support</p>
               </div>
             </div>
           </div>

@@ -1,8 +1,10 @@
 import type React from "react"
+import "../globals.css"
+
 export default function EnLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return <div>{children}</div>
+  return children
 }

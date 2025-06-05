@@ -1,9 +1,5 @@
-export default function RootLayout({ children }) {
-  return (
-    <html>
-      <body>{children}</body>
-    </html>
-  )
+export default function Layout() {
+  // This file will be deleted
 }
 
 

@@ -1,4 +1,4 @@
-export default function AboutPage() {
+export default function About() {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-white border-b border-gray-200 py-4">
@@ -13,8 +13,8 @@ export default function AboutPage() {
 
           <div className="max-w-3xl mx-auto">
             <p className="text-lg text-gray-600 mb-6">
-              Everpay is a leading provider of payment solutions for businesses of all sizes. Founded in 2020, we've
-              been helping companies streamline their payment processes and improve their bottom line.
+              Everpay is a leading provider of payment solutions for businesses of all sizes. Founded in 2009, we've
+              been helping companies of all sizes streamline their payment processes and improve their bottom line.
             </p>
 
             <p className="text-lg text-gray-600 mb-6">
@@ -55,11 +55,7 @@ export default function AboutPage() {
         </div>
       </main>
 
-      <footer className="bg-white border-t border-gray-200 py-8">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-gray-600">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
-        </div>
-      </footer>
+  
     </div>
   )
 }

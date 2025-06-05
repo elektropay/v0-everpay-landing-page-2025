@@ -1,17 +1,24 @@
+import { Button } from "./ui/button"
+
 export function HeroSection() {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
+    <section className="bg-gray-50 py-16" style={{ padding: "4rem 1rem", backgroundColor: "#f9f9f9" }}>
+      <div className="container mx-auto px-4" style={{ maxWidth: "1200px", margin: "0 auto", textAlign: "center" }}>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {/* Left Column */}
           <div className="max-w-3xl flex flex-col justify-center">
-            <h2 className="mb-6 text-4xl font-bold">Innovative Payment Solutions for Modern Businesses</h2>
-            <p className="mb-8 text-xl text-gray-600">
+            <h2 className="mb-6 text-4xl font-bold" style={{ fontSize: "3rem", marginBottom: "1rem", color: "#333" }}>
+              Innovative Payment Solutions for Modern Businesses
+            </h2>
+            <p
+              className="mb-8 text-xl text-gray-600"
+              style={{ fontSize: "1.25rem", marginBottom: "2rem", color: "#666" }}
+            >
               Streamline your payment processing with our secure, reliable, and easy-to-use platform.
             </p>
-            <button className="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 px-6 text-base font-medium text-white hover:bg-blue-700">
+            <Button className="inline-flex h-12 items-center justify-center rounded-md bg-blue-600 px-6 text-base font-medium text-white hover:bg-blue-700">
               Get Started
-            </button>
+            </Button>
           </div>
 
           {/* Right Column - Phone Mockup */}
