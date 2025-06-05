@@ -16,16 +16,10 @@ export const metadata: Metadata = {
   description: "Empowering businesses with seamless payment processing solutions",
 }
 
-export default function RootLayout({
+export default function LangLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
-    <html lang="en" className={openSans.variable}>
-      <body className="min-h-screen bg-white font-sans">
-        <div className="flex min-h-screen flex-col">{children}</div>
-      </body>
-    </html>
-  )
+  return children
 }

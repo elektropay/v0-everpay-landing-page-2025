@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { HeroSection } from "@/components/hero-section"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
@@ -8,34 +9,7 @@ export default function HomePage() {
     <div className="flex min-h-screen flex-col bg-white">
       <SiteHeader />
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-gray-100 py-16">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-              <div className="flex flex-col justify-center">
-                <h1 className="mb-4 text-4xl font-bold leading-tight">
-                  Empowering Your Business with Innovative Payment Solutions
-                </h1>
-                <p className="mb-6 text-gray-600">
-                  Experience the future of payments with our comprehensive platform designed to streamline transactions,
-                  reduce costs, and enhance customer satisfaction.
-                </p>
-                <div>
-                  <Button className="bg-primary hover:bg-primary/90">Get Started</Button>
-                </div>
-              </div>
-              <div className="relative h-[300px]">
-                <Image
-                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80"
-                  alt="Payment processing"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
+        <HeroSection />
         {/* Payment Gateway Section */}
         <section className="py-16">
           <div className="container mx-auto px-4">
@@ -224,12 +198,12 @@ export default function HomePage() {
                 {
                   title: "Choose the right payment methods for your business",
                   description: "Customize your payment stack to meet your specific needs",
-                  image: "https://images.unsplash.com/photo-1556742077-0a6b6a4a4ac4?auto=format&fit=crop&q=80",
+                  image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&q=80",
                 },
                 {
                   title: "Start accepting payments and grow your business",
                   description: "Begin processing transactions securely and efficiently",
-                  image: "https://images.unsplash.com/photo-1556742111-a301076d9d18?auto=format&fit=crop&q=80",
+                  image: "https://images.unsplash.com/photo-1556742188-a301076d9d18?auto=format&fit=crop&q=80",
                 },
               ].map((step, index) => (
                 <div key={index} className="flex flex-col">
