@@ -78,6 +78,9 @@ export function SiteHeader() {
               </svg>
             </button>
           </div>
+          <div>
+            <h1>Everpay</h1>
+          </div>
         </div>
       </div>
     </header>

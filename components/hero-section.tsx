@@ -16,18 +16,10 @@ export function HeroSection() {
               <div className="text-xs">Send, receive and pay anywhere in the world in the most convenient way</div>
             </div>
 
-            <h1 className="mb-8 text-6xl font-bold leading-tight">
-              Smart
-              <br />
-              Payment
-              <br />
-              solutions
-            </h1>
+            <h2 className="mb-8 text-6xl font-bold leading-tight">Smart Payment Solutions</h2>
 
             <div className="mb-12">
-              <p className="text-sm text-black/70">
-                Modern payment solutions for all of your financial needs in every way
-              </p>
+              <p className="text-sm text-black/70">Modern banking solutions for all of your financial needs</p>
             </div>
 
             <div className="flex items-center space-x-3">

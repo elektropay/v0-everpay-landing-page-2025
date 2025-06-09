@@ -1,8 +1,17 @@
-export default function Page() {
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+import { HeroSection } from "@/components/hero-section"
+import { FeaturesSection } from "@/components/features-section"
+
+export default function HomePage() {
   return (
     <div>
-      <h1>Everpay</h1>
-      <p>Payment Solutions</p>
+      <SiteHeader />
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+      </main>
+      <SiteFooter />
     </div>
   )
 }
