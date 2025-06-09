@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-background py-24">
@@ -16,20 +14,17 @@ export function HeroSection() {
               <div className="text-xs">Send, receive and pay anywhere in the world in the most convenient way</div>
             </div>
 
-            <h2 className="mb-8 text-6xl font-bold leading-tight">Smart Payment Solutions</h2>
+            <h1 className="mb-8 text-6xl font-bold leading-tight">Smart Payment Solutions</h1>
 
             <div className="mb-12">
               <p className="text-sm text-black/70">Modern banking solutions for all of your financial needs</p>
             </div>
 
             <div className="flex items-center space-x-3">
-              <Link
-                href="/open-account"
-                className="group flex h-12 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white transition-all hover:bg-black/90"
-              >
-                Open a card
+              <button className="group flex h-12 items-center justify-center rounded-full bg-black px-6 text-sm font-medium text-white transition-all hover:bg-black/90">
+                Get Started
                 <span className="ml-2 font-mono transition-transform group-hover:translate-x-0.5">→→→</span>
-              </Link>
+              </button>
             </div>
           </div>
 

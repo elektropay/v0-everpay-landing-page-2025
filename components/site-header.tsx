@@ -80,6 +80,10 @@ export function SiteHeader() {
           </div>
           <div>
             <h1>Everpay</h1>
+            <nav>
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+            </nav>
           </div>
         </div>
       </div>
