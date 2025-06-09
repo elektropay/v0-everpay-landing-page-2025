@@ -1,6 +1,8 @@
-import { redirect } from "next/navigation"
-
-export default function RootPage() {
-  redirect("/en")
-  return null
+export default function Page() {
+  return (
+    <div>
+      <h1>Everpay</h1>
+      <p>Payment Solutions</p>
+    </div>
+  )
 }
