@@ -50,3 +50,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
+
+export function ButtonComponent({ children, ...props }: { children: React.ReactNode; [key: string]: any }) {
+  return <button {...props}>{children}</button>
+}
