@@ -84,8 +84,8 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-gray-900" style={{ fontFamily: "Inter, sans-serif" }}>
-              Everpay
+            <Link href="/" className="text-2xl font-bold text-black-900" style={{ fontFamily: "Manrope, sans-serif" }}>
+              everpay
             </Link>
           </div>
 
@@ -99,7 +99,7 @@ export function SiteHeader() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+                  className="flex items-center space-x-1 text-black-900 hover:text-gray-900 font-bold text-sm py-2"
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
                   <span>{item.title}</span>
@@ -116,7 +116,7 @@ export function SiteHeader() {
                             <div key={idx}>
                               <div className="mb-4">
                                 <h3
-                                  className="font-semibold text-gray-900 mb-1"
+                                  className="font-bold text-gray-900 mb-1"
                                   style={{ fontFamily: "Inter, sans-serif" }}
                                 >
                                   {section.category}
@@ -130,7 +130,7 @@ export function SiteHeader() {
                                   <Link
                                     key={subItem.title}
                                     href={subItem.href}
-                                    className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 text-sm text-gray-700 hover:text-gray-900"
+                                    className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 text-sm text-black-700 hover:text-gray-900"
                                     style={{ fontFamily: "Manrope, sans-serif" }}
                                   >
                                     <span>{subItem.title}</span>
