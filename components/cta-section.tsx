@@ -1,5 +1,3 @@
-import { Shield, Lock } from "lucide-react"
-
 export function CTASection() {
   return (
     <section className="bg-[#0A2F2F] py-16 text-white">
@@ -8,7 +6,15 @@ export function CTASection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 mt-4">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Shield className="h-5 w-5 text-[#4CAF50]" />
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 1.66667L12.5 6.66667L18.3333 7.5L14.1667 11.5833L15.0833 17.5L10 14.8333L4.91667 17.5L5.83333 11.5833L1.66667 7.5L7.5 6.66667L10 1.66667Z"
+                  stroke="#4CAF50"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div>
               <h3 className="text-sm font-medium">PCI DSS Level 1</h3>
@@ -17,7 +23,15 @@ export function CTASection() {
           </div>
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Lock className="h-5 w-5 text-[#4CAF50]" />
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M5 10L8.33333 13.3333L15 6.66667"
+                  stroke="#4CAF50"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div>
               <h3 className="text-sm font-medium">End-to-End Encryption</h3>
@@ -26,7 +40,15 @@ export function CTASection() {
           </div>
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Shield className="h-5 w-5 text-[#4CAF50]" />
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 1.66667L12.5 6.66667L18.3333 7.5L14.1667 11.5833L15.0833 17.5L10 14.8333L4.91667 17.5L5.83333 11.5833L1.66667 7.5L7.5 6.66667L10 1.66667Z"
+                  stroke="#4CAF50"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </div>
             <div>
               <h3 className="text-sm font-medium">Fraud Prevention</h3>
@@ -49,7 +71,7 @@ export function CTASection() {
               </button>
             </div>
           </div>
-          <div className="hidden md:block">{/* You can add an illustration or image here if needed */}</div>
+          <div className="hidden md:block"></div>
         </div>
       </div>
     </section>

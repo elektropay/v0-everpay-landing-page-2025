@@ -1,23 +1,19 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
-
-const securityFeatures = [
-  {
-    title: "Sophisticated Login Protection",
-    description: "Multi-factor authentication and advanced security measures.",
-  },
-  {
-    title: "Data-Loss Prevention",
-    description: "Automatic backups and encryption for all sensitive data.",
-  },
-  {
-    title: "Proactive Fraud Prevention",
-    description: "AI-powered fraud detection and prevention systems.",
-  },
-]
-
 export function CheckoutProtectionSection() {
+  const securityFeatures = [
+    {
+      title: "Sophisticated Login Protection",
+      description: "Multi-factor authentication and advanced security measures.",
+    },
+    {
+      title: "Data-Loss Prevention",
+      description: "Automatic backups and encryption for all sensitive data.",
+    },
+    {
+      title: "Proactive Fraud Prevention",
+      description: "AI-powered fraud detection and prevention systems.",
+    },
+  ]
+
   return (
     <section className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
@@ -28,7 +24,15 @@ export function CheckoutProtectionSection() {
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="flex gap-4">
                   <div className="h-8 w-8 rounded-full bg-[#4CAF50]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="h-5 w-5 text-[#4CAF50]" />
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M16.6667 5L7.50004 14.1667L3.33337 10"
+                        stroke="#4CAF50"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">{feature.title}</h4>
@@ -37,16 +41,12 @@ export function CheckoutProtectionSection() {
                 </div>
               ))}
             </div>
-            <Button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049]">Learn About Security</Button>
+            <button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049] text-white px-6 py-2 rounded-lg">
+              Learn About Security
+            </button>
           </div>
           <div className="relative">
-            <Image
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
-              alt="Security Features"
-              width={600}
-              height={400}
-              className="rounded-lg object-cover"
-            />
+            <div className="w-full h-64 bg-gray-300 rounded-lg"></div>
           </div>
         </div>
       </div>

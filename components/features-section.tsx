@@ -100,7 +100,6 @@ export function FeaturesSection() {
             </div>
           </li>
 
-          {/* Additional features can be added here if needed */}
           <li className="flex min-w-[220px] items-center gap-3 rounded-xl bg-gray-100 p-4">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
