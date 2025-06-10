@@ -1,26 +1,41 @@
 import type React from "react"
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/types"
+import type { Metadata } from "next"
+import { Inter, Manrope } from "next/font/google"
+import "../globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
-export default async function RootLayout({
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  title: "Everpay - Modern Payment Solutions",
+  description: "Secure, fast, and reliable payment processing for businesses of all sizes",
+  generator: "v0.dev",
+}
+
+export default function LangLayout({
   children,
-  params: { lang },
+  params,
 }: {
   children: React.ReactNode
-  params: { lang: Locale }
+  params: { lang: string }
 }) {
-  const dictionary = await getDictionary(lang)
-
   return (
-    <html lang={lang}>
-      <body>
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader dictionary={dictionary} />
-          <main className="flex-1">{children}</main>
-          <SiteFooter dictionary={dictionary} />
-        </div>
+    <html lang={params.lang} className={`${inter.variable} ${manrope.variable}`}>
+      <body className="font-sans">
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
       </body>
     </html>
   )
