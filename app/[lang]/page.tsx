@@ -11,7 +11,6 @@ import { SiteFooter } from "@/components/site-footer"
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
       <main>
         <HeroSection />
         <StatsSection />
@@ -21,7 +20,6 @@ export default function Home() {
         <BusinessTypesSection />
         <CTASection />
       </main>
-      <SiteFooter />
     </div>
   )
 }
