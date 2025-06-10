@@ -5,9 +5,37 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const menuItems = [
+  {
+    title: "Solutions",
+    items: [
+      {
+        category: "For Individual Locations",
+        description: "Attract, retain and engage patients — all on one easy-to-use platform.",
+        items: [
+          { title: "Dental", href: "/solutions/dental" },
+          { title: "Eye Care", href: "/solutions/eye-care" },
+          { title: "Medical", href: "/solutions/medical" },
+          { title: "Veterinary", href: "/solutions/veterinary" },
+          { title: "Medical Spa", href: "/solutions/medical-spa" },
+          { title: "Plastic Surgery", href: "/solutions/plastic-surgery" },
+          { title: "Physical Therapy", href: "/solutions/physical-therapy" },
+          { title: "Mental Health", href: "/solutions/mental-health" },
+          { title: "Primary Care", href: "/solutions/primary-care" },
+        ],
+      },
+      {
+        category: "For Enterprises",
+        description: "Unify multi-office operations.",
+        items: [
+          { title: "Dental Service Organizations (DSO)", href: "/solutions/dso" },
+          { title: "Vision Groups", href: "/solutions/vision-groups" },
+          { title: "Medical Groups", href: "/solutions/medical-groups" },
+        ],
+      },
+    ],
+  },
   {
     title: "Products",
     items: [
@@ -18,21 +46,12 @@ const menuItems = [
     ],
   },
   {
-    title: "Solutions",
-    items: [
-      { title: "Security", href: "/security" },
-      { title: "Partners", href: "/partners" },
-      { title: "About", href: "/about" },
-      { title: "Contact", href: "/contact" },
-    ],
-  },
-  {
     title: "Resources",
     items: [
       { title: "Blog", href: "/blog" },
-      { title: "Careers", href: "/careers" },
-      { title: "Privacy Policy", href: "/privacy-policy" },
-      { title: "Terms", href: "/terms" },
+      { title: "Documentation", href: "/docs" },
+      { title: "API Reference", href: "/api" },
+      { title: "Help Center", href: "/help" },
     ],
   },
   {
@@ -48,7 +67,7 @@ const menuItems = [
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
-  const [isOpen, setIsOpen] = useState(false)
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -60,111 +79,214 @@ export function SiteHeader() {
   }, [])
 
   return (
-    <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent"
-      }`}
-    >
-      <div className="container flex h-16 items-center justify-between">
-        <div className="flex items-center gap-9">
-          <Link href="/" className={`text-xl font-bold ${scrolled ? "text-[#0A2F2F]" : "text-white"}`}>
-            Everpay
-          </Link>
-          <nav className="hidden lg:flex items-center gap-7">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
+      <div className="container mx-auto px-4">
+        <div className="flex h-16 items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link href="/" className="text-2xl font-bold text-gray-900" style={{ fontFamily: "Inter, sans-serif" }}>
+              Everpay
+            </Link>
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item) => (
-              <div key={item.title} className="relative group">
+              <div
+                key={item.title}
+                className="relative"
+                onMouseEnter={() => setActiveDropdown(item.title)}
+                onMouseLeave={() => setActiveDropdown(null)}
+              >
                 <button
-                  className={`group flex items-center gap-1 outline-none ${
-                    scrolled ? "text-gray-600 hover:text-[#4CAF50]" : "text-white hover:text-white/80"
-                  }`}
+                  className="flex items-center space-x-1 text-gray-700 hover:text-gray-900 font-medium text-sm py-2"
+                  style={{ fontFamily: "Manrope, sans-serif" }}
                 >
-                  <span className="text-sm font-medium">{item.title}</span>
-                  <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
+                  <span>{item.title}</span>
+                  {item.title === "Solutions" && <ChevronDown className="h-4 w-4" />}
                 </button>
-                <div className="hidden group-hover:block absolute top-full left-0 pt-2">
-                  <div className="bg-white rounded-lg shadow-lg border p-2 min-w-[200px]">
-                    {item.items.map((subItem) => (
-                      <Link
-                        key={subItem.title}
-                        href={subItem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 rounded-md"
-                      >
-                        {subItem.title}
-                      </Link>
-                    ))}
+
+                {/* Dropdown Menu */}
+                {activeDropdown === item.title && (
+                  <div className="absolute top-full left-0 mt-1 w-screen max-w-4xl bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    {item.title === "Solutions" ? (
+                      <div className="p-6">
+                        <div className="grid grid-cols-2 gap-8">
+                          {item.items.map((section: any, idx) => (
+                            <div key={idx}>
+                              <div className="mb-4">
+                                <h3
+                                  className="font-semibold text-gray-900 mb-1"
+                                  style={{ fontFamily: "Inter, sans-serif" }}
+                                >
+                                  {section.category}
+                                </h3>
+                                <p className="text-sm text-gray-600" style={{ fontFamily: "Manrope, sans-serif" }}>
+                                  {section.description}
+                                </p>
+                              </div>
+                              <div className="grid grid-cols-3 gap-4">
+                                {section.items.map((subItem: any) => (
+                                  <Link
+                                    key={subItem.title}
+                                    href={subItem.href}
+                                    className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 text-sm text-gray-700 hover:text-gray-900"
+                                    style={{ fontFamily: "Manrope, sans-serif" }}
+                                  >
+                                    <span>{subItem.title}</span>
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="p-4">
+                        <div className="grid grid-cols-1 gap-1">
+                          {item.items.map((subItem: any) => (
+                            <Link
+                              key={subItem.title}
+                              href={subItem.href}
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md"
+                              style={{ fontFamily: "Manrope, sans-serif" }}
+                            >
+                              {subItem.title}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                </div>
+                )}
               </div>
             ))}
-          </nav>
-        </div>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="sm"
-              className={`rounded-full ${scrolled ? "" : "text-white hover:text-white hover:bg-white/10"}`}
+            <Link
+              href="/plans"
+              className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+              style={{ fontFamily: "Manrope, sans-serif" }}
             >
-              Sign in
-            </Button>
-            <Button size="sm" className="rounded-full bg-[#4CAF50] hover:bg-[#45a049]">
-              Try for free
+              Plans
+            </Link>
+          </nav>
+
+          {/* Right Side */}
+          <div className="hidden lg:flex items-center space-x-6">
+            <Link
+              href="/login"
+              className="flex items-center text-gray-700 hover:text-gray-900 text-sm font-medium"
+              style={{ fontFamily: "Manrope, sans-serif" }}
+            >
+              <span className="mr-2">👤</span>
+              Log in
+            </Link>
+
+            <div className="text-gray-700 text-sm font-medium" style={{ fontFamily: "Manrope, sans-serif" }}>
+              Sales: 888-579-5668
+            </div>
+
+            <Button
+              className="bg-[#4CAF50] hover:bg-[#45a049] text-white px-6 py-2 rounded-full text-sm font-medium"
+              style={{ fontFamily: "Manrope, sans-serif" }}
+            >
+              Get started
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <Sheet>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`lg:hidden rounded-full ${scrolled ? "" : "text-white hover:bg-white/10"}`}
-              >
+              <Button variant="ghost" size="icon" className="lg:hidden">
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full p-0 bg-[#0A2F2F] border-none">
+            <SheetContent side="right" className="w-full p-0 bg-white">
               <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b border-white/10">
-                  <Link href="/" className="text-xl font-bold text-white">
+                <div className="flex items-center justify-between p-4 border-b">
+                  <Link
+                    href="/"
+                    className="text-xl font-bold text-gray-900"
+                    style={{ fontFamily: "Inter, sans-serif" }}
+                  >
                     Everpay
                   </Link>
                   <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="rounded-full text-white hover:bg-white/10">
+                    <Button variant="ghost" size="icon">
                       <X className="h-5 w-5" />
                     </Button>
                   </SheetTrigger>
                 </div>
-                <div className="flex-1 overflow-auto py-2">
-                  <Accordion type="single" collapsible className="w-full">
-                    {menuItems.map((item, index) => (
-                      <AccordionItem key={index} value={`item-${index}`} className="border-b-0 px-4">
-                        <AccordionTrigger className="py-4 text-white hover:no-underline text-xl font-semibold">
+
+                <div className="flex-1 overflow-auto p-4">
+                  <div className="space-y-4">
+                    {menuItems.map((item) => (
+                      <div key={item.title}>
+                        <div className="font-semibold text-gray-900 mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                           {item.title}
-                        </AccordionTrigger>
-                        <AccordionContent className="pb-4 pt-1">
-                          <div className="flex flex-col space-y-3">
-                            {item.items.map((subItem, subIndex) => (
-                              <Link
-                                key={subIndex}
-                                href={subItem.href}
-                                className="text-gray-300 hover:text-white py-2 px-4 rounded-lg hover:bg-white/5 transition-colors"
-                              >
-                                {subItem.title}
-                              </Link>
-                            ))}
-                          </div>
-                        </AccordionContent>
-                      </AccordionItem>
+                        </div>
+                        <div className="space-y-2 ml-4">
+                          {item.title === "Solutions"
+                            ? item.items.map((section: any, idx) => (
+                                <div key={idx} className="space-y-2">
+                                  <div
+                                    className="font-medium text-gray-700 text-sm"
+                                    style={{ fontFamily: "Manrope, sans-serif" }}
+                                  >
+                                    {section.category}
+                                  </div>
+                                  {section.items.map((subItem: any) => (
+                                    <Link
+                                      key={subItem.title}
+                                      href={subItem.href}
+                                      className="block text-sm text-gray-600 hover:text-gray-900 ml-4"
+                                      style={{ fontFamily: "Manrope, sans-serif" }}
+                                    >
+                                      {subItem.title}
+                                    </Link>
+                                  ))}
+                                </div>
+                              ))
+                            : item.items.map((subItem: any) => (
+                                <Link
+                                  key={subItem.title}
+                                  href={subItem.href}
+                                  className="block text-sm text-gray-600 hover:text-gray-900"
+                                  style={{ fontFamily: "Manrope, sans-serif" }}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              ))}
+                        </div>
+                      </div>
                     ))}
-                  </Accordion>
+                    <Link
+                      href="/plans"
+                      className="block font-semibold text-gray-900"
+                      style={{ fontFamily: "Inter, sans-serif" }}
+                    >
+                      Plans
+                    </Link>
+                  </div>
                 </div>
-                <div className="mt-auto p-4 border-t border-white/10 space-y-3">
-                  <Button variant="ghost" className="w-full justify-start text-white hover:bg-white/5 rounded-lg">
-                    Sign in
-                  </Button>
-                  <Button className="w-full justify-start bg-[#4CAF50] hover:bg-[#45a049] rounded-lg">
-                    Try for free
+
+                <div className="mt-auto p-4 border-t space-y-3">
+                  <Link
+                    href="/login"
+                    className="flex items-center text-gray-700 hover:text-gray-900"
+                    style={{ fontFamily: "Manrope, sans-serif" }}
+                  >
+                    <span className="mr-2">👤</span>
+                    Log in
+                  </Link>
+                  <div className="text-gray-700 text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
+                    Sales: 888-579-5668
+                  </div>
+                  <Button
+                    className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full"
+                    style={{ fontFamily: "Manrope, sans-serif" }}
+                  >
+                    Get started
                   </Button>
                 </div>
               </div>
