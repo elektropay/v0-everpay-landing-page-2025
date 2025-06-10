@@ -34,17 +34,19 @@ const footerLinks: FooterColumn[] = [
   {
     title: "Products",
     links: [
-      { name: "Payment", href: "/payment" },
-      { name: "Checkout", href: "/checkout" },
-      { name: "Terminal", href: "/terminal" },
+      { name: "Payments", href: "/payments" },
+      { name: "Online Payments", href: "/online-payments" },
+      { name: "Commerce", href: "/commerce" },
+      { name: "Fraud Prevention", href: "/fraud-prevention" },
     ],
   },
   {
-    title: "Developers",
+    title: "Solutions",
     links: [
-      { name: "Docs", href: "/docs" },
-      { name: "API Reference", href: "/api-reference" },
-      { name: "Guides", href: "/guides" },
+      { name: "Security", href: "/security" },
+      { name: "Partners", href: "/partners" },
+      { name: "About", href: "/about" },
+      { name: "Contact", href: "/contact" },
     ],
   },
   {
@@ -53,6 +55,7 @@ const footerLinks: FooterColumn[] = [
       { name: "About", href: "/about" },
       { name: "Blog", href: "/blog" },
       { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/contact" },
     ],
   },
 ]
@@ -65,7 +68,7 @@ export function SiteFooter({ dictionary = {} }: { dictionary?: any }) {
   const handleCountryChange = (country: Country) => {
     setSelectedCountry(country)
     setIsCountryMenuOpen(false)
-    router.push(`/${country.locale}${router.pathname}`)
+    // For now, just close the menu - can implement locale switching later
   }
 
   const footerDictionary = dictionary.footer || {

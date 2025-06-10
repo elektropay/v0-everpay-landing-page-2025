@@ -11,28 +11,28 @@ const menuItems = [
   {
     title: "Products",
     items: [
-      { title: "Card Acquiring", href: "/payments" },
-      { title: "Payment Gateway", href: "/gateway" },
-      { title: "POS Devices", href: "/pos" },
-      { title: "Card Issuing", href: "/issuing" },
+      { title: "Payments", href: "/payments" },
+      { title: "Online Payments", href: "/online-payments" },
+      { title: "Commerce", href: "/commerce" },
+      { title: "Fraud Prevention", href: "/fraud-prevention" },
     ],
   },
   {
     title: "Solutions",
     items: [
-      { title: "SMB & Enterprise", href: "/solutions/business" },
-      { title: "Retail", href: "/solutions/retail" },
-      { title: "E-commerce", href: "/solutions/ecommerce" },
-      { title: "Marketplace", href: "/solutions/marketplace" },
+      { title: "Security", href: "/security" },
+      { title: "Partners", href: "/partners" },
+      { title: "About", href: "/about" },
+      { title: "Contact", href: "/contact" },
     ],
   },
   {
     title: "Resources",
     items: [
-      { title: "Documentation", href: "/docs" },
-      { title: "API Reference", href: "/api" },
-      { title: "Help Center", href: "/help" },
       { title: "Blog", href: "/blog" },
+      { title: "Careers", href: "/careers" },
+      { title: "Privacy Policy", href: "/privacy-policy" },
+      { title: "Terms", href: "/terms" },
     ],
   },
   {
