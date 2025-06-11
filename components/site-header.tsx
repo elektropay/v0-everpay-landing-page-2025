@@ -174,15 +174,15 @@ export function SiteHeader() {
           {/* Right Side */}
           <div className="hidden lg:flex items-center space-x-6">
             <Link
-              href="/login"
-              className="flex items-center text-gray-700 hover:text-gray-900 text-sm font-medium"
+              href="//app.everpayinc.com/login"
+              className="flex items-center text-black-900 hover:text-gray-900 text-sm font-bold"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
-              <span className="mr-2">👤</span>
+              <span className="mr-2 font-bold">👤</span>
               Log in
             </Link>
 
-            <div className="text-gray-700 text-sm font-medium" style={{ fontFamily: "Manrope, sans-serif" }}>
+            <div className="text-gray-700 text-sm font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
               Sales: 888-579-5668
             </div>
 
@@ -206,10 +206,10 @@ export function SiteHeader() {
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link
                     href="/"
-                    className="text-xl font-bold text-gray-900"
+                    className="text-xl font-bold text-black-900"
                     style={{ fontFamily: "Inter, sans-serif" }}
                   >
-                    Everpay
+                    everpay
                   </Link>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
@@ -222,7 +222,7 @@ export function SiteHeader() {
                   <div className="space-y-4">
                     {menuItems.map((item) => (
                       <div key={item.title}>
-                        <div className="font-semibold text-gray-900 mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                        <div className="font-bold text-black-900 mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                           {item.title}
                         </div>
                         <div className="space-y-2 ml-4">
@@ -230,7 +230,7 @@ export function SiteHeader() {
                             ? item.items.map((section: any, idx) => (
                                 <div key={idx} className="space-y-2">
                                   <div
-                                    className="font-medium text-gray-700 text-sm"
+                                    className="font-medium text-gray-900 text-sm"
                                     style={{ fontFamily: "Manrope, sans-serif" }}
                                   >
                                     {section.category}
@@ -239,7 +239,7 @@ export function SiteHeader() {
                                     <Link
                                       key={subItem.title}
                                       href={subItem.href}
-                                      className="block text-sm text-gray-600 hover:text-gray-900 ml-4"
+                                      className="block text-sm text-black-600 hover:text-gray-600 ml-4"
                                       style={{ fontFamily: "Manrope, sans-serif" }}
                                     >
                                       {subItem.title}
@@ -251,7 +251,7 @@ export function SiteHeader() {
                                 <Link
                                   key={subItem.title}
                                   href={subItem.href}
-                                  className="block text-sm text-gray-600 hover:text-gray-900"
+                                  className="block text-sm text-black-600 hover:text-gray-900"
                                   style={{ fontFamily: "Manrope, sans-serif" }}
                                 >
                                   {subItem.title}
@@ -262,7 +262,7 @@ export function SiteHeader() {
                     ))}
                     <Link
                       href="/plans"
-                      className="block font-semibold text-gray-900"
+                      className="block font-bold text-black-900"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
                       Plans
@@ -272,14 +272,14 @@ export function SiteHeader() {
 
                 <div className="mt-auto p-4 border-t space-y-3">
                   <Link
-                    href="/login"
-                    className="flex items-center text-gray-700 hover:text-gray-900"
+                    href="//app.everpayinc.com/login"
+                    className="flex items-center text-black-900 hover:text-gray-900"
                     style={{ fontFamily: "Manrope, sans-serif" }}
                   >
-                    <span className="mr-2">👤</span>
+                    span className="mr-2 font-bold">👤</span>
                     Log in
                   </Link>
-                  <div className="text-gray-700 text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  <div className="text-black-900 text-sm font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Sales: 888-579-5668
                   </div>
                   <Button
