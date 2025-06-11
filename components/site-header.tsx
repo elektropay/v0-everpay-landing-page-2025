@@ -279,7 +279,7 @@ export function SiteHeader() {
                     <span className="mr-2">👤</span>
                     Log in
                   </Link>
-                  <div className="text-gray-700 text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  <div className="text-black text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Sales: 888-579-5668
                   </div>
                   <Button
