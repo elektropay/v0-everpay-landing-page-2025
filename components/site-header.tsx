@@ -164,7 +164,7 @@ export function SiteHeader() {
 
             <Link
               href="/plans"
-              className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+              className="text-black-900 hover:text-gray-900 font-bold text-sm"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               Plans
@@ -262,7 +262,7 @@ export function SiteHeader() {
                     ))}
                     <Link
                       href="/plans"
-                      className="block font-semibold text-gray-900"
+                      className="block font-bold text-black-900"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
                       Plans
@@ -273,13 +273,13 @@ export function SiteHeader() {
                 <div className="mt-auto p-4 border-t space-y-3">
                   <Link
                     href="/login"
-                    className="flex items-center text-gray-700 hover:text-gray-900"
+                    className="flex items-center font-bold text-black hover:text-gray-900"
                     style={{ fontFamily: "Manrope, sans-serif" }}
                   >
                     <span className="mr-2">👤</span>
                     Log in
                   </Link>
-                  <div className="text-black text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  <div className="text-black font-bold text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Sales: 888-579-5668
                   </div>
                   <Button
