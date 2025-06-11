@@ -84,7 +84,7 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-black-900" style={{ fontFamily: "Manrope, sans-serif" }}>
+            <Link href="/" className="text-2xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
               everpay
             </Link>
           </div>
@@ -99,7 +99,7 @@ export function SiteHeader() {
                 onMouseLeave={() => setActiveDropdown(null)}
               >
                 <button
-                  className="flex items-center space-x-1 text-black-900 hover:text-gray-900 font-bold text-sm py-2"
+                  className="flex items-center space-x-1 text-black hover:text-gray-900 font-bold text-sm py-2"
                   style={{ fontFamily: "Manrope, sans-serif" }}
                 >
                   <span>{item.title}</span>
@@ -130,7 +130,7 @@ export function SiteHeader() {
                                   <Link
                                     key={subItem.title}
                                     href={subItem.href}
-                                    className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 text-sm text-black-700 hover:text-gray-900"
+                                    className="flex items-center space-x-2 p-2 rounded-md hover:bg-gray-50 text-sm text-black hover:text-gray-900"
                                     style={{ fontFamily: "Manrope, sans-serif" }}
                                   >
                                     <span>{subItem.title}</span>
@@ -164,7 +164,7 @@ export function SiteHeader() {
 
             <Link
               href="/plans"
-              className="text-gray-700 hover:text-gray-900 font-medium text-sm"
+              className="text-black hover:text-gray-900 font-bold text-sm"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               Plans
@@ -175,7 +175,7 @@ export function SiteHeader() {
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               href="//app.everpayinc.com/login"
-              className="flex items-center text-black-900 hover:text-gray-900 text-sm font-bold"
+              className="flex items-center text-black hover:text-gray-900 text-sm font-bold"
               style={{ fontFamily: "Manrope, sans-serif" }}
             >
               <span className="mr-2 font-bold">👤</span>
@@ -206,7 +206,7 @@ export function SiteHeader() {
                 <div className="flex items-center justify-between p-4 border-b">
                   <Link
                     href="/"
-                    className="text-xl font-bold text-black-900"
+                    className="text-xl font-bold text-black"
                     style={{ fontFamily: "Inter, sans-serif" }}
                   >
                     everpay
@@ -222,7 +222,7 @@ export function SiteHeader() {
                   <div className="space-y-4">
                     {menuItems.map((item) => (
                       <div key={item.title}>
-                        <div className="font-bold text-black-900 mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
+                        <div className="font-bold text-black mb-2" style={{ fontFamily: "Inter, sans-serif" }}>
                           {item.title}
                         </div>
                         <div className="space-y-2 ml-4">
@@ -239,7 +239,7 @@ export function SiteHeader() {
                                     <Link
                                       key={subItem.title}
                                       href={subItem.href}
-                                      className="block text-sm text-black-600 hover:text-gray-600 ml-4"
+                                      className="block text-sm text-grey-600 hover:text-gray-600 ml-4"
                                       style={{ fontFamily: "Manrope, sans-serif" }}
                                     >
                                       {subItem.title}
@@ -251,7 +251,7 @@ export function SiteHeader() {
                                 <Link
                                   key={subItem.title}
                                   href={subItem.href}
-                                  className="block text-sm text-black-600 hover:text-gray-900"
+                                  className="block text-sm text-black hover:text-gray-900"
                                   style={{ fontFamily: "Manrope, sans-serif" }}
                                 >
                                   {subItem.title}
@@ -262,7 +262,7 @@ export function SiteHeader() {
                     ))}
                     <Link
                       href="/plans"
-                      className="block font-bold text-black-900"
+                      className="block font-bold text-black"
                       style={{ fontFamily: "Inter, sans-serif" }}
                     >
                       Plans
@@ -273,13 +273,13 @@ export function SiteHeader() {
                 <div className="mt-auto p-4 border-t space-y-3">
                   <Link
                     href="//app.everpayinc.com/login"
-                    className="flex items-center text-black-900 hover:text-gray-900"
+                    className="flex items-center text-black hover:text-gray-900"
                     style={{ fontFamily: "Manrope, sans-serif" }}
                   >
                     span className="mr-2 font-bold">👤</span>
                     Log in
                   </Link>
-                  <div className="text-black-900 text-sm font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  <div className="text-black text-sm font-bold" style={{ fontFamily: "Manrope, sans-serif" }}>
                     Sales: 888-579-5668
                   </div>
                   <Button
