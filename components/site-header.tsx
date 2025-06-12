@@ -84,7 +84,12 @@ export function SiteHeader() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="text-2xl font-bold text-black-900" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <img 
+                  src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png" 
+                  alt="Everpay" 
+                  className="h-8"
+                /> 
+            <Link href="/" className="text-xl font-bold ml-2 text-black-900" style={{ fontFamily: "Manrope, sans-serif" }}>
               everpay
             </Link>
           </div>
