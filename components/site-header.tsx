@@ -278,14 +278,15 @@ export function SiteHeader() {
                 <div className="mt-auto p-4 border-t space-y-3">
                   <Link
                     href="/login"
-                    className="flex items-center font-bold text-black hover:text-gray-900"
+                    className="flex items-center font-bold text-black-900 hover:text-gray-900"
                     style={{ fontFamily: "Manrope, sans-serif" }}
                   >
-                    <span className="mr-2">👤</span>
+                    <span className="mr-2 font-bold">👤</span>
                     Log in
                   </Link>
-                  <div className="text-black font-bold text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
-                    Sales: 888-579-5668
+                  <div className="text-black-900 font-bold text-sm" style={{ fontFamily: "Manrope, sans-serif" }}>
+                    <span className="font-bold">Sales:</span> 
+                    876-525-4398
                   </div>
                   <Button
                     className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full"
