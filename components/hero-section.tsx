@@ -12,7 +12,7 @@ export function HeroSection() {
               <h1 className="text-5xl font-bold tracking-tight lg:text-6xl text-[#0A2F2F]">
                 Managing Payments Should Be Easy
               </h1>
-              <p className="text-lg text-gray-600 max-w-[500px]">
+              <p className="text-lg text-gray-900 font-bold max-w-[500px]">
                 Streamline your business&apos;s financial management with our intuitive, scalable SaaS platform.
                 Designed for US enterprises.
               </p>
