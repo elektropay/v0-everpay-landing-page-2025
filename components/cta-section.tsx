@@ -40,11 +40,11 @@ export function CTASection() {
           <div>
             <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-gray-300 mb-8">Join thousands of businesses transforming their payment experience</p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 items-center justify-center text-center">
               <button className="inline-flex h-12 items-center justify-center rounded-full bg-[#4CAF50] px-8 text-base font-medium text-white transition-colors hover:bg-[#45a049] focus:outline-none focus:ring-2 focus:ring-[#4CAF50] focus:ring-offset-2">
                 Get Started
               </button>
-              <button className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-base font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
+              <button className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-base font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 text-center text-center">
                 Contact Us
               </button>
             </div>
