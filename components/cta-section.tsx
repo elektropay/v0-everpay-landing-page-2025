@@ -36,7 +36,7 @@ export function CTASection() {
         </div>
 
         {/* CTA Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 items-center text-center">
           <div>
             <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-gray-300 mb-8">Join thousands of businesses transforming their payment experience</p>
