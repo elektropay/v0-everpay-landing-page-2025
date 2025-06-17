@@ -36,7 +36,7 @@ export function CTASection() {
         </div>
 
         {/* CTA Content */}
-        <div className="container mx-auto mt-10 px-4 items-center text-center">
+        <div className="container mx-auto mt-4 px-4 items-center text-center">
           <div>
             <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
             <p className="text-gray-300 mb-8">Join thousands of businesses transforming their payment experience</p>
