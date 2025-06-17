@@ -49,7 +49,6 @@ export function CTASection() {
               </button>
             </div>
           </div>
-          <div className="hidden md:block">{/* You can add an illustration or image here if needed */}</div>
         </div>
       </div>
     </section>
