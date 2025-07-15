@@ -1,53 +1,36 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import Image from "next/image"
 
-type Props = {
-  className?: string
-}
-
-/**
- * Primary call-to-action section used at the end of many pages.
- */
-export function CTASection({ className }: Props) {
+export function CtaSection() {
   return (
-    <section
-      className={cn(
-        "relative isolate overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-700 py-16 sm:py-24",
-        className,
-      )}
-    >
-      <div className="mx-auto max-w-4xl px-4 text-center text-white">
-        <h2 className="text-3xl font-bold sm:text-4xl">Ready to simplify payments?</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-lg/7 text-emerald-100">
-          Create an account in minutes and start accepting payments today.
-        </p>
-        <div className="mt-8 flex justify-center gap-4">
-          <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
-            Get started
-          </Button>
-          <Button variant="outline" size="lg" className="border-white text-white bg-transparent">
-            Talk to sales
-          </Button>
+    <section className="bg-[#4CAF50] py-16">
+      <div className="container mx-auto px-4 text-center">
+        <div className="max-w-3xl mx-auto space-y-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">Ready to get started?</h2>
+          <p className="text-xl text-white/90 font-sans">
+            Join millions of businesses that trust Everpay to handle their payments. Get started today and see why we're
+            the preferred choice for online payments.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-white text-[#4CAF50] hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-medium font-sans"
+            >
+              Create account
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-white text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium font-sans bg-transparent"
+            >
+              Contact sales
+            </Button>
+          </div>
         </div>
       </div>
-
-      {/* Decorative blurred blob */}
-      <Image
-        src="/placeholder.svg?width=400&height=400"
-        alt=""
-        width={400}
-        height={400}
-        className="pointer-events-none absolute -bottom-40 right-0 opacity-30 blur-2xl"
-        unoptimized
-      />
     </section>
   )
 }
 
-// Default export as an alias so either import style works.
-export default CTASection
-// Also export the camel-cased alias many files used earlier.
-export { CTASection as CtaSection }
+// Export both named and default for compatibility
+export { CtaSection as CTASection }
+export default CtaSection

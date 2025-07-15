@@ -1,78 +1,81 @@
 import { Button } from "@/components/ui/button"
-import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[820px] w-full bg-gradient-to-br from-[#f8fafc] to-[#f1f5f9]">
-      <div className="container relative mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-8 pt-20">
-          {/* Left Column - Content */}
-          <div className="flex flex-col gap-8 pt-12">
-            <div className="space-y-6">
-              <h1 className="text-5xl font-bold tracking-tight lg:text-6xl text-[#0A2F2F]">
+    <section className="relative bg-gradient-to-br from-gray-50 to-white py-20 lg:py-32">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight font-heading">
                 The payment infrastructure for the internet
               </h1>
-              <p className="text-lg text-gray-600 max-w-[500px]">
+              <p className="text-xl text-gray-600 leading-relaxed font-sans">
                 Millions of businesses of all sizes—from startups to large enterprises—use Everpay's software and APIs
                 to accept payments, send payouts, and manage their businesses online.
               </p>
-              <div className="flex items-center gap-4">
-                <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049] text-white shadow-lg">
-                  Start now
-                </Button>
-                <Button variant="outline" size="lg" className="border-gray-300 bg-transparent">
-                  Contact sales
-                </Button>
-              </div>
             </div>
 
-            {/* Metrics Section */}
-            <div className="flex items-center gap-8 pt-8">
-              <div>
-                <div className="text-2xl font-bold text-[#0A2F2F]">$1T+</div>
-                <p className="text-sm text-gray-600">Payment volume</p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button
+                size="lg"
+                className="bg-[#4CAF50] hover:bg-[#45a049] text-white px-8 py-3 rounded-full text-lg font-medium font-sans"
+              >
+                Start now
+              </Button>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 rounded-full text-lg font-medium font-sans bg-transparent"
+              >
+                Contact sales
+              </Button>
+            </div>
+
+            <div className="flex items-center space-x-8 text-sm text-gray-500 font-sans">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Always available</span>
               </div>
-              <div>
-                <div className="text-2xl font-bold text-[#0A2F2F]">50M+</div>
-                <p className="text-sm text-gray-600">Businesses served</p>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-[#0A2F2F]">200+</div>
-                <p className="text-sm text-gray-600">Countries</p>
-              </div>
+              <div>No setup fees</div>
+              <div>Cancel anytime</div>
             </div>
           </div>
 
-          {/* Right Column - Dashboard Image */}
-          <div className="relative lg:absolute lg:right-0 lg:top-0 lg:w-1/2 lg:h-full">
-            <Image
-              src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80"
-              alt="Payment Dashboard Interface"
-              fill
-              className="object-contain object-center"
-              priority
-              unoptimized
-            />
-          </div>
-        </div>
+          <div className="relative">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
+              <div className="space-y-6">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-lg font-semibold text-gray-900 font-heading">Payment Dashboard</h3>
+                  <div className="flex space-x-2">
+                    <div className="w-3 h-3 bg-red-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    <div className="w-3 h-3 bg-green-400 rounded-full"></div>
+                  </div>
+                </div>
 
-        {/* Bottom Trust Indicators */}
-        <div className="grid md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-gray-200">
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-900 mb-1">SOC 2 Type II</div>
-            <p className="text-xs text-gray-600">Compliant</p>
-          </div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-900 mb-1">PCI DSS Level 1</div>
-            <p className="text-xs text-gray-600">Certified</p>
-          </div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-900 mb-1">99.99%</div>
-            <p className="text-xs text-gray-600">Uptime SLA</p>
-          </div>
-          <div className="text-center">
-            <div className="text-sm font-medium text-gray-900 mb-1">24/7</div>
-            <p className="text-xs text-gray-600">Support</p>
+                <div className="space-y-4">
+                  <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
+                    <div>
+                      <p className="text-sm text-gray-600 font-sans">Total Revenue</p>
+                      <p className="text-2xl font-bold text-gray-900 font-heading">$2,847,392</p>
+                    </div>
+                    <div className="text-green-500 text-sm font-medium font-sans">+12.5%</div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <p className="text-sm text-gray-600 font-sans">Transactions</p>
+                      <p className="text-xl font-bold text-gray-900 font-heading">24,847</p>
+                    </div>
+                    <div className="p-4 bg-purple-50 rounded-lg">
+                      <p className="text-sm text-gray-600 font-sans">Success Rate</p>
+                      <p className="text-xl font-bold text-gray-900 font-heading">99.2%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
