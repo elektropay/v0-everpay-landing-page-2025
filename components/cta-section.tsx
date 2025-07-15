@@ -54,3 +54,4 @@ export function CTASection() {
     </section>
   )
 }
+export { CTASection as CtaSection }
