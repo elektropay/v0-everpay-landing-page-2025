@@ -44,6 +44,7 @@ export default function PaymentsPage() {
                   fill
                   className="object-cover"
                   priority
+                  unoptimized
                 />
               </div>
             </div>
@@ -102,6 +103,7 @@ export default function PaymentsPage() {
                         alt={feature.title}
                         fill
                         className="object-cover transition-transform group-hover:scale-105"
+                        unoptimized
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       <div className="absolute bottom-0 p-6 text-white">
@@ -278,7 +280,11 @@ export default function PaymentsPage() {
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Create account
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10 bg-transparent"
+                >
                   Talk to sales
                 </Button>
               </div>
