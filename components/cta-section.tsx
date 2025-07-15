@@ -1,32 +1,53 @@
-import { Button } from "@/components/ui/button"
+"use client"
 
-export function CtaSection() {
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import Image from "next/image"
+
+type Props = {
+  className?: string
+}
+
+/**
+ * Primary call-to-action section used at the end of many pages.
+ */
+export function CTASection({ className }: Props) {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-600">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to get started?</h2>
-        <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-          Join thousands of businesses that trust Everpay for their payment processing needs.
+    <section
+      className={cn(
+        "relative isolate overflow-hidden bg-gradient-to-br from-emerald-600 to-emerald-700 py-16 sm:py-24",
+        className,
+      )}
+    >
+      <div className="mx-auto max-w-4xl px-4 text-center text-white">
+        <h2 className="text-3xl font-bold sm:text-4xl">Ready to simplify payments?</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-lg/7 text-emerald-100">
+          Create an account in minutes and start accepting payments today.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-100">
-            Start for free
+        <div className="mt-8 flex justify-center gap-4">
+          <Button size="lg" className="bg-white text-emerald-700 hover:bg-emerald-50">
+            Get started
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
-          >
-            Contact sales
+          <Button variant="outline" size="lg" className="border-white text-white bg-transparent">
+            Talk to sales
           </Button>
         </div>
       </div>
+
+      {/* Decorative blurred blob */}
+      <Image
+        src="/placeholder.svg?width=400&height=400"
+        alt=""
+        width={400}
+        height={400}
+        className="pointer-events-none absolute -bottom-40 right-0 opacity-30 blur-2xl"
+        unoptimized
+      />
     </section>
   )
 }
 
-// Export as default as well for compatibility
-export default CtaSection
-
-// Alias so imports expecting `CTASection` still resolve
-export { CtaSection as CTASection }
+// Default export as an alias so either import style works.
+export default CTASection
+// Also export the camel-cased alias many files used earlier.
+export { CTASection as CtaSection }
