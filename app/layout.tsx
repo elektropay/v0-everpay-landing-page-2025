@@ -1,6 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
   title: "Everpay - Modern Payment Solutions",
@@ -24,7 +26,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <SiteHeader />
+        <main>{children}</main>
+        <SiteFooter />
+      </body>
     </html>
   )
 }
