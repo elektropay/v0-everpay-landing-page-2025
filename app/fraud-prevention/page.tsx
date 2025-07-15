@@ -95,10 +95,11 @@ export default function FraudPreventionPage() {
                   </div>
                   <div className={`relative h-96 rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}>
                     <Image
-                      src={`/placeholder.svg?height=400&width=600`}
+                      src={`https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?auto=format&fit=crop&q=80`}
                       alt={feature.title}
                       fill
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
                 </div>
@@ -171,10 +172,11 @@ export default function FraudPreventionPage() {
                 </div>
                 <div className="relative h-72 rounded-lg overflow-hidden">
                   <Image
-                    src="/placeholder.svg?height=300&width=400"
+                    src="https://images.unsplash.com/photo-1563986768494-4dee9223994e?auto=format&fit=crop&q=80"
                     alt="Fraud Prevention"
                     fill
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
               </div>

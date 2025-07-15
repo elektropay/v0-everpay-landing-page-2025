@@ -139,10 +139,11 @@ export default function SecurityPage() {
                   </div>
                   <div className="relative h-[300px] rounded-lg overflow-hidden">
                     <Image
-                      src={`https://images.unsplash.com/photo-${index + 1}?auto=format&fit=crop&q=80`}
+                      src={`https://images.unsplash.com/photo-1563986768494-4dee9223994e?auto=format&fit=crop&q=80`}
                       alt={feature.title}
                       fill
                       className="object-cover"
+                      unoptimized
                     />
                   </div>
                 </div>

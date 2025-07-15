@@ -1,51 +1,58 @@
+import { Shield, Lock, CheckCircle } from "lucide-react"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
 
 const securityFeatures = [
   {
-    title: "Sophisticated Login Protection",
-    description: "Multi-factor authentication and advanced security measures.",
+    icon: Shield,
+    title: "Fraud prevention",
+    description: "Machine learning models trained on billions of data points help detect and prevent fraud.",
   },
   {
-    title: "Data-Loss Prevention",
-    description: "Automatic backups and encryption for all sensitive data.",
+    icon: Lock,
+    title: "Data security",
+    description: "Your data is encrypted and stored securely with bank-level security standards.",
   },
   {
-    title: "Proactive Fraud Prevention",
-    description: "AI-powered fraud detection and prevention systems.",
+    icon: CheckCircle,
+    title: "Compliance",
+    description: "We're certified to the highest industry standards including PCI DSS Level 1.",
   },
 ]
 
 export function CheckoutProtectionSection() {
   return (
-    <section className="bg-gray-50 py-16">
+    <section className="py-16">
       <div className="container mx-auto px-4">
-        <div className="grid gap-12 md:grid-cols-2">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Trusted Checkout Protection</h2>
+            <h2 className="text-3xl font-bold mb-6">Designed to increase conversion and reduce fraud</h2>
+            <p className="text-gray-600 mb-8">
+              Our machine learning models train on billions of data points and help increase revenue across conversion,
+              fraud, and revenue recovery.
+            </p>
             <div className="space-y-6">
               {securityFeatures.map((feature, index) => (
                 <div key={index} className="flex gap-4">
-                  <div className="h-8 w-8 rounded-full bg-[#4CAF50]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="h-5 w-5 text-[#4CAF50]" />
+                  <div className="flex-shrink-0">
+                    <div className="h-12 w-12 rounded-lg bg-[#4CAF50]/10 flex items-center justify-center">
+                      <feature.icon className="h-6 w-6 text-[#4CAF50]" />
+                    </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <h3 className="font-semibold mb-2">{feature.title}</h3>
+                    <p className="text-gray-600">{feature.description}</p>
                   </div>
                 </div>
               ))}
             </div>
-            <Button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049]">Learn About Security</Button>
           </div>
-          <div className="relative">
+          <div className="relative h-[400px] rounded-lg overflow-hidden">
             <Image
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
-              alt="Security Features"
-              width={600}
-              height={400}
-              className="rounded-lg object-cover"
+              src="https://images.unsplash.com/photo-1563986768494-4dee9223994e?auto=format&fit=crop&q=80"
+              alt="Security Dashboard"
+              fill
+              className="object-cover"
+              unoptimized
             />
           </div>
         </div>

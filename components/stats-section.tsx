@@ -11,13 +11,11 @@ export function StatsSection() {
       <div className="container mx-auto px-4">
         <div className="mb-8 grid gap-16 md:grid-cols-2">
           <div className="space-y-6">
-            <div className="text-sm font-medium text-[#4CAF50] tracking-wide">DIGITAL EXCHANGE</div>
-            <h2 className="text-4xl font-bold text-[#0A2F2F] leading-tight lg:text-5xl">
-              Linking Commerce Via Transactions
-            </h2>
+            <div className="text-sm font-medium text-[#4CAF50] tracking-wide">UNIFIED PLATFORM</div>
+            <h2 className="text-4xl font-bold text-[#0A2F2F] leading-tight lg:text-5xl">A complete commerce toolkit</h2>
             <p className="text-gray-600 text-lg">
-              Efficiently facilitating transactions, our platform seamlessly connects consumers and businesses for
-              digital commerce.
+              From checkout to global payouts, businesses around the world use Everpay to simplify their financial
+              stack.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:gap-12">
