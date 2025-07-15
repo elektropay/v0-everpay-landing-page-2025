@@ -27,3 +27,6 @@ export function CtaSection() {
 
 // Export as default as well for compatibility
 export default CtaSection
+
+// Alias so imports expecting `CTASection` still resolve
+export { CtaSection as CTASection }
