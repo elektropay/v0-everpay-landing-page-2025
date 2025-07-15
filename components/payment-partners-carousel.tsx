@@ -6,40 +6,36 @@ import { cn } from "@/lib/utils"
 
 const paymentPartners = [
   {
-    name: "Stripe",
-    logo: "https://cdn.worldvectorlogo.com/logos/stripe-4.svg",
-  },
-  {
-    name: "PayPal",
-    logo: "https://cdn.worldvectorlogo.com/logos/paypal.svg",
-  },
-  {
-    name: "Square",
-    logo: "https://cdn.worldvectorlogo.com/logos/square.svg",
-  },
-  {
-    name: "Adyen",
-    logo: "https://cdn.worldvectorlogo.com/logos/adyen.svg",
-  },
-  {
-    name: "Worldpay",
-    logo: "https://cdn.worldvectorlogo.com/logos/worldpay.svg",
-  },
-  {
-    name: "Braintree",
-    logo: "https://cdn.worldvectorlogo.com/logos/braintree.svg",
-  },
-  {
-    name: "Klarna",
-    logo: "https://cdn.worldvectorlogo.com/logos/klarna-1.svg",
-  },
-  {
     name: "Visa",
-    logo: "https://cdn.worldvectorlogo.com/logos/visa.svg",
+    logo: "/images/visa.png",
   },
   {
     name: "Mastercard",
-    logo: "https://cdn.worldvectorlogo.com/logos/mastercard.svg",
+    logo: "/images/mastercard.png",
+  },
+  {
+    name: "American Express",
+    logo: "/images/amex.png",
+  },
+  {
+    name: "PayPal",
+    logo: "/images/paypal.png",
+  },
+  {
+    name: "Apple Pay",
+    logo: "/images/apple-pay.png",
+  },
+  {
+    name: "Google Pay",
+    logo: "/images/google-pay.png",
+  },
+  {
+    name: "JCB",
+    logo: "/images/jcb.png",
+  },
+  {
+    name: "Interac",
+    logo: "/images/interac.png",
   },
 ]
 
@@ -47,7 +43,7 @@ export function PaymentPartnersCarousel() {
   const [scrollPosition, setScrollPosition] = useState(0)
 
   useEffect(() => {
-    const duration = 20000 // 20 seconds for one complete cycle
+    const duration = 30000 // 30 seconds for one complete cycle
     const start = Date.now()
     const totalWidth = paymentPartners.length * 200 // Assuming each logo takes ~200px
 
@@ -65,6 +61,10 @@ export function PaymentPartnersCarousel() {
 
   return (
     <div className="w-full overflow-hidden bg-white py-12">
+      <div className="container mx-auto px-4 mb-8">
+        <h2 className="text-2xl font-bold text-center mb-4">Accept payments from anywhere</h2>
+        <p className="text-gray-600 text-center">Support for all major payment methods and currencies</p>
+      </div>
       <div className="relative">
         <div
           className="flex items-center gap-16 transition-transform duration-1000"
@@ -75,16 +75,17 @@ export function PaymentPartnersCarousel() {
             <div
               key={index}
               className={cn(
-                "flex h-10 w-32 flex-shrink-0 items-center justify-center",
+                "flex h-16 w-40 flex-shrink-0 items-center justify-center",
                 "grayscale transition-all duration-300 hover:grayscale-0",
               )}
             >
               <Image
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
-                width={120}
-                height={48}
-                className="h-8 w-auto object-contain"
+                width={160}
+                height={64}
+                className="h-12 w-auto object-contain"
+                unoptimized
               />
             </div>
           ))}
@@ -93,16 +94,17 @@ export function PaymentPartnersCarousel() {
             <div
               key={`duplicate-${index}`}
               className={cn(
-                "flex h-10 w-32 flex-shrink-0 items-center justify-center",
+                "flex h-16 w-40 flex-shrink-0 items-center justify-center",
                 "grayscale transition-all duration-300 hover:grayscale-0",
               )}
             >
               <Image
                 src={partner.logo || "/placeholder.svg"}
                 alt={partner.name}
-                width={120}
-                height={48}
-                className="h-8 w-auto object-contain"
+                width={160}
+                height={64}
+                className="h-12 w-auto object-contain"
+                unoptimized
               />
             </div>
           ))}
