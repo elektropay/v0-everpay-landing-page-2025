@@ -1,5 +1,5 @@
-import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
@@ -17,18 +17,19 @@ export function HeroSection() {
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link
+              <Button
                 className="inline-flex h-10 items-center justify-center rounded-full bg-white px-8 text-sm font-medium text-gray-900 shadow transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 disabled:pointer-events-none disabled:opacity-50"
                 href="#"
               >
                 Start now
-              </Link>
-              <Link
+              </Button>
+              <Button
+                variant="outline"
                 className="inline-flex h-10 items-center justify-center rounded-full border border-gray-700 bg-transparent px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-800 hover:text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-400 disabled:pointer-events-none disabled:opacity-50"
                 href="#"
               >
                 Contact sales
-              </Link>
+              </Button>
             </div>
           </div>
           <Image
@@ -37,7 +38,7 @@ export function HeroSection() {
             height="550"
             src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwaW5mcmFzdHJ1Y3R1cmV8ZW58MHx8fHwxNzA5ODY1NjcwfDA&ixlib=rb-4.0.3&q=80&w=800"
             width="550"
-            unoptimized
+            unoptimized="true"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
-import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default function CareersPage() {
   return (
@@ -46,8 +46,9 @@ export default function CareersPage() {
               alt="Careers"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
-              src="/placeholder.svg?height=310&width=550"
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXJlZXJzJTIwdGVhbXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
+              unoptimized="true"
             />
           </div>
         </section>
@@ -58,25 +59,25 @@ export default function CareersPage() {
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-2">Software Engineer (Backend)</h3>
                 <p className="text-gray-500 mb-4">Develop and maintain our core payment processing systems.</p>
-                <Link className="text-blue-600 hover:underline" href="#">
+                <Button className="text-blue-600 hover:underline" variant="link" href="#">
                   Apply Now
-                </Link>
+                </Button>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-2">Product Manager</h3>
                 <p className="text-gray-500 mb-4">Define and execute the product roadmap for our payment solutions.</p>
-                <Link className="text-blue-600 hover:underline" href="#">
+                <Button className="text-blue-600 hover:underline" variant="link" href="#">
                   Apply Now
-                </Link>
+                </Button>
               </div>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-bold mb-2">Sales Executive</h3>
                 <p className="text-gray-500 mb-4">
                   Drive revenue growth by expanding our client base and partnerships.
                 </p>
-                <Link className="text-blue-600 hover:underline" href="#">
+                <Button className="text-blue-600 hover:underline" variant="link" href="#">
                   Apply Now
-                </Link>
+                </Button>
               </div>
             </div>
           </div>

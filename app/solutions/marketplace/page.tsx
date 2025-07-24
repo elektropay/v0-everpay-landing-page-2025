@@ -1,6 +1,6 @@
-import Link from "next/link"
+import type React from "react"
 import Image from "next/image"
-import { UsersIcon, DollarSignIcon, SettingsIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function MarketplaceSolutionsPage() {
   return (
@@ -12,7 +12,7 @@ export default function MarketplaceSolutionsPage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Marketplace Solutions</h1>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Simplify complex payment flows for your multi-vendor platform.
+                  Facilitate payments between multiple parties with our robust marketplace solutions.
                 </p>
               </div>
             </div>
@@ -22,25 +22,26 @@ export default function MarketplaceSolutionsPage() {
           <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Efficient Payouts & Management</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Simplified Payouts</h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Everpay provides robust tools to manage payments, split funds, and automate payouts to multiple
-                  vendors on your marketplace, reducing operational overhead.
+                  Automate and manage payouts to your sellers, service providers, or contractors with ease, supporting
+                  various payout methods and currencies.
                 </p>
-                <Link
+                <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
                   Learn More
-                </Link>
+                </Button>
               </div>
             </div>
             <Image
-              alt="Marketplace Solutions"
+              alt="Marketplace Payouts"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="/placeholder.svg?height=310&width=550"
+              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMHBheW91dHN8ZW58MHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
+              unoptimized="true"
             />
           </div>
         </section>
@@ -49,23 +50,23 @@ export default function MarketplaceSolutionsPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center text-center">
                 <UsersIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Vendor Management</h3>
+                <h3 className="text-xl font-bold mb-2">Seller Onboarding</h3>
                 <p className="text-gray-500">
-                  Onboard and manage multiple vendors with ease, ensuring compliance and smooth operations.
+                  Streamline the onboarding process for new sellers with customizable forms and verification.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <DollarSignIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Automated Payouts</h3>
+                <CreditCardIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Split Payments</h3>
                 <p className="text-gray-500">
-                  Automate fund distribution to your vendors, reducing manual effort and errors.
+                  Easily split payments between multiple sellers or service providers in a single transaction.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <SettingsIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Customizable Workflows</h3>
+                <BarChartIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Reporting & Analytics</h3>
                 <p className="text-gray-500">
-                  Tailor payment flows and commission structures to fit your marketplace's unique needs.
+                  Gain insights into your marketplace performance with detailed transaction and payout reports.
                 </p>
               </div>
             </div>
@@ -73,5 +74,68 @@ export default function MarketplaceSolutionsPage() {
         </section>
       </main>
     </div>
+  )
+}
+
+function BarChartIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="12" x2="12" y1="20" y2="10" />
+      <line x1="18" x2="18" y1="20" y2="4" />
+      <line x1="6" x2="6" y1="20" y2="16" />
+    </svg>
+  )
+}
+
+function CreditCardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="14" x="2" y="5" rx="2" />
+      <line x1="2" x2="22" y1="10" y2="10" />
+    </svg>
+  )
+}
+
+function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
   )
 }

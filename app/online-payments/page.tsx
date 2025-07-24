@@ -1,6 +1,7 @@
-import Link from "next/link"
+import type React from "react"
 import Image from "next/image"
-import { GlobeIcon, CreditCardIcon, ShoppingCartIcon } from "lucide-react"
+import { GlobeIcon, SmartphoneIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function OnlinePaymentsPage() {
   return (
@@ -27,21 +28,21 @@ export default function OnlinePaymentsPage() {
                   Reach customers worldwide by accepting payments in over 135 currencies and supporting all major
                   payment methods, including credit cards, digital wallets, and local payment options.
                 </p>
-                <Link
+                <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
                   Get Started
-                </Link>
+                </Button>
               </div>
             </div>
             <Image
               alt="Online Payments"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBwYXltZW50c3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxvbmxpbmUlMjBwYXltZW50c3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
-              unoptimized
+              unoptimized="true"
             />
           </div>
         </section>
@@ -56,7 +57,7 @@ export default function OnlinePaymentsPage() {
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <ShoppingCartIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <SmartphoneIcon className="h-12 w-12 text-gray-900 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Seamless Checkout</h3>
                 <p className="text-gray-500">
                   Provide a smooth and secure checkout experience for your customers with customizable forms.
@@ -74,5 +75,25 @@ export default function OnlinePaymentsPage() {
         </section>
       </main>
     </div>
+  )
+}
+
+function CreditCardIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect width="20" height="14" x="2" y="5" rx="2" />
+      <line x1="2" x2="22" y1="10" y2="10" />
+    </svg>
   )
 }

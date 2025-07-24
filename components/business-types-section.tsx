@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export function BusinessTypesSection() {
   return (
@@ -21,54 +21,54 @@ export function BusinessTypesSection() {
               alt="Startup"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="200"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxzdGFydHVwfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=400"
+              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxzZXR1cCUyMGJ1c2luZXNzfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=400"
               width="350"
-              unoptimized
+              unoptimized="true"
             />
             <h3 className="text-xl font-bold">Startups</h3>
             <p className="text-gray-500">Get up and running quickly with flexible APIs and transparent pricing.</p>
-            <Link
+            <Button
               className="inline-flex h-9 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
               href="#"
             >
               Learn More
-            </Link>
+            </Button>
           </div>
           <div className="grid gap-1">
             <Image
               alt="Enterprise"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="200"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=400"
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxlbnRlcnByaXNlJTIwYnVzaW5lc3N8ZW58MHx8fHwxNzA5ODY1NjcwfDA&ixlib=rb-4.0.3&q=80&w=400"
               width="350"
-              unoptimized
+              unoptimized="true"
             />
             <h3 className="text-xl font-bold">Enterprise</h3>
             <p className="text-gray-500">Scale with confidence with custom solutions and dedicated support.</p>
-            <Link
+            <Button
               className="inline-flex h-9 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
               href="#"
             >
               Learn More
-            </Link>
+            </Button>
           </div>
           <div className="grid gap-1">
             <Image
               alt="Marketplace"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="200"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=400"
+              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMGJ1c2luZXNzfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=400"
               width="350"
-              unoptimized
+              unoptimized="true"
             />
             <h3 className="text-xl font-bold">Marketplaces</h3>
             <p className="text-gray-500">Manage complex payment flows and payouts for your platform.</p>
-            <Link
+            <Button
               className="inline-flex h-9 items-center justify-center rounded-full border border-gray-200 bg-white px-4 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
               href="#"
             >
               Learn More
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

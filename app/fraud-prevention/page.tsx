@@ -1,6 +1,6 @@
-import Link from "next/link"
 import Image from "next/image"
 import { ShieldCheckIcon, LockIcon, BarChartIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function FraudPreventionPage() {
   return (
@@ -27,21 +27,21 @@ export default function FraudPreventionPage() {
                   Our machine learning models analyze every transaction in real-time to identify and block suspicious
                   activity, minimizing your risk of chargebacks and financial losses.
                 </p>
-                <Link
+                <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
                   Learn More
-                </Link>
+                </Button>
               </div>
             </div>
             <Image
               alt="Fraud Detection"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmF1ZCUyMGRldGVjdGlvbnxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
+              src="https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmF1ZCUyMGRldGVjdGlvbnxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
-              unoptimized
+              unoptimized="true"
             />
           </div>
         </section>

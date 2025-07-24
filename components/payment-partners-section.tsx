@@ -23,7 +23,7 @@ export function PaymentPartnersSection() {
             height="310"
             src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwZ2F0ZXdheXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
             width="550"
-            unoptimized
+            unoptimized="true"
           />
           <div className="flex flex-col justify-center space-y-4">
             <ul className="grid gap-6">

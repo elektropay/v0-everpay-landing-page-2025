@@ -25,8 +25,9 @@ export default function BlogPage() {
                   alt="Blog Post Image"
                   className="aspect-video overflow-hidden rounded-xl object-cover object-center group-hover:opacity-90 transition-opacity"
                   height="200"
-                  src="/placeholder.svg?height=200&width=350"
+                  src="https://images.unsplash.com/photo-1534469589579-86bd01bc003a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwdHJlbmRzfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=350"
                   width="350"
+                  unoptimized="true"
                 />
                 <div className="grid gap-1">
                   <h2 className="text-xl font-bold group-hover:underline">
@@ -43,8 +44,9 @@ export default function BlogPage() {
                   alt="Blog Post Image"
                   className="aspect-video overflow-hidden rounded-xl object-cover object-center group-hover:opacity-90 transition-opacity"
                   height="200"
-                  src="/placeholder.svg?height=200&width=350"
+                  src="https://images.unsplash.com/photo-1563986768609-322da13575f3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwZ2F0ZXdheSUyMGd1aWRlfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=350"
                   width="350"
+                  unoptimized="true"
                 />
                 <div className="grid gap-1">
                   <h2 className="text-xl font-bold group-hover:underline">
@@ -61,8 +63,9 @@ export default function BlogPage() {
                   alt="Blog Post Image"
                   className="aspect-video overflow-hidden rounded-xl object-cover object-center group-hover:opacity-90 transition-opacity"
                   height="200"
-                  src="/placeholder.svg?height=200&width=350"
+                  src="https://images.unsplash.com/photo-1554774853-719586f82d77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwY2klMjBjb21wbGlhbmNlfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=350"
                   width="350"
+                  unoptimized="true"
                 />
                 <div className="grid gap-1">
                   <h2 className="text-xl font-bold group-hover:underline">

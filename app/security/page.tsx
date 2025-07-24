@@ -1,6 +1,6 @@
-import Link from "next/link"
 import Image from "next/image"
 import { ShieldCheckIcon, LockIcon, ServerIcon } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 export default function SecurityPage() {
   return (
@@ -28,20 +28,21 @@ export default function SecurityPage() {
                   strict compliance standards to ensure the highest level of protection for your business and your
                   customers' data.
                 </p>
-                <Link
+                <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
                   Learn More
-                </Link>
+                </Button>
               </div>
             </div>
             <Image
               alt="Security Framework"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="/placeholder.svg?height=310&width=550"
+              src="https://images.unsplash.com/photo-1563986768494-4dee9223994e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxzZWN1cml0eSUyMGZyYW1ld29ya3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
+              unoptimized="true"
             />
           </div>
         </section>

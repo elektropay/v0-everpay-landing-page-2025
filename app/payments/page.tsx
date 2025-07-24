@@ -1,13 +1,11 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
+import { Check, CreditCardIcon, DollarSignIcon, Repeat2Icon } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import Link from "next/link"
-import { CreditCardIcon, DollarSignIcon, RepeatIcon } from "lucide-react"
 
 export default function PaymentsPage() {
   const [activeTab, setActiveTab] = useState("overview")
@@ -304,7 +302,7 @@ export default function PaymentsPage() {
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Payments</h1>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Accept payments online, in person, and around the world with Everpay.
+                  A complete payments platform engineered for growth.
                 </p>
               </div>
             </div>
@@ -314,26 +312,26 @@ export default function PaymentsPage() {
           <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Flexible Payment Options</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Accept Payments Anywhere</h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Everpay supports a wide range of payment methods, including credit and debit cards, digital wallets
-                  like Apple Pay and Google Pay, and local payment options, giving your customers flexibility.
+                  Everpay provides a unified platform to accept payments online, in-person, and globally. Our flexible
+                  APIs and tools make it easy to integrate payment processing into your existing systems.
                 </p>
-                <Link
+                <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
                   Get Started
-                </Link>
+                </Button>
               </div>
             </div>
             <Image
-              alt="Payment Options"
+              alt="Payments"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
               height="310"
-              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwb3B0aW9uc3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXltZW50JTIwcHJvY2Vzc2luZ3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
-              unoptimized
+              unoptimized={true}
             />
           </div>
         </section>
@@ -344,20 +342,20 @@ export default function PaymentsPage() {
                 <CreditCardIcon className="h-12 w-12 text-gray-900 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Online Payments</h3>
                 <p className="text-gray-500">
-                  Integrate seamlessly with your website or app to accept payments securely.
+                  Accept credit cards, digital wallets, and local payment methods on your website or app.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <DollarSignIcon className="h-12 w-12 text-gray-900 mb-4" />
                 <h3 className="text-xl font-bold mb-2">In-Person Payments</h3>
                 <p className="text-gray-500">
-                  Use our POS solutions to accept payments at your physical store or events.
+                  Process payments at your physical store with our point-of-sale solutions.
                 </p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <RepeatIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <Repeat2Icon className="h-12 w-12 text-gray-900 mb-4" />
                 <h3 className="text-xl font-bold mb-2">Recurring Payments</h3>
-                <p className="text-gray-500">Automate subscriptions and recurring billing for your services.</p>
+                <p className="text-gray-500">Automate subscriptions and recurring billing for your business.</p>
               </div>
             </div>
           </div>

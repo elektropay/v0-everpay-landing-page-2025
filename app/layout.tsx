@@ -1,14 +1,28 @@
 import type React from "react"
 import type { Metadata } from "next"
-import "./globals.css"
+import { Inter, Manrope } from "next/font/google"
+import "../styles/globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { getDictionary } from "@/lib/i18n" // Import getDictionary
+import { getDictionary } from "@/lib/i18n"
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+})
 
 export const metadata: Metadata = {
-  title: "Everpay - Modern Payment Solutions",
-  description: "Secure, fast, and reliable payment processing for businesses of all sizes",
-  generator: "v0.dev",
+  title: "Everpay - The Payment Infrastructure for the Internet",
+  description:
+    "Millions of businesses of all sizes—from startups to large enterprises—use Everpay's software and APIs to accept payments, send payouts, and manage their businesses online.",
+    generator: 'v0.dev'
 }
 
 export default async function RootLayout({
@@ -16,23 +30,13 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  // Fetch the default (English) dictionary for the root layout
-  const dictionary = await getDictionary("en")
+  const dictionary = await getDictionary("en") // Default to English dictionary
 
   return (
-    <html lang="en">
-      <head>
-        {/* Google Fonts – regular link method to avoid next/font WASM */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Manrope:wght@400;700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body className="font-sans">
+    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
+      <body>
         <SiteHeader />
-        <main>{children}</main>
+        {children}
         <SiteFooter dictionary={dictionary} />
       </body>
     </html>

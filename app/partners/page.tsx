@@ -1,5 +1,5 @@
-import Link from "next/link"
 import Image from "next/image"
+import { Button } from "@/components/ui/button"
 
 export default function PartnersPage() {
   return (
@@ -24,48 +24,51 @@ export default function PartnersPage() {
                 alt="Partner Logo"
                 className="mb-4"
                 height="80"
-                src="/placeholder.svg?height=80&width=160"
+                src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBwbGF0Zm9ybXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=160"
                 width="160"
+                unoptimized="true"
               />
               <h3 className="text-xl font-bold mb-2">E-commerce Platform</h3>
               <p className="text-gray-500 mb-4">
                 Seamless integration with leading e-commerce platforms for online businesses.
               </p>
-              <Link className="text-blue-600 hover:underline" href="#">
+              <Button className="text-blue-600 hover:underline" variant="link" href="#">
                 Visit Website
-              </Link>
+              </Button>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <Image
                 alt="Partner Logo"
                 className="mb-4"
                 height="80"
-                src="/placeholder.svg?height=80&width=160"
+                src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxwYXJ0bmVyJTIwbG9nb3xlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=160"
                 width="160"
+                unoptimized="true"
               />
               <h3 className="text-xl font-bold mb-2">Financial Institutions</h3>
               <p className="text-gray-500 mb-4">
                 Partnerships with banks and financial institutions for secure and reliable transactions.
               </p>
-              <Link className="text-blue-600 hover:underline" href="#">
+              <Button className="text-blue-600 hover:underline" variant="link" href="#">
                 Visit Website
-              </Link>
+              </Button>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
               <Image
                 alt="Partner Logo"
                 className="mb-4"
                 height="80"
-                src="/placeholder.svg?height=80&width=160"
+                src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMGxvZ298ZW58MHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=160"
                 width="160"
+                unoptimized="true"
               />
               <h3 className="text-xl font-bold mb-2">Technology Providers</h3>
               <p className="text-gray-500 mb-4">
                 Collaborating with technology companies to enhance our payment solutions.
               </p>
-              <Link className="text-blue-600 hover:underline" href="#">
+              <Button className="text-blue-600 hover:underline" variant="link" href="#">
                 Visit Website
-              </Link>
+              </Button>
             </div>
           </div>
         </section>

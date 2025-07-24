@@ -1,3 +1,5 @@
+import Image from "next/image"
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -26,23 +28,25 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <img
+            <Image
               alt="Mission"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
-              src="/placeholder.svg?height=310&width=550"
+              src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtaXNzaW9uJTIwYW5kJTIwdGVhbXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
+              unoptimized="true"
             />
           </div>
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-            <img
+            <Image
               alt="Values"
               className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
               height="310"
-              src="/placeholder.svg?height=310&width=550"
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjB2YWx1ZXMlMjBhbmQlMjBjdWx0dXJlfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=800"
               width="550"
+              unoptimized="true"
             />
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">

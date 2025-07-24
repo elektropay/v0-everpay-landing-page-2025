@@ -1,156 +1,200 @@
+"use client"
+
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select } from "@/components/ui/select"
+import { useState } from "react"
 import type { Dictionary } from "@/lib/i18n/types"
 
-interface SiteFooterProps {
-  dictionary: Dictionary
+interface Country {
+  code: string
+  name: string
+  flag: string
+  locale: string
+  currency: string
 }
 
-export function SiteFooter({ dictionary }: SiteFooterProps) {
-  const footerNav = {
-    solutions: [
-      { href: "/solutions/ach-payments", text: "ACH Payments" },
-      { href: "/solutions/credit-card-processing", text: "Credit Card Processing" },
-      { href: "/solutions/digital-wallets", text: "Digital Wallets" },
-      { href: "/solutions/recurring-billing", text: "Recurring Billing" },
-      { href: "/solutions/high-risk-processing", text: "High-Risk Processing" },
-      { href: "/solutions/ecommerce", text: "E-commerce" },
-      { href: "/solutions/retail", text: "Retail" },
-      { href: "/solutions/healthcare", text: "Healthcare" },
-    ],
-    products: [
-      { href: "/payments", text: "Payments" },
-      { href: "/online-payments", text: "Online Payments" },
-      { href: "/commerce", text: "Commerce" },
-      { href: "/fraud-prevention", text: "Fraud Prevention" },
-      { href: "/card-acquiring", text: "Card Acquiring" },
-      { href: "/payment-gateway", text: "Payment Gateway" },
-    ],
-    resources: [
-      { href: "/blog", text: "Blog" },
-      { href: "/docs", text: "Documentation" },
-      { href: "/api", text: "API Reference" },
-      { href: "/help", text: "Help Center" },
-      { href: "/case-studies", text: "Case Studies" },
-      { href: "/guides", text: "Guides" },
-    ],
-    company: [
-      { href: "/about", text: "About Us" },
-      { href: "/careers", text: "Careers" },
-      { href: "/contact", text: "Contact" },
-      { href: "/partners", text: "Partners" },
-      { href: "/press", text: "Press" },
-      { href: "/investors", text: "Investors" },
-    ],
+const countries: Country[] = [
+  { code: "US", name: "United States", flag: "🇺🇸", locale: "en", currency: "USD" },
+  { code: "ES", name: "España", flag: "🇪🇸", locale: "es", currency: "EUR" },
+  { code: "FR", name: "France", flag: "🇫🇷", locale: "fr", currency: "EUR" },
+  { code: "DE", name: "Deutschland", flag: "🇩🇪", locale: "de", currency: "EUR" },
+  { code: "CN", name: "中国", flag: "🇨🇳", locale: "zh", currency: "CNY" },
+]
+
+const footerLinks = {
+  solutions: [
+    { name: "ACH Payments", href: "/solutions/ach-payments" },
+    { name: "Credit Card Processing", href: "/solutions/credit-card-processing" },
+    { name: "Digital Wallets", href: "/solutions/digital-wallets" },
+    { name: "Recurring Billing", href: "/solutions/recurring-billing" },
+    { name: "High-Risk Processing", href: "/solutions/high-risk-processing" },
+    { name: "E-commerce", href: "/solutions/ecommerce" },
+    { name: "Retail", href: "/solutions/retail" },
+    { name: "Healthcare", href: "/solutions/healthcare" },
+  ],
+  products: [
+    { name: "Payments", href: "/payments" },
+    { name: "Online Payments", href: "/online-payments" },
+    { name: "Commerce", href: "/commerce" },
+    { name: "Fraud Prevention", href: "/fraud-prevention" },
+    { name: "Card Acquiring", href: "/products/card-acquiring" },
+    { name: "Payment Gateway", href: "/products/payment-gateway" },
+  ],
+  resources: [
+    { name: "Blog", href: "/blog" },
+    { name: "Documentation", href: "/docs" },
+    { name: "API Reference", href: "/api" },
+    { name: "Help Center", href: "/help" },
+    { name: "Case Studies", href: "/resources/case-studies" },
+    { name: "Guides", href: "/resources/guides" },
+  ],
+  company: [
+    { name: "About Us", href: "/about" },
+    { name: "Careers", href: "/careers" },
+    { name: "Contact", href: "/contact" },
+    { name: "Partners", href: "/partners" },
+    { name: "Press", href: "/company/press" },
+    { name: "Investors", href: "/company/investors" },
+  ],
+}
+
+export function SiteFooter({ dictionary = {} }: { dictionary?: Dictionary }) {
+  const [isCountryMenuOpen, setIsCountryMenuOpen] = useState(false)
+  const [selectedCountry, setSelectedCountry] = useState(countries[0])
+
+  const handleCountryChange = (country: Country) => {
+    setSelectedCountry(country)
+    setIsCountryMenuOpen(false)
   }
 
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 md:py-16">
-      <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-2">
-          <Link className="flex items-center mb-4" href="/">
-            <img
-              alt="Everpay Logo"
-              className="h-8 w-auto"
-              src="/placeholder-logo.svg?height=32&width=120&query=everpay%20logo"
-              unoptimized
-            />
-          </Link>
-          <p className="text-sm mb-4">Transform your payments experience</p>
-          <div className="flex items-center gap-2 mb-6">
-            <img
-              alt="United States flag"
-              className="h-4 w-6"
-              src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHx1bml0ZWQlMjBzdGF0ZXMlMjBmbGFnfGVufDB8fHx8MTcwOTg2NTY3MHww&ixlib=rb-4.0.3&q=80&w=400"
-              unoptimized
-            />
-            <Select>
-              <SelectTrigger className="w-[180px] bg-gray-800 border-gray-700 text-white rounded-full">
-                <SelectValue placeholder="United States" />
-              </SelectTrigger>
-              <SelectContent className="bg-gray-800 text-white">
-                <SelectItem value="us">United States</SelectItem>
-                <SelectItem value="ca">Canada</SelectItem>
-                <SelectItem value="gb">United Kingdom</SelectItem>
-              </SelectContent>
-            </Select>
+    <footer className="bg-[#081B1E] pt-16 text-gray-300">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          {/* Brand Section */}
+          <div className="lg:col-span-1">
+            <div className="text-2xl font-bold text-white mb-4 font-heading">Everpay</div>
+            <p className="text-sm mb-4 font-sans">Transform your payments experience</p>
+            <div className="relative">
+              <button
+                onClick={() => setIsCountryMenuOpen(!isCountryMenuOpen)}
+                className="flex items-center gap-2 px-3 py-1.5 text-xs rounded-full border border-gray-700 hover:border-gray-500 transition-colors font-sans"
+              >
+                <span>{selectedCountry.flag}</span>
+                <span className="text-xs">{selectedCountry.name}</span>
+                <svg
+                  className={`h-3 w-3 transition-transform ${isCountryMenuOpen ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {isCountryMenuOpen && (
+                <div className="absolute bottom-full mb-2 w-48 bg-[#0A2F2F] border border-gray-700 rounded-lg shadow-lg">
+                  {countries.map((country) => (
+                    <button
+                      key={country.code}
+                      onClick={() => handleCountryChange(country)}
+                      className="flex items-center gap-2 w-full px-3 py-2 text-xs hover:bg-gray-700/50 transition-colors font-sans"
+                    >
+                      <span>{country.flag}</span>
+                      <span>{country.name}</span>
+                      <span className="ml-auto text-gray-400">{country.currency}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
-          <div className="flex gap-2">
-            <Input
-              className="flex-1 bg-gray-800 border-gray-700 text-white rounded-full"
-              placeholder="Enter your email"
-              type="email"
-            />
-            <Button className="rounded-full">Subscribe</Button>
+
+          {/* Solutions */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 font-heading">Solutions</h3>
+            <ul className="space-y-2">
+              {footerLinks.solutions.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm hover:text-white transition-colors font-sans">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Products */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 font-heading">Products</h3>
+            <ul className="space-y-2">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm hover:text-white transition-colors font-sans">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 font-heading">Resources</h3>
+            <ul className="space-y-2">
+              {footerLinks.resources.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm hover:text-white transition-colors font-sans">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h3 className="font-semibold text-white mb-4 font-heading">Company</h3>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-sm hover:text-white transition-colors font-sans">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-        <div className="grid grid-cols-2 gap-8 md:col-span-3">
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Solutions</h3>
-            <nav className="grid gap-2">
-              {footerNav.solutions.map((link) => (
-                <Link key={link.href} className="hover:text-white" href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </nav>
+
+        {/* Bottom Section */}
+        <div className="border-t border-gray-800 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 mb-4">
+            <p className="text-xs font-sans">© 2025 Everpay Corp. All rights reserved.</p>
+            <div className="flex gap-6">
+              <Link href="/cookie-policy" className="text-xs hover:text-white transition-colors font-sans">
+                Cookie Settings
+              </Link>
+              <Link href="/privacy-policy" className="text-xs hover:text-white transition-colors font-sans">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-xs hover:text-white transition-colors font-sans">
+                Terms of Service
+              </Link>
+              <Link href="/security" className="text-xs hover:text-white transition-colors font-sans">
+                Security
+              </Link>
+            </div>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Products</h3>
-            <nav className="grid gap-2">
-              {footerNav.products.map((link) => (
-                <Link key={link.href} className="hover:text-white" href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </nav>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Resources</h3>
-            <nav className="grid gap-2">
-              {footerNav.resources.map((link) => (
-                <Link key={link.href} className="hover:text-white" href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </nav>
-          </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
-            <nav className="grid gap-2">
-              {footerNav.company.map((link) => (
-                <Link key={link.href} className="hover:text-white" href={link.href}>
-                  {link.text}
-                </Link>
-              ))}
-            </nav>
+          <div className="space-y-2">
+            <p className="text-xs text-gray-400 font-sans">
+              Banking services are provided by Everpay Banking Partners, Members FDIC. The Everpay Card is issued by
+              Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and Mastercard International.
+            </p>
+            <p className="text-xs text-gray-400 font-sans">
+              Everpay Services are regulated as a Money Services Business by FinCEN. Everpay is PCI DSS Level 1
+              certified, the highest level of security certification in the payments industry.
+            </p>
           </div>
         </div>
-      </div>
-      <div className="container mx-auto px-4 md:px-6 mt-8 border-t border-gray-700 pt-8 text-sm text-gray-400">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p>&copy; {new Date().getFullYear()} Everpay Corp. All rights reserved.</p>
-          <nav className="flex gap-4">
-            <Link className="hover:text-white" href="/cookie-policy">
-              Cookie Settings
-            </Link>
-            <Link className="hover:text-white" href="/privacy-policy">
-              Privacy Policy
-            </Link>
-            <Link className="hover:text-white" href="/terms">
-              Terms of Service
-            </Link>
-            <Link className="hover:text-white" href="/security">
-              Security
-            </Link>
-          </nav>
-        </div>
-        <p className="mt-4 text-xs">
-          Banking services are provided by Everpay Banking Partners, Members FDIC. The Everpay Card is issued by Everpay
-          Banking Partners pursuant to licenses from Visa U.S.A. Inc. and Mastercard International.
-        </p>
       </div>
     </footer>
   )
