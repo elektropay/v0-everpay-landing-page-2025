@@ -1,43 +1,32 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Manrope } from "next/font/google"
-import "../styles/globals.css"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import { getDictionary } from "@/lib/i18n"
+import { Inter, Plus_Jakarta_Sans, Space_Mono } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-})
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-})
+// Define fonts with variable names for Tailwind CSS
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-display" })
+const spaceMono = Space_Mono({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-mono" })
 
 export const metadata: Metadata = {
-  title: "Everpay - The Payment Infrastructure for the Internet",
+  title: "Everpay - Accept Payments, Send Payouts, and Manage Your Businesses Online",
   description:
-    "Millions of businesses of all sizes—from startups to large enterprises—use Everpay's software and APIs to accept payments, send payouts, and manage their businesses online.",
+    "Everpay helps businesses accept payments, send payouts, and manage their operations online with ease and security.",
     generator: 'v0.dev'
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const dictionary = await getDictionary("en") // Default to English dictionary
-
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body>
-        <SiteHeader />
-        {children}
-        <SiteFooter dictionary={dictionary} />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${plusJakartaSans.variable} ${spaceMono.variable} font-sans antialiased`}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )

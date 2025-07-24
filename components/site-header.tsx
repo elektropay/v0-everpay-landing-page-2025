@@ -1,206 +1,74 @@
 "use client"
 
 import Link from "next/link"
-import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
+import { MenuIcon } from "lucide-react"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
+import { cn } from "@/lib/utils"
 
-const menuItems = [
-  {
-    title: "Solutions",
-    items: [
-      { title: "ACH Payments", href: "/solutions/ach-payments" },
-      { title: "Credit Card Processing", href: "/solutions/credit-card-processing" },
-      { title: "Digital Wallets", href: "/solutions/digital-wallets" },
-      { title: "Recurring Billing", href: "/solutions/recurring-billing" },
-      { title: "High-Risk Processing", href: "/solutions/high-risk-processing" },
-      { title: "E-commerce", href: "/solutions/ecommerce" },
-      { title: "Retail", href: "/solutions/retail" },
-      { title: "Healthcare", href: "/solutions/healthcare" },
-    ],
-  },
-  {
-    title: "Products",
-    items: [
-      { title: "Payments", href: "/payments" },
-      { title: "Online Payments", href: "/online-payments" },
-      { title: "Commerce", href: "/commerce" },
-      { title: "Fraud Prevention", href: "/fraud-prevention" },
-      { title: "Card Acquiring", href: "/products/card-acquiring" },
-      { title: "Payment Gateway", href: "/products/payment-gateway" },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { title: "Blog", href: "/blog" },
-      { title: "Documentation", href: "/docs" },
-      { title: "API Reference", href: "/api" },
-      { title: "Help Center", href: "/help" },
-      { title: "Case Studies", href: "/resources/case-studies" },
-      { title: "Guides", href: "/resources/guides" },
-    ],
-  },
-  {
-    title: "Company",
-    items: [
-      { title: "About Us", href: "/about" },
-      { title: "Careers", href: "/careers" },
-      { title: "Contact", href: "/contact" },
-      { title: "Partners", href: "/partners" },
-      { title: "Press", href: "/company/press" },
-      { title: "Investors", href: "/company/investors" },
-    ],
-  },
-]
+export function SiteHeader({ lang }: { lang: string }) {
+  const pathname = usePathname()
 
-export function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  const navLinks = [
+    { href: `/${lang}/payments`, label: "Payments" },
+    { href: `/${lang}/solutions/business`, label: "Solutions" },
+    { href: `/${lang}/partners`, label: "Partners" },
+    { href: `/${lang}/developers`, label: "Developers" },
+    { href: `/${lang}/company`, label: "Company" },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center">
-            <Image
-              src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png"
-              alt="Everpay Logo"
-              className="h-8 w-auto"
-              width={32}
-              height={32}
-              unoptimized="true" // Corrected unoptimized prop
-            />
-            <Link href="/" className="text-xl font-bold ml-2 text-everpayText font-sans">
-              everpay
-            </Link>
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {menuItems.map((item) => (
-              <div
-                key={item.title}
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(item.title)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button className="flex items-center space-x-1 text-everpayText hover:text-gray-700 font-medium text-sm py-2 font-sans">
-                  <span>{item.title}</span>
-                  <ChevronDown className="h-4 w-4" />
-                </button>
-
-                {/* Dropdown Menu */}
-                {activeDropdown === item.title && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
-                    <div className="p-4">
-                      <div className="space-y-2">
-                        {item.items.map((subItem) => (
-                          <Link
-                            key={subItem.title}
-                            href={subItem.href}
-                            className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-md font-sans"
-                          >
-                            {subItem.title}
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          {/* Right Side */}
-          <div className="hidden lg:flex items-center space-x-6">
-            <Link
-              href="/login"
-              className="flex items-center text-everpayText hover:text-gray-700 text-sm font-medium font-sans"
-            >
-              <span className="mr-2">👤</span>
-              Log in
-            </Link>
-
-            <div className="text-everpayText text-sm font-medium font-sans">Sales: 888-579-5668</div>
-
-            <Button className="bg-everpayGreen text-white px-6 py-2 rounded-full text-sm font-medium font-sans hover:bg-everpayGreen-dark">
-              Get started
+    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-white text-everpay-dark shadow-sm">
+      <Link className="mr-6 flex items-center" href={`/${lang}`}>
+        <Image src="/placeholder-logo.svg" alt="Everpay Logo" width={32} height={32} className="h-8 w-8" />
+        <span className="ml-2 text-2xl font-bold font-display">everpay</span>
+      </Link>
+      <nav className="ml-auto hidden gap-6 lg:flex">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            className={cn(
+              "text-lg font-medium transition-colors hover:text-everpay-green",
+              pathname === link.href ? "text-everpay-green" : "text-everpay-dark",
+            )}
+            href={link.href}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+      <div className="ml-auto flex items-center gap-4">
+        <Button className="hidden lg:inline-flex" variant="ghost">
+          Log in
+        </Button>
+        <Button className="hidden lg:inline-flex bg-everpay-green text-white rounded-full hover:bg-everpay-green/90">
+          Get started
+        </Button>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button className="lg:hidden bg-transparent" size="icon" variant="outline">
+              <MenuIcon className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
             </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
-                <Menu className="h-5 w-5" />
+          </SheetTrigger>
+          <SheetContent side="right">
+            <div className="grid gap-2 py-6">
+              {navLinks.map((link) => (
+                <Link key={link.href} className="flex w-full items-center py-2 text-lg font-semibold" href={link.href}>
+                  {link.label}
+                </Link>
+              ))}
+              <Button className="w-full" variant="ghost">
+                Log in
               </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-full p-0 bg-white">
-              <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-4 border-b">
-                  <Link href="/" className="text-xl font-bold text-everpayText font-heading">
-                    Everpay
-                  </Link>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <X className="h-5 w-5" />
-                    </Button>
-                  </SheetTrigger>
-                </div>
-
-                <div className="flex-1 overflow-auto p-4">
-                  <div className="space-y-4">
-                    {menuItems.map((item) => (
-                      <div key={item.title}>
-                        <div className="font-semibold text-everpayText mb-2 font-heading">{item.title}</div>
-                        <div className="space-y-2 ml-4">
-                          {item.items.map((subItem) => (
-                            <Link
-                              key={subItem.title}
-                              href={subItem.href}
-                              className="block text-sm text-gray-600 hover:text-everpayText font-sans"
-                            >
-                              {subItem.title}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="mt-auto p-4 border-t space-y-3">
-                  <Link
-                    href="/login"
-                    className="flex items-center font-medium text-everpayText hover:text-gray-700 font-sans"
-                  >
-                    <span className="mr-2">👤</span>
-                    Log in
-                  </Link>
-                  <div className="text-everpayText text-sm font-sans">
-                    <span className="font-medium">Sales:</span> 888-579-5668
-                  </div>
-                  <Button className="w-full bg-everpayGreen hover:bg-everpayGreen-dark text-white rounded-full font-sans">
-                    Get started
-                  </Button>
-                </div>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+              <Button className="w-full bg-everpay-green text-white rounded-full hover:bg-everpay-green/90">
+                Get started
+              </Button>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )

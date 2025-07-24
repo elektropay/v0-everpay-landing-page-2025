@@ -1,3 +1,5 @@
+const { fontFamily } = require("tailwindcss/defaultTheme")
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -18,10 +20,6 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily: {
-        sans: ["Manrope", "sans-serif"],
-        heading: ["Inter", "sans-serif"],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,16 +55,18 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         // Custom Everpay colors
-        everpayGreen: {
-          DEFAULT: "#4CAF50", // A vibrant green for primary actions
-          dark: "#45a049", // A slightly darker green for hover states
+        everpay: {
+          green: "#4CAF50", // A vibrant green for primary buttons and accents
+          dark: "#212121", // Dark text for headings and body
+          lightgray: "#F5F5F5", // Light background for dashboard cards
+          mediumgray: "#E0E0E0", // Border or subtle background
+          red: "#EF4444", // For dashboard dots
+          yellow: "#FACC15", // For dashboard dots
         },
-        everpayLightGray: "#F5F7FA", // Light background for dashboard sub-cards
-        everpayText: "#333333", // Dark text color
       },
       borderRadius: {
-        lg: "1rem", // More rounded corners for cards and buttons
-        md: "0.75rem",
+        lg: "1.5rem", // More rounded corners for cards and buttons
+        md: "1rem",
         sm: "0.5rem",
       },
       keyframes: {
@@ -78,15 +78,15 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        scroll: {
-          from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-50%)" },
-        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        scroll: "scroll linear infinite",
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", ...fontFamily.sans],
+        display: ["var(--font-display)", ...fontFamily.sans], // For prominent text like hero
+        mono: ["var(--font-mono)", ...fontFamily.mono], // For tabular numbers
       },
     },
   },

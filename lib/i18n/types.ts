@@ -47,4 +47,4 @@ export type Dictionary = {
   }
 }
 
-export type Locale = keyof typeof import("./dictionaries").dictionaries
+export type Locale = keyof typeof import("./dictionaries").dictionaryLoaders

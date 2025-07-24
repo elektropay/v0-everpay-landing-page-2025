@@ -1,24 +1,21 @@
-import { Card, CardContent } from "@/components/ui/card"
+import { Card } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
 
 interface DashboardCardProps {
   title: string
   value: string
   percentage?: string
-  valueColor?: string
   className?: string
 }
 
-export function DashboardCard({ title, value, percentage, valueColor, className }: DashboardCardProps) {
+export function DashboardCard({ title, value, percentage, className }: DashboardCardProps) {
   return (
-    <Card className={cn("flex-1 bg-everpayLightGray rounded-lg shadow-sm", className)}>
-      <CardContent className="p-4">
-        <p className="text-sm text-gray-600 font-sans">{title}</p>
-        <div className="flex items-baseline justify-between mt-1">
-          <h3 className={cn("text-2xl font-bold font-heading", valueColor)}>{value}</h3>
-          {percentage && <span className="text-everpayGreen text-sm font-medium font-sans">{percentage}</span>}
-        </div>
-      </CardContent>
+    <Card className={cn("p-4 rounded-lg bg-everpay-lightgray shadow-none", className)}>
+      <p className="text-sm text-gray-600">{title}</p>
+      <div className="flex items-baseline justify-between mt-1">
+        <h3 className="text-2xl font-bold font-mono text-everpay-dark">{value}</h3>
+        {percentage && <span className="text-everpay-green text-sm font-medium">{percentage}</span>}
+      </div>
     </Card>
   )
 }
