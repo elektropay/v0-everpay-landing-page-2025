@@ -1,87 +1,105 @@
+import { CtaSection } from "@/components/cta-section"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/types"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-export default function CareersPage() {
+export default async function CareersPage({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
+  const dictionary = await getDictionary(lang)
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[100dvh]">
       <main className="flex-1">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_600px]">
+              <div className="flex flex-col justify-center space-y-4">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+                    {dictionary.careers.heroTitle}
+                  </h1>
+                  <p className="max-w-[600px] text-gray-500 md:text-xl">{dictionary.careers.heroDescription}</p>
+                </div>
+              </div>
+              <Image
+                alt="Careers Hero"
+                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last"
+                height="400"
+                src="/placeholder.svg?height=400&width=600"
+                width="600"
+                unoptimized="true" // Corrected unoptimized prop
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dictionary.careers.whyJoinTitle}</h2>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Discover the benefits of building your career with Everpay.
+                </p>
+              </div>
+            </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">{dictionary.careers.reason1Title}</h3>
+                <p className="text-sm text-gray-500">{dictionary.careers.reason1Description}</p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">{dictionary.careers.reason2Title}</h3>
+                <p className="text-sm text-gray-500">{dictionary.careers.reason2Description}</p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">{dictionary.careers.reason3Title}</h3>
+                <p className="text-sm text-gray-500">{dictionary.careers.reason3Description}</p>
+              </div>
+              <div className="grid gap-1">
+                <h3 className="text-lg font-bold">{dictionary.careers.reason4Title}</h3>
+                <p className="text-sm text-gray-500">{dictionary.careers.reason4Description}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Careers at Everpay</h1>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  {dictionary.careers.openPositionsTitle}
+                </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Join our team and help us build the future of payments.
+                  {dictionary.careers.openPositionsDescription}
                 </p>
               </div>
             </div>
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Why Work With Us?</h2>
-                <ul className="grid gap-2 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  <li>
-                    <span className="font-semibold">Innovative Environment:</span> Work on cutting-edge payment
-                    technologies.
-                  </li>
-                  <li>
-                    <span className="font-semibold">Growth Opportunities:</span> Develop your skills and advance your
-                    career.
-                  </li>
-                  <li>
-                    <span className="font-semibold">Collaborative Culture:</span> Be part of a supportive and diverse
-                    team.
-                  </li>
-                  <li>
-                    <span className="font-semibold">Impactful Work:</span> Contribute to solutions that empower
-                    businesses globally.
-                  </li>
-                </ul>
-              </div>
+            <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3">
+              {dictionary.careers.departments.map((dept, index) => (
+                <div key={index} className="grid gap-1">
+                  <h3 className="text-lg font-bold">{dept.name}</h3>
+                  <p className="text-sm text-gray-500">{dept.count} Open Positions</p>
+                  <Link className="text-primary hover:underline" href="#">
+                    View Jobs
+                  </Link>
+                </div>
+              ))}
             </div>
-            <Image
-              alt="Careers"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
-              height="310"
-              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxjYXJlZXJzJTIwdGVhbXxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
-              width="550"
-              unoptimized="true"
-            />
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">Open Positions</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Software Engineer (Backend)</h3>
-                <p className="text-gray-500 mb-4">Develop and maintain our core payment processing systems.</p>
-                <Button className="text-blue-600 hover:underline" variant="link" href="#">
-                  Apply Now
-                </Button>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Product Manager</h3>
-                <p className="text-gray-500 mb-4">Define and execute the product roadmap for our payment solutions.</p>
-                <Button className="text-blue-600 hover:underline" variant="link" href="#">
-                  Apply Now
-                </Button>
-              </div>
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-bold mb-2">Sales Executive</h3>
-                <p className="text-gray-500 mb-4">
-                  Drive revenue growth by expanding our client base and partnerships.
-                </p>
-                <Button className="text-blue-600 hover:underline" variant="link" href="#">
-                  Apply Now
-                </Button>
-              </div>
+            <div className="flex justify-center">
+              <Link className="text-primary hover:underline" href="#">
+                {dictionary.careers.viewAllJobs}
+              </Link>
             </div>
           </div>
         </section>
+
+        <CtaSection />
       </main>
     </div>
   )

@@ -46,3 +46,5 @@ export type Dictionary = {
     bankingDisclaimer: string
   }
 }
+
+export type Locale = keyof typeof import("./dictionaries").dictionaries

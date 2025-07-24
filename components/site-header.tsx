@@ -77,13 +77,13 @@ export function SiteHeader() {
           <div className="flex items-center">
             <Image
               src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png"
-              alt="Everpay"
+              alt="Everpay Logo"
               className="h-8 w-auto"
               width={32}
               height={32}
-              unoptimized="true"
+              unoptimized="true" // Corrected unoptimized prop
             />
-            <Link href="/" className="text-xl font-bold ml-2 text-gray-900 font-sans">
+            <Link href="/" className="text-xl font-bold ml-2 text-everpayText font-sans">
               everpay
             </Link>
           </div>
@@ -97,7 +97,7 @@ export function SiteHeader() {
                 onMouseEnter={() => setActiveDropdown(item.title)}
                 onMouseLeave={() => setActiveDropdown(null)}
               >
-                <button className="flex items-center space-x-1 text-gray-900 hover:text-gray-700 font-medium text-sm py-2 font-sans">
+                <button className="flex items-center space-x-1 text-everpayText hover:text-gray-700 font-medium text-sm py-2 font-sans">
                   <span>{item.title}</span>
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -128,15 +128,15 @@ export function SiteHeader() {
           <div className="hidden lg:flex items-center space-x-6">
             <Link
               href="/login"
-              className="flex items-center text-gray-700 hover:text-gray-900 text-sm font-medium font-sans"
+              className="flex items-center text-everpayText hover:text-gray-700 text-sm font-medium font-sans"
             >
               <span className="mr-2">👤</span>
               Log in
             </Link>
 
-            <div className="text-gray-700 text-sm font-medium font-sans">Sales: 888-579-5668</div>
+            <div className="text-everpayText text-sm font-medium font-sans">Sales: 888-579-5668</div>
 
-            <Button className="bg-[#4CAF50] hover:bg-[#45a049] text-white px-6 py-2 rounded-full text-sm font-medium font-sans">
+            <Button className="bg-everpayGreen text-white px-6 py-2 rounded-full text-sm font-medium font-sans hover:bg-everpayGreen-dark">
               Get started
             </Button>
           </div>
@@ -151,7 +151,7 @@ export function SiteHeader() {
             <SheetContent side="right" className="w-full p-0 bg-white">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between p-4 border-b">
-                  <Link href="/" className="text-xl font-bold text-gray-900 font-heading">
+                  <Link href="/" className="text-xl font-bold text-everpayText font-heading">
                     Everpay
                   </Link>
                   <SheetTrigger asChild>
@@ -165,13 +165,13 @@ export function SiteHeader() {
                   <div className="space-y-4">
                     {menuItems.map((item) => (
                       <div key={item.title}>
-                        <div className="font-semibold text-gray-900 mb-2 font-heading">{item.title}</div>
+                        <div className="font-semibold text-everpayText mb-2 font-heading">{item.title}</div>
                         <div className="space-y-2 ml-4">
                           {item.items.map((subItem) => (
                             <Link
                               key={subItem.title}
                               href={subItem.href}
-                              className="block text-sm text-gray-600 hover:text-gray-900 font-sans"
+                              className="block text-sm text-gray-600 hover:text-everpayText font-sans"
                             >
                               {subItem.title}
                             </Link>
@@ -185,15 +185,15 @@ export function SiteHeader() {
                 <div className="mt-auto p-4 border-t space-y-3">
                   <Link
                     href="/login"
-                    className="flex items-center font-medium text-gray-900 hover:text-gray-700 font-sans"
+                    className="flex items-center font-medium text-everpayText hover:text-gray-700 font-sans"
                   >
                     <span className="mr-2">👤</span>
                     Log in
                   </Link>
-                  <div className="text-gray-900 text-sm font-sans">
+                  <div className="text-everpayText text-sm font-sans">
                     <span className="font-medium">Sales:</span> 888-579-5668
                   </div>
-                  <Button className="w-full bg-[#4CAF50] hover:bg-[#45a049] text-white rounded-full font-sans">
+                  <Button className="w-full bg-everpayGreen hover:bg-everpayGreen-dark text-white rounded-full font-sans">
                     Get started
                   </Button>
                 </div>

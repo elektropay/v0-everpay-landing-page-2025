@@ -1,32 +1,18 @@
+import { HomePageContent } from "@/components/home-page-content"
 import { getDictionary } from "@/lib/i18n"
-import { HeroSection } from "@/components/hero-section"
-import { StatsSection } from "@/components/stats-section"
-import { FeaturesSection } from "@/components/features-section"
-import { PaymentPartnersSection } from "@/components/payment-partners-section"
-import { PaymentPartnersCarousel } from "@/components/payment-partners-carousel"
-import { CheckoutProtectionSection } from "@/components/checkout-protection-section"
-import { BusinessTypesSection } from "@/components/business-types-section"
-import { CTASection } from "@/components/cta-section"
+import type { Locale } from "@/lib/i18n/types"
 
-interface PageProps {
-  params: {
-    lang: string
-  }
-}
+export default async function LangHomePage({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
+  const dictionary = await getDictionary(lang)
 
-export default async function LocalizedHomePage({ params }: PageProps) {
-  const dictionary = await getDictionary(params.lang)
+  // You can use the dictionary here to pass localized content to HomePageContent
+  // For simplicity, HomePageContent currently uses hardcoded English text.
+  // In a real app, you'd pass props like:
+  // <HomePageContent dictionary={dictionary.homePage} />
 
-  return (
-    <div className="min-h-screen bg-white">
-      <HeroSection />
-      <StatsSection />
-      <FeaturesSection />
-      <PaymentPartnersCarousel />
-      <PaymentPartnersSection />
-      <CheckoutProtectionSection />
-      <BusinessTypesSection />
-      <CTASection />
-    </div>
-  )
+  return <HomePageContent />
 }

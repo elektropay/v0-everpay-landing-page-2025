@@ -1,44 +1,37 @@
-"use client"
-
 import Image from "next/image"
-import { cn } from "@/lib/utils"
 
-const partners = [
-  { src: "/images/visa.png", alt: "Visa" },
-  { src: "/images/mastercard.png", alt: "Mastercard" },
-  { src: "/images/amex.png", alt: "American Express" },
-  { src: "/images/paypal.png", alt: "PayPal" },
-  { src: "/images/apple-pay.png", alt: "Apple Pay" },
-  { src: "/images/google-pay.png", alt: "Google Pay" },
-  { src: "/images/interac.png", alt: "Interac" },
-  { src: "/images/jcb.png", alt: "JCB" },
-]
+export function PaymentPartnersCarousel() {
+  const partners = [
+    { src: "/images/visa.png", alt: "Visa" },
+    { src: "/images/mastercard.png", alt: "Mastercard" },
+    { src: "/images/interac.png", alt: "Interac" },
+    { src: "/images/jcb.png", alt: "JCB" },
+    { src: "/images/apple-pay.png", alt: "Apple Pay" },
+    { src: "/images/google-pay.png", alt: "Google Pay" },
+    { src: "/images/amex.png", alt: "American Express" },
+    { src: "/images/paypal.png", alt: "PayPal" },
+  ]
 
-export function PaymentPartnersCarousel({
-  className,
-}: {
-  className?: string
-}) {
   return (
-    <section className={cn("py-12 bg-gray-50", className)}>
-      <h3 className="mb-6 text-center text-lg font-semibold text-gray-700">
-        Trusted by the world’s leading payment networks
-      </h3>
-
-      {/* Continuous scroll container */}
-      <div className="overflow-hidden">
-        <div className="flex animate-scroll gap-12" style={{ animationDuration: "30s" }}>
-          {[...partners, ...partners].map((logo, idx) => (
-            <Image
-              key={idx}
-              src={logo.src || "/placeholder.svg"}
-              alt={logo.alt}
-              width={120}
-              height={60}
-              className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition"
-              unoptimized="true"
-            />
-          ))}
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <div className="container px-4 md:px-6">
+        <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Trusted by leading businesses</h2>
+        <div className="relative overflow-hidden">
+          <div className="flex animate-scroll whitespace-nowrap">
+            {/* Duplicate partners to create a seamless loop */}
+            {[...partners, ...partners].map((partner, index) => (
+              <div key={index} className="inline-block mx-8">
+                <Image
+                  alt={partner.alt}
+                  className="h-16 w-auto object-contain"
+                  height="64"
+                  src={partner.src || "/placeholder.svg"}
+                  width="128"
+                  unoptimized="true" // Corrected unoptimized prop
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

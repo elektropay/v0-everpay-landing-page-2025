@@ -1,23 +1,10 @@
-import { NextResponse } from "next/server"
-import type { NextRequest } from "next/server"
+import { i18n } from "./lib/i18n/config"
+import { createMiddleware } from "@vercel/edge-functions-ui/i18n"
 
 const locales = ["en", "es", "fr", "de", "zh"]
 const defaultLocale = "en"
 
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname
-
-  // Check if the pathname already includes a locale
-  const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`)
-
-  // If it doesn't have a locale, redirect to the default locale
-  if (!pathnameHasLocale && !pathname.match(/\.(jpg|png|svg|css|js)$/)) {
-    const url = new URL(`/${defaultLocale}${pathname}`, request.url)
-    return NextResponse.redirect(url)
-  }
-
-  return NextResponse.next()
-}
+export default createMiddleware(i18n)
 
 export const config = {
   matcher: [

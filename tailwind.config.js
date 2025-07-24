@@ -56,11 +56,18 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Custom Everpay colors
+        everpayGreen: {
+          DEFAULT: "#4CAF50", // A vibrant green for primary actions
+          dark: "#45a049", // A slightly darker green for hover states
+        },
+        everpayLightGray: "#F5F7FA", // Light background for dashboard sub-cards
+        everpayText: "#333333", // Dark text color
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 15px)",
-        sm: "calc(var(--radius) - 8px)",
+        lg: "1rem", // More rounded corners for cards and buttons
+        md: "0.75rem",
+        sm: "0.5rem",
       },
       keyframes: {
         "accordion-down": {

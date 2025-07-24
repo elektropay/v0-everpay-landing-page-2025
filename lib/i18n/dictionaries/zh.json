@@ -1,5 +1,14 @@
 {
+  "header": {
+    "solutions": "解决方案",
+    "products": "产品",
+    "resources": "资源",
+    "company": "公司",
+    "signIn": "登录",
+    "signUp": "注册"
+  },
   "footer": {
+    "description": "Everpay 是一家领先的支付处理公司，为全球企业提供安全高效的解决方案。",
     "solutions": {
       "title": "解决方案",
       "achPayments": "ACH支付",
@@ -9,7 +18,11 @@
       "highRiskProcessing": "高风险处理",
       "ecommerce": "电子商务",
       "retail": "零售",
-      "healthcare": "医疗保健"
+      "healthcare": "医疗保健",
+      "businessSolutions": "商业解决方案",
+      "ecommerceSolutions": "电子商务解决方案",
+      "marketplaceSolutions": "市场解决方案",
+      "retailSolutions": "零售解决方案"
     },
     "products": {
       "title": "产品",
@@ -18,7 +31,9 @@
       "commerce": "商务",
       "fraudPrevention": "欺诈预防",
       "cardAcquiring": "银行卡收单",
-      "paymentGateway": "支付网关"
+      "paymentGateway": "支付网关",
+      "cardIssuing": "发卡",
+      "posSystems": "POS系统"
     },
     "resources": {
       "title": "资源",
@@ -43,6 +58,481 @@
     "privacyPolicy": "隐私政策",
     "termsOfService": "服务条款",
     "security": "安全",
-    "bankingDisclaimer": "银行服务由Everpay银行合作伙伴（FDIC成员）提供。Everpay卡由Everpay银行合作伙伴根据Visa U.S.A. Inc.和Mastercard International的许可发行。"
+    "bankingDisclaimer": "银行服务由Everpay银行合作伙伴（FDIC成员）提供。Everpay卡由Everpay银行合作伙伴根据Visa U.S.A. Inc.和Mastercard International的许可发行。",
+    "cookiePolicy": "Cookie政策"
+  },
+  "home": {
+    "heroTitle": "互联网支付基础设施",
+    "heroDescription": "数百万各种规模的企业——从初创公司到大型企业——使用 Everpay 的软件和 API 来接受付款、发送支出和在线管理其业务。",
+    "getStarted": "立即开始",
+    "contactSales": "联系销售",
+    "featuresTitle": "为什么选择 Everpay？",
+    "feature1Title": "全球覆盖",
+    "feature1Description": "支持超过 135 种货币，接受来自全球客户的付款。",
+    "feature2Title": "高级安全",
+    "feature2Description": "通过行业领先的欺诈预防和合规性保护您的业务和客户。",
+    "feature3Title": "无缝集成",
+    "feature3Description": "通过我们对开发者友好的 API 和全面的文档轻松集成。",
+    "ctaTitle": "准备好发展您的业务了吗？",
+    "ctaDescription": "加入数千家已经使用 Everpay 简化支付处理的企业。",
+    "ctaButton": "开始接受付款"
+  },
+  "payments": {
+    "title": "支付",
+    "overviewTab": "概述",
+    "featuresTab": "功能",
+    "pricingTab": "定价",
+    "overviewContent": {
+      "title": "简化您的支付处理",
+      "description": "Everpay 提供一套全面的支付解决方案，旨在帮助各种规模的企业高效、安全地接受、处理和管理支付。",
+      "keyBenefits": "主要优势",
+      "benefit1": "接受所有主要支付方式",
+      "benefit2": "支持多币种的全球覆盖",
+      "benefit3": "强大的欺诈预防工具",
+      "benefit4": "与现有系统无缝集成",
+      "benefit5": "详细的分析和报告",
+      "cta": "开始使用支付"
+    },
+    "featuresContent": {
+      "title": "满足各种需求的强大功能",
+      "description": "我们的支付平台以灵活性和可扩展性为设计理念，提供广泛的功能以支持您独特的业务需求。",
+      "feature1Title": "可定制的结账",
+      "feature1Description": "设计符合您品牌并优化转化率的结账体验。",
+      "feature2Title": "循环计费",
+      "feature2Description": "通过灵活的计费周期自动化订阅和循环支付。",
+      "feature3Title": "面对面支付",
+      "feature3Description": "使用我们的 POS 解决方案在您的实体店安全地接受支付。",
+      "feature4Title": "争议管理",
+      "feature4Description": "简化管理退单和争议的流程。",
+      "feature5Title": "令牌化",
+      "feature5Description": "安全地存储客户卡片详细信息以供未来交易，而不会暴露敏感数据。"
+    },
+    "pricingContent": {
+      "title": "透明定价，无隐藏费用",
+      "description": "Everpay 提供有竞争力的直接定价模型，根据您的业务量和需求量身定制。请联系我们的销售团队获取定制报价。",
+      "standardPricing": "标准定价",
+      "transactionFee": "每笔成功卡片交易 2.9% + 0.30 美元",
+      "achFee": "ACH 转账 0.8%（上限 5 美元）",
+      "internationalFee": "国际卡额外收取 1%",
+      "customPricing": "大批量定制定价",
+      "customPricingDescription": "交易量大或有独特需求的企业可以享受定制定价方案。请联系我们的销售团队讨论您的需求。",
+      "contactSalesButton": "联系销售获取定制定价"
+    }
+  },
+  "onlinePayments": {
+    "title": "在线支付",
+    "heroTitle": "随时随地接受在线支付",
+    "heroDescription": "Everpay 的在线支付解决方案让您的客户无论身在何处或使用何种设备，都能轻松支付。",
+    "featuresTitle": "在线支付的关键功能",
+    "feature1Title": "安全结账页面",
+    "feature1Description": "将安全、可定制的支付表单直接嵌入到您的网站或应用程序中。",
+    "feature2Title": "移动优化",
+    "feature2Description": "确保在任何移动设备上都能获得流畅的支付体验。",
+    "feature3Title": "欺诈保护",
+    "feature3Description": "用于检测和预防在线欺诈交易的高级工具。",
+    "feature4Title": "全球支付方式",
+    "feature4Description": "支持全球范围内的信用卡、数字钱包和本地支付选项。",
+    "ctaTitle": "准备好提升您的在线销售额了吗？",
+    "ctaDescription": "立即开始使用 Everpay 接受在线支付。",
+    "ctaButton": "立即开始"
+  },
+  "commerce": {
+    "title": "商业解决方案",
+    "heroTitle": "现代企业的统一商务",
+    "heroDescription": "Everpay 的商务解决方案将在线和面对面支付、库存和客户数据整合在一起，提供真正统一的体验。",
+    "featuresTitle": "我们商务平台的功能",
+    "feature1Title": "集成 POS",
+    "feature1Description": "将您的在线商店与您的实体零售店无缝连接。",
+    "feature2Title": "库存管理",
+    "feature2Description": "实时跟踪所有销售渠道的产品。",
+    "feature3Title": "客户资料",
+    "feature3Description": "全面了解您的客户、他们的购买历史和偏好。",
+    "feature4Title": "报告和分析",
+    "feature4Description": "访问全面的报告以做出明智的业务决策。",
+    "ctaTitle": "通过统一商务改变您的业务。",
+    "ctaDescription": "了解 Everpay 如何简化您的运营。",
+    "ctaButton": "了解更多"
+  },
+  "fraudPrevention": {
+    "title": "欺诈预防",
+    "heroTitle": "保护您的业务免受欺诈",
+    "heroDescription": "Everpay 的高级欺诈预防工具利用机器学习和实时分析来最大程度地降低风险并最大化合法交易。",
+    "featuresTitle": "我们的欺诈预防能力",
+    "feature1Title": "机器学习模型",
+    "feature1Description": "根据行为模式自动检测并阻止可疑交易。",
+    "feature2Title": "可定制规则",
+    "feature2Description": "设置您自己的规则和阈值以标记高风险交易。",
+    "feature3Title": "退单保护",
+    "feature3Description": "通过我们的争议管理工具减少退单和相关成本。",
+    "feature4Title": "设备指纹识别",
+    "feature4Description": "通过分析设备特征来识别和阻止欺诈者。",
+    "ctaTitle": "使用 Everpay 的欺诈预防功能保护您的收入。",
+    "ctaDescription": "保护您的业务免受不断变化的威胁。",
+    "ctaButton": "请求演示"
+  },
+  "cardIssuing": {
+    "title": "发卡",
+    "heroTitle": "使用 Everpay 发行您自己的卡片",
+    "heroDescription": "使用 Everpay 的发卡平台，以编程方式创建、管理和分发实体卡和虚拟卡。",
+    "featuresTitle": "发卡的关键功能",
+    "feature1Title": "可定制卡片",
+    "feature1Description": "设计带有您品牌的卡片，设置消费限额并控制使用。",
+    "feature2Title": "实时控制",
+    "feature2Description": "根据您的业务逻辑实时批准或拒绝交易。",
+    "feature3Title": "虚拟和实体卡",
+    "feature3Description": "发行用于各种用例的卡片，从员工费用到客户奖励。",
+    "feature4Title": "详细报告",
+    "feature4Description": "通过全面的报告跟踪卡片使用情况、支出和余额。"
+  },
+  "posSystems": {
+    "title": "POS系统",
+    "heroTitle": "现代 POS 系统，实现无缝零售",
+    "heroDescription": "Everpay 的销售点 (POS) 系统专为现代零售设计，提供快速、安全和集成的支付处理。",
+    "featuresTitle": "我们 POS 解决方案的功能",
+    "feature1Title": "接受所有支付",
+    "feature1Description": "处理信用卡、借记卡、移动支付等。",
+    "feature2Title": "库存同步",
+    "feature2Description": "自动更新在线和店内渠道的库存。",
+    "feature3Title": "客户管理",
+    "feature3Description": "建立客户资料并跟踪购买历史，以提供个性化服务。",
+    "feature4Title": "报告和分析",
+    "feature4Description": "深入了解销售业绩和客户行为。"
+  },
+  "documentation": {
+    "title": "文档",
+    "heroTitle": "开发者文档",
+    "heroDescription": "访问全面的指南、API 参考和 SDK，将 Everpay 集成到您的应用程序中。",
+    "sections": [
+      {
+        "title": "入门",
+        "description": "了解如何设置您的 Everpay 账户并进行您的第一个 API 调用。",
+        "link": "/docs/getting-started"
+      },
+      {
+        "title": "API 参考",
+        "description": "Everpay 所有 API 端点和资源的详细文档。",
+        "link": "/api"
+      },
+      {
+        "title": "SDK 和库",
+        "description": "探索我们针对各种编程语言的官方 SDK。",
+        "link": "/docs/sdks"
+      },
+      {
+        "title": "Webhooks",
+        "description": "了解如何使用 Webhooks 接收实时通知。",
+        "link": "/docs/webhooks"
+      },
+      {
+        "title": "测试",
+        "description": "了解如何在沙盒和生产环境中测试您的集成。",
+        "link": "/docs/testing"
+      }
+    ]
+  },
+  "helpCenter": {
+    "title": "帮助中心",
+    "heroTitle": "我们如何帮助您？",
+    "heroDescription": "查找常见问题的答案，解决问题，并获得 Everpay 团队的支持。",
+    "searchPlaceholder": "搜索文章...",
+    "categories": [
+      {
+        "title": "入门",
+        "description": "新用户和账户设置指南。",
+        "link": "/help/getting-started"
+      },
+      {
+        "title": "支付和交易",
+        "description": "有关处理支付、退款和争议的信息。",
+        "link": "/help/payments"
+      },
+      {
+        "title": "账户管理",
+        "description": "管理您的账户设置、用户和账单。",
+        "link": "/help/account"
+      },
+      {
+        "title": "集成",
+        "description": "将 Everpay 与您的电子商务平台和应用程序连接。",
+        "link": "/help/integrations"
+      },
+      {
+        "title": "安全和合规性",
+        "description": "了解我们的安全措施和合规标准。",
+        "link": "/help/security"
+      }
+    ],
+    "contactSupport": "找不到您要找的内容？联系我们的支持团队。",
+    "contactButton": "联系支持"
+  },
+  "aboutUs": {
+    "title": "关于我们",
+    "heroTitle": "我们的使命",
+    "heroDescription": "在 Everpay，我们相信通过无缝安全的支付解决方案赋能企业。我们的使命是为互联网构建金融基础设施。",
+    "ourStoryTitle": "我们的故事",
+    "ourStoryDescription": "Everpay 成立于 20XX 年，最初的愿景是简化在线支付。我们已发展成为全球领导者，为全球数百万企业提供服务。",
+    "valuesTitle": "我们的价值观",
+    "value1Title": "以客户为中心",
+    "value1Description": "我们优先考虑客户的成功，并努力超越他们的期望。",
+    "value2Title": "创新",
+    "value2Description": "我们不断创新，提供尖端的支付技术。",
+    "value3Title": "诚信",
+    "value3Description": "我们以透明、诚实和道德规范运营。",
+    "value4Title": "全球影响力",
+    "value4Description": "我们的目标是对全球企业和经济产生积极影响。",
+    "teamTitle": "认识我们的团队",
+    "teamDescription": "我们多元化的专家团队致力于构建支付的未来。",
+    "ctaTitle": "加入我们的旅程",
+    "ctaDescription": "探索职业机会，成为 Everpay 团队的一员。",
+    "ctaButton": "查看职业"
+  },
+  "careers": {
+    "title": "职业",
+    "heroTitle": "加入 Everpay 团队",
+    "heroDescription": "我们正在构建支付的未来，我们正在寻找有才华的人加入我们。探索我们的空缺职位，与 Everpay 一起发展您的职业生涯。",
+    "whyJoinTitle": "为什么加入 Everpay？",
+    "reason1Title": "有影响力的工作",
+    "reason1Description": "为全球数百万企业赋能的平台做出贡献。",
+    "reason2Title": "成长机会",
+    "reason2Description": "获得持续学习和职业发展计划。",
+    "reason3Title": "包容性文化",
+    "reason3Description": "在多元化和支持性的环境中工作，您的想法受到重视。",
+    "reason4Title": "有竞争力的福利",
+    "reason4Description": "享受全面的健康、福利和财务福利。",
+    "openPositionsTitle": "空缺职位",
+    "openPositionsDescription": "浏览我们各个部门的当前招聘信息。",
+    "departments": [
+      { "name": "工程", "count": 15 },
+      { "name": "产品", "count": 8 },
+      { "name": "销售", "count": 12 },
+      { "name": "市场", "count": 6 },
+      { "name": "运营", "count": 10 }
+    ],
+    "viewAllJobs": "查看所有职位",
+    "ctaTitle": "准备好产生影响了吗？",
+    "ctaDescription": "立即申请 Everpay 的职位。",
+    "ctaButton": "立即申请"
+  },
+  "contact": {
+    "title": "联系我们",
+    "heroTitle": "联系我们",
+    "heroDescription": "有疑问或需要支持？请联系我们的团队，我们将很乐意为您提供帮助。",
+    "contactOptionsTitle": "联系方式",
+    "salesTitle": "销售咨询",
+    "salesDescription": "对 Everpay 感兴趣？我们的销售团队可以帮助您。",
+    "salesEmail": "sales@everpay.com",
+    "salesPhone": "+1 (888) 579-5668",
+    "supportTitle": "客户支持",
+    "supportDescription": "需要现有 Everpay 账户的帮助？请访问我们的帮助中心或联系支持。",
+    "supportEmail": "support@everpay.com",
+    "supportPhone": "+1 (888) 579-5669",
+    "generalInquiriesTitle": "一般咨询",
+    "generalInquiriesDescription": "对于所有其他问题，请使用以下表格或给我们发送电子邮件。",
+    "generalEmail": "info@everpay.com",
+    "formTitle": "给我们留言",
+    "nameLabel": "姓名",
+    "emailLabel": "电子邮件",
+    "subjectLabel": "主题",
+    "messageLabel": "消息",
+    "submitButton": "发送消息",
+    "addressTitle": "我们的办公室",
+    "addressLine1": "123 Payment Gateway",
+    "addressLine2": "Suite 400",
+    "addressLine3": "Fintech City, CA 90210"
+  },
+  "partners": {
+    "title": "合作伙伴",
+    "heroTitle": "与 Everpay 合作",
+    "heroDescription": "加入 Everpay 合作伙伴计划，通过向您的客户提供我们领先的支付解决方案来发展您的业务。",
+    "whyPartnerTitle": "为什么选择合作？",
+    "reason1Title": "扩展您的产品",
+    "reason1Description": "为您的客户提供全面的支付解决方案。",
+    "reason2Title": "收入分成",
+    "reason2Description": "从推荐的业务中赚取有竞争力的佣金。",
+    "reason3Title": "专属支持",
+    "reason3Description": "从我们的合作伙伴团队获得专属支持和资源。",
+    "reason4Title": "营销和销售资源",
+    "reason4Description": "访问联合营销材料和销售赋能工具。",
+    "partnerTypesTitle": "我们的合作伙伴类型",
+    "type1Title": "推荐合作伙伴",
+    "type1Description": "将业务推荐给 Everpay 并赚取佣金。",
+    "type2Title": "集成合作伙伴",
+    "type2Description": "将 Everpay 集成到您的平台或软件中。",
+    "type3Title": "经销商合作伙伴",
+    "type3Description": "直接向您的客户销售 Everpay 解决方案。",
+    "ctaTitle": "准备好共同成长了吗？",
+    "ctaDescription": "立即申请成为 Everpay 合作伙伴。",
+    "ctaButton": "立即申请"
+  },
+  "privacyPolicy": {
+    "title": "隐私政策",
+    "heroTitle": "隐私政策",
+    "heroDescription": "您的隐私对我们很重要。本政策解释了我们如何收集、使用和保护您的个人信息。",
+    "sections": [
+      {
+        "title": "我们收集的信息",
+        "content": "我们收集您直接提供给我们的信息，例如您创建账户、进行购买或联系我们时。这可能包括您的姓名、电子邮件地址、支付信息和其他详细信息。当您使用我们的服务时，我们还会自动收集信息，例如 IP 地址、设备信息和使用数据。"
+      },
+      {
+        "title": "我们如何使用您的信息",
+        "content": "我们使用收集到的信息来提供、维护和改进我们的服务，处理交易，与您沟通，个性化您的体验，以及用于安全和欺诈预防。在需要您同意的情况下，我们也可能将您的信息用于营销目的。"
+      },
+      {
+        "title": "我们如何共享您的信息",
+        "content": "我们可能会与代表我们提供服务的第三方服务提供商共享您的信息，例如支付处理商、分析提供商和营销合作伙伴。如果法律要求或为了保护我们的权利，我们也可能与执法部门或其他政府机构共享信息。"
+      },
+      {
+        "title": "您的选择",
+        "content": "您对您的个人信息拥有某些选择，例如访问、更新或删除您的数据。您也可以选择不接收我们的促销通信。请注意，某些信息可能会出于法律或业务目的而保留。"
+      },
+      {
+        "title": "安全",
+        "content": "我们实施合理的安全措施来保护您的信息免受未经授权的访问、使用或披露。但是，互联网上的任何传输方法或电子存储都不是 100% 安全的。"
+      },
+      {
+        "title": "本政策的变更",
+        "content": "我们可能会不时更新本隐私政策。我们将通过在此页面上发布新政策来通知您任何更改。建议您定期查看本隐私政策以了解任何更改。"
+      }
+    ]
+  },
+  "termsOfService": {
+    "title": "服务条款",
+    "heroTitle": "服务条款",
+    "heroDescription": "这些条款约束您对 Everpay 服务的使用。使用我们的服务即表示您同意这些条款。",
+    "sections": [
+      {
+        "title": "接受条款",
+        "content": "通过访问或使用 Everpay 提供的服务，即表示您同意受本服务条款和所有引用条款的约束。如果您不同意所有这些条款，请勿使用我们的服务。"
+      },
+      {
+        "title": "资格",
+        "content": "您必须年满 18 岁才能使用我们的服务。通过使用我们的服务，您声明并保证您符合此年龄要求并具有签订这些条款的法律能力。"
+      },
+      {
+        "title": "账户注册",
+        "content": "要访问我们服务的某些功能，您可能需要注册一个账户。您同意在注册过程中提供准确、最新和完整的信息，并更新此类信息以保持其准确、最新和完整。"
+      },
+      {
+        "title": "用户行为",
+        "content": "您同意仅将我们的服务用于合法目的，并且不以侵犯他人权利、限制或禁止他人使用和享受服务的方式使用。禁止的行为包括骚扰或给任何其他用户造成困扰或不便，传输淫秽或冒犯性内容，或扰乱我们服务内对话的正常流程。"
+      },
+      {
+        "title": "费用和支付",
+        "content": "您同意支付与您使用服务相关的所有费用和收费，如我们的定价页面所述或另有约定。除非另有说明，所有费用均不予退还。"
+      },
+      {
+        "title": "知识产权",
+        "content": "我们服务上提供的所有内容和材料，包括但不限于文本、图形、网站名称、代码、图像和徽标，均为 Everpay 的知识产权，并受适用的版权和商标法保护。"
+      },
+      {
+        "title": "终止",
+        "content": "我们可能立即终止或暂停您对我们服务的访问，恕不另行通知或承担责任，原因不限，包括但不限于您违反服务条款。"
+      },
+      {
+        "title": "免责声明",
+        "content": "我们的服务按“原样”和“可用”提供，不提供任何明示或暗示的保证，包括但不限于适销性、特定用途适用性或不侵权的暗示保证。"
+      },
+      {
+        "title": "责任限制",
+        "content": "在任何情况下，Everpay 及其董事、员工、合作伙伴、代理、供应商或关联公司均不对任何间接、偶然、特殊、后果性或惩罚性损害负责，包括但不限于利润损失、数据、使用、商誉或其他无形损失，这些损失是由于 (i) 您访问或使用或无法访问或使用服务；(ii) 任何第三方在服务上的行为或内容；(iii) 从服务获得的任何内容；以及 (iv) 未经授权访问、使用或更改您的传输或内容，无论是基于保证、合同、侵权（包括疏忽）或任何其他法律理论，无论我们是否已被告知此类损害的可能性，即使此处规定的补救措施被发现未能达到其基本目的。"
+      },
+      {
+        "title": "管辖法律",
+        "content": "这些条款应受 [您的国家/州] 法律管辖并据其解释，不考虑其冲突法规定。"
+      }
+    ]
+  },
+  "cookiePolicy": {
+    "title": "Cookie政策",
+    "heroTitle": "Cookie政策",
+    "heroDescription": "本 Cookie 政策解释了什么是 Cookie、我们如何使用它们以及您对 Cookie 的选择。",
+    "sections": [
+      {
+        "title": "什么是 Cookie？",
+        "content": "Cookie 是您访问的网站通过您的网络浏览器发送的小段文本。Cookie 文件存储在您的网络浏览器中，允许服务或第三方识别您，使您的下次访问更轻松，并使服务对您更有用。"
+      },
+      {
+        "title": "我们如何使用 Cookie",
+        "content": "当您使用和访问服务时，我们可能会在您的网络浏览器中放置一些 Cookie 文件。我们使用 Cookie 的目的是：启用服务的某些功能，提供分析，存储您的偏好，启用广告投放，包括行为广告。"
+      },
+      {
+        "title": "第三方 Cookie",
+        "content": "除了我们自己的 Cookie，我们还可能使用各种第三方 Cookie 来报告服务的使用统计数据，在服务上和通过服务投放广告等。"
+      },
+      {
+        "title": "您对 Cookie 有哪些选择？",
+        "content": "如果您想删除 Cookie 或指示您的网络浏览器删除或拒绝 Cookie，请访问您的网络浏览器的帮助页面。但是请注意，如果您删除 Cookie 或拒绝接受它们，您可能无法使用我们提供的所有功能，您可能无法存储您的偏好，并且我们的一些页面可能无法正常显示。"
+      }
+    ]
+  },
+  "solutions": {
+    "business": {
+      "title": "商业解决方案",
+      "heroTitle": "为您的业务量身定制的支付解决方案",
+      "heroDescription": "Everpay 提供一系列灵活的支付解决方案，旨在满足各行业企业的独特需求。",
+      "featuresTitle": "商业关键功能",
+      "feature1Title": "可定制集成",
+      "feature1Description": "将 Everpay 无缝集成到您现有的业务系统和工作流程中。",
+      "feature2Title": "可扩展基础设施",
+      "feature2Description": "我们的平台随您的业务扩展，处理任何交易量。",
+      "feature3Title": "专属支持",
+      "feature3Description": "从我们的支付专家团队获得个性化支持。",
+      "feature4Title": "全球支付接受",
+      "feature4Description": "支持多币种，接受来自全球客户的支付。",
+      "ctaTitle": "准备好优化您的业务支付了吗？",
+      "ctaDescription": "了解 Everpay 如何简化您的财务运营。",
+      "ctaButton": "获取定制报价"
+    },
+    "ecommerce": {
+      "title": "电子商务解决方案",
+      "heroTitle": "通过无缝支付提升您的在线销售额",
+      "heroDescription": "Everpay 的电子商务解决方案提供您在线接受支付所需的一切，安全高效，从而提高转化率。",
+      "featuresTitle": "电子商务特定功能",
+      "feature1Title": "优化结账流程",
+      "feature1Description": "通过快速、直观且移动友好的结账体验减少购物车放弃率。",
+      "feature2Title": "订阅管理",
+      "feature2Description": "轻松管理基于订阅的业务的循环支付。",
+      "feature3Title": "在线商店欺诈预防",
+      "feature3Description": "使用高级检测工具保护您的电子商务业务免受在线欺诈。",
+      "feature4Title": "与流行平台集成",
+      "feature4Description": "与 Shopify、WooCommerce、Magento 等无缝连接。",
+      "ctaTitle": "改变您的在线商店支付体验。",
+      "ctaDescription": "立即开始使用 Everpay 的电子商务解决方案销售更多产品。",
+      "ctaButton": "了解更多"
+    },
+    "marketplace": {
+      "title": "市场解决方案",
+      "heroTitle": "简化您的市场支付",
+      "heroDescription": "Everpay 的市场解决方案处理复杂的支付流程，使您能够轻松管理买家、卖家和您的平台之间的支付。",
+      "featuresTitle": "市场特定功能",
+      "feature1Title": "分账支付",
+      "feature1Description": "在多个供应商和您的平台之间自动分账。",
+      "feature2Title": "入驻和验证",
+      "feature2Description": "简化新卖家的入驻和验证流程。",
+      "feature3Title": "支付管理",
+      "feature3Description": "以多种货币自动向您的供应商支付。",
+      "feature4Title": "争议解决",
+      "feature4Description": "帮助管理和解决买家和卖家之间争议的工具。",
+      "ctaTitle": "使用 Everpay 建立一个蓬勃发展的市场。",
+      "ctaDescription": "简化您的支付操作并专注于增长。",
+      "ctaButton": "请求演示"
+    },
+    "retail": {
+      "title": "零售解决方案",
+      "heroTitle": "现代零售业务支付解决方案",
+      "heroDescription": "Everpay 的零售解决方案为您的实体店提供快速、安全和集成的支付处理，提升客户体验。",
+      "featuresTitle": "零售特定功能",
+      "feature1Title": "集成 POS",
+      "feature1Description": "将您的店内支付与您的库存和客户数据连接。",
+      "feature2Title": "非接触式支付",
+      "feature2Description": "接受刷卡支付、移动钱包和其他现代支付方式。",
+      "feature3Title": "离线模式",
+      "feature3Description": "即使您的互联网连接中断，也能继续接受支付。",
+      "feature4Title": "客户忠诚度计划",
+      "feature4Description": "与忠诚度计划集成，奖励您的客户。",
+      "ctaTitle": "提升您的店内支付体验。",
+      "ctaDescription": "了解 Everpay 的全面零售解决方案。",
+      "ctaButton": "获取报价"
+    }
   }
 }
