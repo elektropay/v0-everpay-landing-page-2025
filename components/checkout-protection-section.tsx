@@ -1,59 +1,57 @@
-import { Shield, Lock, CheckCircle } from "lucide-react"
 import Image from "next/image"
-
-const securityFeatures = [
-  {
-    icon: Shield,
-    title: "Fraud prevention",
-    description: "Machine learning models trained on billions of data points help detect and prevent fraud.",
-  },
-  {
-    icon: Lock,
-    title: "Data security",
-    description: "Your data is encrypted and stored securely with bank-level security standards.",
-  },
-  {
-    icon: CheckCircle,
-    title: "Compliance",
-    description: "We're certified to the highest industry standards including PCI DSS Level 1.",
-  },
-]
 
 export function CheckoutProtectionSection() {
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Designed to increase conversion and reduce fraud</h2>
-            <p className="text-gray-600 mb-8">
-              Our machine learning models train on billions of data points and help increase revenue across conversion,
-              fraud, and revenue recovery.
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <div className="inline-block rounded-lg bg-gray-200 px-3 py-1 text-sm">Security & Compliance</div>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              Secure your checkout, protect your business
+            </h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              Everpay provides robust security features and compliance tools to keep your transactions safe and your
+              business protected.
             </p>
-            <div className="space-y-6">
-              {securityFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="h-12 w-12 rounded-lg bg-[#4CAF50]/10 flex items-center justify-center">
-                      <feature.icon className="h-6 w-6 text-[#4CAF50]" />
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold mb-2">{feature.title}</h3>
-                    <p className="text-gray-600">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1563986768494-4dee9223994e?auto=format&fit=crop&q=80"
-              alt="Security Dashboard"
-              fill
-              className="object-cover"
-              unoptimized
-            />
+        </div>
+        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <Image
+            alt="Security"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+            height="310"
+            src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxzZWN1cmUlMjBjaGVja291dHxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
+            width="550"
+            unoptimized
+          />
+          <div className="flex flex-col justify-center space-y-4">
+            <ul className="grid gap-6">
+              <li>
+                <div className="grid gap-1">
+                  <h3 className="text-xl font-bold">Advanced Fraud Prevention</h3>
+                  <p className="text-gray-500">
+                    Leverage machine learning to detect and prevent fraudulent transactions in real-time.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className="grid gap-1">
+                  <h3 className="text-xl font-bold">PCI DSS Compliance</h3>
+                  <p className="text-gray-500">
+                    Ensure your business meets the highest industry standards for data security.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div className="grid gap-1">
+                  <h3 className="text-xl font-bold">Data Encryption</h3>
+                  <p className="text-gray-500">
+                    All sensitive data is encrypted at rest and in transit, protecting your customers' information.
+                  </p>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

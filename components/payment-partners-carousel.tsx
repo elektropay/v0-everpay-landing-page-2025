@@ -1,60 +1,44 @@
 "use client"
 
+import Image from "next/image"
+
 export function PaymentPartnersCarousel() {
   const partners = [
-    { name: "Visa", logo: "/images/visa.png" },
-    { name: "Mastercard", logo: "/images/mastercard.png" },
-    { name: "American Express", logo: "/images/amex.png" },
-    { name: "PayPal", logo: "/images/paypal.png" },
-    { name: "Apple Pay", logo: "/images/apple-pay.png" },
-    { name: "Google Pay", logo: "/images/google-pay.png" },
-    { name: "JCB", logo: "/images/jcb.png" },
-    { name: "Interac", logo: "/images/interac.png" },
+    { src: "/images/visa.png", alt: "Visa" },
+    { src: "/images/mastercard.png", alt: "Mastercard" },
+    { src: "/images/amex.png", alt: "American Express" },
+    { src: "/images/paypal.png", alt: "PayPal" },
+    { src: "/images/apple-pay.png", alt: "Apple Pay" },
+    { src: "/images/google-pay.png", alt: "Google Pay" },
+    { src: "/images/interac.png", alt: "Interac" },
+    { src: "/images/jcb.png", alt: "JCB" },
   ]
 
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 font-heading">
-            Trusted by leading payment networks
-          </h2>
-          <p className="text-lg text-gray-600 font-sans">Accept payments from all major cards and digital wallets</p>
-        </div>
-
-        <div className="relative overflow-hidden">
-          <div
-            className="flex space-x-12 animate-scroll"
-            style={{
-              width: "calc(200% + 3rem)",
-              animationDuration: "30s",
-            }}
-          >
-            {/* First set of logos */}
-            {partners.map((partner, index) => (
-              <div
-                key={`first-${index}`}
-                className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
-              >
-                <img
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={partner.name}
-                  className="max-w-24 max-h-10 object-contain"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {partners.map((partner, index) => (
-              <div
-                key={`second-${index}`}
-                className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
-              >
-                <img
-                  src={partner.logo || "/placeholder.svg"}
-                  alt={partner.name}
-                  className="max-w-24 max-h-10 object-contain"
-                  loading="lazy"
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
+      <div className="container px-4 md:px-6 text-center">
+        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4">
+          Trusted by leading businesses worldwide
+        </h2>
+        <p className="max-w-[700px] mx-auto text-gray-500 md:text-xl mb-12">
+          Everpay integrates with all major payment methods and platforms to ensure seamless transactions for your
+          customers.
+        </p>
+        <div className="relative w-full overflow-hidden py-4">
+          <div className="flex animate-carousel-slow">
+            {partners.concat(partners).map((partner, index) => (
+              <div key={index} className="flex-shrink-0 w-40 h-20 flex items-center justify-center mx-4">
+                <Image
+                  alt={partner.alt}
+                  className="object-contain max-h-full max-w-full"
+                  height="80"
+                  src={partner.src || "/placeholder.svg"}
+                  style={{
+                    aspectRatio: "160/80",
+                    objectFit: "contain",
+                  }}
+                  width="160"
+                  unoptimized
                 />
               </div>
             ))}

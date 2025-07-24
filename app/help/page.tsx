@@ -1,56 +1,88 @@
-import { Button } from "@/components/ui/button"
-import { MessageCircle, Phone, Mail, FileText } from "lucide-react"
+import Link from "next/link"
+import { SearchIcon } from "lucide-react"
+import { Input } from "@/components/ui/input"
 
 export default function HelpPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="bg-slate-900 text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">Help Center</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Get the support you need. Our help center has answers to common questions and multiple ways to get in
-                touch.
-              </p>
-              <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                Browse Articles
-              </Button>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Help Center</h1>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Find answers to your questions, guides, and support resources.
+                </p>
+              </div>
+              <div className="w-full max-w-md relative">
+                <Input className="w-full pl-10 rounded-full" placeholder="Search for articles..." type="search" />
+                <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-gray-500" />
+              </div>
             </div>
           </div>
         </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: FileText,
-                  title: "Knowledge Base",
-                  description: "Browse our comprehensive help articles",
-                },
-                {
-                  icon: MessageCircle,
-                  title: "Live Chat",
-                  description: "Chat with our support team",
-                },
-                {
-                  icon: Mail,
-                  title: "Email Support",
-                  description: "Send us an email for detailed help",
-                },
-                {
-                  icon: Phone,
-                  title: "Phone Support",
-                  description: "Call us for urgent issues",
-                },
-              ].map((option, index) => (
-                <div key={index} className="text-center p-6 border rounded-lg">
-                  <option.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{option.title}</h3>
-                  <p className="text-gray-600">{option.description}</p>
-                </div>
-              ))}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-2">Getting Started</h3>
+              <ul className="space-y-2 text-gray-500">
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    Account Setup
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    First Transaction
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    Dashboard Overview
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-2">Payments & Payouts</h3>
+              <ul className="space-y-2 text-gray-500">
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    Accepting Payments
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    Managing Payouts
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    Refunds & Disputes
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold mb-2">Integrations</h3>
+              <ul className="space-y-2 text-gray-500">
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    API Integration
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    E-commerce Platforms
+                  </Link>
+                </li>
+                <li>
+                  <Link className="hover:text-gray-900" href="#">
+                    POS Systems
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </section>

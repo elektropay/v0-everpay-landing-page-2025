@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import "./globals.css"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import { getDictionary } from "@/lib/i18n" // Import getDictionary
 
 export const metadata: Metadata = {
   title: "Everpay - Modern Payment Solutions",
@@ -10,11 +11,14 @@ export const metadata: Metadata = {
   generator: "v0.dev",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // Fetch the default (English) dictionary for the root layout
+  const dictionary = await getDictionary("en")
+
   return (
     <html lang="en">
       <head>
@@ -29,7 +33,7 @@ export default function RootLayout({
       <body className="font-sans">
         <SiteHeader />
         <main>{children}</main>
-        <SiteFooter />
+        <SiteFooter dictionary={dictionary} />
       </body>
     </html>
   )

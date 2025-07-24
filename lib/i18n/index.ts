@@ -1,4 +1,4 @@
-import type { Locale } from "./types"
+import type { Dictionary } from "./types"
 
 const dictionaries = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
@@ -8,4 +8,10 @@ const dictionaries = {
   zh: () => import("./dictionaries/zh.json").then((module) => module.default),
 }
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]()
+export const getDictionary = async (locale: string): Promise<Dictionary> => {
+  if (locale in dictionaries) {
+    return dictionaries[locale as keyof typeof dictionaries]()
+  }
+  // Fallback to English if the locale is not found
+  return dictionaries.en()
+}

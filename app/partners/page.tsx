@@ -1,199 +1,71 @@
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Users, Building, Globe } from "lucide-react"
-import Image from "next/image"
 import Link from "next/link"
-
-const partnerTypes = [
-  {
-    title: "Technology Partners",
-    description: "Integrate your solutions with our payment infrastructure",
-    icon: Globe,
-    benefits: ["Access to payment APIs", "Technical documentation", "Integration support", "Testing environment"],
-  },
-  {
-    title: "Solution Partners",
-    description: "Build and implement payment solutions for your clients",
-    icon: Building,
-    benefits: ["Partner portal access", "Revenue sharing", "Sales enablement", "Joint marketing"],
-  },
-  {
-    title: "Strategic Partners",
-    description: "Create innovative payment experiences together",
-    icon: Users,
-    benefits: ["Custom solutions", "Dedicated support", "Co-marketing opportunities", "Priority features"],
-  },
-]
-
-const featuredPartners = [
-  {
-    name: "Shopify",
-    type: "E-commerce",
-    description: "Integrated payment solutions for online stores",
-    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80",
-  },
-  {
-    name: "Salesforce",
-    type: "CRM",
-    description: "Seamless payment processing in CRM workflows",
-    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80",
-  },
-  {
-    name: "QuickBooks",
-    type: "Accounting",
-    description: "Automated payment reconciliation",
-    logo: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&q=80",
-  },
-]
+import Image from "next/image"
 
 export default function PartnersPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">Partner with Everpay</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Join our partner ecosystem to build innovative payment solutions and grow your business with
-                industry-leading payment technology.
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Partners</h1>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Collaborating with industry leaders to provide comprehensive solutions.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <Image
+                alt="Partner Logo"
+                className="mb-4"
+                height="80"
+                src="/placeholder.svg?height=80&width=160"
+                width="160"
+              />
+              <h3 className="text-xl font-bold mb-2">E-commerce Platform</h3>
+              <p className="text-gray-500 mb-4">
+                Seamless integration with leading e-commerce platforms for online businesses.
               </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
-                  Become a Partner
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white bg-transparent text-white hover:bg-white/10"
-                >
-                  Partner Directory
-                </Button>
-              </div>
+              <Link className="text-blue-600 hover:underline" href="#">
+                Visit Website
+              </Link>
             </div>
-          </div>
-        </section>
-
-        {/* Partner Types */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Partnership Programs</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {partnerTypes.map((type, index) => (
-                <div key={index} className="p-6 border rounded-lg bg-white shadow-sm">
-                  <type.icon className="h-12 w-12 text-[#4CAF50] mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{type.title}</h3>
-                  <p className="text-gray-600 mb-6">{type.description}</p>
-                  <ul className="space-y-3">
-                    {type.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#4CAF50]" />
-                        <span className="text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button variant="link" className="mt-6 p-0">
-                    Learn more <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </div>
-              ))}
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <Image
+                alt="Partner Logo"
+                className="mb-4"
+                height="80"
+                src="/placeholder.svg?height=80&width=160"
+                width="160"
+              />
+              <h3 className="text-xl font-bold mb-2">Financial Institutions</h3>
+              <p className="text-gray-500 mb-4">
+                Partnerships with banks and financial institutions for secure and reliable transactions.
+              </p>
+              <Link className="text-blue-600 hover:underline" href="#">
+                Visit Website
+              </Link>
             </div>
-          </div>
-        </section>
-
-        {/* Featured Partners */}
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Featured Partners</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              {featuredPartners.map((partner, index) => (
-                <Link
-                  key={index}
-                  href="#"
-                  className="block p-6 bg-white rounded-lg border transition-shadow hover:shadow-md"
-                >
-                  <div className="h-16 relative mb-4">
-                    <Image
-                      src={partner.logo || "/placeholder.svg"}
-                      alt={partner.name}
-                      fill
-                      className="object-contain"
-                      unoptimized
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="text-sm text-[#4CAF50] font-medium">{partner.type}</div>
-                    <h3 className="text-xl font-semibold">{partner.name}</h3>
-                    <p className="text-gray-600">{partner.description}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Why Partner with Everpay?</h2>
-                <div className="space-y-6">
-                  {[
-                    {
-                      title: "Market Reach",
-                      description: "Access millions of businesses worldwide through our platform.",
-                    },
-                    {
-                      title: "Technical Support",
-                      description: "Get dedicated integration support and technical resources.",
-                    },
-                    {
-                      title: "Revenue Growth",
-                      description: "Unlock new revenue streams with competitive revenue sharing.",
-                    },
-                    {
-                      title: "Innovation",
-                      description: "Build on cutting-edge payment technology and infrastructure.",
-                    },
-                  ].map((benefit, index) => (
-                    <div key={index} className="flex gap-4">
-                      <CheckCircle className="h-6 w-6 text-[#4CAF50] flex-shrink-0" />
-                      <div>
-                        <h3 className="font-semibold mb-1">{benefit.title}</h3>
-                        <p className="text-gray-600">{benefit.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?auto=format&fit=crop&q=80"
-                  alt="Partnership benefits"
-                  fill
-                  className="object-cover"
-                  unoptimized
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-6">Ready to Partner?</h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join our partner ecosystem and let's build the future of payments together.
-            </p>
-            <div className="flex justify-center gap-4">
-              <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
-                Apply Now
-              </Button>
-              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
-                Contact Partner Team
-              </Button>
+            <div className="bg-white p-6 rounded-lg shadow-md flex flex-col items-center text-center">
+              <Image
+                alt="Partner Logo"
+                className="mb-4"
+                height="80"
+                src="/placeholder.svg?height=80&width=160"
+                width="160"
+              />
+              <h3 className="text-xl font-bold mb-2">Technology Providers</h3>
+              <p className="text-gray-500 mb-4">
+                Collaborating with technology companies to enhance our payment solutions.
+              </p>
+              <Link className="text-blue-600 hover:underline" href="#">
+                Visit Website
+              </Link>
             </div>
           </div>
         </section>

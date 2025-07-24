@@ -1,63 +1,73 @@
-import { Button } from "@/components/ui/button"
-import { CheckCircle, CreditCard, Smartphone, Wifi } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { ShoppingBagIcon, ReceiptIcon, BarcodeIcon } from "lucide-react"
 
-export default function POSPage() {
+export default function PosPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="bg-slate-900 text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">POS Devices</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Modern point-of-sale solutions for in-person payments. Accept all payment types with our secure,
-                reliable POS devices.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                  Shop Devices
-                </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Request Demo
-                </Button>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Point-of-Sale (POS) Systems</h1>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Streamline your in-person sales with Everpay's intuitive and powerful POS solutions.
+                </p>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Features Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: CreditCard,
-                  title: "All Payment Types",
-                  description: "Accept cards, contactless, and mobile payments",
-                },
-                {
-                  icon: Wifi,
-                  title: "Always Connected",
-                  description: "WiFi, Ethernet, and cellular connectivity options",
-                },
-                {
-                  icon: Smartphone,
-                  title: "Smart Features",
-                  description: "Built-in receipt printing and inventory management",
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Secure & Reliable",
-                  description: "End-to-end encryption with tamper-resistant hardware",
-                },
-              ].map((feature, index) => (
-                <div key={index} className="text-center p-6">
-                  <feature.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
-                </div>
-              ))}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Accept Payments Anywhere</h2>
+                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our POS systems allow you to accept credit cards, debit cards, and mobile payments securely, whether
+                  you're in a retail store, at a pop-up event, or on the go.
+                </p>
+                <Link
+                  className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  href="#"
+                >
+                  Explore POS Devices
+                </Link>
+              </div>
+            </div>
+            <Image
+              alt="POS System"
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+              height="310"
+              src="/placeholder.svg?height=310&width=550"
+              width="550"
+            />
+          </div>
+        </section>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center text-center">
+                <ShoppingBagIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Inventory Management</h3>
+                <p className="text-gray-500">
+                  Track your products, manage stock levels, and streamline your sales process.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <ReceiptIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Reporting & Analytics</h3>
+                <p className="text-gray-500">
+                  Gain insights into your sales performance with detailed reports and analytics.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <BarcodeIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Customer Management</h3>
+                <p className="text-gray-500">
+                  Build customer profiles, track purchase history, and offer loyalty programs.
+                </p>
+              </div>
             </div>
           </div>
         </section>

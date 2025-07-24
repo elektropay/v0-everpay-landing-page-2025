@@ -1,184 +1,73 @@
-import { Button } from "@/components/ui/button"
-import { Shield, LineChart, Brain, CheckCircle } from "lucide-react"
+import Link from "next/link"
 import Image from "next/image"
-
-const fraudFeatures = [
-  {
-    title: "AI-Powered Detection",
-    description: "Machine learning algorithms that adapt to new fraud patterns in real-time",
-    icon: Brain,
-    features: ["Behavioral biometrics", "Pattern recognition", "Anomaly detection", "Risk scoring"],
-  },
-  {
-    title: "Real-time Monitoring",
-    description: "24/7 transaction monitoring with instant alerts and automated responses",
-    icon: LineChart,
-    features: [
-      "Live transaction screening",
-      "Instant notifications",
-      "Automated rules engine",
-      "Custom alert thresholds",
-    ],
-  },
-  {
-    title: "Advanced Authentication",
-    description: "Multi-layer authentication methods to verify legitimate users",
-    icon: Shield,
-    features: ["3D Secure 2.0", "Two-factor authentication", "Device fingerprinting", "IP intelligence"],
-  },
-]
-
-const stats = [
-  { value: "99.9%", label: "Fraud detection rate" },
-  { value: "<0.1%", label: "False positive rate" },
-  { value: "100ms", label: "Average response time" },
-  { value: "24/7", label: "Real-time monitoring" },
-]
+import { ShieldCheckIcon, LockIcon, BarChartIcon } from "lucide-react"
 
 export default function FraudPreventionPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
-        <section className="bg-slate-900 text-white py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">Fraud Prevention & Risk Management</h1>
-              <p className="text-xl text-gray-300 mb-8">
-                Protect your business with advanced fraud detection and prevention systems powered by machine learning.
-              </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                  Start Protection
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white bg-transparent text-white hover:bg-white/10"
-                >
-                  View Demo
-                </Button>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Fraud Prevention</h1>
+                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Protect your business from fraudulent transactions with Everpay's advanced security tools.
+                </p>
               </div>
             </div>
           </div>
         </section>
-
-        <section className="py-12 border-b">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-green-600 mb-2">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
-                </div>
-              ))}
+        <section className="w-full py-12 md:py-24 lg:py-32">
+          <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="flex flex-col justify-center space-y-4">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Real-time Fraud Detection</h2>
+                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                  Our machine learning models analyze every transaction in real-time to identify and block suspicious
+                  activity, minimizing your risk of chargebacks and financial losses.
+                </p>
+                <Link
+                  className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+                  href="#"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
+            <Image
+              alt="Fraud Detection"
+              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+              height="310"
+              src="https://images.unsplash.com/photo-1579621970795-87facc2f976d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxmcmF1ZCUyMGRldGVjdGlvbnxlbnwwfHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
+              width="550"
+              unoptimized
+            />
           </div>
         </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="space-y-20">
-              {fraudFeatures.map((feature, index) => (
-                <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
-                  <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                    <feature.icon className="h-12 w-12 text-green-600 mb-6" />
-                    <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
-                    <p className="text-gray-600 mb-6">{feature.description}</p>
-                    <ul className="space-y-3">
-                      {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center gap-2">
-                          <CheckCircle className="h-5 w-5 text-green-600" />
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className={`relative h-96 rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                    <Image
-                      src={`https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?auto=format&fit=crop&q=80`}
-                      alt={feature.title}
-                      fill
-                      className="object-cover"
-                      unoptimized
-                    />
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Intelligent Risk Scoring</h2>
-              <p className="text-gray-600">
-                Our advanced risk scoring engine analyzes hundreds of data points in real-time to accurately detect and
-                prevent fraud.
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "User Behavior Analysis",
-                  items: ["Device fingerprinting", "Typing patterns", "Navigation behavior", "Purchase history"],
-                },
-                {
-                  title: "Transaction Analysis",
-                  items: ["Velocity checks", "Amount patterns", "Geographic location", "Time of transaction"],
-                },
-                {
-                  title: "Network Analysis",
-                  items: ["IP reputation", "Proxy detection", "Device networks", "Account linkages"],
-                },
-              ].map((category, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
-                  <ul className="space-y-3">
-                    {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-gray-600">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20">
-          <div className="container mx-auto px-4">
-            <div className="bg-slate-900 rounded-2xl text-white p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <h2 className="text-3xl font-bold mb-4">Ready to protect your business?</h2>
-                  <p className="text-gray-300 mb-6">
-                    Start protecting your business with our advanced fraud prevention system today.
-                  </p>
-                  <div className="flex gap-4">
-                    <Button size="lg" className="bg-green-600 hover:bg-green-700">
-                      Get Started
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white bg-transparent text-white hover:bg-white/10"
-                    >
-                      Contact Sales
-                    </Button>
-                  </div>
-                </div>
-                <div className="relative h-72 rounded-lg overflow-hidden">
-                  <Image
-                    src="https://images.unsplash.com/photo-1563986768494-4dee9223994e?auto=format&fit=crop&q=80"
-                    alt="Fraud Prevention"
-                    fill
-                    className="object-cover"
-                    unoptimized
-                  />
-                </div>
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <div className="flex flex-col items-center text-center">
+                <ShieldCheckIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Chargeback Protection</h3>
+                <p className="text-gray-500">
+                  Reduce chargebacks with our intelligent dispute management tools and evidence submission.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <LockIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">PCI DSS Compliance</h3>
+                <p className="text-gray-500">
+                  Ensure your payment processing meets the highest industry security standards.
+                </p>
+              </div>
+              <div className="flex flex-col items-center text-center">
+                <BarChartIcon className="h-12 w-12 text-gray-900 mb-4" />
+                <h3 className="text-xl font-bold mb-2">Fraud Analytics</h3>
+                <p className="text-gray-500">
+                  Gain insights into fraud patterns and optimize your prevention strategies with detailed reports.
+                </p>
               </div>
             </div>
           </div>

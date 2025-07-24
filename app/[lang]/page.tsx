@@ -6,7 +6,7 @@ import { PaymentPartnersSection } from "@/components/payment-partners-section"
 import { PaymentPartnersCarousel } from "@/components/payment-partners-carousel"
 import { CheckoutProtectionSection } from "@/components/checkout-protection-section"
 import { BusinessTypesSection } from "@/components/business-types-section"
-import { CtaSection } from "@/components/cta-section"
+import { CTASection } from "@/components/cta-section" // Ensure this is imported as CTASection
 
 interface PageProps {
   params: {
@@ -26,7 +26,7 @@ export default async function LocalizedHomePage({ params }: PageProps) {
       <PaymentPartnersSection />
       <CheckoutProtectionSection />
       <BusinessTypesSection />
-      <CtaSection />
+      <CTASection />
     </div>
   )
 }

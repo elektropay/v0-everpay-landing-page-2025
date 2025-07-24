@@ -1,22 +1,48 @@
 {
-  "common": {
-    "getStarted": "开始使用",
-    "signIn": "登录",
-    "tryForFree": "免费试用",
-    "contactUs": "联系我们"
-  },
   "footer": {
-    "selectCountry": "选择您的国家",
-    "copyright": "© {year} Everpay Corp. 保留所有权利。",
-    "legal": {
-      "cookieSettings": "Cookie 设置",
-      "privacyPolicy": "隐私政策",
-      "termsOfService": "服务条款",
-      "security": "安全"
+    "solutions": {
+      "title": "解决方案",
+      "achPayments": "ACH支付",
+      "creditCardProcessing": "信用卡处理",
+      "digitalWallets": "数字钱包",
+      "recurringBilling": "循环计费",
+      "highRiskProcessing": "高风险处理",
+      "ecommerce": "电子商务",
+      "retail": "零售",
+      "healthcare": "医疗保健"
     },
-    "disclaimer": {
-      "banking": "银行服务由 Everpay 银行合作伙伴提供，FDIC 成员。Everpay 卡由 Everpay 银行合作伙伴根据 Visa U.S.A. Inc. 和 Mastercard International 的许可发行。",
-      "regulation": "Everpay 服务作为货币服务业务由 FinCEN 监管。Everpay 获得 PCI DSS 1 级认证，这是支付行业最高级别的安全认证。"
-    }
+    "products": {
+      "title": "产品",
+      "payments": "支付",
+      "onlinePayments": "在线支付",
+      "commerce": "商务",
+      "fraudPrevention": "欺诈预防",
+      "cardAcquiring": "银行卡收单",
+      "paymentGateway": "支付网关"
+    },
+    "resources": {
+      "title": "资源",
+      "blog": "博客",
+      "documentation": "文档",
+      "apiReference": "API参考",
+      "helpCenter": "帮助中心",
+      "caseStudies": "案例研究",
+      "guides": "指南"
+    },
+    "company": {
+      "title": "公司",
+      "aboutUs": "关于我们",
+      "careers": "职业",
+      "contact": "联系方式",
+      "partners": "合作伙伴",
+      "press": "新闻",
+      "investors": "投资者"
+    },
+    "copyright": "© {year} Everpay Corp. 保留所有权利。",
+    "cookieSettings": "Cookie设置",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "security": "安全",
+    "bankingDisclaimer": "银行服务由Everpay银行合作伙伴（FDIC成员）提供。Everpay卡由Everpay银行合作伙伴根据Visa U.S.A. Inc.和Mastercard International的许可发行。"
   }
 }

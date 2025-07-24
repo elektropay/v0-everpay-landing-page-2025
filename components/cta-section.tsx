@@ -1,36 +1,30 @@
-import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
-export function CtaSection() {
+export function CTASection() {
   return (
-    <section className="bg-[#4CAF50] py-16">
-      <div className="container mx-auto px-4 text-center">
-        <div className="max-w-3xl mx-auto space-y-6">
-          <h2 className="text-3xl lg:text-4xl font-bold text-white font-heading">Ready to get started?</h2>
-          <p className="text-xl text-white/90 font-sans">
-            Join millions of businesses that trust Everpay to handle their payments. Get started today and see why we're
-            the preferred choice for online payments.
+    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+      <div className="container px-4 md:px-6 text-center">
+        <div className="max-w-3xl mx-auto space-y-4">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Ready to get started?</h2>
+          <p className="text-gray-500 md:text-xl">
+            Join millions of businesses worldwide that trust Everpay for their payment needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-white text-[#4CAF50] hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-medium font-sans"
+          <div className="flex flex-col gap-2 min-[400px]:flex-row justify-center">
+            <Link
+              className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href="#"
             >
-              Create account
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white/10 px-8 py-3 rounded-full text-lg font-medium font-sans bg-transparent"
+              Sign up now
+            </Link>
+            <Link
+              className="inline-flex h-10 items-center justify-center rounded-full border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
+              href="#"
             >
               Contact sales
-            </Button>
+            </Link>
           </div>
         </div>
       </div>
     </section>
   )
 }
-
-// Export both named and default for compatibility
-export { CtaSection as CTASection }
-export default CtaSection
