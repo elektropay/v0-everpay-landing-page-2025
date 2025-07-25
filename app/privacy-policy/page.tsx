@@ -1,10 +1,8 @@
 import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/types"
+import type { Locale } from "@/lib/i18n/config"
 
 interface PrivacyPolicyPageProps {
-  params: {
-    lang: Locale
-  }
+  params: { lang: Locale }
 }
 
 export default async function PrivacyPolicyPage({ params: { lang } }: PrivacyPolicyPageProps) {
@@ -12,106 +10,261 @@ export default async function PrivacyPolicyPage({ params: { lang } }: PrivacyPol
 
   return (
     <div className="container mx-auto px-4 py-12 md:px-6 lg:py-24">
-      <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">{dict.footer.privacyPolicy}</h1>
-      <div className="prose mt-8 max-w-none dark:prose-invert">
+      <h1 className="text-4xl font-bold mb-8">{dict.footer.privacyPolicy}</h1>
+      <div className="prose dark:prose-invert max-w-none">
         <p>
-          This Privacy Policy describes how Everpay Inc. ("Company", "we", "us", and "our") collects, uses, and
-          discloses your personal information when you visit, use, or purchase from everpay.com ("Website").
+          {
+            "This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You."
+          }
         </p>
-        <h2>Information We Collect</h2>
+        <h2>{"Interpretation and Definitions"}</h2>
+        <h3>{"Interpretation"}</h3>
         <p>
-          We collect personal information you voluntarily provide to us when you register on the Website, express an
-          interest in obtaining information about us or our products and services, when you participate in activities on
-          the Website (such as posting messages in our forums or entering competitions), or otherwise when you contact
-          us.
+          {
+            "The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural."
+          }
         </p>
-        <p>
-          The personal information that we collect depends on the context of your interactions with us and the Website,
-          the choices you make and the products and features you use. The personal information we collect may include
-          the following:
-        </p>
-        <ul>
-          <li>Names</li>
-          <li>Email addresses</li>
-          <li>Phone numbers</li>
-          <li>Mailing addresses</li>
-          <li>Billing addresses</li>
-          <li>Payment information (e.g., credit card numbers)</li>
-        </ul>
-        <h2>How We Use Your Information</h2>
-        <p>
-          We use personal information collected via our Website for a variety of business purposes described below. We
-          process your personal information for these purposes in reliance on our legitimate business interests, in
-          order to enter into or perform a contract with you, with your consent, and/or for compliance with our legal
-          obligations. We indicate the specific processing grounds we rely on next to each purpose listed below.
-        </p>
-        <ul>
-          <li>To facilitate account creation and logon process.</li>
-          <li>To post testimonials with your consent.</li>
-          <li>To send you marketing and promotional communications.</li>
-          <li>To send administrative information to you.</li>
-          <li>To fulfill and manage your orders.</li>
-          <li>To deliver targeted advertising to you.</li>
-          <li>To request feedback and to contact you about your experience with our Website.</li>
-          <li>To protect our Website.</li>
-          <li>To enable user-to-user communications.</li>
-          <li>To enforce our terms, conditions and policies.</li>
-          <li>To respond to legal requests and prevent harm.</li>
-        </ul>
-        <h2>Disclosure of Your Information</h2>
-        <p>We may process or share data based on the following legal basis:</p>
+        <h3>{"Definitions"}</h3>
         <ul>
           <li>
-            <strong>Consent:</strong> We may process your data if you have given us specific consent to use your
-            personal information for a specific purpose.
+            <strong>{"Account"}</strong>{" "}
+            {"means a unique account created for You to access our Service or parts of our Service."}
           </li>
           <li>
-            <strong>Legitimate Interests:</strong> We may process your data when it is reasonably necessary to achieve
-            our legitimate business interests.
+            <strong>{"Company"}</strong>{" "}
+            {'(referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Everpay.'}
           </li>
           <li>
-            <strong>Performance of a Contract:</strong> Where we have entered into a contract with you, we may process
-            your personal information to fulfill the terms of our contract.
+            <strong>{"Cookies"}</strong>{" "}
+            {
+              "are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website."
+            }
           </li>
           <li>
-            <strong>Legal Obligations:</strong> We may disclose your information where we are legally required to do so
-            in order to comply with applicable law, governmental requests, a judicial proceeding, court order, or legal
-            process, such as in response to a court order or a subpoena (including in response to public authorities to
-            meet national security or law enforcement requirements).
+            <strong>{"Country"}</strong> {"refers to: United States"}
           </li>
           <li>
-            <strong>Vital Interests:</strong> We may disclose your information where we believe it is necessary to
-            investigate, prevent, or take action regarding potential violations of our policies, suspected fraud,
-            situations involving potential threats to the safety of any person and illegal activities, or as evidence in
-            litigation in which we are involved.
+            <strong>{"Device"}</strong>{" "}
+            {"means any device that can access the Service such as a computer, a cellphone or a digital tablet."}
+          </li>
+          <li>
+            <strong>{"Personal Data"}</strong>{" "}
+            {"is any information that relates to an identified or identifiable individual."}
+          </li>
+          <li>
+            <strong>{"Service"}</strong> {"refers to the Website."}
+          </li>
+          <li>
+            <strong>{"Service Provider"}</strong>{" "}
+            {
+              "means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used."
+            }
+          </li>
+          <li>
+            <strong>{"Usage Data"}</strong>{" "}
+            {
+              "refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit)."
+            }
+          </li>
+          <li>
+            <strong>{"Website"}</strong> {"refers to Everpay, accessible from https://www.everpay.com"}
+          </li>
+          <li>
+            <strong>{"You"}</strong>{" "}
+            {
+              "means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable."
+            }
           </li>
         </ul>
-        <h2>Security of Your Information</h2>
+        <h2>{"Collecting and Using Your Personal Data"}</h2>
+        <h3>{"Types of Data Collected"}</h3>
+        <h4>{"Personal Data"}</h4>
         <p>
-          We use administrative, technical, and physical security measures to help protect your personal information.
-          While we have taken reasonable steps to secure the personal information you provide to us, please be aware
-          that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission
-          can be guaranteed against any interception or other type of misuse.
+          {
+            "While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:"
+          }
         </p>
-        <h2>Your Privacy Rights</h2>
+        <ul>
+          <li>{"Email address"}</li>
+          <li>{"First name and last name"}</li>
+          <li>{"Phone number"}</li>
+          <li>{"Address, State, Province, ZIP/Postal Code, City"}</li>
+          <li>{"Usage Data"}</li>
+        </ul>
+        <h4>{"Usage Data"}</h4>
+        <p>{"Usage Data is collected automatically when using the Service."}</p>
         <p>
-          In some regions (like the European Economic Area), you have certain rights under applicable data protection
-          laws. These may include the right (i) to request access and obtain a copy of your personal information, (ii)
-          to request rectification or erasure; (iii) to restrict the processing of your personal information; and (iv)
-          if applicable, to data portability. In certain circumstances, you may also have the right to object to the
-          processing of your personal information. To make such a request, please use the contact details provided
-          below.
+          {
+            "Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data."
+          }
         </p>
-        <h2>Changes to This Privacy Policy</h2>
         <p>
-          We may update this Privacy Policy from time to time. The updated version will be indicated by an updated
-          "Revised" date and the updated version will be effective as soon as it is accessible. If we make material
-          changes to this Privacy Policy, we may notify you either by prominently posting a notice of such changes or by
-          directly sending you a notification. We encourage you to review this Privacy Policy frequently to be informed
-          of how we are protecting your information.
+          {
+            "When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data."
+          }
         </p>
-        <h2>Contact Us</h2>
-        <p>If you have questions or comments about this policy, you may email us at privacy@everpay.com.</p>
+        <p>
+          {
+            "We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device."
+          }
+        </p>
+        <h3>{"Use of Your Personal Data"}</h3>
+        <p>{"The Company may use Personal Data for the following purposes:"}</p>
+        <ul>
+          <li>
+            <strong>{"To provide and maintain our Service"}</strong>
+            {", including to monitor the usage of our Service."}
+          </li>
+          <li>
+            <strong>{"To manage Your Account:"}</strong>{" "}
+            {
+              "to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user."
+            }
+          </li>
+          <li>
+            <strong>{"For the performance of a contract:"}</strong>{" "}
+            {
+              "the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service."
+            }
+          </li>
+          <li>
+            <strong>{"To contact You:"}</strong>{" "}
+            {
+              "To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation."
+            }
+          </li>
+          <li>
+            <strong>{"To provide You with news,"}</strong>{" "}
+            {
+              "special offers and general information about other goods, services and events which we offer that are similar to those that you have already purchased or enquired about unless You have opted not to receive such information."
+            }
+          </li>
+          <li>
+            <strong>{"To manage Your requests:"}</strong> {"To attend and manage Your requests to Us."}
+          </li>
+          <li>
+            <strong>{"For business transfers:"}</strong>{" "}
+            {
+              "We may use Your information to evaluate or conduct a merger, divestiture, restructuring, reorganization, dissolution, or other sale or transfer of some or all of Our assets, whether as a going concern or as part of bankruptcy, liquidation, or similar proceeding, in which Personal Data held by Us about our Service users is among the assets transferred."
+            }
+          </li>
+          <li>
+            <strong>{"For other purposes"}</strong>
+            {
+              ": We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience."
+            }
+          </li>
+        </ul>
+        <h3>{"Disclosure of Your Personal Data"}</h3>
+        <h4>{"With Service Providers"}</h4>
+        <p>
+          {
+            "We may share Your personal information with Service Providers to monitor and analyze the use of our Service, to contact You."
+          }
+        </p>
+        <h4>{"For Business Transfers"}</h4>
+        <p>
+          {
+            "We may share or transfer Your personal information in connection with, or during negotiations of, any merger, sale of Company assets, financing, or acquisition of all or a portion of Our business to another company."
+          }
+        </p>
+        <h4>{"With Affiliates"}</h4>
+        <p>
+          {
+            "We may share Your information with Our affiliates, in which case we will require those affiliates to honor this Privacy Policy. Affiliates include Our parent company and any other subsidiaries, joint venture partners or other companies that We control or that are under common control with Us."
+          }
+        </p>
+        <h4>{"With Business Partners"}</h4>
+        <p>
+          {
+            "We may share Your information with Our business partners to offer You certain products, services or promotions."
+          }
+        </p>
+        <h4>{"With other users"}</h4>
+        <p>
+          {
+            "When You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside."
+          }
+        </p>
+        <h4>{"With Your consent"}</h4>
+        <p>{"We may disclose Your personal information for any other purpose with Your consent."}</p>
+        <h2>{"Retention of Your Personal Data"}</h2>
+        <p>
+          {
+            "The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies."
+          }
+        </p>
+        <p>
+          {
+            "The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods."
+          }
+        </p>
+        <h2>{"Transfer of Your Personal Data"}</h2>
+        <p>
+          {
+            "Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction."
+          }
+        </p>
+        <p>
+          {
+            "Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer."
+          }
+        </p>
+        <p>
+          {
+            "The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information."
+          }
+        </p>
+        <h2>{"Delete Your Personal Data"}</h2>
+        <p>
+          {
+            "You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You."
+          }
+        </p>
+        <p>{"Our Service may give You the ability to delete certain information about You from within the Service."}</p>
+        <p>
+          {
+            "You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us."
+          }
+        </p>
+        <p>
+          {
+            "Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so."
+          }
+        </p>
+        <h2>{"Links to Other Websites"}</h2>
+        <p>
+          {
+            "Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit."
+          }
+        </p>
+        <p>
+          {
+            "We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services."
+          }
+        </p>
+        <h2>{"Changes to this Privacy Policy"}</h2>
+        <p>
+          {
+            "We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page."
+          }
+        </p>
+        <p>
+          {
+            'We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.'
+          }
+        </p>
+        <p>
+          {
+            "You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page."
+          }
+        </p>
+        <h2>{"Contact Us"}</h2>
+        <p>{"If you have any questions about this Privacy Policy, You can contact us:"}</p>
+        <ul>
+          <li>{"By email: privacy@everpay.com"}</li>
+          <li>{"By visiting this page on our website: https://www.everpay.com/contact"}</li>
+        </ul>
       </div>
     </div>
   )

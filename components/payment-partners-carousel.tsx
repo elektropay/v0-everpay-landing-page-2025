@@ -1,59 +1,49 @@
 "use client"
 
+import * as React from "react"
 import Image from "next/image"
 
-export function PaymentPartnersCarousel() {
-  const partners = [
-    { src: "/images/visa.png", alt: "Visa" },
-    { src: "/images/mastercard.png", alt: "Mastercard" },
-    { src: "/images/interac.png", alt: "Interac" },
-    { src: "/images/jcb.png", alt: "JCB" },
-    { src: "/images/apple-pay.png", alt: "Apple Pay" },
-    { src: "/images/google-pay.png", alt: "Google Pay" },
-    { src: "/images/amex.png", alt: "American Express" },
-    { src: "/images/paypal.png", alt: "PayPal" },
-  ]
+interface PaymentPartnersCarouselProps {
+  images: { src: string; alt: string }[]
+}
+
+export function PaymentPartnersCarousel({ images }: PaymentPartnersCarouselProps) {
+  const [currentIndex, setCurrentIndex] = React.useState(0)
+  const carouselRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
+    }, 3000) // Change image every 3 seconds
+
+    return () => clearInterval(interval)
+  }, [images.length])
+
+  React.useEffect(() => {
+    if (carouselRef.current) {
+      carouselRef.current.style.transform = `translateX(-${currentIndex * 100}%)`
+    }
+  }, [currentIndex])
 
   return (
-    <div className="relative w-full overflow-hidden py-8">
-      <div className="flex animate-marquee whitespace-nowrap">
-        {partners.map((partner, index) => (
-          <div key={index} className="mx-4 inline-block">
+    <div className="relative w-full overflow-hidden">
+      <div
+        ref={carouselRef}
+        className="flex transition-transform duration-500 ease-in-out"
+        style={{ width: `${images.length * 100}%` }}
+      >
+        {images.map((image, index) => (
+          <div key={index} className="w-full flex-shrink-0 flex items-center justify-center p-4">
             <Image
-              src={partner.src || "/placeholder.png"}
-              alt={partner.alt}
-              width={100}
+              src={image.src || "/placeholder.svg"}
+              alt={image.alt}
+              width={120}
               height={60}
-              className="h-12 object-contain grayscale opacity-60 transition-opacity hover:opacity-100"
-            />
-          </div>
-        ))}
-        {/* Duplicate partners for seamless looping */}
-        {partners.map((partner, index) => (
-          <div key={`duplicate-${index}`} className="mx-4 inline-block">
-            <Image
-              src={partner.src || "/placeholder.png"}
-              alt={partner.alt}
-              width={100}
-              height={60}
-              className="h-12 object-contain grayscale opacity-60 transition-opacity hover:opacity-100"
+              className="object-contain"
             />
           </div>
         ))}
       </div>
-      <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
     </div>
   )
 }

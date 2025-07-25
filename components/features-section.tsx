@@ -1,78 +1,53 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { Messages } from "@/lib/i18n/types"
-import { GlobeIcon, ShieldCheckIcon, CodeIcon, TrendingUpIcon, HeadsetIcon, DollarSignIcon } from "lucide-react"
+import { CheckCircle } from "lucide-react"
+import type { Dictionary } from "@/lib/i18n/types"
 
 interface FeaturesSectionProps {
-  dict: Messages
+  dict: Dictionary
 }
 
 export function FeaturesSection({ dict }: FeaturesSectionProps) {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2 lg:grid-cols-3">
-          <div className="space-y-4">
-            <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-              {dict.features.title}
-            </div>
-            <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.features.title}</h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
               {dict.features.description}
-            </h2>
+            </p>
           </div>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <GlobeIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature1Title}</CardTitle>
-                <CardDescription>{dict.features.feature1Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <ShieldCheckIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature2Title}</CardTitle>
-                <CardDescription>{dict.features.feature2Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <CodeIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature3Title}</CardTitle>
-                <CardDescription>{dict.features.feature3Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <TrendingUpIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature4Title}</CardTitle>
-                <CardDescription>{dict.features.feature4Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <HeadsetIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature5Title}</CardTitle>
-                <CardDescription>{dict.features.feature5Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <DollarSignIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.features.feature6Title}</CardTitle>
-                <CardDescription>{dict.features.feature6Description}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
+        </div>
+        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-3 lg:gap-12">
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature1Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature1Description}</p>
+          </div>
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature2Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature2Description}</p>
+          </div>
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature3Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature3Description}</p>
+          </div>
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature4Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature4Description}</p>
+          </div>
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature5Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature5Description}</p>
+          </div>
+          <div className="grid gap-1">
+            <CheckCircle className="h-8 w-8 text-primary" />
+            <h3 className="text-xl font-bold">{dict.features.feature6Title}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature6Description}</p>
+          </div>
         </div>
       </div>
     </section>

@@ -1,223 +1,170 @@
 "use client"
-
-import type React from "react"
-
-import { useState } from "react"
-import { Link } from "@/lib/i18n/navigation"
-import { usePathname } from "next/navigation"
-import { useMessages } from "next-intl"
-import type { Locale } from "@/lib/i18n/types"
+import Link from "next/link"
+import { useTheme } from "next-themes"
+import { Moon, Sun, Menu, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { MenuIcon, GlobeIcon } from "lucide-react"
-import Image from "next/image"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { locales } from "@/lib/i18n/config"
+import { usePathname, useRouter } from "@/lib/i18n/navigation"
+import { type Locale, locales } from "@/lib/i18n/config"
+import type { Dictionary } from "@/lib/i18n/types"
 
 interface SiteHeaderProps {
+  dict: Dictionary
   lang: Locale
 }
 
-export function SiteHeader({ lang }: SiteHeaderProps) {
+export function SiteHeader({ dict, lang }: SiteHeaderProps) {
+  const { setTheme } = useTheme()
   const pathname = usePathname()
-  const messages = useMessages()
-  const dict = messages as any
+  const router = useRouter()
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  const handleLocaleChange = (newLocale: string) => {
-    const newPath = `/${newLocale}${pathname.substring(3)}`
-    window.location.href = newPath
+  const onSelectChange = (nextLocale: string) => {
+    router.replace(pathname, { locale: nextLocale })
   }
 
-  const navLinks = [
+  const navItems = [
     { href: "/", label: dict.header.home },
-    { href: "/about", label: dict.header.about },
     {
+      href: "/solutions/business",
       label: dict.header.solutions,
-      subLinks: [
-        { href: "/solutions/business", label: dict.header.business },
+      children: [
         { href: "/solutions/ecommerce", label: dict.header.ecommerce },
-        { href: "/solutions/marketplace", label: dict.header.marketplace },
         { href: "/solutions/retail", label: dict.header.retail },
+        { href: "/solutions/marketplace", label: dict.header.marketplace },
+        { href: "/solutions/business", label: dict.header.business },
       ],
     },
     {
+      href: "/api",
       label: dict.header.developers,
-      subLinks: [
+      children: [
         { href: "/api", label: dict.header.api },
         { href: "/docs", label: dict.header.docs },
-        { href: "/gateway", label: dict.header.gateway },
-        { href: "/issuing", label: dict.header.issuing },
-        { href: "/online-payments", label: dict.header.onlinePayments },
-        { href: "/pos", label: dict.header.pos },
-        { href: "/payments", label: dict.header.payments },
-        { href: "/fraud-prevention", label: dict.header.fraudPrevention },
-        { href: "/security", label: dict.header.security },
       ],
     },
-    { href: "/partners", label: dict.header.partners },
-    { href: "/blog", label: dict.header.blog },
-    { href: "/careers", label: dict.header.careers },
-    { href: "/help", label: dict.header.help },
+    { href: "/pricing", label: dict.header.pricing },
     { href: "/contact", label: dict.header.contact },
   ]
 
   return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
-      <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-        <SheetTrigger asChild>
-          <Button variant="outline" size="icon" className="lg:hidden bg-transparent">
-            <MenuIcon className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left">
-          <Link href={`/${lang}`} onClick={() => setIsMobileMenuOpen(false)}>
-            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={120} height={40} className="h-10 w-auto" />
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container flex h-14 items-center">
+        <div className="mr-4 hidden md:flex">
+          <Link href={`/${lang}`} className="mr-6 flex items-center space-x-2">
+            <span className="inline-block font-bold">Everpay</span>
           </Link>
-          <div className="grid gap-2 py-6">
-            {navLinks.map((link, index) => (
-              <div key={index}>
-                {link.href ? (
-                  <Link
-                    href={`/${lang}${link.href}`}
-                    className="flex w-full items-center py-2 text-lg font-semibold"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                ) : (
-                  <div className="py-2 text-lg font-semibold">{link.label}</div>
-                )}
-                {link.subLinks && (
-                  <div className="ml-4 grid gap-1">
-                    {link.subLinks.map((subLink, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        href={`/${lang}${subLink.href}`}
-                        className="flex w-full items-center py-2 text-base"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {subLink.label}
-                      </Link>
+          <nav className="flex items-center space-x-6 text-sm font-medium">
+            {navItems.map((item) =>
+              item.children ? (
+                <DropdownMenu key={item.href}>
+                  <DropdownMenuTrigger className="capitalize flex items-center gap-1">
+                    {item.label} <ChevronDown className="h-4 w-4" />
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent>
+                    {item.children.map((child) => (
+                      <DropdownMenuItem key={child.href} asChild>
+                        <Link href={`/${lang}${child.href}`}>{child.label}</Link>
+                      </DropdownMenuItem>
                     ))}
-                  </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={`/${lang}${item.href}`}
+                  className="transition-colors hover:text-foreground/80 text-foreground/60"
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
+          </nav>
+        </div>
+        <Sheet>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+            >
+              <Menu className="h-5 w-5" />
+              <span className="sr-only">Toggle Menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="left" className="pr-0">
+            <Link href={`/${lang}`} className="flex items-center space-x-2">
+              <span className="inline-block font-bold">Everpay</span>
+            </Link>
+            <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+              <div className="flex flex-col gap-3">
+                {navItems.map((item) =>
+                  item.children ? (
+                    <div key={item.href}>
+                      <h4 className="font-medium text-foreground/80">{item.label}</h4>
+                      <nav className="grid gap-1 py-1">
+                        {item.children.map((child) => (
+                          <Link
+                            key={child.href}
+                            href={`/${lang}${child.href}`}
+                            className="transition-colors hover:text-foreground/80 text-foreground/60"
+                          >
+                            {child.label}
+                          </Link>
+                        ))}
+                      </nav>
+                    </div>
+                  ) : (
+                    <Link
+                      key={item.href}
+                      href={`/${lang}${item.href}`}
+                      className="transition-colors hover:text-foreground/80 text-foreground/60"
+                    >
+                      {item.label}
+                    </Link>
+                  ),
                 )}
               </div>
-            ))}
-            <div className="mt-4">
-              <Select onValueChange={handleLocaleChange} defaultValue={lang}>
-                <SelectTrigger className="w-[180px]">
-                  <GlobeIcon className="mr-2 h-4 w-4" />
-                  <SelectValue placeholder="Select Language" />
-                </SelectTrigger>
-                <SelectContent>
-                  {locales.map((locale) => (
-                    <SelectItem key={locale} value={locale}>
-                      {locale.toUpperCase()}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
             </div>
-            <Link
-              className="mt-4 flex w-full items-center justify-center rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50"
-              href={`/${lang}/signIn`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {dict.header.signIn}
-            </Link>
-            <Link
-              className="flex w-full items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
-              href={`/${lang}/signUp`}
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {dict.header.signUp}
-            </Link>
-          </div>
-        </SheetContent>
-      </Sheet>
-      <Link className="mr-6 hidden lg:flex" href={`/${lang}`}>
-        <Image src="/placeholder-logo.png" alt="Everpay Logo" width={120} height={40} className="h-10 w-auto" />
-      </Link>
-      <nav className="hidden items-center gap-6 text-sm font-medium lg:flex">
-        {navLinks.map((link, index) => (
-          <div key={index} className="relative group">
-            {link.href ? (
-              <Link className="flex items-center px-2 py-1 hover:underline" href={`/${lang}${link.href}`}>
-                {link.label}
-              </Link>
-            ) : (
-              <div className="flex items-center px-2 py-1 cursor-default">
-                {link.label}
-                {link.subLinks && (
-                  <ChevronDownIcon className="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" />
-                )}
-              </div>
-            )}
-            {link.subLinks && (
-              <div className="absolute left-0 top-full z-10 hidden group-hover:block bg-white dark:bg-gray-800 shadow-lg rounded-md py-2 min-w-[160px]">
-                {link.subLinks.map((subLink, subIndex) => (
-                  <Link
-                    key={subIndex}
-                    className="block px-4 py-2 text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-                    href={`/${lang}${subLink.href}`}
-                  >
-                    {subLink.label}
-                  </Link>
+          </SheetContent>
+        </Sheet>
+        <div className="flex flex-1 items-center justify-end space-x-2">
+          <nav className="flex items-center gap-2">
+            <Select value={lang} onValueChange={onSelectChange}>
+              <SelectTrigger className="w-[80px]">
+                <SelectValue placeholder="Lang" />
+              </SelectTrigger>
+              <SelectContent>
+                {locales.map((locale) => (
+                  <SelectItem key={locale} value={locale}>
+                    {locale.toUpperCase()}
+                  </SelectItem>
                 ))}
-              </div>
-            )}
-          </div>
-        ))}
-      </nav>
-      <div className="ml-auto flex items-center gap-4">
-        <Select onValueChange={handleLocaleChange} defaultValue={lang}>
-          <SelectTrigger className="w-[180px]">
-            <GlobeIcon className="mr-2 h-4 w-4" />
-            <SelectValue placeholder="Select Language" />
-          </SelectTrigger>
-          <SelectContent>
-            {locales.map((locale) => (
-              <SelectItem key={locale} value={locale}>
-                {locale.toUpperCase()}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-        <Link
-          className="hidden rounded-md border border-gray-200 bg-white px-4 py-2 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 lg:flex"
-          href={`/${lang}/signIn`}
-        >
-          {dict.header.signIn}
-        </Link>
-        <Link
-          className="hidden rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300 lg:flex"
-          href={`/${lang}/signUp`}
-        >
-          {dict.header.signUp}
-        </Link>
+              </SelectContent>
+            </Select>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                  <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                  <span className="sr-only">Toggle theme</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setTheme("light")}>Light</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("dark")}>Dark</DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setTheme("system")}>System</DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            <Button asChild>
+              <Link href={`/${lang}/login`}>{dict.header.login}</Link>
+            </Button>
+            <Button asChild>
+              <Link href={`/${lang}/signup`}>{dict.header.signup}</Link>
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
-  )
-}
-
-function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m6 9 6 6 6-6" />
-    </svg>
   )
 }

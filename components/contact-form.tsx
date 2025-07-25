@@ -6,11 +6,12 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import type { Messages } from "@/lib/i18n/types"
+import type { Dictionary } from "@/lib/i18n/types"
 
 interface ContactFormProps {
-  dict: Messages
+  dict: Dictionary
 }
 
 export function ContactForm({ dict }: ContactFormProps) {
@@ -39,25 +40,19 @@ export function ContactForm({ dict }: ContactFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {dict.contact.nameLabel}
-        </label>
-        <Input id="name" name="name" type="text" required />
+      <div className="grid gap-2">
+        <Label htmlFor="name">{dict.contact.nameLabel}</Label>
+        <Input id="name" name="name" placeholder="John Doe" required />
       </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {dict.contact.emailLabel}
-        </label>
-        <Input id="email" name="email" type="email" required />
+      <div className="grid gap-2">
+        <Label htmlFor="email">{dict.contact.emailLabel}</Label>
+        <Input id="email" name="email" type="email" placeholder="john@example.com" required />
       </div>
-      <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {dict.contact.subjectLabel}
-        </label>
+      <div className="grid gap-2">
+        <Label htmlFor="subject">{dict.contact.subjectLabel}</Label>
         <Select name="subject" required>
-          <SelectTrigger className="w-full">
-            <SelectValue placeholder={dict.contact.generalInquiry} />
+          <SelectTrigger>
+            <SelectValue placeholder={dict.contact.subjectLabel} />
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="general">{dict.contact.generalInquiry}</SelectItem>
@@ -67,17 +62,15 @@ export function ContactForm({ dict }: ContactFormProps) {
           </SelectContent>
         </Select>
       </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {dict.contact.messageLabel}
-        </label>
-        <Textarea id="message" name="message" rows={5} required />
+      <div className="grid gap-2">
+        <Label htmlFor="message">{dict.contact.messageLabel}</Label>
+        <Textarea id="message" name="message" placeholder="Your message" required className="min-h-[120px]" />
       </div>
       <Button type="submit" className="w-full">
         {dict.contact.submitButton}
       </Button>
-      {status === "success" && <p className="mt-4 text-center text-green-600">{dict.contact.successMessage}</p>}
-      {status === "error" && <p className="mt-4 text-center text-red-600">{dict.contact.errorMessage}</p>}
+      {status === "success" && <p className="text-green-500 text-center mt-4">{dict.contact.successMessage}</p>}
+      {status === "error" && <p className="text-red-500 text-center mt-4">{dict.contact.errorMessage}</p>}
     </form>
   )
 }

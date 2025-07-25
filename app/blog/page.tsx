@@ -1,83 +1,57 @@
 import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/types"
-import Image from "next/image"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Link } from "@/lib/i18n/navigation"
+import type { Locale } from "@/lib/i18n/config"
 
 interface BlogPageProps {
-  params: {
-    lang: Locale
-  }
+  params: { lang: Locale }
 }
 
 export default async function BlogPage({ params: { lang } }: BlogPageProps) {
   const dict = await getDictionary(lang)
 
-  const blogPosts = [
-    {
-      id: 1,
-      title: "The Future of Digital Payments: Trends to Watch in 2024",
-      description:
-        "Explore the latest trends shaping the digital payment landscape and what to expect in the coming year.",
-      image: "/placeholder.png?height=200&width=300",
-      date: "October 26, 2023",
-    },
-    {
-      id: 2,
-      title: "How AI is Revolutionizing Fraud Prevention in E-commerce",
-      description:
-        "Discover how artificial intelligence is being used to combat fraud and enhance security for online businesses.",
-      image: "/placeholder.png?height=200&width=300",
-      date: "September 15, 2023",
-    },
-    {
-      id: 3,
-      title: "Simplifying Cross-Border Payments for Global Businesses",
-      description: "Learn about the challenges and solutions for managing international transactions efficiently.",
-      image: "/placeholder.png?height=200&width=300",
-      date: "August 1, 2023",
-    },
-    {
-      id: 4,
-      title: "The Rise of Mobile Wallets: What Businesses Need to Know",
-      description:
-        "Understand the growing popularity of mobile wallets and how to integrate them into your payment strategy.",
-      image: "/placeholder.png?height=200&width=300",
-      date: "July 10, 2023",
-    },
-  ]
-
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">{dict.header.blog}</h1>
-          <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            Stay up-to-date with the latest insights, trends, and news from the world of payments.
-          </p>
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.header.blog}</h1>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {dict.BlogPage.description}
+            </p>
+          </div>
         </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {blogPosts.map((post) => (
-            <Card key={post.id}>
-              <Image
-                alt={post.title}
-                className="aspect-video w-full overflow-hidden rounded-t-xl object-cover"
-                height="200"
-                src={post.image || "/placeholder.png"}
-                width="300"
-              />
-              <CardHeader>
-                <CardTitle>{post.title}</CardTitle>
-                <CardDescription>{post.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">{post.date}</p>
-                <Link href={`/${lang}/blog/${post.id}`} className="mt-4 inline-flex text-primary hover:underline">
-                  Read More
-                </Link>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">{dict.BlogPage.latestPosts}</h3>
+            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
+              <li>
+                {"Post 1: The Future of Payments"}{" "}
+                <a className="text-blue-500 hover:underline" href="#">
+                  {dict.BlogPage.readMore}
+                </a>
+              </li>
+              <li>
+                {"Post 2: Secure Transactions in E-commerce"}{" "}
+                <a className="text-blue-500 hover:underline" href="#">
+                  {dict.BlogPage.readMore}
+                </a>
+              </li>
+              <li>
+                {"Post 3: Innovations in POS Systems"}{" "}
+                <a className="text-blue-500 hover:underline" href="#">
+                  {dict.BlogPage.readMore}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="grid gap-1">
+            <h3 className="text-xl font-bold">{"Categories"}</h3>
+            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
+              <li>{"Technology"}</li>
+              <li>{"Security"}</li>
+              <li>{"E-commerce"}</li>
+              <li>{"Fintech"}</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>

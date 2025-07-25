@@ -1,74 +1,46 @@
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import type { Messages } from "@/lib/i18n/types"
-import { ShoppingCartIcon, StoreIcon, UsersIcon, CloudIcon, BriefcaseIcon, HeartIcon } from "lucide-react"
+import { ShoppingCart, Store, Users, Briefcase } from "lucide-react"
+import type { Dictionary } from "@/lib/i18n/types"
+import { Link } from "@/lib/i18n/navigation"
+import type { Locale } from "@/lib/i18n/config"
 
 interface BusinessTypesSectionProps {
-  dict: Messages
+  dict: Dictionary
+  lang: Locale
 }
 
-export function BusinessTypesSection({ dict }: BusinessTypesSectionProps) {
+export function BusinessTypesSection({ dict, lang }: BusinessTypesSectionProps) {
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6 text-center">
-        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{dict.businessTypes.title}</h2>
-        <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400 mt-4">
-          {dict.businessTypes.description}
-        </p>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <ShoppingCartIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.ecommerceTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.ecommerceDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <StoreIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.retailTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.retailDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <UsersIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.marketplaceTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.marketplaceDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <CloudIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.saasTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.saasDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <BriefcaseIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.servicesTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.servicesDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
-          <Card>
-            <CardHeader className="flex flex-row items-center gap-4">
-              <HeartIcon className="h-8 w-8 text-primary" />
-              <div className="grid gap-1">
-                <CardTitle>{dict.businessTypes.nonProfitTitle}</CardTitle>
-                <CardDescription>{dict.businessTypes.nonProfitDescription}</CardDescription>
-              </div>
-            </CardHeader>
-          </Card>
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.businessTypes.title}</h2>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {dict.businessTypes.description}
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
+          <Link href={`/${lang}/solutions/ecommerce`} className="group grid gap-1 text-center">
+            <ShoppingCart className="mx-auto h-12 w-12 text-primary" />
+            <h3 className="text-xl font-bold group-hover:underline">{dict.businessTypes.ecommerceTitle}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.ecommerceDescription}</p>
+          </Link>
+          <Link href={`/${lang}/solutions/retail`} className="group grid gap-1 text-center">
+            <Store className="mx-auto h-12 w-12 text-primary" />
+            <h3 className="text-xl font-bold group-hover:underline">{dict.businessTypes.retailTitle}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.retailDescription}</p>
+          </Link>
+          <Link href={`/${lang}/solutions/marketplace`} className="group grid gap-1 text-center">
+            <Users className="mx-auto h-12 w-12 text-primary" />
+            <h3 className="text-xl font-bold group-hover:underline">{dict.businessTypes.marketplaceTitle}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.marketplaceDescription}</p>
+          </Link>
+          <Link href={`/${lang}/solutions/business`} className="group grid gap-1 text-center">
+            <Briefcase className="mx-auto h-12 w-12 text-primary" />
+            <h3 className="text-xl font-bold group-hover:underline">{dict.businessTypes.businessTitle}</h3>
+            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.businessDescription}</p>
+          </Link>
         </div>
       </div>
     </section>

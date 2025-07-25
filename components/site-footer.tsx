@@ -1,147 +1,129 @@
-"use client"
-
-import { Link } from "@/lib/i18n/navigation"
-import { useMessages } from "next-intl"
-import type { Locale } from "@/lib/i18n/types"
-import Image from "next/image"
+import Link from "next/link"
+import type { Locale } from "@/lib/i18n/config"
+import type { Dictionary } from "@/lib/i18n/types"
 
 interface SiteFooterProps {
+  dict: Dictionary
   lang: Locale
 }
 
-export function SiteFooter({ lang }: SiteFooterProps) {
-  const messages = useMessages()
-  const dict = messages as any
-
+export function SiteFooter({ dict, lang }: SiteFooterProps) {
   return (
-    <footer className="w-full bg-gray-100 py-12 dark:bg-gray-800">
-      <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-5 md:px-6">
+    <footer className="border-t bg-card py-12">
+      <div className="container grid grid-cols-1 gap-8 md:grid-cols-5">
         <div className="col-span-1 md:col-span-2">
-          <Link className="flex items-center gap-2" href={`/${lang}`}>
-            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={120} height={40} className="h-10 w-auto" />
+          <Link href={`/${lang}`} className="flex items-center space-x-2">
+            <span className="inline-block font-bold">Everpay</span>
           </Link>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">{dict.footer.copyright}</p>
+          <p className="mt-4 text-sm text-muted-foreground">{dict.footer.copyright}</p>
         </div>
-        <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.company}</h3>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/about`}
-          >
-            {dict.footer.aboutUs}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/careers`}
-          >
-            {dict.footer.careers}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/blog`}
-          >
-            {dict.footer.blog}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/partners`}
-          >
-            {dict.footer.partners}
-          </Link>
-        </div>
-        <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.solutions}</h3>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/solutions/ecommerce`}
-          >
-            {dict.footer.ecommerce}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/solutions/retail`}
-          >
-            {dict.footer.retail}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/solutions/marketplace`}
-          >
-            {dict.footer.marketplace}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/solutions/business`}
-          >
-            {dict.footer.business}
-          </Link>
-        </div>
-        <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.developers}</h3>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/api`}
-          >
-            {dict.footer.apiReference}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/docs`}
-          >
-            {dict.footer.documentation}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/docs`}
-          >
-            {dict.footer.sdks}
-          </Link>
-        </div>
-        <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.support}</h3>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/help`}
-          >
-            {dict.footer.helpCenter}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/contact`}
-          >
-            {dict.footer.contactUs}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/fraud-prevention`}
-          >
-            {dict.footer.fraudPrevention}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/security`}
-          >
-            {dict.footer.security}
-          </Link>
-          <h3 className="mt-4 text-lg font-semibold">{dict.footer.legal}</h3>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/privacy-policy`}
-          >
-            {dict.footer.privacyPolicy}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/terms`}
-          >
-            {dict.footer.termsOfService}
-          </Link>
-          <Link
-            className="text-sm text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={`/${lang}/cookie-policy`}
-          >
-            {dict.footer.cookiePolicy}
-          </Link>
+        <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 md:col-span-3">
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-foreground">{dict.footer.company}</h3>
+            <nav className="mt-4 space-y-2">
+              <Link href={`/${lang}/about`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.aboutUs}
+              </Link>
+              <Link href={`/${lang}/careers`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.careers}
+              </Link>
+              <Link href={`/${lang}/blog`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.blog}
+              </Link>
+              <Link href={`/${lang}/partners`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.partners}
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-foreground">{dict.footer.solutions}</h3>
+            <nav className="mt-4 space-y-2">
+              <Link
+                href={`/${lang}/online-payments`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.onlinePayments}
+              </Link>
+              <Link href={`/${lang}/pos`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.posPayments}
+              </Link>
+              <Link href={`/${lang}/issuing`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.issuing}
+              </Link>
+              <Link href={`/${lang}/gateway`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.gateway}
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-foreground">{dict.footer.businessTypes}</h3>
+            <nav className="mt-4 space-y-2">
+              <Link
+                href={`/${lang}/solutions/ecommerce`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.ecommerce}
+              </Link>
+              <Link
+                href={`/${lang}/solutions/retail`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.retail}
+              </Link>
+              <Link
+                href={`/${lang}/solutions/marketplace`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.marketplace}
+              </Link>
+              <Link
+                href={`/${lang}/solutions/business`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.business}
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-foreground">{dict.footer.resources}</h3>
+            <nav className="mt-4 space-y-2">
+              <Link href={`/${lang}/docs`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.docs}
+              </Link>
+              <Link href={`/${lang}/help`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.helpCenter}
+              </Link>
+              <Link href={`/${lang}/security`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.security}
+              </Link>
+              <Link
+                href={`/${lang}/fraud-prevention`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.fraudPrevention}
+              </Link>
+            </nav>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold tracking-wider text-foreground">{dict.footer.legal}</h3>
+            <nav className="mt-4 space-y-2">
+              <Link
+                href={`/${lang}/privacy-policy`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.privacyPolicy}
+              </Link>
+              <Link href={`/${lang}/terms`} className="block text-sm text-muted-foreground hover:text-foreground">
+                {dict.footer.termsOfService}
+              </Link>
+              <Link
+                href={`/${lang}/cookie-policy`}
+                className="block text-sm text-muted-foreground hover:text-foreground"
+              >
+                {dict.footer.cookiePolicy}
+              </Link>
+            </nav>
+          </div>
         </div>
       </div>
     </footer>
