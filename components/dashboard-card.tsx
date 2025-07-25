@@ -1,24 +1,21 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { type LucideIcon } from 'lucide-react';
+import { Card } from "@/components/ui/card"
+import { cn } from "@/lib/utils"
 
 interface DashboardCardProps {
-  title: string;
-  value: string;
-  description: string;
-  icon: LucideIcon;
+  title: string
+  value: string
+  percentage?: string
+  className?: string
 }
 
-export function DashboardCard({ title, value, description, icon: Icon }: DashboardCardProps) {
+export function DashboardCard({ title, value, percentage, className }: DashboardCardProps) {
   return (
-    <Card>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
-        <Icon className="h-4 w-4 text-muted-foreground" />
-      </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold">{value}</div>
-        <p className="text-xs text-muted-foreground">{description}</p>
-      </CardContent>
+    <Card className={cn("p-4 rounded-lg bg-everpay-lightgray shadow-none", className)}>
+      <p className="text-sm text-gray-600">{title}</p>
+      <div className="flex items-baseline justify-between mt-1">
+        <h3 className="text-2xl font-bold font-mono text-everpay-dark">{value}</h3>
+        {percentage && <span className="text-everpay-green text-sm font-medium">{percentage}</span>}
+      </div>
     </Card>
-  );
+  )
 }

@@ -1,5 +1,5 @@
 {
-  "name": "fintech-landing",
+  "name": "everpay-landing-page-2025",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-dialog": "latest",
+    "@radix-ui/react-label": "^1.0.2",
     "@radix-ui/react-select": "latest",
     "@radix-ui/react-slot": "latest",
     "class-variance-authority": "^0.7.1",

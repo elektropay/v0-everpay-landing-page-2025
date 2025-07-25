@@ -1,5 +1,5 @@
 import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
+import type { Locale } from "@/lib/i18n/types"
 import { HomePageContent } from "@/components/home-page-content"
 
 interface HomePageProps {

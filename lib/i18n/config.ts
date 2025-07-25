@@ -1,6 +1,7 @@
 import type { Pathnames } from "next-intl/navigation"
 
 export const locales = ["en", "es", "fr", "de", "zh"] as const
+export const defaultLocale = "en" as const
 export type Locale = (typeof locales)[number]
 
 export const pathnames = {
@@ -30,8 +31,4 @@ export const pathnames = {
   "/terms": "/terms",
 } satisfies Pathnames<typeof locales>
 
-export const localePrefix = undefined // or 'always' or 'never'
-
-export const defaultLocale: Locale = "en"
-
-export type AppPathnames = keyof typeof pathnames
+export const localePrefix = undefined

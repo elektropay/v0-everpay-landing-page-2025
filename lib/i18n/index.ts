@@ -1,9 +1,9 @@
-import { getRequestConfig, getMessages as getNextIntlMessages } from "next-intl/server"
+import { getRequestConfig } from "next-intl/server"
 import { notFound } from "next/navigation"
 import { locales } from "./config"
 import type { Dictionary, Locale } from "./types"
 
-// This is the default export for next-intl's getRequestConfig
+// This function is used by next-intl's getRequestConfig
 export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(locale as any)) notFound()
 
@@ -12,7 +12,7 @@ export default getRequestConfig(async ({ locale }) => {
   }
 })
 
-// Custom getDictionary function to load a specific dictionary
+// This function can be used directly to get the dictionary
 const dictionaryLoaders = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
   es: () => import("./dictionaries/es.json").then((module) => module.default),
@@ -29,5 +29,7 @@ export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
   return dictionaryLoaders.en()
 }
 
-// Export getMessages for server components, re-exporting from next-intl/server
-export const getMessages = getNextIntlMessages
+// This function can be used to get messages, similar to getDictionary
+export const getMessages = async (locale: Locale) => {
+  return (await import(`./dictionaries/${locale}.json`)).default
+}

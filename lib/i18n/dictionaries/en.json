@@ -1,93 +1,39 @@
 {
-  "Index": {
-    "title": "Welcome to Everpay",
-    "description": "The future of seamless payments.",
-    "getStarted": "Get Started",
-    "learnMore": "Learn More"
-  },
-  "Header": {
+  "header": {
     "home": "Home",
-    "payments": "Payments",
-    "onlinePayments": "Online Payments",
-    "fraudPrevention": "Fraud Prevention",
-    "cardIssuing": "Card Issuing",
-    "posSystems": "POS Systems",
+    "about": "About",
     "solutions": "Solutions",
+    "developers": "Developers",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
     "business": "Business",
     "ecommerce": "E-commerce",
     "marketplace": "Marketplace",
     "retail": "Retail",
-    "developers": "Developers",
-    "docs": "Docs",
-    "help": "Help",
-    "company": "Company",
-    "about": "About",
-    "careers": "Careers",
-    "blog": "Blog",
-    "partners": "Partners",
-    "contact": "Contact",
-    "login": "Sign In",
-    "signUp": "Sign Up",
-    "pricing": "Pricing",
-    "commerce": "Commerce",
     "api": "API",
+    "docs": "Docs",
     "gateway": "Gateway",
+    "issuing": "Issuing",
+    "onlinePayments": "Online Payments",
+    "pos": "POS",
+    "payments": "Payments",
+    "fraudPrevention": "Fraud Prevention",
     "security": "Security",
-    "businessSolutions": "Business Solutions",
-    "ecommerceSolutions": "E-commerce Solutions",
-    "marketplaceSolutions": "Marketplace Solutions",
-    "retailSolutions": "Retail Solutions"
+    "partners": "Partners",
+    "blog": "Blog",
+    "careers": "Careers",
+    "help": "Help",
+    "commerce": "Commerce"
   },
-  "Footer": {
-    "company": {
-      "title": "Company",
-      "aboutUs": "About Us",
-      "careers": "Careers",
-      "blog": "Blog",
-      "partners": "Partners"
-    },
-    "products": {
-      "title": "Products",
-      "payments": "Payments",
-      "onlinePayments": "Online Payments",
-      "fraudPrevention": "Fraud Prevention",
-      "cardIssuing": "Card Issuing",
-      "posSystems": "POS Systems"
-    },
-    "solutions": {
-      "title": "Solutions",
-      "business": "Business",
-      "ecommerce": "E-commerce",
-      "marketplace": "Marketplace",
-      "retail": "Retail"
-    },
-    "resources": {
-      "title": "Resources",
-      "docs": "Documentation",
-      "helpCenter": "Help Center",
-      "apiReference": "API Reference"
-    },
-    "legal": {
-      "title": "Legal",
-      "privacyPolicy": "Privacy Policy",
-      "termsOfService": "Terms of Service",
-      "cookiePolicy": "Cookie Policy"
-    },
-    "contactUs": {
-      "title": "Contact Us",
-      "address": "123 Payment St, FinTech City, FC 12345",
-      "email": "info@everpay.com",
-      "phone": "+1 (800) 123-4567"
-    },
-    "copyright": "© 2024 Everpay. All rights reserved."
-  },
-  "HeroSection": {
+  "hero": {
     "title": "The Future of Payments, Today.",
     "description": "Everpay provides seamless, secure, and scalable payment solutions for businesses of all sizes. Empower your growth with our innovative technology.",
     "getStartedButton": "Get Started",
     "contactSalesButton": "Contact Sales"
   },
-  "FeaturesSection": {
+  "features": {
     "title": "Why Choose Everpay?",
     "description": "Our platform is built to help your business thrive in the digital economy.",
     "feature1Title": "Global Reach",
@@ -101,69 +47,93 @@
     "feature5Title": "24/7 Support",
     "feature5Description": "Our dedicated team is always here to help you succeed.",
     "feature6Title": "Competitive Pricing",
-    "feature6Description": "Transparent and affordable rates with no hidden fees."
+    "feature6Description": "Transparent and affordable rates for all your payment needs."
   },
-  "StatsSection": {
+  "stats": {
     "title": "Trusted by Businesses Worldwide",
-    "description": "Join thousands of satisfied merchants who rely on Everpay for their payment needs.",
+    "description": "Join thousands of satisfied merchants who rely on Everpay for their payment processing.",
     "transactions": "Transactions Processed",
     "businesses": "Businesses Served",
-    "countries": "Countries Supported"
+    "countries": "Countries Supported",
+    "growth": "Annual Growth"
   },
-  "PaymentPartnersSection": {
-    "title": "Our Payment Partners",
-    "description": "We collaborate with leading payment networks to ensure broad acceptance and reliability."
+  "paymentPartners": {
+    "title": "Accept All Major Payment Methods",
+    "description": "From credit cards to digital wallets, Everpay supports a wide range of payment options to maximize your conversion rates."
   },
-  "CheckoutProtectionSection": {
-    "title": "Secure Checkout & Fraud Protection",
-    "description": "Ensure every transaction is safe and secure with Everpay's advanced fraud detection and prevention tools.",
-    "feature1Title": "Real-time Fraud Detection",
-    "feature1Description": "Identify and block suspicious transactions instantly.",
+  "checkoutProtection": {
+    "title": "Secure Checkout & Fraud Prevention",
+    "description": "Protect your business and customers with our advanced security features.",
+    "feature1Title": "AI-Powered Fraud Detection",
+    "feature1Description": "Leverage machine learning to identify and block suspicious transactions in real-time.",
     "feature2Title": "PCI DSS Compliance",
-    "feature2Description": "Maintain the highest security standards for card data.",
+    "feature2Description": "Ensure your payment processing meets the highest industry security standards.",
     "feature3Title": "3D Secure 2.0",
-    "feature3Description": "Add an extra layer of security for online credit and debit card transactions.",
-    "feature4Title": "Chargeback Prevention",
-    "feature4Description": "Minimize disputes and protect your revenue."
+    "feature3Description": "Add an extra layer of security for card-not-present transactions.",
+    "feature4Title": "Chargeback Protection",
+    "feature4Description": "Minimize losses from fraudulent chargebacks with our robust dispute management."
   },
-  "BusinessTypesSection": {
+  "businessTypes": {
     "title": "Solutions for Every Business Type",
-    "description": "Whether you're a startup or an enterprise, Everpay has tailored solutions to meet your unique payment needs.",
+    "description": "Whether you're a small startup or a large enterprise, Everpay has tailored solutions to meet your unique payment needs.",
     "ecommerceTitle": "E-commerce",
-    "ecommerceDescription": "Seamless online payment processing for your e-commerce store.",
+    "ecommerceDescription": "Seamless online payments for your e-commerce store.",
     "retailTitle": "Retail",
-    "retailDescription": "Modernize your in-store payments with our versatile POS solutions.",
+    "retailDescription": "Modernize your in-store payments with our POS solutions.",
     "marketplaceTitle": "Marketplace",
-    "marketplaceDescription": "Manage complex payment flows for multi-vendor platforms.",
+    "marketplaceDescription": "Manage complex payouts and commissions with ease.",
     "saasTitle": "SaaS & Subscriptions",
-    "saasDescription": "Automate recurring billing and subscription management."
+    "saasDescription": "Automate recurring billing and subscription management.",
+    "servicesTitle": "Service Businesses",
+    "servicesDescription": "Accept payments for appointments, bookings, and more.",
+    "nonProfitTitle": "Non-Profits",
+    "nonProfitDescription": "Secure and easy donation processing for your cause."
   },
   "cta": {
     "title": "Ready to Transform Your Payments?",
-    "description": "Join Everpay today and experience the future of secure and efficient transactions.",
+    "description": "Join Everpay today and experience the future of secure and efficient payment processing.",
     "signUpButton": "Sign Up Now",
     "contactSalesButton": "Contact Sales"
   },
-  "ContactPage": {
+  "footer": {
+    "company": "Company",
+    "aboutUs": "About Us",
+    "careers": "Careers",
+    "blog": "Blog",
+    "partners": "Partners",
+    "solutions": "Solutions",
+    "ecommerce": "E-commerce",
+    "retail": "Retail",
+    "marketplace": "Marketplace",
+    "business": "Business",
+    "developers": "Developers",
+    "apiReference": "API Reference",
+    "documentation": "Documentation",
+    "sdks": "SDKs",
+    "support": "Support",
+    "helpCenter": "Help Center",
+    "contactUs": "Contact Us",
+    "fraudPrevention": "Fraud Prevention",
+    "security": "Security",
+    "legal": "Legal",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy",
+    "copyright": "© 2024 Everpay Inc. All rights reserved."
+  },
+  "contact": {
     "title": "Contact Us",
     "description": "Have questions or need assistance? Fill out the form below and we'll get back to you as soon as possible.",
     "nameLabel": "Name",
-    "namePlaceholder": "Enter your name",
     "emailLabel": "Email",
-    "emailPlaceholder": "Enter your email",
     "subjectLabel": "Subject",
-    "subjectPlaceholder": "Select a subject",
-    "subjectGeneral": "General Inquiry",
-    "subjectSales": "Sales Inquiry",
-    "subjectSupport": "Technical Support",
-    "subjectPartnership": "Partnership Opportunities",
+    "generalInquiry": "General Inquiry",
+    "salesQuestion": "Sales Question",
+    "supportRequest": "Support Request",
+    "feedback": "Feedback",
     "messageLabel": "Message",
-    "messagePlaceholder": "Enter your message",
-    "submitButton": "Submit Message"
-  },
-  "NotFoundPage": {
-    "title": "404 - Page Not Found",
-    "description": "The page you are looking for does not exist.",
-    "goHome": "Go to Homepage"
+    "submitButton": "Submit",
+    "successMessage": "Your message has been sent successfully!",
+    "errorMessage": "There was an error sending your message. Please try again later."
   }
 }

@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Everpay LANDING page 2025",
-  description: "The future of payments, today.",
+  title: "Everpay - The Future of Payments",
+  description: "Seamless, secure, and scalable payment solutions for businesses of all sizes.",
     generator: 'v0.dev'
 }
 
