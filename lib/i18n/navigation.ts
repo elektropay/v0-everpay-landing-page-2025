@@ -1,8 +1,8 @@
-import { createSharedPathnamesNavigation } from "next-intl/navigation"
-import { locales, localePrefix, pathnames } from "./config"
+import { createLocalizedPathnamesNavigation } from "next-intl/navigation"
+import { locales, pathnames, defaultLocale } from "./config"
 
-export const { Link, redirect, usePathname, useRouter } = createSharedPathnamesNavigation({
+export const { Link, redirect, usePathname, useRouter } = createLocalizedPathnamesNavigation({
   locales,
-  localePrefix,
   pathnames,
+  defaultLocale,
 })

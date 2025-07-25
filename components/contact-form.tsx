@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "next-intl"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import type { Messages } from "@/lib/i18n/types"
 
 interface ContactFormProps {
@@ -14,99 +14,70 @@ interface ContactFormProps {
 }
 
 export function ContactForm({ dict }: ContactFormProps) {
-  const t = useTranslations("contact")
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  })
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setStatus("idle") // Reset status
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setStatus("idle")
 
     // Simulate API call
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000)) // Simulate network delay
-      console.log("Form submitted:", formData)
+    await new Promise((resolve) => setTimeout(resolve, 1000))
+
+    const formData = new FormData(event.currentTarget)
+    const name = formData.get("name")
+    const email = formData.get("email")
+    const subject = formData.get("subject")
+    const message = formData.get("message")
+
+    console.log({ name, email, subject, message })
+
+    // Simulate success or error based on some condition (e.g., email content)
+    if (email && (email as string).includes("@")) {
       setStatus("success")
-      setFormData({ name: "", email: "", subject: "", message: "" }) // Clear form
-    } catch (error) {
-      console.error("Form submission error:", error)
+      event.currentTarget.reset()
+    } else {
       setStatus("error")
     }
   }
 
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {t("nameLabel")}
-        </label>
-        <Input
-          id="name"
-          name="name"
-          type="text"
-          value={formData.name}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full"
-        />
-      </div>
-      <div>
-        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {t("emailLabel")}
-        </label>
-        <Input
-          id="email"
-          name="email"
-          type="email"
-          value={formData.email}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full"
-        />
-      </div>
-      <div>
-        <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {t("subjectLabel")}
-        </label>
-        <Input
-          id="subject"
-          name="subject"
-          type="text"
-          value={formData.subject}
-          onChange={handleChange}
-          required
-          className="mt-1 block w-full"
-        />
-      </div>
-      <div>
-        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
-          {t("messageLabel")}
-        </label>
-        <Textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          required
-          rows={5}
-          className="mt-1 block w-full"
-        />
-      </div>
-      <Button type="submit" className="w-full">
-        {t("submitButton")}
-      </Button>
-      {status === "success" && <p className="text-center text-green-600 mt-4">{t("successMessage")}</p>}
-      {status === "error" && <p className="text-center text-red-600 mt-4">{t("errorMessage")}</p>}
-    </form>
+    <Card>
+      <CardHeader>
+        <CardTitle>{dict.contact.title}</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="name" className="sr-only">
+              {dict.contact.nameLabel}
+            </label>
+            <Input id="name" name="name" placeholder={dict.contact.nameLabel} required />
+          </div>
+          <div>
+            <label htmlFor="email" className="sr-only">
+              {dict.contact.emailLabel}
+            </label>
+            <Input id="email" name="email" type="email" placeholder={dict.contact.emailLabel} required />
+          </div>
+          <div>
+            <label htmlFor="subject" className="sr-only">
+              {dict.contact.subjectLabel}
+            </label>
+            <Input id="subject" name="subject" placeholder={dict.contact.subjectLabel} required />
+          </div>
+          <div>
+            <label htmlFor="message" className="sr-only">
+              {dict.contact.messageLabel}
+            </label>
+            <Textarea id="message" name="message" placeholder={dict.contact.messageLabel} rows={5} required />
+          </div>
+          <Button type="submit" className="w-full">
+            {dict.contact.submitButton}
+          </Button>
+          {status === "success" && <p className="text-center text-green-500 mt-4">{dict.contact.successMessage}</p>}
+          {status === "error" && <p className="text-center text-red-500 mt-4">{dict.contact.errorMessage}</p>}
+        </form>
+      </CardContent>
+    </Card>
   )
 }

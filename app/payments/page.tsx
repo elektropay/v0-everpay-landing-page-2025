@@ -22,7 +22,7 @@ export default async function PaymentsPage({
 
   return (
     <div className="flex flex-col min-h-screen">
-      <SiteHeader dict={dict} />
+      <SiteHeader dict={dict} lang={lang} />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-[#0A2F2F] text-white overflow-hidden">
@@ -392,16 +392,17 @@ export default async function PaymentsPage({
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.footer.onlinePayments}</h1>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.navigation.payments}</h1>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  This is the payments page.
+                  This is the payments page. Content will be added here soon.
                 </p>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter dict={dict} />
+      <SiteFooter dict={dict} lang={lang} />
     </div>
   )
 }
+</merged_code>

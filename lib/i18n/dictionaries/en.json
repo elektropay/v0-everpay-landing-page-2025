@@ -7,108 +7,140 @@
   },
   "Header": {
     "home": "Home",
+    "payments": "Payments",
+    "onlinePayments": "Online Payments",
+    "fraudPrevention": "Fraud Prevention",
+    "cardIssuing": "Card Issuing",
+    "posSystems": "POS Systems",
     "solutions": "Solutions",
+    "business": "Business",
+    "ecommerce": "E-commerce",
+    "marketplace": "Marketplace",
+    "retail": "Retail",
     "developers": "Developers",
-    "company": "Company",
-    "pricing": "Pricing",
-    "contact": "Contact",
-    "about": "About",
-    "blog": "Blog",
-    "careers": "Careers",
+    "docs": "Docs",
     "help": "Help",
-    "login": "Login",
-    "signup": "Sign Up"
+    "company": "Company",
+    "about": "About",
+    "careers": "Careers",
+    "blog": "Blog",
+    "partners": "Partners",
+    "contact": "Contact"
   },
   "Footer": {
-    "company": "Company",
-    "aboutUs": "About Us",
-    "careers": "Careers",
-    "blog": "Blog",
-    "contactUs": "Contact Us",
-    "products": "Products",
-    "onlinePayments": "Online Payments",
-    "posSolutions": "POS Solutions",
-    "paymentGateway": "Payment Gateway",
-    "issuing": "Issuing",
-    "solutions": "Solutions",
-    "ecommerce": "E-commerce",
-    "retail": "Retail",
-    "marketplace": "Marketplace",
-    "business": "Business",
-    "resources": "Resources",
-    "documentation": "Documentation",
-    "helpCenter": "Help Center",
-    "apiReference": "API Reference",
-    "partners": "Partners",
-    "legal": "Legal",
-    "privacyPolicy": "Privacy Policy",
-    "termsOfService": "Terms of Service",
-    "cookiePolicy": "Cookie Policy",
-    "fraudPrevention": "Fraud Prevention",
-    "security": "Security",
-    "copyright": "© 2024 Everpay Inc. All rights reserved."
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "blog": "Blog",
+      "partners": "Partners"
+    },
+    "products": {
+      "title": "Products",
+      "payments": "Payments",
+      "onlinePayments": "Online Payments",
+      "fraudPrevention": "Fraud Prevention",
+      "cardIssuing": "Card Issuing",
+      "posSystems": "POS Systems"
+    },
+    "solutions": {
+      "title": "Solutions",
+      "business": "Business",
+      "ecommerce": "E-commerce",
+      "marketplace": "Marketplace",
+      "retail": "Retail"
+    },
+    "resources": {
+      "title": "Resources",
+      "docs": "Documentation",
+      "help": "Help Center",
+      "api": "API Reference"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "cookiePolicy": "Cookie Policy"
+    },
+    "copyright": "© 2024 Everpay. All rights reserved."
   },
   "HeroSection": {
     "title": "The Future of Payments, Today.",
-    "description": "Everpay provides seamless, secure, and scalable payment solutions for businesses of all sizes. Revolutionize your transactions with our cutting-edge technology.",
+    "description": "Everpay provides seamless, secure, and innovative payment solutions for businesses of all sizes. Empower your growth with our cutting-edge technology.",
     "getStartedButton": "Get Started",
     "contactSalesButton": "Contact Sales"
   },
   "FeaturesSection": {
     "title": "Why Choose Everpay?",
-    "description": "Our platform is built to empower your business with robust features and unparalleled reliability.",
+    "description": "Our platform is built to scale with your business, offering a suite of tools designed for efficiency and growth.",
     "feature1Title": "Global Reach",
-    "feature1Description": "Accept payments from anywhere in the world, in any currency.",
+    "feature1Description": "Accept payments from anywhere in the world with support for multiple currencies and payment methods.",
     "feature2Title": "Advanced Security",
-    "feature2Description": "Protect your transactions with state-of-the-art fraud prevention and encryption.",
+    "feature2Description": "Protect your transactions and customer data with industry-leading encryption and fraud detection.",
     "feature3Title": "Seamless Integration",
-    "feature3Description": "Easily integrate our APIs with your existing systems.",
-    "feature4Title": "Scalable Infrastructure",
-    "feature4Description": "Grow your business without worrying about payment processing limits.",
+    "feature3Description": "Easily integrate our APIs into your existing systems with comprehensive documentation and developer tools.",
+    "feature4Title": "Real-time Analytics",
+    "feature4Description": "Gain insights into your sales and customer behavior with powerful, customizable dashboards.",
     "feature5Title": "24/7 Support",
-    "feature5Description": "Our dedicated support team is always here to help you.",
-    "feature6Title": "Real-time Analytics",
-    "feature6Description": "Gain insights into your sales and customer behavior with detailed reports."
+    "feature5Description": "Our dedicated support team is available around the clock to assist you with any queries.",
+    "feature6Title": "Scalable Infrastructure",
+    "feature6Description": "Our robust infrastructure handles high transaction volumes, ensuring reliability and performance."
   },
   "StatsSection": {
-    "title": "Our Impact",
-    "description": "We are proud to be a leading payment solution provider, trusted by businesses worldwide.",
+    "title": "Trusted by Businesses Worldwide",
+    "description": "Join thousands of satisfied merchants who rely on Everpay for their payment processing needs.",
     "transactions": "Transactions Processed",
     "businesses": "Businesses Served",
     "countries": "Countries Supported",
     "growth": "Annual Growth"
   },
   "PaymentPartnersSection": {
-    "title": "Trusted by Leading Payment Partners",
-    "description": "We collaborate with the world's most reliable payment networks to ensure smooth and secure transactions for your business."
+    "title": "Accept All Major Payment Methods",
+    "description": "Everpay supports a wide range of payment options, making it easy for your customers to pay how they prefer.",
+    "visa": "Visa",
+    "mastercard": "Mastercard",
+    "amex": "American Express",
+    "paypal": "PayPal",
+    "applePay": "Apple Pay",
+    "googlePay": "Google Pay",
+    "interac": "Interac",
+    "jcb": "JCB"
   },
   "CheckoutProtectionSection": {
     "title": "Secure Checkout & Fraud Protection",
-    "description": "Protect your business and customers with our advanced security features. Our platform is designed to detect and prevent fraudulent activities, ensuring every transaction is safe.",
-    "feature1Title": "AI-Powered Fraud Detection",
-    "feature1Description": "Utilize machine learning to identify and block suspicious transactions in real-time.",
-    "feature2Title": "PCI DSS Compliance",
-    "feature2Description": "Maintain the highest security standards with our fully compliant payment processing.",
-    "feature3Title": "3D Secure 2.0",
-    "feature3Description": "Add an extra layer of security for online credit and debit card transactions.",
-    "feature4Title": "Tokenization",
-    "feature4Description": "Protect sensitive cardholder data by converting it into a unique, encrypted token."
+    "description": "Protect your business and customers with Everpay's advanced security features.",
+    "fraudDetection": {
+      "title": "AI-Powered Fraud Detection",
+      "description": "Our intelligent algorithms analyze transactions in real-time to identify and block fraudulent activities, minimizing chargebacks and protecting your revenue."
+    },
+    "dataEncryption": {
+      "title": "End-to-End Data Encryption",
+      "description": "All sensitive payment information is encrypted from the moment it's captured until it reaches its destination, ensuring maximum data security and compliance."
+    },
+    "tokenization": {
+      "title": "Tokenization for Enhanced Security",
+      "description": "Replace sensitive card data with unique tokens, reducing your PCI DSS scope and protecting customer information from breaches."
+    },
+    "3dSecure": {
+      "title": "3D Secure 2.0 Support",
+      "description": "Implement an additional layer of security for online credit and debit card transactions, reducing fraud and liability shifts."
+    }
   },
   "BusinessTypesSection": {
     "title": "Solutions for Every Business Type",
-    "description": "Whether you're a small startup or a large enterprise, Everpay has tailored solutions to meet your unique payment needs.",
+    "description": "Whether you're a startup or an enterprise, Everpay has tailored solutions to meet your unique payment needs.",
     "ecommerceTitle": "E-commerce",
-    "ecommerceDescription": "Seamless online payment processing for your e-commerce store.",
+    "ecommerceDescription": "Optimize your online checkout experience with seamless integrations and global payment options.",
     "retailTitle": "Retail",
-    "retailDescription": "Secure in-store and online payment solutions for retail businesses.",
+    "retailDescription": "Streamline in-store payments with our robust POS systems and integrated payment terminals.",
     "marketplaceTitle": "Marketplace",
-    "marketplaceDescription": "Robust payment infrastructure for multi-vendor marketplaces.",
+    "marketplaceDescription": "Manage complex payment flows for multiple vendors with our flexible marketplace solutions.",
     "saasTitle": "SaaS & Subscriptions",
-    "saasDescription": "Automate recurring payments and manage subscriptions with ease."
+    "saasDescription": "Automate recurring billing and subscription management with our powerful recurring payment tools."
   },
   "cta": {
     "title": "Ready to Transform Your Payments?",
-    "description": "Join thousands of businesses that trust Everpay for their payment processing needs. Get started today and experience the future of finance.",
+    "description": "Join Everpay today and experience the future of secure and efficient payment processing.",
     "signUpButton": "Sign Up Now",
     "contactSalesButton": "Contact Sales"
   },

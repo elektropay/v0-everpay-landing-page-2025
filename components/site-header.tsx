@@ -3,219 +3,118 @@
 import type React from "react"
 
 import { useState } from "react"
-import Image from "next/image"
 import { MenuIcon } from "lucide-react"
+import { Link, usePathname } from "@/lib/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Link } from "@/lib/i18n/navigation"
-import { useLocale, useTranslations } from "next-intl"
-import { locales, pathnames } from "@/lib/i18n/config"
-import { usePathname } from "@/lib/i18n/navigation"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { type Locale, locales } from "@/lib/i18n/config"
+import type { Messages } from "@/lib/i18n/types"
 
-export function SiteHeader({ lang }: { lang: string }) {
-  const t = useTranslations("header")
-  const currentLocale = useLocale()
+interface SiteHeaderProps {
+  dict: Messages
+  lang: Locale
+}
+
+export function SiteHeader({ dict, lang }: SiteHeaderProps) {
   const pathname = usePathname()
   const [isSheetOpen, setIsSheetOpen] = useState(false)
 
-  const getLocalizedPath = (pathKey: keyof typeof pathnames, locale: string) => {
-    const path = pathnames[pathKey]
-    if (typeof path === "string") {
-      return `/${locale}${path}`
-    }
-    return `/${locale}${path[locale as keyof typeof path] || path.en}`
+  const handleLocaleChange = (newLocale: string) => {
+    // This is a client component, so we can use window.location
+    // For a server component, you would use Next.js's redirect or router.push
+    window.location.href = `/${newLocale}${pathname}`
   }
+
+  const navLinks = [
+    { href: "/", label: dict.navigation.home },
+    { href: "/payments", label: dict.navigation.payments },
+    { href: "/solutions/business", label: dict.navigation.solutions },
+    { href: "/developers", label: dict.navigation.developers },
+    { href: "/company", label: dict.navigation.company },
+    { href: "/contact", label: dict.navigation.contact },
+  ]
 
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background">
-      <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
-        <div className="flex gap-6 md:gap-10">
-          <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
-            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={24} height={24} />
-            <span className="inline-block font-bold">Everpay</span>
-          </Link>
-          <nav className="hidden gap-6 md:flex">
-            <Link
-              href={getLocalizedPath("/", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("home")}
+      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
+        <Link href={`/${lang}`} className="flex items-center gap-2 font-semibold">
+          <DollarSignIcon className="h-6 w-6" />
+          <span className="sr-only">Everpay</span>
+          Everpay
+        </Link>
+        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} className="hover:text-primary">
+              {link.label}
             </Link>
-            <Link
-              href={getLocalizedPath("/solutions/business", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("solutions")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/docs", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("developers")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/contact", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("contact")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/about", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("about")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/blog", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("blog")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/careers", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("careers")}
-            </Link>
-            <Link
-              href={getLocalizedPath("/help", currentLocale)}
-              className="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm"
-            >
-              {t("help")}
-            </Link>
-          </nav>
-        </div>
-        <div className="flex flex-1 items-center justify-end space-x-4">
-          <nav className="flex items-center space-x-1">
-            <Link href={`/${currentLocale}/login`}>
-              <Button variant="ghost">{t("login")}</Button>
-            </Link>
-            <Link href={`/${currentLocale}/signup`}>
-              <Button>{t("signup")}</Button>
-            </Link>
-            <div className="relative">
-              <select
-                value={currentLocale}
-                onChange={(e) => {
-                  const newLocale = e.target.value
-                  const newPath = getLocalizedPath(pathname as keyof typeof pathnames, newLocale)
-                  window.location.href = newPath
-                }}
-                className="appearance-none bg-transparent border-none text-sm font-medium focus:outline-none focus:ring-0"
-              >
-                {locales.map((locale) => (
-                  <option key={locale} value={locale}>
-                    {locale.toUpperCase()}
-                  </option>
+          ))}
+          <Select onValueChange={handleLocaleChange} defaultValue={lang}>
+            <SelectTrigger className="w-[80px]">
+              <SelectValue placeholder="Lang" />
+            </SelectTrigger>
+            <SelectContent>
+              {locales.map((locale) => (
+                <SelectItem key={locale} value={locale}>
+                  {locale.toUpperCase()}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Button variant="secondary" className="rounded-full">
+            {dict.hero.getStartedButton}
+          </Button>
+        </nav>
+        <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <Button variant="outline" size="icon">
+              <MenuIcon className="h-6 w-6" />
+              <span className="sr-only">Toggle navigation menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <div className="flex flex-col items-start gap-4 p-4">
+              <Link href={`/${lang}`} className="flex items-center gap-2 font-semibold">
+                <DollarSignIcon className="h-6 w-6" />
+                <span className="sr-only">Everpay</span>
+                Everpay
+              </Link>
+              <nav className="flex flex-col items-start gap-4 text-sm font-medium">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="hover:text-primary"
+                    onClick={() => setIsSheetOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
                 ))}
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <ChevronDownIcon className="h-4 w-4" />
-              </div>
-            </div>
-            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-                >
-                  <MenuIcon className="h-6 w-6" />
-                  <span className="sr-only">Toggle Menu</span>
+                <Select onValueChange={handleLocaleChange} defaultValue={lang}>
+                  <SelectTrigger className="w-[80px]">
+                    <SelectValue placeholder="Lang" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    {locales.map((locale) => (
+                      <SelectItem key={locale} value={locale}>
+                        {locale.toUpperCase()}
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+                <Button variant="secondary" className="rounded-full w-full">
+                  {dict.hero.getStartedButton}
                 </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="pr-0">
-                <Link
-                  href={`/${currentLocale}`}
-                  className="flex items-center space-x-2"
-                  onClick={() => setIsSheetOpen(false)}
-                >
-                  <Image src="/placeholder-logo.png" alt="Everpay Logo" width={24} height={24} />
-                  <span className="font-bold">Everpay</span>
-                </Link>
-                <div className="h-full overflow-y-auto">
-                  <nav className="flex flex-col gap-2 py-6">
-                    <Link
-                      href={getLocalizedPath("/", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("home")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/solutions/business", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("solutions")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/docs", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("developers")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/contact", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("contact")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/about", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("about")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/blog", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("blog")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/careers", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("careers")}
-                    </Link>
-                    <Link
-                      href={getLocalizedPath("/help", currentLocale)}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("help")}
-                    </Link>
-                    <Link
-                      href={`/${currentLocale}/login`}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("login")}
-                    </Link>
-                    <Link
-                      href={`/${currentLocale}/signup`}
-                      className="flex w-full items-center py-2 text-lg font-semibold"
-                      onClick={() => setIsSheetOpen(false)}
-                    >
-                      {t("signup")}
-                    </Link>
-                  </nav>
-                </div>
-              </SheetContent>
-            </Sheet>
-          </nav>
-        </div>
+              </nav>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </header>
   )
 }
 
-function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
+function DollarSignIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -229,7 +128,8 @@ function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
       strokeLinecap="round"
       strokeLinejoin="round"
     >
-      <path d="m6 9 6 6 6-6" />
+      <line x1="12" x2="12" y1="2" y2="22" />
+      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
     </svg>
   )
 }

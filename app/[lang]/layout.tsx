@@ -1,10 +1,8 @@
 import type React from "react"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "next-intl/server"
+import { getMessages } from "@/lib/i18n"
 import { locales } from "@/lib/i18n/config"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
 
 export default async function LocaleLayout({
   children,
@@ -15,15 +13,7 @@ export default async function LocaleLayout({
 }) {
   if (!locales.includes(lang as any)) notFound()
 
-  const messages = await getMessages()
+  const messages = await getMessages(lang)
 
-  return (
-    <NextIntlClientProvider messages={messages}>
-      <div className="flex min-h-screen flex-col">
-        <SiteHeader lang={lang} />
-        <main className="flex-1">{children}</main>
-        <SiteFooter lang={lang} />
-      </div>
-    </NextIntlClientProvider>
-  )
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
 }
