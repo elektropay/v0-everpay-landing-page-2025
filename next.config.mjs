@@ -1,3 +1,7 @@
+import createNextIntlPlugin from 'next-intl/plugin'
+
+const withNextIntl = createNextIntlPlugin()
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   eslint: {
@@ -10,13 +14,11 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'res.cloudinary.com',
-        port: '',
-        pathname: '/lmj6rf6tz/image/upload/**',
+        hostname: '**.v0.dev',
       },
     ],
     unoptimized: true,
   },
-};
+}
 
-export default nextConfig;
+export default withNextIntl(nextConfig)

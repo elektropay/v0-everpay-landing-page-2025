@@ -1,141 +1,59 @@
-import type React from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/config"
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 
-export default function MarketplaceSolutionsPage() {
+export default async function MarketplaceSolutionsPage({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
+  const dict = await getDictionary(lang)
+
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
+      <SiteHeader dict={dict} />
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Marketplace Solutions</h1>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Facilitate payments between multiple parties with our robust marketplace solutions.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
         <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Simplified Payouts</h2>
-                <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Automate and manage payouts to your sellers, service providers, or contractors with ease, supporting
-                  various payout methods and currencies.
-                </p>
-                <Button
-                  className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
-                  href="#"
-                >
-                  Learn More
-                </Button>
-              </div>
-            </div>
-            <Image
-              alt="Marketplace Payouts"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-              height="310"
-              src="https://images.unsplash.com/photo-1556740758-90de374c12ad?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHwxfHxtYXJrZXRwbGFjZSUyMHBheW91dHN8ZW58MHx8fDE3MDk4NjU2NzB8MA&ixlib=rb-4.0.3&q=80&w=800"
-              width="550"
-              unoptimized="true"
-            />
-          </div>
-        </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              <div className="flex flex-col items-center text-center">
-                <UsersIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Seller Onboarding</h3>
-                <p className="text-gray-500">
-                  Streamline the onboarding process for new sellers with customizable forms and verification.
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <CreditCardIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Split Payments</h3>
-                <p className="text-gray-500">
-                  Easily split payments between multiple sellers or service providers in a single transaction.
-                </p>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <BarChartIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Reporting & Analytics</h3>
-                <p className="text-gray-500">
-                  Gain insights into your marketplace performance with detailed transaction and payout reports.
-                </p>
+            <div className="mx-auto max-w-4xl space-y-8">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-center">
+                {dict.marketplaceSolutions.title}
+              </h1>
+              <p className="text-center text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                {dict.marketplaceSolutions.description}
+              </p>
+              <div className="grid gap-8 md:grid-cols-2">
+                <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                  <h2 className="text-xl font-semibold">{dict.marketplaceSolutions.splitPayments.title}</h2>
+                  <p className="mt-2 text-gray-500 dark:text-gray-400">
+                    {dict.marketplaceSolutions.splitPayments.content}
+                  </p>
+                </div>
+                <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                  <h2 className="text-xl font-semibold">{dict.marketplaceSolutions.onboardingVerification.title}</h2>
+                  <p className="mt-2 text-gray-500 dark:text-gray-400">
+                    {dict.marketplaceSolutions.onboardingVerification.content}
+                  </p>
+                </div>
+                <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                  <h2 className="text-xl font-semibold">{dict.marketplaceSolutions.globalPayouts.title}</h2>
+                  <p className="mt-2 text-gray-500 dark:text-gray-400">
+                    {dict.marketplaceSolutions.globalPayouts.content}
+                  </p>
+                </div>
+                <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+                  <h2 className="text-xl font-semibold">{dict.marketplaceSolutions.fraudPrevention.title}</h2>
+                  <p className="mt-2 text-gray-500 dark:text-gray-400">
+                    {dict.marketplaceSolutions.fraudPrevention.content}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
+      <SiteFooter dict={dict} />
     </div>
-  )
-}
-
-function BarChartIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="12" x2="12" y1="20" y2="10" />
-      <line x1="18" x2="18" y1="20" y2="4" />
-      <line x1="6" x2="6" y1="20" y2="16" />
-    </svg>
-  )
-}
-
-function CreditCardIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect width="20" height="14" x="2" y="5" rx="2" />
-      <line x1="2" x2="22" y1="10" y2="10" />
-    </svg>
-  )
-}
-
-function UsersIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-    </svg>
   )
 }

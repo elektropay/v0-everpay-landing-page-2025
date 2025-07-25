@@ -1,513 +1,594 @@
 {
-  "header": {
+  "navigation": {
+    "home": "Inicio",
     "solutions": "Soluciones",
     "products": "Productos",
     "resources": "Recursos",
     "company": "Empresa",
+    "contact": "Contacto",
     "signIn": "Iniciar Sesión",
     "signUp": "Registrarse"
   },
+  "hero": {
+    "title": "El Futuro de los Pagos, Simplificado.",
+    "description": "Everpay ofrece un conjunto completo de soluciones de pago diseñadas para ayudar a empresas de todos los tamaños a prosperar en la economía digital.",
+    "getStartedButton": "Empezar",
+    "learnMoreButton": "Saber Más"
+  },
+  "features": {
+    "tagline": "Características Clave",
+    "title": "Funciones Potentes para su Negocio",
+    "description": "Desde el procesamiento de pagos sin interrupciones hasta la protección avanzada contra el fraude, Everpay tiene todo lo que necesita para administrar sus finanzas con confianza.",
+    "paymentProcessing": {
+      "title": "Procesamiento de Pagos sin Interrupciones",
+      "description": "Acepte todos los principales métodos de pago en línea y en persona con facilidad."
+    },
+    "fraudProtection": {
+      "title": "Protección Avanzada contra el Fraude",
+      "description": "Proteja su negocio de transacciones fraudulentas con nuestro sistema inteligente de detección de fraude."
+    },
+    "analyticsReporting": {
+      "title": "Análisis e Informes Completos",
+      "description": "Obtenga información valiosa sobre sus ventas y el comportamiento del cliente con informes detallados."
+    },
+    "globalPayments": {
+      "title": "Capacidades de Pago Globales",
+      "description": "Amplíe su alcance y acepte pagos de clientes en todo el mundo."
+    }
+  },
+  "stats": {
+    "transactions": {
+      "value": "Más de 100M",
+      "label": "Transacciones Procesadas"
+    },
+    "businesses": {
+      "value": "Más de 50K",
+      "label": "Empresas Atendidas"
+    },
+    "countries": {
+      "value": "Más de 150",
+      "label": "Países Soportados"
+    },
+    "growth": {
+      "value": "99.9%",
+      "label": "Garantía de Disponibilidad"
+    }
+  },
+  "paymentPartners": {
+    "tagline": "Nuestros Socios",
+    "title": "Con la Confianza de las Principales Redes de Pago",
+    "description": "Nos asociamos con las redes de pago más seguras y confiables del mundo para garantizar que sus transacciones sean siempre seguras y eficientes."
+  },
+  "checkoutProtection": {
+    "tagline": "La Seguridad Primero",
+    "title": "Pago Seguro y Protección contra el Fraude",
+    "description": "Nuestras medidas de seguridad avanzadas protegen su negocio y a sus clientes del fraude, asegurando que cada transacción sea segura.",
+    "feature1": "Cumplimiento PCI DSS Nivel 1",
+    "feature2": "Soporte 3D Secure 2.0",
+    "feature3": "Monitoreo de Fraude en Tiempo Real"
+  },
+  "businessTypes": {
+    "tagline": "Soluciones para Cada Negocio",
+    "title": "Adaptado a su Industria",
+    "description": "Ya sea que sea un gigante del comercio electrónico o una tienda minorista local, Everpay tiene la solución de pago perfecta para sus necesidades únicas.",
+    "ecommerce": {
+      "title": "Comercio Electrónico",
+      "description": "Procesamiento de pagos en línea sin interrupciones para su tienda digital."
+    },
+    "retail": {
+      "title": "Minorista",
+      "description": "Sistemas POS modernos y soluciones de pago en persona."
+    },
+    "marketplace": {
+      "title": "Mercado",
+      "description": "Enrutamiento de pagos complejos y pagos a proveedores para plataformas."
+    },
+    "saas": {
+      "title": "SaaS y Suscripciones",
+      "description": "Facturación recurrente automatizada y gestión de suscripciones."
+    }
+  },
+  "cta": {
+    "title": "¿Listo para empezar?",
+    "description": "Únase a miles de empresas que ya utilizan Everpay para simplificar su procesamiento de pagos.",
+    "signUpButton": "Regístrese Ahora",
+    "contactSalesButton": "Contactar Ventas"
+  },
   "footer": {
-    "description": "Everpay es una empresa líder en procesamiento de pagos que ofrece soluciones seguras y eficientes para empresas de todo el mundo.",
-    "products": "Productos",
-    "payments": "Pagos",
-    "onlinePayments": "Pagos en Línea",
-    "commerce": "Comercio",
-    "fraudPrevention": "Prevención de Fraude",
-    "cardIssuing": "Emisión de Tarjetas",
-    "posSystems": "Sistemas POS",
-    "solutions": "Soluciones",
-    "businessSolutions": "Soluciones Empresariales",
-    "ecommerceSolutions": "Soluciones de Comercio Electrónico",
-    "marketplaceSolutions": "Soluciones para Marketplaces",
-    "retailSolutions": "Soluciones Minoristas",
-    "resources": "Recursos",
-    "documentation": "Documentación",
-    "helpCenter": "Centro de Ayuda",
-    "blog": "Blog",
-    "apiReference": "Referencia de API",
-    "company": "Empresa",
-    "aboutUs": "Sobre Nosotros",
-    "careers": "Carreras",
-    "partners": "Socios",
-    "contact": "Contacto",
-    "allRightsReserved": "Todos los derechos reservados.",
-    "privacyPolicy": "Política de Privacidad",
-    "termsOfService": "Términos de Servicio",
-    "cookiePolicy": "Política de Cookies"
-  },
-  "home": {
-    "heroTitle": "La Infraestructura de Pagos para Internet",
-    "heroDescription": "Millones de empresas de todos los tamaños, desde startups hasta grandes corporaciones, utilizan el software y las APIs de Everpay para aceptar pagos, enviar desembolsos y gestionar sus negocios en línea.",
-    "getStarted": "Empezar Ahora",
-    "contactSales": "Contactar Ventas",
-    "featuresTitle": "¿Por qué elegir Everpay?",
-    "feature1Title": "Alcance Global",
-    "feature1Description": "Acepte pagos de clientes en todo el mundo con soporte para más de 135 monedas.",
-    "feature2Title": "Seguridad Avanzada",
-    "feature2Description": "Proteja su negocio y a sus clientes con prevención de fraude y cumplimiento líderes en la industria.",
-    "feature3Title": "Integración Perfecta",
-    "feature3Description": "Integre fácilmente con nuestras APIs amigables para desarrolladores y documentación completa.",
-    "ctaTitle": "¿Listo para hacer crecer su negocio?",
-    "ctaDescription": "Únase a miles de empresas que ya utilizan Everpay para simplificar su procesamiento de pagos.",
-    "ctaButton": "Empezar a Aceptar Pagos"
-  },
-  "payments": {
-    "title": "Pagos",
-    "overviewTab": "Resumen",
-    "featuresTab": "Características",
-    "pricingTab": "Precios",
-    "overviewContent": {
-      "title": "Simplifique su Procesamiento de Pagos",
-      "description": "Everpay ofrece un conjunto completo de soluciones de pago diseñadas para ayudar a empresas de todos los tamaños a aceptar, procesar y gestionar pagos de manera eficiente y segura.",
-      "keyBenefits": "Beneficios Clave",
-      "benefit1": "Acepte todos los principales métodos de pago",
-      "benefit2": "Alcance global con soporte multidivisa",
-      "benefit3": "Herramientas robustas de prevención de fraude",
-      "benefit4": "Integración perfecta con sistemas existentes",
-      "benefit5": "Análisis e informes detallados",
-      "cta": "Comenzar con Pagos"
+    "tagline": "Simplificando los pagos para un mañana mejor.",
+    "copyright": "Todos los derechos reservados.",
+    "company": {
+      "title": "Empresa",
+      "about": "Sobre Nosotros",
+      "careers": "Carreras",
+      "partners": "Socios",
+      "blog": "Blog"
     },
-    "featuresContent": {
-      "title": "Funciones Potentes para Cada Necesidad",
-      "description": "Nuestra plataforma de pagos está construida con flexibilidad y escalabilidad en mente, ofreciendo una amplia gama de funciones para satisfacer sus requisitos comerciales únicos.",
-      "feature1Title": "Pago Personalizable",
-      "feature1Description": "Diseñe una experiencia de pago que coincida con su marca y optimice las tasas de conversión.",
-      "feature2Title": "Facturación Recurrente",
-      "feature2Description": "Automatice suscripciones y pagos recurrentes con ciclos de facturación flexibles.",
-      "feature3Title": "Pagos en Persona",
-      "feature3Description": "Acepte pagos de forma segura en sus ubicaciones físicas con nuestras soluciones POS.",
-      "feature4Title": "Gestión de Disputas",
-      "feature4Description": "Agilice el proceso de gestión de contracargos y disputas.",
-      "feature5Title": "Tokenización",
-      "feature5Description": "Almacene de forma segura los detalles de la tarjeta del cliente para futuras transacciones sin exponer datos sensibles."
+    "solutions": {
+      "title": "Soluciones",
+      "ecommerce": "Comercio Electrónico",
+      "retail": "Minorista",
+      "marketplace": "Mercado",
+      "business": "Negocio"
     },
-    "pricingContent": {
-      "title": "Precios Transparentes, Sin Cargos Ocultos",
-      "description": "Everpay ofrece modelos de precios competitivos y directos adaptados al volumen y las necesidades de su negocio. Póngase en contacto con nuestro equipo de ventas para una cotización personalizada.",
-      "standardPricing": "Precios Estándar",
-      "transactionFee": "2.9% + $0.30 por transacción de tarjeta exitosa",
-      "achFee": "0.8% para transferencias ACH (con un tope de $5)",
-      "internationalFee": "1% adicional para tarjetas internacionales",
-      "customPricing": "Precios Personalizados para Alto Volumen",
-      "customPricingDescription": "Las empresas con altos volúmenes de transacciones o requisitos únicos pueden beneficiarse de planes de precios personalizados. Póngase en contacto con nuestro equipo de ventas para discutir sus necesidades.",
-      "contactSalesButton": "Contactar Ventas para Precios Personalizados"
+    "products": {
+      "title": "Productos",
+      "payments": "Pagos",
+      "pos": "POS",
+      "issuing": "Emisión",
+      "onlinePayments": "Pagos en Línea",
+      "gateway": "Pasarela",
+      "api": "API"
+    },
+    "resources": {
+      "title": "Recursos",
+      "documentation": "Documentación",
+      "helpCenter": "Centro de Ayuda",
+      "security": "Seguridad",
+      "fraudPrevention": "Prevención de Fraude"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "cookiePolicy": "Política de Cookies"
+    },
+    "contact": {
+      "title": "Contacto",
+      "contactUs": "Contáctenos"
+    }
+  },
+  "contact": {
+    "title": "Póngase en Contacto",
+    "description": "¿Tiene preguntas o necesita ayuda? Contáctenos y estaremos encantados de ayudarle.",
+    "addressTitle": "Nuestra Oficina",
+    "addressLine1": "123 Calle de Pago.",
+    "addressLine2": "Suite 400, Ciudad Fintech, FC 12345",
+    "contactInfoTitle": "Información de Contacto",
+    "phone": "Teléfono",
+    "phoneNumber": "+1 (555) 123-4567",
+    "email": "Correo Electrónico",
+    "emailAddress": "info@everpay.com",
+    "contactFormTitle": "Envíanos un mensaje",
+    "formNameLabel": "Nombre",
+    "formNamePlaceholder": "Ingrese su nombre",
+    "formEmailLabel": "Correo Electrónico",
+    "formEmailPlaceholder": "Ingrese su correo electrónico",
+    "formSubjectLabel": "Asunto",
+    "formSubjectPlaceholder": "Ingrese el asunto",
+    "formMessageLabel": "Mensaje",
+    "formMessagePlaceholder": "Ingrese su mensaje",
+    "formSubmitButton": "Enviar Mensaje"
+  },
+  "cookiePolicy": {
+    "title": "Política de Cookies",
+    "intro": "Esta Política de Cookies explica cómo Everpay utiliza cookies y tecnologías similares para reconocerle cuando visita nuestro sitio web en everpay.com. Explica qué son estas tecnologías y por qué las usamos, así como sus derechos para controlar nuestro uso de ellas.",
+    "whatAreCookies": {
+      "title": "¿Qué son las cookies?",
+      "content": "Las cookies son pequeños archivos de datos que se colocan en su computadora o dispositivo móvil cuando visita un sitio web. Las cookies son ampliamente utilizadas por los propietarios de sitios web para hacer que sus sitios web funcionen, o para que funcionen de manera más eficiente, así como para proporcionar información de informes."
+    },
+    "howWeUseCookies": {
+      "title": "Cómo usamos las cookies",
+      "content": "Utilizamos cookies por varias razones. Algunas cookies son necesarias para que nuestro sitio web funcione, y se denominan cookies 'esenciales' o 'estrictamente necesarias'. Otras cookies nos permiten rastrear y orientar los intereses de nuestros usuarios para mejorar la experiencia en nuestras Propiedades en Línea. Terceros sirven cookies a través de nuestro sitio web con fines publicitarios, analíticos y otros. Esto se describe con más detalle a continuación."
+    },
+    "typesOfCookies": {
+      "title": "Tipos de cookies que utilizamos",
+      "essential": {
+        "title": "Cookies esenciales",
+        "content": "Estas cookies son estrictamente necesarias para proporcionarle los servicios disponibles a través de nuestro Sitio web y para utilizar algunas de sus funciones, como el acceso a áreas seguras."
+      },
+      "performance": {
+        "title": "Cookies de rendimiento y funcionalidad",
+        "content": "Estas cookies se utilizan para mejorar el rendimiento y la funcionalidad de nuestro Sitio web, pero no son esenciales para su uso. Sin embargo, sin estas cookies, ciertas funcionalidades (como los videos) pueden no estar disponibles."
+      },
+      "functionality": {
+        "title": "Cookies de análisis y personalización",
+        "content": "Estas cookies recopilan información que se utiliza de forma agregada para ayudarnos a comprender cómo se utiliza nuestro Sitio web o la eficacia de nuestras campañas de marketing, o para ayudarnos a personalizar nuestro Sitio web para usted."
+      },
+      "targeting": {
+        "title": "Cookies de publicidad",
+        "content": "Estas cookies se utilizan para hacer que los mensajes publicitarios sean más relevantes para usted. Realizan funciones como evitar que el mismo anuncio reaparezca continuamente, asegurar que los anuncios se muestren correctamente para los anunciantes y, en algunos casos, seleccionar anuncios basados en sus intereses."
+      }
+    },
+    "thirdPartyCookies": {
+      "title": "Cookies de terceros",
+      "content": "Además de nuestras propias cookies, también podemos utilizar varias cookies de terceros para informar estadísticas de uso del Servicio, entregar anuncios en y a través del Servicio, y así sucesivamente."
+    },
+    "managingCookies": {
+      "title": "Cómo puedo controlar las cookies?",
+      "content": "Tiene derecho a decidir si acepta o rechaza las cookies. Puede ejercer sus preferencias de cookies haciendo clic en los enlaces de exclusión voluntaria apropiados proporcionados en la tabla de cookies anterior. Puede configurar o modificar los controles de su navegador web para aceptar o rechazar cookies. Si elige rechazar las cookies, aún puede usar nuestro sitio web, aunque su acceso a algunas funcionalidades y áreas de nuestro sitio web puede estar restringido."
+    },
+    "changesToPolicy": {
+      "title": "Cambios en nuestra Política de Cookies",
+      "content": "Podemos actualizar esta Política de Cookies de vez en cuando para reflejar, por ejemplo, cambios en las cookies que utilizamos o por otras razones operativas, legales o reglamentarias. Por lo tanto, vuelva a visitar esta Política de Cookies regularmente para mantenerse informado sobre nuestro uso de cookies y tecnologías relacionadas."
+    },
+    "contactUs": {
+      "title": "¿Dónde puedo obtener más información?",
+      "content": "Si tiene alguna pregunta sobre nuestro uso de cookies u otras tecnologías, envíenos un correo electrónico a info@everpay.com."
+    }
+  },
+  "docs": {
+    "title": "Documentación",
+    "description": "Explore nuestra documentación completa para comenzar con las potentes soluciones de pago de Everpay.",
+    "gettingStarted": {
+      "title": "Primeros Pasos",
+      "description": "Aprenda a configurar su cuenta Everpay y a empezar a procesar pagos.",
+      "links": {
+        "installation": "Guía de Instalación",
+        "quickStart": "Tutorial de Inicio Rápido",
+        "authentication": "Autenticación"
+      }
+    },
+    "apiReference": {
+      "title": "Referencia de la API",
+      "description": "Documentación detallada de nuestra API RESTful, incluyendo todos los puntos finales y modelos de datos.",
+      "links": {
+        "endpoints": "Puntos Finales de la API",
+        "dataModels": "Modelos de Datos",
+        "errorCodes": "Códigos de Error"
+      }
+    },
+    "guides": {
+      "title": "Guías",
+      "description": "Guías paso a paso para casos de uso comunes e integraciones avanzadas.",
+      "links": {
+        "webhooks": "Implementación de Webhooks",
+        "customIntegrations": "Integraciones Personalizadas",
+        "paymentFlows": "Comprensión de los Flujos de Pago"
+      }
+    }
+  },
+  "fraudPrevention": {
+    "title": "Prevención de Fraude",
+    "description": "Proteja su negocio de transacciones fraudulentas con las herramientas avanzadas de detección y prevención de fraude de Everpay.",
+    "aiPoweredDetection": {
+      "title": "Detección Impulsada por IA",
+      "content": "Aproveche el aprendizaje automático para identificar y bloquear transacciones sospechosas en tiempo real."
+    },
+    "chargebackProtection": {
+      "title": "Protección contra Contracargos",
+      "content": "Minimice los contracargos con nuestros sólidos mecanismos de resolución y prevención de disputas."
+    },
+    "customRules": {
+      "title": "Reglas Personalizables",
+      "content": "Configure reglas de fraude personalizadas adaptadas a las necesidades de su negocio y tolerancia al riesgo."
+    },
+    "realTimeMonitoring": {
+      "title": "Monitoreo en Tiempo Real",
+      "content": "Monitoree todas las transacciones en tiempo real para detectar cualquier actividad inusual o posibles amenazas."
+    }
+  },
+  "gateway": {
+    "title": "Pasarela de Pago",
+    "description": "Nuestra pasarela de pago segura y confiable garantiza un procesamiento de transacciones fluido y eficiente para su negocio.",
+    "secureTransactions": {
+      "title": "Transacciones Seguras",
+      "content": "Pasarela certificada PCI DSS Nivel 1 para garantizar el más alto nivel de seguridad en todos los pagos."
+    },
+    "globalReach": {
+      "title": "Alcance Global",
+      "content": "Conéctese con clientes de todo el mundo al admitir múltiples monedas y métodos de pago locales."
+    },
+    "easyIntegration": {
+      "title": "Fácil Integración",
+      "content": "API y SDKs simples para una integración rápida y sin problemas en sus sistemas existentes."
+    },
+    "realTimeReporting": {
+      "title": "Informes en Tiempo Real",
+      "content": "Acceda a información instantánea sobre sus datos de transacciones con herramientas de informes completas."
+    }
+  },
+  "help": {
+    "title": "Centro de Ayuda",
+    "description": "Encuentre respuestas a sus preguntas, obtenga soporte y explore recursos para aprovechar al máximo Everpay.",
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "content": "Explore nuestra extensa sección de preguntas frecuentes para obtener respuestas rápidas a consultas comunes.",
+      "button": "Ver Preguntas Frecuentes"
+    },
+    "contactSupport": {
+      "title": "Contactar Soporte",
+      "content": "Nuestro equipo de soporte dedicado está disponible las 24 horas del día, los 7 días de la semana para ayudarle con cualquier problema.",
+      "button": "Obtener Soporte"
+    },
+    "documentation": {
+      "title": "Documentación",
+      "content": "Acceda a guías detalladas y referencias de API para integrar y usar Everpay de manera efectiva.",
+      "button": "Leer Documentos"
+    },
+    "communityForum": {
+      "title": "Foro de la Comunidad",
+      "content": "Conéctese con otros usuarios de Everpay y comparta ideas, consejos y mejores prácticas.",
+      "button": "Unirse al Foro"
+    }
+  },
+  "issuing": {
+    "title": "Emisión de Tarjetas",
+    "description": "Cree, administre y controle sus propias tarjetas de pago de marca con la plataforma flexible de emisión de tarjetas de Everpay.",
+    "customizableCards": {
+      "title": "Tarjetas Personalizables",
+      "content": "Diseñe y emita tarjetas físicas o virtuales adaptadas a su marca y necesidades específicas."
+    },
+    "realTimeControls": {
+      "title": "Controles en Tiempo Real",
+      "content": "Establezca límites de gasto, active/desactive tarjetas y monitoree transacciones en tiempo real."
+    },
+    "developerFriendlyApi": {
+      "title": "API Amigable para Desarrolladores",
+      "content": "Integre capacidades de emisión de tarjetas sin problemas en sus aplicaciones con nuestra robusta API."
+    },
+    "fraudPrevention": {
+      "title": "Prevención de Fraude Incorporada",
+      "content": "Proteja sus tarjetas emitidas y transacciones con mecanismos avanzados de detección de fraude."
     }
   },
   "onlinePayments": {
     "title": "Pagos en Línea",
-    "heroTitle": "Acepte Pagos en Línea, en Cualquier Lugar",
-    "heroDescription": "Las soluciones de pago en línea de Everpay facilitan que sus clientes paguen, sin importar dónde se encuentren o qué dispositivo estén utilizando.",
-    "featuresTitle": "Características Clave para Pagos en Línea",
-    "feature1Title": "Páginas de Pago Seguras",
-    "feature1Description": "Incruste formularios de pago seguros y personalizables directamente en su sitio web o aplicación.",
-    "feature2Title": "Optimización Móvil",
-    "feature2Description": "Asegure una experiencia de pago fluida en cualquier dispositivo móvil.",
-    "feature3Title": "Protección contra Fraude",
-    "feature3Description": "Herramientas avanzadas para detectar y prevenir transacciones fraudulentas en línea.",
-    "feature4Title": "Métodos de Pago Globales",
-    "feature4Description": "Soporte para tarjetas de crédito, billeteras digitales y opciones de pago locales en todo el mundo.",
-    "ctaTitle": "¿Listo para aumentar sus ventas en línea?",
-    "ctaDescription": "Comience a aceptar pagos en línea con Everpay hoy.",
-    "ctaButton": "Empezar Ahora"
-  },
-  "commerce": {
-    "title": "Soluciones de Comercio",
-    "heroTitle": "Comercio Unificado para Negocios Modernos",
-    "heroDescription": "Las soluciones de comercio de Everpay unen los pagos en línea y en persona, el inventario y los datos de los clientes para una experiencia verdaderamente unificada.",
-    "featuresTitle": "Características de Nuestra Plataforma de Comercio",
-    "feature1Title": "POS Integrado",
-    "feature1Description": "Conecte sin problemas su tienda en línea con sus ubicaciones minoristas físicas.",
-    "feature2Title": "Gestión de Inventario",
-    "feature2Description": "Realice un seguimiento de sus productos en todos los canales de venta en tiempo real.",
-    "feature3Title": "Perfiles de Clientes",
-    "feature3Description": "Obtenga una vista de 360 grados de sus clientes, su historial de compras y sus preferencias.",
-    "feature4Title": "Informes y Análisis",
-    "feature4Description": "Acceda a informes completos para tomar decisiones comerciales informadas.",
-    "ctaTitle": "Transforme su negocio con el comercio unificado.",
-    "ctaDescription": "Descubra cómo Everpay puede optimizar sus operaciones.",
-    "ctaButton": "Saber Más"
-  },
-  "fraudPrevention": {
-    "title": "Prevención de Fraude",
-    "heroTitle": "Proteja su Negocio del Fraude",
-    "heroDescription": "Las herramientas avanzadas de prevención de fraude de Everpay utilizan aprendizaje automático y análisis en tiempo real para minimizar el riesgo y maximizar las transacciones legítimas.",
-    "featuresTitle": "Nuestras Capacidades de Prevención de Fraude",
-    "feature1Title": "Modelos de Aprendizaje Automático",
-    "feature1Description": "Detecte y bloquee automáticamente transacciones sospechosas basadas en patrones de comportamiento.",
-    "feature2Title": "Reglas Personalizables",
-    "feature2Description": "Configure sus propias reglas y umbrales para marcar transacciones de alto riesgo.",
-    "feature3Title": "Protección contra Contracargos",
-    "feature3Description": "Reduzca los contracargos y los costos asociados con nuestras herramientas de gestión de disputas.",
-    "feature4Title": "Huella Digital del Dispositivo",
-    "feature4Description": "Identifique y bloquee a los estafadores analizando las características del dispositivo.",
-    "ctaTitle": "Asegure sus ingresos con la prevención de fraude de Everpay.",
-    "ctaDescription": "Proteja su negocio de las amenazas en evolución.",
-    "ctaButton": "Solicitar una Demostración"
-  },
-  "cardIssuing": {
-    "title": "Emisión de Tarjetas",
-    "heroTitle": "Emita sus Propias Tarjetas con Everpay",
-    "heroDescription": "Cree, gestione y distribuya tarjetas físicas y virtuales programáticamente con la plataforma de emisión de tarjetas de Everpay.",
-    "featuresTitle": "Características Clave de la Emisión de Tarjetas",
-    "feature1Title": "Tarjetas Personalizables",
-    "feature1Description": "Diseñe tarjetas con su marca, establezca límites de gasto y controle el uso.",
-    "feature2Title": "Controles en Tiempo Real",
-    "feature2Description": "Apruebe o rechace transacciones en tiempo real según su lógica de negocio.",
-    "feature3Title": "Tarjetas Virtuales y Físicas",
-    "feature3Description": "Emita tarjetas para diversos casos de uso, desde gastos de empleados hasta recompensas para clientes.",
-    "feature4Title": "Informes Detallados",
-    "feature4Description": "Realice un seguimiento del uso de la tarjeta, el gasto y los saldos con informes completos."
-  },
-  "posSystems": {
-    "title": "Sistemas POS",
-    "heroTitle": "Sistemas POS Modernos para un Comercio Minorista sin Problemas",
-    "heroDescription": "Los sistemas de punto de venta (POS) de Everpay están diseñados para el comercio minorista moderno, ofreciendo un procesamiento de pagos rápido, seguro e integrado.",
-    "featuresTitle": "Características de Nuestras Soluciones POS",
-    "feature1Title": "Acepte Todos los Pagos",
-    "feature1Description": "Procese tarjetas de crédito, tarjetas de débito, pagos móviles y más.",
-    "feature2Title": "Sincronización de Inventario",
-    "feature2Description": "Actualice automáticamente el inventario en los canales en línea y en la tienda.",
-    "feature3Title": "Gestión de Clientes",
-    "feature3Description": "Cree perfiles de clientes y realice un seguimiento del historial de compras para un servicio personalizado.",
-    "feature4Title": "Informes y Análisis",
-    "feature4Description": "Obtenga información sobre el rendimiento de las ventas y el comportamiento del cliente."
-  },
-  "documentation": {
-    "title": "Documentación",
-    "heroTitle": "Documentación para Desarrolladores",
-    "heroDescription": "Acceda a guías completas, referencias de API y SDKs para integrar Everpay en sus aplicaciones.",
-    "sections": [
-      {
-        "title": "Primeros Pasos",
-        "description": "Aprenda a configurar su cuenta Everpay y realizar su primera llamada a la API.",
-        "link": "/docs/getting-started"
-      },
-      {
-        "title": "Referencia de API",
-        "description": "Documentación detallada para todos los puntos finales y recursos de la API de Everpay.",
-        "link": "/api"
-      },
-      {
-        "title": "SDKs y Librerías",
-        "description": "Explore nuestros SDKs oficiales para varios lenguajes de programación.",
-        "link": "/docs/sdks"
-      },
-      {
-        "title": "Webhooks",
-        "description": "Comprenda cómo usar webhooks para recibir notificaciones en tiempo real.",
-        "link": "/docs/webhooks"
-      },
-      {
-        "title": "Pruebas",
-        "description": "Aprenda sobre cómo probar su integración en entornos de sandbox y producción.",
-        "link": "/docs/testing"
-      }
-    ]
-  },
-  "helpCenter": {
-    "title": "Centro de Ayuda",
-    "heroTitle": "¿Cómo Podemos Ayudarle?",
-    "heroDescription": "Encuentre respuestas a preguntas comunes, solucione problemas y obtenga soporte del equipo de Everpay.",
-    "searchPlaceholder": "Buscar artículos...",
-    "categories": [
-      {
-        "title": "Primeros Pasos",
-        "description": "Guías para nuevos usuarios y configuración de la cuenta.",
-        "link": "/help/getting-started"
-      },
-      {
-        "title": "Pagos y Transacciones",
-        "description": "Información sobre el procesamiento de pagos, reembolsos y disputas.",
-        "link": "/help/payments"
-      },
-      {
-        "title": "Gestión de Cuentas",
-        "description": "Gestione la configuración de su cuenta, usuarios y facturación.",
-        "link": "/help/account"
-      },
-      {
-        "title": "Integraciones",
-        "description": "Conecte Everpay con sus plataformas y aplicaciones de comercio electrónico.",
-        "link": "/help/integrations"
-      },
-      {
-        "title": "Seguridad y Cumplimiento",
-        "description": "Conozca nuestras medidas de seguridad y estándares de cumplimiento.",
-        "link": "/help/security"
-      }
-    ],
-    "contactSupport": "¿No encuentra lo que busca? Póngase en contacto con nuestro equipo de soporte.",
-    "contactButton": "Contactar Soporte"
-  },
-  "aboutUs": {
-    "title": "Sobre Nosotros",
-    "heroTitle": "Nuestra Misión",
-    "heroDescription": "En Everpay, creemos en empoderar a las empresas con soluciones de pago fluidas y seguras. Nuestra misión es construir la infraestructura financiera para internet.",
-    "ourStoryTitle": "Nuestra Historia",
-    "ourStoryDescription": "Fundada en 20XX, Everpay comenzó con la visión de simplificar los pagos en línea. Hemos crecido hasta convertirnos en un líder global, sirviendo a millones de empresas en todo el mundo.",
-    "valuesTitle": "Nuestros Valores",
-    "value1Title": "Enfoque en el Cliente",
-    "value1Description": "Priorizamos el éxito de nuestros clientes y nos esforzamos por superar sus expectativas.",
-    "value2Title": "Innovación",
-    "value2Description": "Innovamos constantemente para proporcionar tecnología de pago de vanguardia.",
-    "value3Title": "Integridad",
-    "value3Description": "Operamos con transparencia, honestidad y prácticas éticas.",
-    "value4Title": "Impacto Global",
-    "value4Description": "Nuestro objetivo es tener un impacto positivo en las empresas y economías de todo el mundo.",
-    "teamTitle": "Conozca a Nuestro Equipo",
-    "teamDescription": "Nuestro diverso equipo de expertos se dedica a construir el futuro de los pagos.",
-    "ctaTitle": "Únase a Nuestro Viaje",
-    "ctaDescription": "Explore las oportunidades de carrera y forme parte del equipo de Everpay.",
-    "ctaButton": "Ver Carreras"
-  },
-  "careers": {
-    "title": "Carreras",
-    "heroTitle": "Únase al Equipo de Everpay",
-    "heroDescription": "Estamos construyendo el futuro de los pagos y buscamos personas talentosas para unirse a nosotros. Explore nuestras posiciones abiertas y haga crecer su carrera con Everpay.",
-    "whyJoinTitle": "¿Por qué unirse a Everpay?",
-    "reason1Title": "Trabajo Impactante",
-    "reason1Description": "Contribuya a una plataforma que empodera a millones de empresas a nivel mundial.",
-    "reason2Title": "Oportunidades de Crecimiento",
-    "reason2Description": "Acceda a programas de aprendizaje continuo y desarrollo profesional.",
-    "reason3Title": "Cultura Inclusiva",
-    "reason3Description": "Trabaje en un entorno diverso y de apoyo donde sus ideas son valoradas.",
-    "reason4Title": "Beneficios Competitivos",
-    "reason4Description": "Disfrute de beneficios integrales de salud, bienestar y financieros.",
-    "openPositionsTitle": "Puestos Abiertos",
-    "openPositionsDescription": "Explore nuestras ofertas de empleo actuales en varios departamentos.",
-    "departments": [
-      { "name": "Ingeniería", "count": 15 },
-      { "name": "Producto", "count": 8 },
-      { "name": "Ventas", "count": 12 },
-      { "name": "Marketing", "count": 6 },
-      { "name": "Operaciones", "count": 10 }
-    ],
-    "viewAllJobs": "Ver Todos los Trabajos",
-    "ctaTitle": "¿Listo para generar un impacto?",
-    "ctaDescription": "Solicite un puesto en Everpay hoy.",
-    "ctaButton": "Aplicar Ahora"
-  },
-  "contact": {
-    "title": "Contáctenos",
-    "heroTitle": "Póngase en Contacto",
-    "heroDescription": "¿Tiene preguntas o necesita soporte? Póngase en contacto con nuestro equipo y estaremos encantados de ayudarle.",
-    "contactOptionsTitle": "Opciones de Contacto",
-    "salesTitle": "Consultas de Ventas",
-    "salesDescription": "¿Interesado en Everpay para su negocio? Nuestro equipo de ventas puede ayudarle.",
-    "salesEmail": "ventas@everpay.com",
-    "salesPhone": "+1 (888) 579-5668",
-    "supportTitle": "Soporte al Cliente",
-    "supportDescription": "¿Necesita ayuda con su cuenta Everpay existente? Visite nuestro Centro de Ayuda o póngase en contacto con soporte.",
-    "supportEmail": "soporte@everpay.com",
-    "supportPhone": "+1 (888) 579-5669",
-    "generalInquiriesTitle": "Consultas Generales",
-    "generalInquiriesDescription": "Para todas las demás preguntas, utilice el formulario a continuación o envíenos un correo electrónico.",
-    "generalEmail": "info@everpay.com",
-    "formTitle": "Envíenos un Mensaje",
-    "nameLabel": "Nombre",
-    "emailLabel": "Correo Electrónico",
-    "subjectLabel": "Asunto",
-    "messageLabel": "Mensaje",
-    "submitButton": "Enviar Mensaje",
-    "addressTitle": "Nuestra Oficina",
-    "addressLine1": "123 Payment Gateway",
-    "addressLine2": "Suite 400",
-    "addressLine3": "Fintech City, CA 90210"
+    "description": "Acepte pagos en línea desde cualquier parte del mundo con las soluciones de pago en línea seguras y versátiles de Everpay.",
+    "globalPaymentMethods": {
+      "title": "Métodos de Pago Globales",
+      "content": "Soporte una amplia gama de métodos de pago locales e internacionales, incluyendo tarjetas, billeteras y transferencias bancarias."
+    },
+    "seamlessCheckout": {
+      "title": "Experiencia de Pago sin Interrupciones",
+      "content": "Proporcione un flujo de pago suave e intuitivo para sus clientes, optimizado para conversiones."
+    },
+    "fraudProtection": {
+      "title": "Protección Avanzada contra el Fraude",
+      "content": "Proteja sus transacciones en línea con herramientas de detección y prevención de fraude en tiempo real."
+    },
+    "recurringPayments": {
+      "title": "Pagos Recurrentes y Suscripciones",
+      "content": "Administre fácilmente la facturación recurrente para suscripciones y modelos de membresía."
+    }
   },
   "partners": {
     "title": "Socios",
-    "heroTitle": "Asóciese con Everpay",
-    "heroDescription": "Únase al Programa de Socios de Everpay y haga crecer su negocio ofreciendo nuestras soluciones de pago líderes a sus clientes.",
-    "whyPartnerTitle": "¿Por qué asociarse con nosotros?",
-    "reason1Title": "Amplíe su Oferta",
-    "reason1Description": "Proporcione soluciones de pago integrales a sus clientes.",
-    "reason2Title": "Participación en los Ingresos",
-    "reason2Description": "Obtenga comisiones competitivas por los negocios referidos.",
-    "reason3Title": "Soporte Dedicado",
-    "reason3Description": "Reciba soporte y recursos dedicados de nuestro equipo de socios.",
-    "reason4Title": "Recursos de Marketing y Ventas",
-    "reason4Description": "Acceda a materiales de co-marketing y herramientas de habilitación de ventas.",
-    "partnerTypesTitle": "Nuestros Tipos de Socios",
-    "type1Title": "Socios de Referencia",
-    "type1Description": "Refiera negocios a Everpay y gane comisiones.",
-    "type2Title": "Socios de Integración",
-    "type2Description": "Integre Everpay en su plataforma o software.",
-    "type3Title": "Socios Revendedores",
-    "type3Description": "Venda soluciones de Everpay directamente a sus clientes.",
-    "ctaTitle": "¿Listo para crecer juntos?",
-    "ctaDescription": "Solicite convertirse en socio de Everpay hoy.",
-    "ctaButton": "Aplicar Ahora"
+    "description": "Colabore con Everpay para expandir su alcance, mejorar sus ofertas y hacer crecer su negocio.",
+    "technologyPartners": {
+      "title": "Socios Tecnológicos",
+      "content": "Integre su software o plataforma con Everpay para ofrecer soluciones de pago sin interrupciones a sus usuarios."
+    },
+    "agencyPartners": {
+      "title": "Socios de Agencia",
+      "content": "Ayude a sus clientes a crecer proporcionándoles las sólidas capacidades de procesamiento de pagos de Everpay."
+    },
+    "referralPartners": {
+      "title": "Socios de Referencia",
+      "content": "Gane comisiones refiriendo negocios a Everpay y ayudándolos a simplificar sus pagos."
+    },
+    "becomeAPartner": {
+      "title": "Conviértase en Socio",
+      "content": "Únase a nuestra creciente red de socios y descubra nuevas oportunidades de colaboración y crecimiento.",
+      "button": "Aplicar Ahora"
+    }
+  },
+  "payments": {
+    "title": "Pagos",
+    "description": "Optimice sus operaciones de pago con las soluciones de pago integrales de Everpay, diseñadas para la eficiencia y la seguridad.",
+    "globalCoverage": {
+      "title": "Cobertura Global",
+      "content": "Acepte pagos de clientes en más de 150 países con soporte para múltiples monedas."
+    },
+    "multiplePaymentMethods": {
+      "title": "Múltiples Métodos de Pago",
+      "content": "Soporte tarjetas de crédito, tarjetas de débito, billeteras digitales y opciones de pago locales."
+    },
+    "fraudProtection": {
+      "title": "Protección Avanzada contra el Fraude",
+      "content": "Utilice herramientas de detección y prevención de fraude impulsadas por IA para asegurar sus transacciones."
+    },
+    "seamlessIntegration": {
+      "title": "Integración sin Interrupciones",
+      "content": "Integre nuestras soluciones de pago fácilmente con sus plataformas de comercio electrónico y herramientas comerciales existentes."
+    }
+  },
+  "pos": {
+    "title": "Punto de Venta (POS)",
+    "description": "Modernice su experiencia de pago en persona con las soluciones POS intuitivas y potentes de Everpay.",
+    "integratedPayments": {
+      "title": "Pagos Integrados",
+      "content": "Acepte pagos con tarjeta, pagos móviles y más directamente a través de su sistema POS."
+    },
+    "inventoryManagement": {
+      "title": "Gestión de Inventario",
+      "content": "Rastree los niveles de existencias, administre productos y automatice las actualizaciones de inventario en tiempo real."
+    },
+    "customerManagement": {
+      "title": "Gestión de Clientes",
+      "content": "Cree perfiles de clientes, rastree el historial de compras y ofrezca programas de lealtad."
+    },
+    "reportingAnalytics": {
+      "title": "Informes y Análisis",
+      "content": "Obtenga información sobre las tendencias de ventas, las horas pico y los productos populares para optimizar su negocio."
+    }
   },
   "privacyPolicy": {
     "title": "Política de Privacidad",
-    "heroTitle": "Política de Privacidad",
-    "heroDescription": "Su privacidad es importante para nosotros. Esta política explica cómo recopilamos, usamos y protegemos su información personal.",
-    "sections": [
-      {
-        "title": "Información que Recopilamos",
-        "content": "Recopilamos la información que nos proporciona directamente, como cuando crea una cuenta, realiza una compra o se pone en contacto con nosotros. Esto puede incluir su nombre, dirección de correo electrónico, información de pago y otros detalles. También recopilamos información automáticamente cuando utiliza nuestros servicios, como la dirección IP, la información del dispositivo y los datos de uso."
+    "intro": "Esta Política de Privacidad describe cómo Everpay recopila, utiliza y divulga su información cuando utiliza nuestros servicios.",
+    "informationWeCollect": {
+      "title": "Información que Recopilamos",
+      "content": "Recopilamos varios tipos de información en relación con los servicios que brindamos, incluyendo:",
+      "personalData": {
+        "title": "Datos Personales",
+        "name": "Nombre",
+        "email": "Dirección de correo electrónico",
+        "address": "Dirección postal",
+        "phone": "Número de teléfono"
       },
-      {
-        "title": "Cómo Usamos su Información",
-        "content": "Utilizamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, procesar transacciones, comunicarnos con usted, personalizar su experiencia y para la seguridad y prevención de fraude. También podemos utilizar su información con fines de marketing, con su consentimiento cuando sea necesario."
-      },
-      {
-        "title": "Cómo Compartimos su Información",
-        "content": "Podemos compartir su información con proveedores de servicios de terceros que realizan servicios en nuestro nombre, como procesadores de pagos, proveedores de análisis y socios de marketing. También podemos compartir información con las fuerzas del orden u otras agencias gubernamentales si así lo exige la ley o para proteger nuestros derechos."
-      },
-      {
-        "title": "Sus Opciones",
-        "content": "Usted tiene ciertas opciones con respecto a su información personal, como acceder, actualizar o eliminar sus datos. También puede optar por no recibir comunicaciones promocionales de nuestra parte. Tenga en cuenta que parte de la información puede conservarse con fines legales o comerciales."
-      },
-      {
-        "title": "Seguridad",
-        "content": "Implementamos medidas de seguridad razonables para proteger su información del acceso, uso o divulgación no autorizados. Sin embargo, ningún método de transmisión por Internet o almacenamiento electrónico es 100% seguro."
-      },
-      {
-        "title": "Cambios en esta Política",
-        "content": "Podemos actualizar esta Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva política en esta página. Se le aconseja revisar esta Política de Privacidad periódicamente para cualquier cambio."
+      "usageData": {
+        "title": "Datos de Uso",
+        "content": "También podemos recopilar información sobre cómo se accede y utiliza el Servicio ('Datos de Uso'). Estos Datos de Uso pueden incluir información como la dirección de Protocolo de Internet de su computadora (por ejemplo, dirección IP), tipo de navegador, versión del navegador, las páginas de nuestro Servicio que visita, la hora y fecha de su visita, el tiempo que pasó en esas páginas, identificadores únicos de dispositivo y otros datos de diagnóstico."
       }
-    ]
+    },
+    "howWeUseInformation": {
+      "title": "Cómo Usamos su Información",
+      "content": "Everpay utiliza los datos recopilados para diversos fines:",
+      "provideServices": "Para proporcionar y mantener nuestro Servicio",
+      "improveServices": "Para mejorar nuestro Servicio",
+      "communicate": "Para comunicarnos con usted",
+      "marketing": "Para proporcionarle noticias, ofertas especiales e información general sobre otros bienes, servicios y eventos que ofrecemos que son similares a los que ya ha comprado o consultado, a menos que haya optado por no recibir dicha información",
+      "legalCompliance": "Para cumplir con las obligaciones legales"
+    },
+    "sharingInformation": {
+      "title": "Compartiendo su Información",
+      "content": "Podemos compartir su información con proveedores de servicios de terceros para facilitar nuestro Servicio, para proporcionar el Servicio en nuestro nombre, para realizar servicios relacionados con el Servicio o para ayudarnos a analizar cómo se utiliza nuestro Servicio."
+    },
+    "dataSecurity": {
+      "title": "Seguridad de los Datos",
+      "content": "La seguridad de sus datos es importante para nosotros, pero recuerde que ningún método de transmisión por Internet o método de almacenamiento electrónico es 100% seguro. Si bien nos esforzamos por utilizar medios comercialmente aceptables para proteger sus Datos Personales, no podemos garantizar su seguridad absoluta."
+    },
+    "yourRights": {
+      "title": "Sus Derechos de Protección de Datos",
+      "content": "Dependiendo de su ubicación, puede tener los siguientes derechos de protección de datos: el derecho a acceder, actualizar o eliminar la información que tenemos sobre usted; el derecho de rectificación; el derecho a oponerse; el derecho de restricción; el derecho a la portabilidad de los datos; el derecho a retirar el consentimiento."
+    },
+    "changesToPolicy": {
+      "title": "Cambios en esta Política de Privacidad",
+      "content": "Podemos actualizar nuestra Política de Privacidad de vez en cuando. Le notificaremos cualquier cambio publicando la nueva Política de Privacidad en esta página."
+    },
+    "contactUs": {
+      "title": "Contáctenos",
+      "content": "Si tiene alguna pregunta sobre esta Política de Privacidad, contáctenos por correo electrónico: info@everpay.com."
+    }
   },
-  "termsOfService": {
+  "security": {
+    "title": "Seguridad",
+    "description": "En Everpay, la seguridad es nuestra máxima prioridad. Empleamos medidas líderes en la industria para proteger sus datos y transacciones.",
+    "dataEncryption": {
+      "title": "Cifrado de Datos",
+      "content": "Todos los datos sensibles se cifran en reposo y en tránsito utilizando protocolos criptográficos robustos."
+    },
+    "fraudDetection": {
+      "title": "Detección Avanzada de Fraude",
+      "content": "Nuestros sistemas impulsados por IA monitorean continuamente las actividades sospechosas para prevenir el fraude."
+    },
+    "compliance": {
+      "title": "Cumplimiento Normativo",
+      "content": "Cumplimos con los estándares y regulaciones de seguridad globales, incluido PCI DSS Nivel 1."
+    },
+    "secureInfrastructure": {
+      "title": "Infraestructura Segura",
+      "content": "Nuestra infraestructura está construida con múltiples capas de seguridad, incluyendo firewalls y sistemas de detección de intrusiones."
+    }
+  },
+  "businessSolutions": {
+    "title": "Soluciones Empresariales",
+    "description": "Everpay ofrece soluciones de pago personalizadas para ayudar a empresas de todos los tamaños a optimizar sus operaciones y crecer.",
+    "paymentProcessing": {
+      "title": "Procesamiento de Pagos Eficiente",
+      "content": "Optimice la aceptación de pagos con un procesamiento rápido y confiable para todo tipo de transacciones."
+    },
+    "fraudPrevention": {
+      "title": "Prevención de Fraude Robusta",
+      "content": "Proteja sus ingresos con herramientas avanzadas de detección de fraude y gestión de contracargos."
+    },
+    "reportingAnalytics": {
+      "title": "Informes y Análisis Completos",
+      "content": "Obtenga información detallada sobre su rendimiento financiero con informes y paneles personalizables."
+    },
+    "globalPayments": {
+      "title": "Aceptación de Pagos Globales",
+      "content": "Amplíe su base de clientes aceptando pagos de todo el mundo en múltiples monedas."
+    }
+  },
+  "ecommerceSolutions": {
+    "title": "Soluciones de Comercio Electrónico",
+    "description": "Optimice su tienda en línea con las soluciones de pago de comercio electrónico seguras y sin interrupciones de Everpay.",
+    "seamlessCheckout": {
+      "title": "Experiencia de Pago sin Interrupciones",
+      "content": "Proporcione un flujo de pago suave e intuitivo que aumente las conversiones y reduzca el abandono del carrito."
+    },
+    "globalPaymentMethods": {
+      "title": "Métodos de Pago Globales",
+      "content": "Ofrezca una amplia gama de opciones de pago locales e internacionales para atender a una base de clientes diversa."
+    },
+    "fraudProtection": {
+      "title": "Protección Avanzada contra el Fraude",
+      "content": "Proteja sus transacciones en línea con herramientas de detección y prevención de fraude en tiempo real."
+    },
+    "recurringPayments": {
+      "title": "Pagos Recurrentes y Suscripciones",
+      "content": "Administre sin esfuerzo la facturación recurrente para servicios de suscripción y modelos de membresía."
+    }
+  },
+  "marketplaceSolutions": {
+    "title": "Soluciones para Marketplaces",
+    "description": "Everpay ofrece soluciones de pago robustas diseñadas específicamente para marketplaces de múltiples proveedores.",
+    "splitPayments": {
+      "title": "Pagos Divididos Automatizados",
+      "content": "Divida fácilmente los pagos entre múltiples proveedores y la plataforma con enrutamiento automatizado."
+    },
+    "onboardingVerification": {
+      "title": "Incorporación y Verificación de Proveedores",
+      "content": "Optimice el proceso de incorporación para nuevos proveedores con verificaciones KYC/AML integradas."
+    },
+    "globalPayouts": {
+      "title": "Pagos Globales",
+      "content": "Facilite los pagos a proveedores en varios países y monedas con facilidad."
+    },
+    "fraudPrevention": {
+      "title": "Prevención de Fraude Mejorada",
+      "content": "Proteja su marketplace de actividades fraudulentas con herramientas avanzadas de detección y prevención."
+    }
+  },
+  "retailSolutions": {
+    "title": "Soluciones Minoristas",
+    "description": "Modernice sus operaciones minoristas con las soluciones de pago integradas en persona y en línea de Everpay.",
+    "inPersonPayments": {
+      "title": "Pagos en Persona sin Interrupciones",
+      "content": "Acepte todos los principales métodos de pago en su tienda física con terminales POS modernos."
+    },
+    "omnichannelExperience": {
+      "title": "Experiencia Omnicanal",
+      "content": "Unifique sus canales de venta en línea y fuera de línea para una experiencia de cliente consistente."
+    },
+    "inventoryManagement": {
+      "title": "Gestión de Inventario Integrada",
+      "content": "Rastree las ventas y el inventario en tiempo real en todas sus ubicaciones minoristas."
+    },
+    "customerInsights": {
+      "title": "Información del Cliente",
+      "content": "Obtenga información valiosa sobre el comportamiento del cliente para personalizar ofertas y mejorar la lealtad."
+    }
+  },
+  "terms": {
     "title": "Términos de Servicio",
-    "heroTitle": "Términos de Servicio",
-    "heroDescription": "Estos términos rigen su uso de los servicios de Everpay. Al utilizar nuestros servicios, usted acepta estos términos.",
-    "sections": [
-      {
-        "title": "Aceptación de los Términos",
-        "content": "Al acceder o utilizar los servicios proporcionados por Everpay, usted acepta estar sujeto a estos Términos de Servicio y a todos los términos incorporados por referencia. Si no está de acuerdo con todos estos términos, no utilice nuestros servicios."
-      },
-      {
-        "title": "Elegibilidad",
-        "content": "Debe tener al menos 18 años para usar nuestros servicios. Al usar nuestros servicios, usted declara y garantiza que cumple con este requisito de edad y tiene la capacidad legal para celebrar estos términos."
-      },
-      {
-        "title": "Registro de Cuenta",
-        "content": "Para acceder a ciertas funciones de nuestros servicios, es posible que deba registrarse para obtener una cuenta. Usted acepta proporcionar información precisa, actual y completa durante el proceso de registro y actualizar dicha información para mantenerla precisa, actual y completa."
-      },
-      {
-        "title": "Conducta del Usuario",
-        "content": "Usted acepta utilizar nuestros servicios solo para fines lícitos y de una manera que no infrinja los derechos de, restrinja o inhiba el uso y disfrute de los servicios por parte de cualquier otra persona. El comportamiento prohibido incluye acosar o causar angustia o inconvenientes a cualquier otro usuario, transmitir contenido obsceno u ofensivo, o interrumpir el flujo normal de diálogo dentro de nuestros servicios."
-      },
-      {
-        "title": "Tarifas y Pagos",
-        "content": "Usted acepta pagar todas las tarifas y cargos asociados con su uso de los servicios como se describe en nuestra página de precios o según lo acordado de otra manera. Todas las tarifas no son reembolsables a menos que se indique lo contrario."
-      },
-      {
-        "title": "Propiedad Intelectual",
-        "content": "Todo el contenido y los materiales disponibles en nuestros servicios, incluidos, entre otros, texto, gráficos, nombre del sitio web, código, imágenes y logotipos, son propiedad intelectual de Everpay y están protegidos por las leyes de derechos de autor y marcas comerciales aplicables."
-      },
-      {
-        "title": "Terminación",
-        "content": "Podemos rescindir o suspender su acceso a nuestros servicios de inmediato, sin previo aviso ni responsabilidad, por cualquier motivo, incluyendo, entre otros, si incumple los Términos de Servicio."
-      },
-      {
-        "title": "Descargo de Responsabilidad de Garantías",
-        "content": "Nuestros servicios se proporcionan 'tal cual' y 'según disponibilidad' sin garantías de ningún tipo, ya sean expresas o implícitas, incluidas, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un propósito particular o no infracción."
-      },
-      {
-        "title": "Limitación de Responsabilidad",
-        "content": "En ningún caso Everpay, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo, incluidos, entre otros, la pérdida de ganancias, datos, uso, buena voluntad u otras pérdidas intangibles, que resulten de (i) su acceso o uso o incapacidad para acceder o usar el Servicio; (ii) cualquier conducta o contenido de cualquier tercero en el Servicio; (iii) cualquier contenido obtenido del Servicio; y (iv) acceso no autorizado, uso o alteración de sus transmisiones o contenido, ya sea basado en garantía, contrato, agravio (incluida la negligencia) o cualquier otra teoría legal, ya sea que se nos haya informado o no de la posibilidad de dicho daño, e incluso si se determina que un remedio establecido en este documento ha fallado en su propósito esencial."
-      },
-      {
-        "title": "Ley Aplicable",
-        "content": "Estos Términos se regirán e interpretarán de acuerdo con las leyes de [Su País/Estado], sin tener en cuenta sus disposiciones sobre conflictos de leyes."
-      }
-    ]
-  },
-  "cookiePolicy": {
-    "title": "Política de Cookies",
-    "heroTitle": "Política de Cookies",
-    "heroDescription": "Esta Política de Cookies explica qué son las cookies, cómo las usamos y sus opciones con respecto a las cookies.",
-    "sections": [
-      {
-        "title": "¿Qué son las Cookies?",
-        "content": "Las cookies son pequeños fragmentos de texto enviados por su navegador web por un sitio web que visita. Un archivo de cookie se almacena en su navegador web y permite que el Servicio o un tercero lo reconozca y haga su próxima visita más fácil y el Servicio más útil para usted."
-      },
-      {
-        "title": "Cómo Usamos las Cookies",
-        "content": "Cuando utiliza y accede al Servicio, podemos colocar varios archivos de cookies en su navegador web. Utilizamos cookies para los siguientes propósitos: para habilitar ciertas funciones del Servicio, para proporcionar análisis, para almacenar sus preferencias, para permitir la entrega de anuncios, incluida la publicidad conductual."
-      },
-      {
-        "title": "Cookies de Terceros",
-        "content": "Además de nuestras propias cookies, también podemos utilizar varias cookies de terceros para informar estadísticas de uso del Servicio, entregar anuncios en y a través del Servicio, y así sucesivamente."
-      },
-      {
-        "title": "¿Cuáles son sus opciones con respecto a las cookies?",
-        "content": "Si desea eliminar las cookies o indicar a su navegador web que elimine o rechace las cookies, visite las páginas de ayuda de su navegador web. Tenga en cuenta, sin embargo, que si elimina las cookies o se niega a aceptarlas, es posible que no pueda utilizar todas las funciones que ofrecemos, es posible que no pueda almacenar sus preferencias y algunas de nuestras páginas podrían no mostrarse correctamente."
-      }
-    ]
-  },
-  "solutions": {
-    "business": {
-      "title": "Soluciones Empresariales",
-      "heroTitle": "Soluciones de Pago Personalizadas para su Negocio",
-      "heroDescription": "Everpay ofrece una gama de soluciones de pago flexibles diseñadas para satisfacer las necesidades únicas de las empresas en diversas industrias.",
-      "featuresTitle": "Características Clave para Empresas",
-      "feature1Title": "Integraciones Personalizables",
-      "feature1Description": "Integre Everpay sin problemas con sus sistemas y flujos de trabajo empresariales existentes.",
-      "feature2Title": "Infraestructura Escalable",
-      "feature2Description": "Nuestra plataforma escala con su negocio, manejando cualquier volumen de transacciones.",
-      "feature3Title": "Soporte Dedicado",
-      "feature3Description": "Reciba soporte personalizado de nuestro equipo de expertos en pagos.",
-      "feature4Title": "Aceptación de Pagos Global",
-      "feature4Description": "Acepte pagos de clientes en todo el mundo con soporte multidivisa.",
-      "ctaTitle": "¿Listo para optimizar los pagos de su negocio?",
-      "ctaDescription": "Descubra cómo Everpay puede optimizar sus operaciones financieras.",
-      "ctaButton": "Obtener una Cotización Personalizada"
+    "intro": "¡Bienvenido a Everpay! Estos Términos de Servicio ('Términos') rigen su acceso y uso del sitio web, productos y servicios de Everpay ('Servicios').",
+    "acceptanceOfTerms": {
+      "title": "Aceptación de los Términos",
+      "content": "Al acceder o utilizar nuestros Servicios, usted acepta estar sujeto a estos Términos y a todas las políticas aquí mencionadas. Si no está de acuerdo con estos Términos, no podrá utilizar nuestros Servicios."
     },
-    "ecommerce": {
-      "title": "Soluciones de Comercio Electrónico",
-      "heroTitle": "Aumente sus Ventas en Línea con Pagos sin Problemas",
-      "heroDescription": "Las soluciones de comercio electrónico de Everpay le brindan todo lo que necesita para aceptar pagos en línea, de forma segura y eficiente, impulsando mayores tasas de conversión.",
-      "featuresTitle": "Características Específicas para Comercio Electrónico",
-      "feature1Title": "Flujo de Pago Optimizado",
-      "feature1Description": "Reduzca el abandono del carrito con una experiencia de pago rápida, intuitiva y optimizada para dispositivos móviles.",
-      "feature2Title": "Gestión de Suscripciones",
-      "feature2Description": "Gestione fácilmente los pagos recurrentes para negocios basados en suscripciones.",
-      "feature3Title": "Prevención de Fraude para Tiendas en Línea",
-      "feature3Description": "Proteja su negocio de comercio electrónico del fraude en línea con herramientas de detección avanzadas.",
-      "feature4Title": "Integración con Plataformas Populares",
-      "feature4Description": "Conéctese sin problemas con Shopify, WooCommerce, Magento y más.",
-      "ctaTitle": "Transforme la experiencia de pago de su tienda en línea.",
-      "ctaDescription": "Comience a vender más con las soluciones de comercio electrónico de Everpay.",
-      "ctaButton": "Saber Más"
+    "changesToTerms": {
+      "title": "Cambios en los Términos",
+      "content": "Nos reservamos el derecho de modificar estos Términos en cualquier momento. Le notificaremos cualquier cambio publicando los nuevos Términos en esta página. Su uso continuado de los Servicios después de dichas modificaciones constituye su aceptación de los nuevos Términos."
     },
-    "marketplace": {
-      "title": "Soluciones para Marketplaces",
-      "heroTitle": "Simplifique los Pagos para su Marketplace",
-      "heroDescription": "Las soluciones de marketplace de Everpay manejan flujos de pago complejos, lo que le permite gestionar fácilmente los pagos entre compradores, vendedores y su plataforma.",
-      "featuresTitle": "Características Específicas para Marketplaces",
-      "feature1Title": "Pagos Divididos",
-      "feature1Description": "Divida automáticamente los pagos entre múltiples proveedores y su plataforma.",
-      "feature2Title": "Incorporación y Verificación",
-      "feature2Description": "Agilice el proceso de incorporación y verificación para nuevos vendedores.",
-      "feature3Title": "Gestión de Pagos",
-      "feature3Description": "Automatice los pagos a sus proveedores en múltiples monedas.",
-      "feature4Title": "Resolución de Disputas",
-      "feature4Description": "Herramientas para ayudar a gestionar y resolver disputas entre compradores y vendedores.",
-      "ctaTitle": "Construya un marketplace próspero con Everpay.",
-      "ctaDescription": "Simplifique sus operaciones de pago y concéntrese en el crecimiento.",
-      "ctaButton": "Solicitar una Demostración"
+    "useOfService": {
+      "title": "Uso del Servicio",
+      "content": "Usted acepta utilizar los Servicios únicamente con fines lícitos y de acuerdo con estos Términos. Se le prohíbe utilizar los Servicios de cualquier manera que pueda dañar, deshabilitar, sobrecargar o deteriorar los Servicios o interferir con el uso de los Servicios por parte de terceros."
     },
-    "retail": {
-      "title": "Soluciones Minoristas",
-      "heroTitle": "Soluciones de Pago Modernas para Negocios Minoristas",
-      "heroDescription": "Las soluciones minoristas de Everpay proporcionan un procesamiento de pagos rápido, seguro e integrado para sus tiendas físicas, mejorando la experiencia del cliente.",
-      "featuresTitle": "Características Específicas para Minoristas",
-      "feature1Title": "POS Integrado",
-      "feature1Description": "Conecte sus pagos en la tienda con su inventario y datos de clientes.",
-      "feature2Title": "Pagos sin Contacto",
-      "feature2Description": "Acepte pagos con tarjeta, billeteras móviles y otros métodos de pago modernos.",
-      "feature3Title": "Modo sin Conexión",
-      "feature3Description": "Continúe aceptando pagos incluso cuando su conexión a Internet esté caída.",
-      "feature4Title": "Programas de Fidelización de Clientes",
-      "feature4Description": "Integre con programas de fidelización para recompensar a sus clientes.",
-      "ctaTitle": "Mejore su experiencia de pago en la tienda.",
-      "ctaDescription": "Descubra las soluciones minoristas integrales de Everpay.",
-      "ctaButton": "Obtener una Cotización"
+    "userAccounts": {
+      "title": "Cuentas de Usuario",
+      "content": "Para acceder a ciertas funciones de los Servicios, es posible que deba crear una cuenta. Usted es responsable de mantener la confidencialidad de la información de su cuenta y de todas las actividades que ocurran bajo su cuenta."
+    },
+    "intellectualProperty": {
+      "title": "Propiedad Intelectual",
+      "content": "Todo el contenido, las marcas comerciales y los datos de nuestros Servicios, incluidos, entre otros, texto, gráficos, logotipos y software, son propiedad de Everpay o de sus licenciantes y están protegidos por las leyes de propiedad intelectual."
+    },
+    "disclaimerOfWarranties": {
+      "title": "Exención de Garantías",
+      "content": "Los Servicios se proporcionan 'tal cual' y 'según disponibilidad' sin garantías de ningún tipo, ya sean expresas o implícitas, incluidas, entre otras, las garantías implícitas de comerciabilidad, idoneidad para un fin particular o no infracción."
+    },
+    "limitationOfLiability": {
+      "title": "Limitación de Responsabilidad",
+      "content": "En ningún caso Everpay, sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables de ningún daño indirecto, incidental, especial, consecuente o punitivo, incluidos, entre otros, la pérdida de beneficios, datos, uso, fondo de comercio u otras pérdidas intangibles, que resulten de (i) su acceso o uso o incapacidad para acceder o usar el Servicio; (ii) cualquier conducta o contenido de cualquier tercero en el Servicio; (iii) cualquier contenido obtenido del Servicio; y (iv) acceso no autorizado, uso o alteración de sus transmisiones o contenido, ya sea basado en garantía, contrato, agravio (incluida la negligencia) o cualquier otra teoría legal, ya sea que se nos haya informado o no de la posibilidad de dicho daño, e incluso si se determina que un remedio establecido en este documento ha fallado en su propósito esencial."
+    },
+    "governingLaw": {
+      "title": "Ley Aplicable",
+      "content": "Estos Términos se regirán e interpretarán de acuerdo con las leyes de la jurisdicción donde Everpay esté incorporado, sin tener en cuenta sus disposiciones sobre conflicto de leyes."
+    },
+    "contactInformation": {
+      "title": "Información de Contacto",
+      "content": "Si tiene alguna pregunta sobre estos Términos, contáctenos en info@everpay.com."
     }
   }
 }

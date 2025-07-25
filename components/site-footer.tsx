@@ -1,120 +1,104 @@
-"use client"
-
 import Link from "next/link"
-import type { getDictionary } from "@/lib/i18n"
 import Image from "next/image"
-import { Facebook, Twitter, Linkedin } from "lucide-react"
-import { useLocale } from "next-intl"
-import { pathnames } from "@/lib/i18n/config"
-import type { Locale } from "@/lib/i18n/types"
+import type { Locale } from "@/lib/i18n/config"
+import type { Messages } from "@/lib/i18n/types"
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 interface SiteFooterProps {
-  dictionary: Awaited<ReturnType<typeof getDictionary>>
+  dict: Messages
+  lang?: Locale
 }
 
-export async function SiteFooter({ dictionary }: SiteFooterProps) {
-  const currentYear = new Date().getFullYear()
-  const currentLocale = useLocale() as Locale
-
+export function SiteFooter({ dict, lang = "en" }: SiteFooterProps) {
   const footerNav = [
     {
-      title: dictionary.footer.products,
-      links: [
-        { href: "/payments", text: dictionary.footer.payments },
-        { href: "/online-payments", text: dictionary.footer.onlinePayments },
-        { href: "/commerce", text: dictionary.footer.commerce },
-        { href: "/fraud-prevention", text: dictionary.footer.fraudPrevention },
-        { href: "/card-issuing", text: dictionary.footer.cardIssuing },
-        { href: "/pos-systems", text: dictionary.footer.posSystems },
+      title: dict.footer.company.title,
+      items: [
+        { href: `/${lang}/about`, label: dict.footer.company.about },
+        { href: `/${lang}/careers`, label: dict.footer.company.careers },
+        { href: `/${lang}/partners`, label: dict.footer.company.partners },
+        { href: `/${lang}/blog`, label: dict.footer.company.blog },
       ],
     },
     {
-      title: dictionary.footer.solutions,
-      links: [
-        { href: "/solutions/business", text: dictionary.footer.businessSolutions },
-        { href: "/solutions/ecommerce", text: dictionary.footer.ecommerceSolutions },
-        { href: "/solutions/marketplace", text: dictionary.footer.marketplaceSolutions },
-        { href: "/solutions/retail", text: dictionary.footer.retailSolutions },
+      title: dict.footer.solutions.title,
+      items: [
+        { href: `/${lang}/solutions/ecommerce`, label: dict.footer.solutions.ecommerce },
+        { href: `/${lang}/solutions/retail`, label: dict.footer.solutions.retail },
+        { href: `/${lang}/solutions/marketplace`, label: dict.footer.solutions.marketplace },
+        { href: `/${lang}/solutions/business`, label: dict.footer.solutions.business },
       ],
     },
     {
-      title: dictionary.footer.resources,
-      links: [
-        { href: "/docs", text: dictionary.footer.documentation },
-        { href: "/help", text: dictionary.footer.helpCenter },
-        { href: "/blog", text: dictionary.footer.blog },
-        { href: "/api", text: dictionary.footer.apiReference },
+      title: dict.footer.products.title,
+      items: [
+        { href: `/${lang}/payments`, label: dict.footer.products.payments },
+        { href: `/${lang}/pos`, label: dict.footer.products.pos },
+        { href: `/${lang}/issuing`, label: dict.footer.products.issuing },
+        { href: `/${lang}/online-payments`, label: dict.footer.products.onlinePayments },
+        { href: `/${lang}/gateway`, label: dict.footer.products.gateway },
+        { href: `/${lang}/api`, label: dict.footer.products.api },
       ],
     },
     {
-      title: dictionary.footer.company,
-      links: [
-        { href: "/about", text: dictionary.footer.aboutUs },
-        { href: "/careers", text: dictionary.footer.careers },
-        { href: "/partners", text: dictionary.footer.partners },
-        { href: "/contact", text: dictionary.footer.contact },
+      title: dict.footer.resources.title,
+      items: [
+        { href: `/${lang}/docs`, label: dict.footer.resources.documentation },
+        { href: `/${lang}/help`, label: dict.footer.resources.helpCenter },
+        { href: `/${lang}/security`, label: dict.footer.resources.security },
+        { href: `/${lang}/fraud-prevention`, label: dict.footer.resources.fraudPrevention },
       ],
+    },
+    {
+      title: dict.footer.legal.title,
+      items: [
+        { href: `/${lang}/privacy-policy`, label: dict.footer.legal.privacyPolicy },
+        { href: `/${lang}/terms`, label: dict.footer.legal.termsOfService },
+        { href: `/${lang}/cookie-policy`, label: dict.footer.legal.cookiePolicy },
+      ],
+    },
+    {
+      title: dict.footer.contact.title,
+      items: [{ href: `/${lang}/contact`, label: dict.footer.contact.contactUs }],
     },
   ]
 
-  const getLocalizedPath = (path: string, locale: Locale) => {
-    const entry = Object.entries(pathnames).find(([, value]) => {
-      if (typeof value === "string") {
-        return value === path
-      }
-      return Object.values(value).includes(path)
-    })
-
-    if (entry) {
-      const [key, value] = entry
-      if (typeof value === "string") {
-        return `/${locale}${value}`
-      }
-      return `/${locale}${value[locale] || value.en}` // Fallback to English if specific locale path not found
-    }
-    return `/${locale}${path}` // Fallback if path not in pathnames
-  }
-
   return (
-    <footer className="bg-gray-900 text-gray-300 py-12 md:py-16">
-      <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
-        <div className="md:col-span-2">
-          <div className="flex items-center mb-4">
-            <Image
-              src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png"
-              alt="Everpay Logo"
-              className="h-8 w-auto"
-              width={32}
-              height={32}
-              unoptimized
-            />
-            <span className="text-white text-2xl font-bold ml-2">everpay</span>
-          </div>
-          <p className="text-sm leading-relaxed">{dictionary.footer.description}</p>
-          <div className="flex space-x-4 mt-6">
-            <Link href="#" className="text-gray-400 hover:text-white">
-              <Facebook className="h-6 w-6" />
-              <span className="sr-only">Facebook</span>
-            </Link>
-            <Link href="#" className="text-gray-400 hover:text-white">
+    <footer className="bg-gray-900 text-gray-400 py-12 md:py-16 lg:py-20">
+      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="col-span-full lg:col-span-1 flex flex-col items-start">
+          <Link className="flex items-center gap-2" href={`/${lang}`}>
+            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={32} height={32} className="h-8 w-8" />
+            <span className="text-2xl font-bold text-white">Everpay</span>
+          </Link>
+          <p className="mt-4 text-sm">{dict.footer.tagline}</p>
+          <div className="flex gap-4 mt-6">
+            <Link className="text-gray-400 hover:text-white" href="#">
               <Twitter className="h-6 w-6" />
               <span className="sr-only">Twitter</span>
             </Link>
-            <Link href="#" className="text-gray-400 hover:text-white">
+            <Link className="text-gray-400 hover:text-white" href="#">
+              <Facebook className="h-6 w-6" />
+              <span className="sr-only">Facebook</span>
+            </Link>
+            <Link className="text-gray-400 hover:text-white" href="#">
+              <Instagram className="h-6 w-6" />
+              <span className="sr-only">Instagram</span>
+            </Link>
+            <Link className="text-gray-400 hover:text-white" href="#">
               <Linkedin className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
             </Link>
           </div>
         </div>
-
-        {footerNav.map((section) => (
-          <div key={section.title}>
-            <h3 className="text-white font-semibold mb-4">{section.title}</h3>
+        {footerNav.map((section, index) => (
+          <div key={index} className="col-span-1">
+            <h3 className="text-lg font-semibold text-white mb-4">{section.title}</h3>
             <ul className="space-y-2">
-              {section.links.map((link) => (
-                <li key={link.href}>
-                  <Link href={getLocalizedPath(link.href, currentLocale)} className="hover:text-white text-sm">
-                    {link.text}
+              {section.items.map((item, itemIndex) => (
+                <li key={itemIndex}>
+                  <Link className="text-sm hover:text-white" href={item.href}>
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -122,22 +106,10 @@ export async function SiteFooter({ dictionary }: SiteFooterProps) {
           </div>
         ))}
       </div>
-
-      <div className="container mx-auto px-4 mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-500">
+      <div className="container px-4 md:px-6 mt-12 border-t border-gray-800 pt-8 text-center text-sm">
         <p>
-          &copy; {currentYear} Everpay. {dictionary.footer.allRightsReserved}
+          &copy; {new Date().getFullYear()} Everpay. {dict.footer.copyright}
         </p>
-        <div className="flex justify-center space-x-4 mt-2">
-          <Link href={getLocalizedPath("/privacy-policy", currentLocale)} className="hover:text-white">
-            {dictionary.footer.privacyPolicy}
-          </Link>
-          <Link href={getLocalizedPath("/terms", currentLocale)} className="hover:text-white">
-            {dictionary.footer.termsOfService}
-          </Link>
-          <Link href={getLocalizedPath("/cookie-policy", currentLocale)} className="hover:text-white">
-            {dictionary.footer.cookiePolicy}
-          </Link>
-        </div>
       </div>
     </footer>
   )

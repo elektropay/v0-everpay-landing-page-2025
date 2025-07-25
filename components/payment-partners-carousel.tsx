@@ -1,39 +1,52 @@
+"use client"
+
 import Image from "next/image"
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
+import Autoplay from "embla-carousel-autoplay"
+
+const paymentPartners = [
+  { src: "/images/visa.png", alt: "Visa" },
+  { src: "/images/mastercard.png", alt: "Mastercard" },
+  { src: "/images/interac.png", alt: "Interac" },
+  { src: "/images/jcb.png", alt: "JCB" },
+  { src: "/images/apple-pay.png", alt: "Apple Pay" },
+  { src: "/images/google-pay.png", alt: "Google Pay" },
+  { src: "/images/amex.png", alt: "American Express" },
+  { src: "/images/paypal.png", alt: "PayPal" },
+]
 
 export function PaymentPartnersCarousel() {
-  const partners = [
-    { src: "/images/visa.png", alt: "Visa" },
-    { src: "/images/mastercard.png", alt: "Mastercard" },
-    { src: "/images/interac.png", alt: "Interac" },
-    { src: "/images/jcb.png", alt: "JCB" },
-    { src: "/images/apple-pay.png", alt: "Apple Pay" },
-    { src: "/images/google-pay.png", alt: "Google Pay" },
-    { src: "/images/amex.png", alt: "American Express" },
-    { src: "/images/paypal.png", alt: "PayPal" },
-  ]
-
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50">
-      <div className="container px-4 md:px-6">
-        <h2 className="text-3xl font-bold tracking-tighter text-center mb-8">Trusted by leading businesses</h2>
-        <div className="relative overflow-hidden">
-          <div className="flex animate-scroll whitespace-nowrap">
-            {/* Duplicate partners to create a seamless loop */}
-            {[...partners, ...partners].map((partner, index) => (
-              <div key={index} className="inline-block mx-8">
-                <Image
-                  alt={partner.alt}
-                  className="h-16 w-auto object-contain"
-                  height="64"
-                  src={partner.src || "/placeholder.svg"}
-                  width="128"
-                  unoptimized="true" // Corrected unoptimized prop
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+    <Carousel
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      plugins={[
+        Autoplay({
+          delay: 2000,
+          stopOnInteraction: false,
+          stopOnMouseEnter: true,
+        }),
+      ]}
+      className="w-full max-w-full"
+    >
+      <CarouselContent className="-ml-4">
+        {paymentPartners.map((partner, index) => (
+          <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+            <div className="p-1">
+              <Image
+                src={partner.src || "/placeholder.png"}
+                alt={partner.alt}
+                width={120}
+                height={60}
+                objectFit="contain"
+                className="mx-auto opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
   )
 }

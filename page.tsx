@@ -7,8 +7,10 @@ import { CheckoutProtectionSection } from "@/components/checkout-protection-sect
 import { BusinessTypesSection } from "@/components/business-types-section"
 import { CTASection } from "@/components/cta-section"
 import { SiteFooter } from "@/components/site-footer"
+import { redirect } from "next/navigation"
 
-export default function Home() {
+export default function RootPage() {
+  redirect("/en")
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />

@@ -4,39 +4,43 @@ import { Button } from "@/components/ui/button"
 import { Check, CreditCardIcon, DollarSignIcon, Repeat2Icon } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/config"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
-export default function PaymentsPage() {
+export default async function PaymentsPage({
+  params: { lang },
+}: {
+  params: { lang: Locale }
+}) {
+  const dict = await getDictionary(lang)
   const [activeTab, setActiveTab] = useState("overview")
 
   return (
     <div className="flex flex-col min-h-screen">
-      <SiteHeader />
+      <SiteHeader dict={dict} />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-[#0A2F2F] text-white overflow-hidden">
           <div className="container mx-auto px-4 py-12 md:py-20">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
-                <h1 className="text-4xl md:text-5xl font-bold mb-6">Intelligent payments for the modern business</h1>
-                <p className="text-xl text-gray-300 mb-8">
-                  Accept payments anywhere, analyze transactions in real-time, and accelerate your business growth with
-                  our comprehensive payment solutions.
-                </p>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">{dict.payments.hero.title}</h1>
+                <p className="text-xl text-gray-300 mb-8">{dict.payments.hero.description}</p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
                   <Button
                     size="lg"
                     className="bg-[#4CAF50] hover:bg-[#45a049] w-full sm:w-[180px] h-[48px] rounded-lg text-base font-medium"
                   >
-                    Get started
+                    {dict.payments.hero.getStarted}
                   </Button>
                   <Button
                     variant="outline"
                     size="lg"
                     className="border-2 border-white bg-transparent text-white hover:bg-white/10 w-full sm:w-[180px] h-[48px] rounded-lg text-base font-medium"
                   >
-                    Contact sales
+                    {dict.payments.hero.contactSales}
                   </Button>
                 </div>
               </div>
@@ -84,25 +88,25 @@ export default function PaymentsPage() {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
-                    title: "In-Person Payments",
-                    description: "Accept all major cards, contactless, and mobile payments with our secure terminals.",
+                    title: dict.payments.features.inPersonPayments.title,
+                    description: dict.payments.features.inPersonPayments.description,
                     image: "https://images.unsplash.com/photo-1556740758-90de374c12ad",
                   },
                   {
-                    title: "Online Payments",
-                    description: "Seamlessly integrate payments into your website or mobile app with our APIs.",
+                    title: dict.payments.features.onlinePayments.title,
+                    description: dict.payments.features.onlinePayments.description,
                     image: "https://images.unsplash.com/photo-1556740714-a8395b3bf30e",
                   },
                   {
-                    title: "Mobile Payments",
-                    description: "Turn any smartphone into a payment terminal with our mobile card reader.",
+                    title: dict.payments.features.mobilePayments.title,
+                    description: dict.payments.features.mobilePayments.description,
                     image: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49",
                   },
                 ].map((feature, index) => (
                   <div key={index} className="relative group overflow-hidden rounded-lg">
                     <div className="relative h-[250px] md:h-[300px]">
                       <Image
-                        src={feature.image || "/placeholder.svg"}
+                        src={feature.image || "/placeholder.png"}
                         alt={feature.title}
                         fill
                         className="object-cover transition-transform group-hover:scale-105"
@@ -124,36 +128,34 @@ export default function PaymentsPage() {
           <section className="bg-gray-50 py-12 md:py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-12">
-                <h2 className="text-3xl font-bold mb-4">Everything you need to succeed</h2>
-                <p className="text-gray-600">
-                  Our payment solutions come with powerful features designed to help your business thrive.
-                </p>
+                <h2 className="text-3xl font-bold mb-4">{dict.payments.benefits.title}</h2>
+                <p className="text-gray-600">{dict.payments.benefits.description}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
-                    title: "Next-Day Deposits",
-                    description: "Get your funds the next business day with our fast settlement process.",
+                    title: dict.payments.benefits.nextDayDeposits.title,
+                    description: dict.payments.benefits.nextDayDeposits.description,
                   },
                   {
-                    title: "Fraud Prevention",
-                    description: "Advanced AI-powered fraud detection to protect your business.",
+                    title: dict.payments.benefits.fraudPrevention.title,
+                    description: dict.payments.benefits.fraudPrevention.description,
                   },
                   {
-                    title: "Real-Time Analytics",
-                    description: "Track sales, refunds, and disputes with detailed reporting.",
+                    title: dict.payments.benefits.realTimeAnalytics.title,
+                    description: dict.payments.benefits.realTimeAnalytics.description,
                   },
                   {
-                    title: "Multi-Currency Support",
-                    description: "Accept payments in 135+ currencies with automatic conversion.",
+                    title: dict.payments.benefits.multiCurrencySupport.title,
+                    description: dict.payments.benefits.multiCurrencySupport.description,
                   },
                   {
-                    title: "24/7 Support",
-                    description: "Expert help available around the clock when you need it.",
+                    title: dict.payments.benefits.support247.title,
+                    description: dict.payments.benefits.support247.description,
                   },
                   {
-                    title: "Developer-Friendly",
-                    description: "Robust APIs and SDKs for custom integration needs.",
+                    title: dict.payments.benefits.developerFriendly.title,
+                    description: dict.payments.benefits.developerFriendly.description,
                   },
                 ].map((benefit, index) => (
                   <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
@@ -173,31 +175,38 @@ export default function PaymentsPage() {
           <section className="py-12 md:py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-12">Payment Features</h2>
+                <h2 className="text-3xl font-bold mb-12">{dict.payments.features.title}</h2>
                 <div className="space-y-12">
                   {[
                     {
-                      title: "Smart Payment Processing",
-                      description:
-                        "Intelligent routing and automatic retries ensure the highest possible success rates for your transactions.",
-                      features: ["Automatic card updates", "Intelligent routing", "Retry logic", "Risk management"],
-                    },
-                    {
-                      title: "Global Coverage",
-                      description:
-                        "Accept payments from customers anywhere in the world with support for multiple currencies and payment methods.",
+                      title: dict.payments.features.smartPaymentProcessing.title,
+                      description: dict.payments.features.smartPaymentProcessing.description,
                       features: [
-                        "135+ currencies",
-                        "Local payment methods",
-                        "Automatic currency conversion",
-                        "Regional tax compliance",
+                        dict.payments.features.smartPaymentProcessing.features.automaticCardUpdates,
+                        dict.payments.features.smartPaymentProcessing.features.intelligentRouting,
+                        dict.payments.features.smartPaymentProcessing.features.retryLogic,
+                        dict.payments.features.smartPaymentProcessing.features.riskManagement,
                       ],
                     },
                     {
-                      title: "Developer Tools",
-                      description:
-                        "Comprehensive APIs and SDKs make it easy to integrate payments into your applications.",
-                      features: ["RESTful APIs", "Client libraries", "Webhooks", "Testing environment"],
+                      title: dict.payments.features.globalCoverage.title,
+                      description: dict.payments.features.globalCoverage.description,
+                      features: [
+                        dict.payments.features.globalCoverage.features.currencies,
+                        dict.payments.features.globalCoverage.features.localPaymentMethods,
+                        dict.payments.features.globalCoverage.features.automaticCurrencyConversion,
+                        dict.payments.features.globalCoverage.features.regionalTaxCompliance,
+                      ],
+                    },
+                    {
+                      title: dict.payments.features.developerTools.title,
+                      description: dict.payments.features.developerTools.description,
+                      features: [
+                        dict.payments.features.developerTools.features.restfulApis,
+                        dict.payments.features.developerTools.features.clientLibraries,
+                        dict.payments.features.developerTools.features.webhooks,
+                        dict.payments.features.developerTools.features.testingEnvironment,
+                      ],
                     },
                   ].map((section, index) => (
                     <div key={index} className="grid md:grid-cols-2 gap-8">
@@ -227,28 +236,31 @@ export default function PaymentsPage() {
           <section className="py-12 md:py-20">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">Simple, transparent pricing</h2>
-                <p className="text-xl text-gray-600 mb-12">
-                  No hidden fees. No long-term contracts. Just straightforward pricing that scales with your business.
-                </p>
+                <h2 className="text-3xl font-bold mb-6">{dict.payments.pricing.title}</h2>
+                <p className="text-xl text-gray-600 mb-12">{dict.payments.pricing.description}</p>
                 <div className="grid md:grid-cols-2 gap-8">
                   {[
                     {
-                      title: "Card-Present",
-                      rate: "1.9% + $0.10",
-                      description: "For in-person payments",
+                      title: dict.payments.pricing.cardPresent.title,
+                      rate: dict.payments.pricing.cardPresent.rate,
+                      description: dict.payments.pricing.cardPresent.description,
                       features: [
-                        "All major credit cards",
-                        "Contactless payments",
-                        "Mobile wallets",
-                        "Next-day deposits",
+                        dict.payments.pricing.cardPresent.features.allMajorCreditCards,
+                        dict.payments.pricing.cardPresent.features.contactlessPayments,
+                        dict.payments.pricing.cardPresent.features.mobileWallets,
+                        dict.payments.pricing.cardPresent.features.nextDayDeposits,
                       ],
                     },
                     {
-                      title: "Card-Not-Present",
-                      rate: "3.49% + $0.30",
-                      description: "For online payments",
-                      features: ["Online payments", "Recurring billing", "Payment links", "Invoice payments"],
+                      title: dict.payments.pricing.cardNotPresent.title,
+                      rate: dict.payments.pricing.cardNotPresent.rate,
+                      description: dict.payments.pricing.cardNotPresent.description,
+                      features: [
+                        dict.payments.pricing.cardNotPresent.features.onlinePayments,
+                        dict.payments.pricing.cardNotPresent.features.recurringBilling,
+                        dict.payments.pricing.cardNotPresent.features.paymentLinks,
+                        dict.payments.pricing.cardNotPresent.features.invoicePayments,
+                      ],
                     },
                   ].map((plan, index) => (
                     <div key={index} className="border rounded-lg p-8">
@@ -275,20 +287,18 @@ export default function PaymentsPage() {
         <section className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4">
             <div className="bg-[#0A2F2F] rounded-2xl text-white p-8 md:p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to get started?</h2>
-              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join thousands of businesses using Everpay to process millions in payments every day.
-              </p>
+              <h2 className="text-3xl font-bold mb-4">{dict.payments.cta.title}</h2>
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto">{dict.payments.cta.description}</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
-                  Create account
+                  {dict.payments.cta.createAccount}
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
                   className="border-white text-white hover:bg-white/10 bg-transparent"
                 >
-                  Talk to sales
+                  {dict.payments.cta.talkToSales}
                 </Button>
               </div>
             </div>
@@ -300,9 +310,9 @@ export default function PaymentsPage() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Payments</h1>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.payments.title}</h1>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  A complete payments platform engineered for growth.
+                  {dict.payments.description}
                 </p>
               </div>
             </div>
@@ -312,16 +322,17 @@ export default function PaymentsPage() {
           <div className="container px-4 md:px-6 grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
             <div className="flex flex-col justify-center space-y-4">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Accept Payments Anywhere</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                  {dict.payments.acceptAnywhere.title}
+                </h2>
                 <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Everpay provides a unified platform to accept payments online, in-person, and globally. Our flexible
-                  APIs and tools make it easy to integrate payment processing into your existing systems.
+                  {dict.payments.acceptAnywhere.description}
                 </p>
                 <Button
                   className="inline-flex h-10 items-center justify-center rounded-full bg-gray-900 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-gray-800 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50"
                   href="#"
                 >
-                  Get Started
+                  {dict.payments.acceptAnywhere.getStarted}
                 </Button>
               </div>
             </div>
@@ -340,28 +351,24 @@ export default function PaymentsPage() {
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               <div className="flex flex-col items-center text-center">
                 <CreditCardIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Online Payments</h3>
-                <p className="text-gray-500">
-                  Accept credit cards, digital wallets, and local payment methods on your website or app.
-                </p>
+                <h3 className="text-xl font-bold mb-2">{dict.payments.features.onlinePayments.title}</h3>
+                <p className="text-gray-500">{dict.payments.features.onlinePayments.description}</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <DollarSignIcon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">In-Person Payments</h3>
-                <p className="text-gray-500">
-                  Process payments at your physical store with our point-of-sale solutions.
-                </p>
+                <h3 className="text-xl font-bold mb-2">{dict.payments.features.inPersonPayments.title}</h3>
+                <p className="text-gray-500">{dict.payments.features.inPersonPayments.description}</p>
               </div>
               <div className="flex flex-col items-center text-center">
                 <Repeat2Icon className="h-12 w-12 text-gray-900 mb-4" />
-                <h3 className="text-xl font-bold mb-2">Recurring Payments</h3>
-                <p className="text-gray-500">Automate subscriptions and recurring billing for your business.</p>
+                <h3 className="text-xl font-bold mb-2">{dict.payments.features.recurringPayments.title}</h3>
+                <p className="text-gray-500">{dict.payments.features.recurringPayments.description}</p>
               </div>
             </div>
           </div>
         </section>
       </main>
-      <SiteFooter />
+      <SiteFooter dict={dict} />
     </div>
   )
 }
