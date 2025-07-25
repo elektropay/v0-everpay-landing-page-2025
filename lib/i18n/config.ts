@@ -1,4 +1,156 @@
-export const i18n = {
-  defaultLocale: "en",
-  locales: ["en", "es", "fr", "de", "zh"],
-} as const
+import type { Pathnames } from "next-intl/navigation"
+
+export const locales = ["en", "es", "fr", "de", "zh"] as const
+export const defaultLocale = "en" as const
+export const localePrefix = "always" as const
+
+export const pathnames: Pathnames<typeof locales> = {
+  "/": "/",
+  "/contact": {
+    en: "/contact",
+    es: "/contacto",
+    fr: "/contact",
+    de: "/kontakt",
+    zh: "/联系",
+  },
+  "/payments": {
+    en: "/payments",
+    es: "/pagos",
+    fr: "/paiements",
+    de: "/zahlungen",
+    zh: "/支付",
+  },
+  "/online-payments": {
+    en: "/online-payments",
+    es: "/pagos-en-linea",
+    fr: "/paiements-en-ligne",
+    de: "/online-zahlungen",
+    zh: "/在线支付",
+  },
+  "/commerce": {
+    en: "/commerce",
+    es: "/comercio",
+    fr: "/commerce",
+    de: "/handel",
+    zh: "/商务",
+  },
+  "/fraud-prevention": {
+    en: "/fraud-prevention",
+    es: "/prevencion-fraude",
+    fr: "/prevention-fraude",
+    de: "/betrugspraevention",
+    zh: "/欺诈预防",
+  },
+  "/card-issuing": {
+    en: "/card-issuing",
+    es: "/emision-tarjetas",
+    fr: "/emission-cartes",
+    de: "/kartenausgabe",
+    zh: "/发卡",
+  },
+  "/pos-systems": {
+    en: "/pos-systems",
+    es: "/sistemas-pos",
+    fr: "/systemes-pos",
+    de: "/pos-systeme",
+    zh: "/pos系统",
+  },
+  "/solutions/business": {
+    en: "/solutions/business",
+    es: "/soluciones/negocios",
+    fr: "/solutions/affaires",
+    de: "/loesungen/unternehmen",
+    zh: "/解决方案/商业",
+  },
+  "/solutions/ecommerce": {
+    en: "/solutions/ecommerce",
+    es: "/soluciones/ecommerce",
+    fr: "/solutions/ecommerce",
+    de: "/loesungen/ecommerce",
+    zh: "/解决方案/电子商务",
+  },
+  "/solutions/marketplace": {
+    en: "/solutions/marketplace",
+    es: "/soluciones/marketplace",
+    fr: "/solutions/marketplace",
+    de: "/loesungen/marktplatz",
+    zh: "/解决方案/市场",
+  },
+  "/solutions/retail": {
+    en: "/solutions/retail",
+    es: "/soluciones/minorista",
+    fr: "/solutions/detail",
+    de: "/loesungen/einzelhandel",
+    zh: "/解决方案/零售",
+  },
+  "/docs": {
+    en: "/docs",
+    es: "/docs",
+    fr: "/docs",
+    de: "/docs",
+    zh: "/文档",
+  },
+  "/help": {
+    en: "/help",
+    es: "/ayuda",
+    fr: "/aide",
+    de: "/hilfe",
+    zh: "/帮助",
+  },
+  "/blog": {
+    en: "/blog",
+    es: "/blog",
+    fr: "/blog",
+    de: "/blog",
+    zh: "/博客",
+  },
+  "/api": {
+    en: "/api",
+    es: "/api",
+    fr: "/api",
+    de: "/api",
+    zh: "/api",
+  },
+  "/about": {
+    en: "/about",
+    es: "/nosotros",
+    fr: "/a-propos",
+    de: "/ueber-uns",
+    zh: "/关于",
+  },
+  "/careers": {
+    en: "/careers",
+    es: "/carreras",
+    fr: "/carrieres",
+    de: "/karriere",
+    zh: "/职业",
+  },
+  "/partners": {
+    en: "/partners",
+    es: "/socios",
+    fr: "/partenaires",
+    de: "/partner",
+    zh: "/合作伙伴",
+  },
+  "/privacy-policy": {
+    en: "/privacy-policy",
+    es: "/politica-privacidad",
+    fr: "/politique-confidentialite",
+    de: "/datenschutzrichtlinie",
+    zh: "/隐私政策",
+  },
+  "/terms": {
+    en: "/terms",
+    es: "/terminos",
+    fr: "/conditions",
+    de: "/nutzungsbedingungen",
+    zh: "/服务条款",
+  },
+  "/cookie-policy": {
+    en: "/cookie-policy",
+    es: "/politica-cookies",
+    fr: "/politique-cookies",
+    de: "/cookie-richtlinie",
+    zh: "/cookie政策",
+  },
+}

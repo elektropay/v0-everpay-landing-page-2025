@@ -1,5 +1,7 @@
 import type React from "react"
 import { Inter, Manrope } from "next/font/google"
+import { NextIntlClientProvider } from "next-intl"
+import { getMessages } from "next-intl/server"
 import "../styles/globals.css"
 
 const inter = Inter({
@@ -14,14 +16,18 @@ const manrope = Manrope({
   display: "swap",
 })
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const messages = await getMessages()
+
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body>{children}</body>
+      <body>
+        <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
+      </body>
     </html>
   )
 }

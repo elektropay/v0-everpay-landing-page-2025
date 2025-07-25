@@ -1,74 +1,150 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { SheetTrigger, SheetContent, Sheet } from "@/components/ui/sheet"
-import { MenuIcon } from "lucide-react"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import { usePathname, useRouter } from "next/navigation"
+import { useLocale } from "next-intl"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
+import { Button } from "@/components/ui/button"
+import { Globe } from "lucide-react"
+import type { Locale, Dictionary } from "@/lib/i18n/types"
+import { locales, pathnames } from "@/lib/i18n/config"
 
-export function SiteHeader({ lang }: { lang: string }) {
+interface SiteHeaderProps {
+  dictionary: Dictionary
+  lang: Locale
+}
+
+export function SiteHeader({ dictionary, lang }: SiteHeaderProps) {
   const pathname = usePathname()
+  const router = useRouter()
+  const currentLocale = useLocale()
 
-  const navLinks = [
-    { href: `/${lang}/payments`, label: "Payments" },
-    { href: `/${lang}/solutions/business`, label: "Solutions" },
-    { href: `/${lang}/partners`, label: "Partners" },
-    { href: `/${lang}/developers`, label: "Developers" },
-    { href: `/${lang}/company`, label: "Company" },
+  const headerNav = [
+    {
+      title: dictionary.header.products,
+      links: [
+        { href: "/payments", text: dictionary.footer.payments },
+        { href: "/online-payments", text: dictionary.footer.onlinePayments },
+        { href: "/commerce", text: dictionary.footer.commerce },
+        { href: "/fraud-prevention", text: dictionary.footer.fraudPrevention },
+        { href: "/card-issuing", text: dictionary.footer.cardIssuing },
+        { href: "/pos-systems", text: dictionary.footer.posSystems },
+      ],
+    },
+    {
+      title: dictionary.header.solutions,
+      links: [
+        { href: "/solutions/business", text: dictionary.footer.businessSolutions },
+        { href: "/solutions/ecommerce", text: dictionary.footer.ecommerceSolutions },
+        { href: "/solutions/marketplace", text: dictionary.footer.marketplaceSolutions },
+        { href: "/solutions/retail", text: dictionary.footer.retailSolutions },
+      ],
+    },
+    {
+      title: dictionary.header.resources,
+      links: [
+        { href: "/docs", text: dictionary.footer.documentation },
+        { href: "/help", text: dictionary.footer.helpCenter },
+        { href: "/blog", text: dictionary.footer.blog },
+        { href: "/api", text: dictionary.footer.apiReference },
+      ],
+    },
+    {
+      title: dictionary.header.company,
+      links: [
+        { href: "/about", text: dictionary.footer.aboutUs },
+        { href: "/careers", text: dictionary.footer.careers },
+        { href: "/partners", text: dictionary.footer.partners },
+        { href: "/contact", text: dictionary.footer.contact },
+      ],
+    },
   ]
 
+  const getLocalizedPath = (path: string, locale: Locale) => {
+    const entry = Object.entries(pathnames).find(([, value]) => {
+      if (typeof value === "string") {
+        return value === path
+      }
+      return Object.values(value).includes(path)
+    })
+
+    if (entry) {
+      const [key, value] = entry
+      if (typeof value === "string") {
+        return `/${locale}${value}`
+      }
+      return `/${locale}${value[locale] || value.en}` // Fallback to English if specific locale path not found
+    }
+    return `/${locale}${path}` // Fallback if path not in pathnames
+  }
+
+  const handleLocaleChange = (newLocale: Locale) => {
+    const currentPathWithoutLocale = pathname.replace(`/${currentLocale}`, "") || "/"
+    const newPath = getLocalizedPath(currentPathWithoutLocale, newLocale)
+    router.push(newPath)
+  }
+
   return (
-    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 bg-white text-everpay-dark shadow-sm">
-      <Link className="mr-6 flex items-center" href={`/${lang}`}>
-        <Image src="/placeholder-logo.svg" alt="Everpay Logo" width={32} height={32} className="h-8 w-8" />
-        <span className="ml-2 text-2xl font-bold font-display">everpay</span>
-      </Link>
-      <nav className="ml-auto hidden gap-6 lg:flex">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            className={cn(
-              "text-lg font-medium transition-colors hover:text-everpay-green",
-              pathname === link.href ? "text-everpay-green" : "text-everpay-dark",
-            )}
-            href={link.href}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </nav>
-      <div className="ml-auto flex items-center gap-4">
-        <Button className="hidden lg:inline-flex" variant="ghost">
-          Log in
-        </Button>
-        <Button className="hidden lg:inline-flex bg-everpay-green text-white rounded-full hover:bg-everpay-green/90">
-          Get started
-        </Button>
-        <Sheet>
-          <SheetTrigger asChild>
-            <Button className="lg:hidden bg-transparent" size="icon" variant="outline">
-              <MenuIcon className="h-6 w-6" />
-              <span className="sr-only">Toggle navigation menu</span>
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <div className="grid gap-2 py-6">
-              {navLinks.map((link) => (
-                <Link key={link.href} className="flex w-full items-center py-2 text-lg font-semibold" href={link.href}>
-                  {link.label}
-                </Link>
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
+        <Link href={`/${lang}`} className="flex items-center">
+          <Image
+            src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png"
+            alt="Everpay Logo"
+            className="h-8 w-auto"
+            width={32}
+            height={32}
+            unoptimized
+          />
+          <span className="text-gray-900 text-2xl font-bold ml-2">everpay</span>
+        </Link>
+
+        <nav className="hidden md:flex space-x-6">
+          {headerNav.map((item) => (
+            <DropdownMenu key={item.title}>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+                  {item.title}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-48">
+                {item.links.map((link) => (
+                  <DropdownMenuItem key={link.href}>
+                    <Link href={getLocalizedPath(link.href, lang)} className="w-full">
+                      {link.text}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ))}
+        </nav>
+
+        <div className="flex items-center space-x-4">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon">
+                <Globe className="h-5 w-5" />
+                <span className="sr-only">Change language</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {locales.map((locale) => (
+                <DropdownMenuItem key={locale} onClick={() => handleLocaleChange(locale)}>
+                  {locale.toUpperCase()}
+                </DropdownMenuItem>
               ))}
-              <Button className="w-full" variant="ghost">
-                Log in
-              </Button>
-              <Button className="w-full bg-everpay-green text-white rounded-full hover:bg-everpay-green/90">
-                Get started
-              </Button>
-            </div>
-          </SheetContent>
-        </Sheet>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
+          <Link href={`/${lang}/sign-in`}>
+            <Button variant="ghost">{dictionary.header.signIn}</Button>
+          </Link>
+          <Link href={`/${lang}/sign-up`}>
+            <Button>{dictionary.header.signUp}</Button>
+          </Link>
+        </div>
       </div>
     </header>
   )
