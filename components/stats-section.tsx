@@ -1,38 +1,35 @@
-import type { Messages } from "@/lib/i18n/types"
+"use client"
 
-interface StatsSectionProps {
-  dict: Messages
-}
+import { useTranslations } from "next-intl"
 
-export function StatsSection({ dict }: StatsSectionProps) {
+export function StatsSection() {
+  const t = useTranslations("stats")
+
+  const stats = [
+    { value: "100M+", label: t("transactions") },
+    { value: "10K+", label: t("businesses") },
+    { value: "150+", label: t("countries") },
+    { value: "30%", label: t("growth") },
+  ]
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.StatsSection.title}</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.StatsSection.description}
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("title")}</h2>
+            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {t("description")}
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex flex-col items-center justify-center space-y-2 text-center">
-            <h3 className="text-4xl font-bold">{dict.StatsSection.stat1Value}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.StatsSection.stat1Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center space-y-2 text-center">
-            <h3 className="text-4xl font-bold">{dict.StatsSection.stat2Value}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.StatsSection.stat2Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center space-y-2 text-center">
-            <h3 className="text-4xl font-bold">{dict.StatsSection.stat3Value}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.StatsSection.stat3Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center space-y-2 text-center">
-            <h3 className="text-4xl font-bold">{dict.StatsSection.stat4Value}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.StatsSection.stat4Label}</p>
-          </div>
+        <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {stats.map((stat, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <div className="text-5xl font-bold text-primary">{stat.value}</div>
+              <div className="text-lg text-gray-500 dark:text-gray-400">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

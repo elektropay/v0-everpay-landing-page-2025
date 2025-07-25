@@ -1,35 +1,25 @@
-import { getMessages } from "next-intl/server"
-import type { Locale } from "@/lib/i18n/config"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/types"
 
-type Props = {
-  params: { lang: Locale }
+interface CookiePolicyPageProps {
+  params: {
+    lang: Locale
+  }
 }
 
-export default async function CookiePolicyPage({ params: { lang } }: Props) {
-  const messages = await getMessages({ locale: lang })
+export default async function CookiePolicyPage({ params: { lang } }: CookiePolicyPageProps) {
+  const dict = await getDictionary(lang)
 
   return (
     <section className="w-full py-12 md:py-24 lg:py-32">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.CookiePolicyPage.title}</h1>
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.footer.cookiePolicy}</h1>
             <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {messages.CookiePolicyPage.description}
+              This is the cookie policy page.
             </p>
           </div>
-        </div>
-        <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
-          <p className="mb-6">{messages.CookiePolicyPage.intro}</p>
-
-          <h2 className="text-2xl font-bold mb-4">{messages.CookiePolicyPage.whatAreCookies}</h2>
-          <p className="mb-6">{messages.CookiePolicyPage.whatAreCookiesContent}</p>
-
-          <h2 className="text-2xl font-bold mb-4">{messages.CookiePolicyPage.howWeUseCookies}</h2>
-          <p className="mb-6">{messages.CookiePolicyPage.howWeUseCookiesContent}</p>
-
-          <h2 className="text-2xl font-bold mb-4">{messages.CookiePolicyPage.typesOfCookies}</h2>
-          <p className="mb-6">{messages.CookiePolicyPage.typesOfCookiesContent}</p>
         </div>
       </div>
     </section>

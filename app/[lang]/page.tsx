@@ -1,13 +1,15 @@
-import { getMessages } from "next-intl/server"
+import { getDictionary } from "@/lib/i18n"
+import type { Locale } from "@/lib/i18n/types"
 import { HomePageContent } from "@/components/home-page-content"
-import type { Locale } from "@/lib/i18n/config"
 
-type Props = {
-  params: { lang: Locale }
+interface HomePageProps {
+  params: {
+    lang: Locale
+  }
 }
 
-export default async function IndexPage({ params: { lang } }: Props) {
-  const messages = await getMessages({ locale: lang })
+export default async function HomePage({ params: { lang } }: HomePageProps) {
+  const dict = await getDictionary(lang)
 
-  return <HomePageContent dict={messages} lang={lang} />
+  return <HomePageContent dict={dict} lang={lang} />
 }

@@ -22,14 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .env*.local
-.vercel/
-.turbo/
-
-# editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.bak
+.vercel
+.turbo

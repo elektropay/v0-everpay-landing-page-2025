@@ -1,16 +1,19 @@
 import type { Pathnames } from "next-intl/navigation"
 
 export const locales = ["en", "es", "fr", "de", "zh"] as const
-export const defaultLocale = "en" as const
-export type Locale = (typeof locales)[number]
 
-export const localePrefix = undefined
-
-export const pathnames: Pathnames<typeof locales> = {
+export const pathnames = {
   "/": "/",
+  "/contact": {
+    en: "/contact",
+    es: "/contacto",
+    fr: "/contactez-nous",
+    de: "/kontakt",
+    zh: "/联系",
+  },
   "/about": {
     en: "/about",
-    es: "/nosotros",
+    es: "/acerca-de",
     fr: "/a-propos",
     de: "/ueber-uns",
     zh: "/关于",
@@ -20,7 +23,7 @@ export const pathnames: Pathnames<typeof locales> = {
     es: "/api",
     fr: "/api",
     de: "/api",
-    zh: "/api",
+    zh: "/接口",
   },
   "/blog": {
     en: "/blog",
@@ -43,25 +46,18 @@ export const pathnames: Pathnames<typeof locales> = {
     de: "/handel",
     zh: "/商务",
   },
-  "/contact": {
-    en: "/contact",
-    es: "/contacto",
-    fr: "/contact",
-    de: "/kontakt",
-    zh: "/联系",
-  },
   "/cookie-policy": {
     en: "/cookie-policy",
-    es: "/politica-cookies",
-    fr: "/politique-cookies",
+    es: "/politica-de-cookies",
+    fr: "/politique-de-cookies",
     de: "/cookie-richtlinie",
-    zh: "/cookie政策",
+    zh: "/Cookie政策",
   },
   "/docs": {
     en: "/docs",
-    es: "/docs",
-    fr: "/docs",
-    de: "/docs",
+    es: "/documentacion",
+    fr: "/documentation",
+    de: "/dokumentation",
     zh: "/文档",
   },
   "/fraud-prevention": {
@@ -69,14 +65,14 @@ export const pathnames: Pathnames<typeof locales> = {
     es: "/prevencion-fraude",
     fr: "/prevention-fraude",
     de: "/betrugspraevention",
-    zh: "/欺诈预防",
+    zh: "/防欺诈",
   },
   "/gateway": {
     en: "/gateway",
-    es: "/gateway",
-    fr: "/gateway",
+    es: "/pasarela",
+    fr: "/passerelle",
     de: "/gateway",
-    zh: "/gateway",
+    zh: "/网关",
   },
   "/help": {
     en: "/help",
@@ -87,14 +83,14 @@ export const pathnames: Pathnames<typeof locales> = {
   },
   "/issuing": {
     en: "/issuing",
-    es: "/issuing",
-    fr: "/issuing",
-    de: "/issuing",
-    zh: "/issuing",
+    es: "/emision",
+    fr: "/emission",
+    de: "/ausgabe",
+    zh: "/发行",
   },
   "/online-payments": {
     en: "/online-payments",
-    es: "/pagos-en-linea",
+    es: "/pagos-online",
     fr: "/paiements-en-ligne",
     de: "/online-zahlungen",
     zh: "/在线支付",
@@ -114,30 +110,30 @@ export const pathnames: Pathnames<typeof locales> = {
     zh: "/支付",
   },
   "/pos": {
-    en: "/pos-systems",
-    es: "/sistemas-pos",
-    fr: "/systemes-pos",
-    de: "/pos-systeme",
-    zh: "/pos系统",
+    en: "/pos",
+    es: "/pos",
+    fr: "/pos",
+    de: "/pos",
+    zh: "/销售点",
   },
   "/privacy-policy": {
     en: "/privacy-policy",
-    es: "/politica-privacidad",
-    fr: "/politique-confidentialite",
+    es: "/politica-de-privacidad",
+    fr: "/politique-de-confidentialite",
     de: "/datenschutzrichtlinie",
     zh: "/隐私政策",
   },
   "/security": {
     en: "/security",
-    es: "/security",
-    fr: "/security",
-    de: "/security",
-    zh: "/security",
+    es: "/seguridad",
+    fr: "/securite",
+    de: "/sicherheit",
+    zh: "/安全",
   },
   "/solutions/business": {
     en: "/solutions/business",
     es: "/soluciones/negocios",
-    fr: "/solutions/affaires",
+    fr: "/solutions/entreprises",
     de: "/loesungen/unternehmen",
     zh: "/解决方案/商业",
   },
@@ -146,19 +142,19 @@ export const pathnames: Pathnames<typeof locales> = {
     es: "/soluciones/ecommerce",
     fr: "/solutions/ecommerce",
     de: "/loesungen/ecommerce",
-    zh: "/解决方案/电子商务",
+    zh: "/解决方案/电商",
   },
   "/solutions/marketplace": {
     en: "/solutions/marketplace",
     es: "/soluciones/marketplace",
     fr: "/solutions/marketplace",
-    de: "/loesungen/marktplatz",
+    de: "/loesungen/marketplace",
     zh: "/解决方案/市场",
   },
   "/solutions/retail": {
     en: "/solutions/retail",
     es: "/soluciones/minorista",
-    fr: "/solutions/detail",
+    fr: "/solutions/commerce-de-detail",
     de: "/loesungen/einzelhandel",
     zh: "/解决方案/零售",
   },
@@ -166,9 +162,9 @@ export const pathnames: Pathnames<typeof locales> = {
     en: "/terms",
     es: "/terminos",
     fr: "/conditions",
-    de: "/nutzungsbedingungen",
-    zh: "/服务条款",
+    de: "/bedingungen",
+    zh: "/条款",
   },
-}
+} satisfies Pathnames<typeof locales>
 
-export type AppPathnames = keyof typeof pathnames
+export const localePrefix = undefined

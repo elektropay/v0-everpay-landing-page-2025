@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
 import type { Messages } from "@/lib/i18n/types"
 import type { Locale } from "@/lib/i18n/config"
-import Link from "next/link"
+import { Link } from "@/lib/i18n/navigation"
 
 interface CtaSectionProps {
   dict: Messages

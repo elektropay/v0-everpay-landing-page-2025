@@ -1,182 +1,186 @@
-import Link from "next/link"
-import { DollarSign } from "lucide-react"
-import type { Locale } from "@/lib/i18n/config"
-import type { Messages } from "@/lib/i18n/types"
+"use client"
 
-interface SiteFooterProps {
-  lang: Locale
-  dict: Messages
-}
+import Image from "next/image"
+import { Link } from "@/lib/i18n/navigation"
+import { useLocale, useTranslations } from "next-intl"
+import { pathnames } from "@/lib/i18n/config"
 
-export function SiteFooter({ lang, dict }: SiteFooterProps) {
-  const getLocalizedPath = (path: string) => `/${lang}${path}`
+export function SiteFooter({ lang }: { lang: string }) {
+  const t = useTranslations("footer")
+  const currentLocale = useLocale()
+
+  const getLocalizedPath = (pathKey: keyof typeof pathnames, locale: string) => {
+    const path = pathnames[pathKey]
+    if (typeof path === "string") {
+      return `/${locale}${path}`
+    }
+    return `/${locale}${path[locale as keyof typeof path] || path.en}`
+  }
 
   return (
-    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-      <aside className="flex items-center gap-2">
-        <Link href={`/${lang}`} passHref>
-          <div className="flex items-center gap-2">
-            <DollarSign className="h-6 w-6" />
-            <span className="font-semibold">Everpay</span>
+    <footer className="bg-gray-100 py-12 dark:bg-gray-800">
+      <div className="container grid grid-cols-1 gap-8 px-4 md:grid-cols-5 md:px-6">
+        <div className="space-y-4 md:col-span-2">
+          <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
+            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={32} height={32} />
+            <span className="text-2xl font-bold">Everpay</span>
+          </Link>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{t("copyright")}</p>
+        </div>
+        <div className="grid grid-cols-2 gap-8 md:col-span-3 md:grid-cols-4">
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 dark:text-gray-50">{t("company")}</h3>
+            <nav className="space-y-2">
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/about", currentLocale)}
+              >
+                {t("aboutUs")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/careers", currentLocale)}
+              >
+                {t("careers")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/blog", currentLocale)}
+              >
+                {t("blog")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/contact", currentLocale)}
+              >
+                {t("contactUs")}
+              </Link>
+            </nav>
           </div>
-        </Link>
-        <p className="text-xs text-gray-500 dark:text-gray-400">{dict.Footer.copyright}</p>
-      </aside>
-      <nav className="sm:ml-auto flex flex-wrap gap-4 sm:gap-6 text-sm">
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">{dict.Footer.products}</h3>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/payments")}
-          >
-            {dict.Footer.payments}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/gateway")}
-          >
-            {dict.Footer.gateway}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/issuing")}
-          >
-            {dict.Footer.issuing}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/pos")}
-          >
-            {dict.Footer.pos}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/online-payments")}
-          >
-            {dict.Footer.onlinePayments}
-          </Link>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 dark:text-gray-50">{t("products")}</h3>
+            <nav className="space-y-2">
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/online-payments", currentLocale)}
+              >
+                {t("onlinePayments")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/pos", currentLocale)}
+              >
+                {t("posSolutions")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/gateway", currentLocale)}
+              >
+                {t("paymentGateway")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/issuing", currentLocale)}
+              >
+                {t("issuing")}
+              </Link>
+            </nav>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 dark:text-gray-50">{t("solutions")}</h3>
+            <nav className="space-y-2">
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/solutions/ecommerce", currentLocale)}
+              >
+                {t("ecommerce")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/solutions/retail", currentLocale)}
+              >
+                {t("retail")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/solutions/marketplace", currentLocale)}
+              >
+                {t("marketplace")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/solutions/business", currentLocale)}
+              >
+                {t("business")}
+              </Link>
+            </nav>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 dark:text-gray-50">{t("resources")}</h3>
+            <nav className="space-y-2">
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/docs", currentLocale)}
+              >
+                {t("documentation")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/help", currentLocale)}
+              >
+                {t("helpCenter")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/api", currentLocale)}
+              >
+                {t("apiReference")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/partners", currentLocale)}
+              >
+                {t("partners")}
+              </Link>
+            </nav>
+          </div>
+          <div className="space-y-3">
+            <h3 className="text-sm font-semibold tracking-wider text-gray-900 dark:text-gray-50">{t("legal")}</h3>
+            <nav className="space-y-2">
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/privacy-policy", currentLocale)}
+              >
+                {t("privacyPolicy")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/terms", currentLocale)}
+              >
+                {t("termsOfService")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/cookie-policy", currentLocale)}
+              >
+                {t("cookiePolicy")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/fraud-prevention", currentLocale)}
+              >
+                {t("fraudPrevention")}
+              </Link>
+              <Link
+                className="text-sm font-medium text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+                href={getLocalizedPath("/security", currentLocale)}
+              >
+                {t("security")}
+              </Link>
+            </nav>
+          </div>
         </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">{dict.Footer.solutions}</h3>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/solutions/ecommerce")}
-          >
-            {dict.Footer.ecommerce}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/solutions/retail")}
-          >
-            {dict.Footer.retail}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/solutions/marketplace")}
-          >
-            {dict.Footer.marketplace}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/solutions/business")}
-          >
-            {dict.Footer.business}
-          </Link>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">{dict.Footer.developers}</h3>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/docs")}
-          >
-            {dict.Footer.docs}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/api")}
-          >
-            {dict.Footer.apiReference}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/docs")}
-          >
-            {dict.Footer.sdks}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/help")}
-          >
-            {dict.Footer.community}
-          </Link>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">{dict.Footer.company}</h3>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/about")}
-          >
-            {dict.Footer.aboutUs}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/careers")}
-          >
-            {dict.Footer.careers}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/partners")}
-          >
-            {dict.Footer.partners}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/blog")}
-          >
-            {dict.Footer.blog}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/contact")}
-          >
-            {dict.Footer.contactUs}
-          </Link>
-        </div>
-        <div className="flex flex-col gap-2">
-          <h3 className="font-semibold">{dict.Footer.legal}</h3>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/privacy-policy")}
-          >
-            {dict.Footer.privacyPolicy}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/terms")}
-          >
-            {dict.Footer.termsOfService}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/cookie-policy")}
-          >
-            {dict.Footer.cookiePolicy}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/fraud-prevention")}
-          >
-            {dict.Footer.fraudPrevention}
-          </Link>
-          <Link
-            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
-            href={getLocalizedPath("/security")}
-          >
-            {dict.Footer.security}
-          </Link>
-        </div>
-      </nav>
+      </div>
     </footer>
   )
 }

@@ -2,57 +2,49 @@
 
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
-import type { Messages } from "@/lib/i18n/types"
+import { useTranslations } from "next-intl"
 
-interface PaymentPartnersCarouselProps {
-  dict: Messages
-}
+export function PaymentPartnersCarousel() {
+  const t = useTranslations("paymentPartners")
 
-export function PaymentPartnersCarousel({ dict }: PaymentPartnersCarouselProps) {
-  const paymentPartners = [
-    { src: "/images/visa.png", alt: dict.PaymentPartnersSection.visa },
-    { src: "/images/mastercard.png", alt: dict.PaymentPartnersSection.mastercard },
-    { src: "/images/amex.png", alt: dict.PaymentPartnersSection.amex },
-    { src: "/images/paypal.png", alt: dict.PaymentPartnersSection.paypal },
-    { src: "/images/apple-pay.png", alt: dict.PaymentPartnersSection.applePay },
-    { src: "/images/google-pay.png", alt: dict.PaymentPartnersSection.googlePay },
-    { src: "/images/interac.png", alt: dict.PaymentPartnersSection.interac },
-    { src: "/images/jcb.png", alt: dict.PaymentPartnersSection.jcb },
+  const partners = [
+    { name: "Visa", logo: "/images/visa.png" },
+    { name: "Mastercard", logo: "/images/mastercard.png" },
+    { name: "Interac", logo: "/images/interac.png" },
+    { name: "JCB", logo: "/images/jcb.png" },
+    { name: "Apple Pay", logo: "/images/apple-pay.png" },
+    { name: "Google Pay", logo: "/images/google-pay.png" },
+    { name: "American Express", logo: "/images/amex.png" },
+    { name: "PayPal", logo: "/images/paypal.png" },
   ]
 
   return (
-    <Carousel
-      opts={{
-        align: "start",
-      }}
-      className="w-full max-w-sm md:max-w-2xl lg:max-w-4xl mx-auto"
-    >
-      <CarouselContent>
-        {paymentPartners.map((partner, index) => (
-          <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-            <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <Image
-                    alt={partner.alt}
-                    className="object-contain"
-                    height="100"
-                    src={partner.src || "/placeholder.png"}
-                    style={{
-                      aspectRatio: "150/100",
-                      objectFit: "contain",
-                    }}
-                    width="150"
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">{t("title")}</h2>
+            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {t("description")}
+            </p>
+          </div>
+        </div>
+        <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          {partners.map((partner) => (
+            <Card key={partner.name} className="flex items-center justify-center p-4">
+              <CardContent className="flex items-center justify-center p-0">
+                <Image
+                  alt={`${partner.name} Logo`}
+                  className="aspect-[2/1] overflow-hidden rounded-lg object-contain object-center"
+                  height={70}
+                  src={partner.logo || "/placeholder.png"}
+                  width={140}
+                />
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
   )
 }
