@@ -1,4 +1,5 @@
-import { DollarSign, Lock, Code, BarChart, LifeBuoy, Cloud } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { GlobeIcon, ShieldCheckIcon, ZapIcon, ScaleIcon, HeadsetIcon, DollarSignIcon } from "lucide-react"
 import type { Messages } from "@/lib/i18n/types"
 
 interface FeaturesSectionProps {
@@ -17,49 +18,61 @@ export function FeaturesSection({ dict }: FeaturesSectionProps) {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <DollarSign className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature1Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature1Description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Lock className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature2Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature2Description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Code className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature3Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature3Description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <BarChart className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature4Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature4Description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <LifeBuoy className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature5Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature5Description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Cloud className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.features.feature6Title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.features.feature6Description}</p>
-          </div>
+        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+          <Card>
+            <CardHeader>
+              <GlobeIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature1Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature1Description}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <ShieldCheckIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature2Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature2Description}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <ZapIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature3Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature3Description}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <ScaleIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature4Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature4Description}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <HeadsetIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature5Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature5Description}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <DollarSignIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.features.feature6Title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.features.feature6Description}</CardDescription>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

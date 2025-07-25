@@ -11,11 +11,13 @@ import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
-export default async function PaymentsPage({
-  params: { lang },
-}: {
-  params: { lang: Locale }
-}) {
+interface PaymentsPageProps {
+  params: {
+    lang: Locale
+  }
+}
+
+export default async function PaymentsPage({ params: { lang } }: PaymentsPageProps) {
   const dict = await getDictionary(lang)
   const messages = await getMessages({ locale: lang })
   const [activeTab, setActiveTab] = useState("overview")
@@ -392,9 +394,9 @@ export default async function PaymentsPage({
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.navigation.payments}</h1>
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Payments</h1>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  This is the payments page. Content will be added here soon.
+                  All about our payment solutions.
                 </p>
               </div>
             </div>
@@ -405,4 +407,3 @@ export default async function PaymentsPage({
     </div>
   )
 }
-</merged_code>

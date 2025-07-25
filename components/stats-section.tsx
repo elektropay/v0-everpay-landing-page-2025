@@ -16,22 +16,18 @@ export function StatsSection({ dict }: StatsSectionProps) {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-4 lg:gap-12">
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="text-5xl font-bold">100M+</div>
+        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+          <div className="flex flex-col items-center space-y-2">
+            <div className="text-5xl font-bold">10M+</div>
             <p className="text-gray-500 dark:text-gray-400">{dict.stats.transactions}</p>
           </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="text-5xl font-bold">10K+</div>
+          <div className="flex flex-col items-center space-y-2">
+            <div className="text-5xl font-bold">5000+</div>
             <p className="text-gray-500 dark:text-gray-400">{dict.stats.businesses}</p>
           </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="text-5xl font-bold">150+</div>
+          <div className="flex flex-col items-center space-y-2">
+            <div className="text-5xl font-bold">100+</div>
             <p className="text-gray-500 dark:text-gray-400">{dict.stats.countries}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="text-5xl font-bold">30%</div>
-            <p className="text-gray-500 dark:text-gray-400">{dict.stats.growth}</p>
           </div>
         </div>
       </div>

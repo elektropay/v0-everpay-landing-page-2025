@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button"
-import { Link } from "@/lib/i18n/navigation"
 import type { Messages } from "@/lib/i18n/types"
 import type { Locale } from "@/lib/i18n/config"
+import Link from "next/link"
 import Image from "next/image"
 
 interface HeroSectionProps {
@@ -22,7 +22,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Link
                 className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                href={`/${lang}/contact`}
+                href={`/${lang}/signup`}
               >
                 {dict.hero.getStartedButton}
               </Link>
@@ -38,7 +38,7 @@ export function HeroSection({ dict, lang }: HeroSectionProps) {
             alt="Hero"
             className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
             height="400"
-            src="/placeholder.svg?height=400&width=600"
+            src="/placeholder.png?height=400&width=600"
             width="600"
           />
         </div>

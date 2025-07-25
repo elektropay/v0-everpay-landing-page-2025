@@ -1,10 +1,7 @@
-"use client"
-
-import type React from "react"
-
-import { Link } from "@/lib/i18n/navigation"
+import Link from "next/link"
 import type { Locale } from "@/lib/i18n/config"
 import type { Messages } from "@/lib/i18n/types"
+import Image from "next/image"
 
 interface SiteFooterProps {
   dict: Messages
@@ -12,108 +9,86 @@ interface SiteFooterProps {
 }
 
 export function SiteFooter({ dict, lang }: SiteFooterProps) {
+  const createLocalizedPath = (path: string, locale: Locale) => {
+    if (path === "/") return `/${locale}`
+    return `/${locale}${path}`
+  }
+
   return (
-    <footer className="w-full border-t bg-background py-8 md:py-12">
-      <div className="container grid grid-cols-2 gap-8 px-4 md:grid-cols-5 md:px-6">
-        <div className="col-span-2 md:col-span-1">
-          <Link href={`/${lang}`} className="flex items-center gap-2 font-semibold">
-            <DollarSignIcon className="h-6 w-6" />
+    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <div className="container grid grid-cols-1 md:grid-cols-4 gap-8 py-8">
+        <div className="flex flex-col items-start gap-4">
+          <Link className="flex items-center gap-2" href={createLocalizedPath("/", lang)}>
+            <Image src="/placeholder-logo.png" width={32} height={32} alt="Everpay Logo" className="h-8 w-8" />
             <span className="sr-only">Everpay</span>
-            Everpay
           </Link>
-          <p className="mt-4 text-sm text-gray-500 dark:text-gray-400">{dict.footer.copyright}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">{dict.footer.copyright}</p>
         </div>
         <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.company.title}</h3>
-          <Link className="text-sm hover:underline" href={`/${lang}/about`}>
-            {dict.footer.company.about}
+          <h3 className="font-semibold">{dict.footer.company}</h3>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/about", lang)}>
+            {dict.footer.aboutUs}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/careers`}>
-            {dict.footer.company.careers}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/careers", lang)}>
+            {dict.footer.careers}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/blog`}>
-            {dict.footer.company.blog}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/blog", lang)}>
+            {dict.footer.blog}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/partners`}>
-            {dict.footer.company.partners}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/partners", lang)}>
+            {dict.footer.partners}
           </Link>
-        </div>
-        <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.products.title}</h3>
-          <Link className="text-sm hover:underline" href={`/${lang}/payments`}>
-            {dict.footer.products.payments}
-          </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/online-payments`}>
-            {dict.footer.products.onlinePayments}
-          </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/fraud-prevention`}>
-            {dict.footer.products.fraudPrevention}
-          </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/issuing`}>
-            {dict.footer.products.cardIssuing}
-          </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/pos`}>
-            {dict.footer.products.posSystems}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/contact", lang)}>
+            {dict.footer.contactUs}
           </Link>
         </div>
         <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.solutions.title}</h3>
-          <Link className="text-sm hover:underline" href={`/${lang}/solutions/business`}>
-            {dict.footer.solutions.business}
+          <h3 className="font-semibold">{dict.footer.products}</h3>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/payments", lang)}>
+            {dict.footer.payments}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/solutions/ecommerce`}>
-            {dict.footer.solutions.ecommerce}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/pos", lang)}>
+            {dict.footer.pos}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/solutions/marketplace`}>
-            {dict.footer.solutions.marketplace}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/issuing", lang)}>
+            {dict.footer.issuing}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/solutions/retail`}>
-            {dict.footer.solutions.retail}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/online-payments", lang)}>
+            {dict.footer.onlinePayments}
+          </Link>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/gateway", lang)}>
+            {dict.footer.gateway}
+          </Link>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/fraud-prevention", lang)}>
+            {dict.footer.fraudPrevention}
+          </Link>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/security", lang)}>
+            {dict.footer.security}
           </Link>
         </div>
         <div className="grid gap-2">
-          <h3 className="text-lg font-semibold">{dict.footer.resources.title}</h3>
-          <Link className="text-sm hover:underline" href={`/${lang}/docs`}>
-            {dict.footer.resources.docs}
+          <h3 className="font-semibold">{dict.footer.resources}</h3>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/docs", lang)}>
+            {dict.footer.documentation}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/help`}>
-            {dict.footer.resources.help}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/help", lang)}>
+            {dict.footer.helpCenter}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/api`}>
-            {dict.footer.resources.api}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/api", lang)}>
+            {dict.footer.apiReference}
           </Link>
-          <h3 className="text-lg font-semibold mt-4">{dict.footer.legal.title}</h3>
-          <Link className="text-sm hover:underline" href={`/${lang}/privacy-policy`}>
-            {dict.footer.legal.privacyPolicy}
+          <h3 className="font-semibold mt-4">{dict.footer.legal}</h3>
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/privacy-policy", lang)}>
+            {dict.footer.privacyPolicy}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/terms`}>
-            {dict.footer.legal.termsOfService}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/terms", lang)}>
+            {dict.footer.termsOfService}
           </Link>
-          <Link className="text-sm hover:underline" href={`/${lang}/cookie-policy`}>
-            {dict.footer.legal.cookiePolicy}
+          <Link className="text-sm hover:underline" href={createLocalizedPath("/cookie-policy", lang)}>
+            {dict.footer.cookiePolicy}
           </Link>
         </div>
       </div>
     </footer>
-  )
-}
-
-function DollarSignIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="12" x2="12" y1="2" y2="22" />
-      <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-    </svg>
   )
 }

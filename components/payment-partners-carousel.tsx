@@ -1,59 +1,43 @@
 "use client"
 
 import Image from "next/image"
-import type { Messages } from "@/lib/i18n/types"
+import { Card, CardContent } from "@/components/ui/card"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 interface PaymentPartnersCarouselProps {
-  dict: Messages
+  partners: { src: string; alt: string }[]
 }
 
-export function PaymentPartnersCarousel({ dict }: PaymentPartnersCarouselProps) {
-  const partners = [
-    { src: "/images/visa.png", alt: dict.paymentPartners.visa },
-    { src: "/images/mastercard.png", alt: dict.paymentPartners.mastercard },
-    { src: "/images/amex.png", alt: dict.paymentPartners.amex },
-    { src: "/images/paypal.png", alt: dict.paymentPartners.paypal },
-    { src: "/images/apple-pay.png", alt: dict.paymentPartners.applePay },
-    { src: "/images/google-pay.png", alt: dict.paymentPartners.googlePay },
-    { src: "/images/interac.png", alt: dict.paymentPartners.interac },
-    { src: "/images/jcb.png", alt: dict.paymentPartners.jcb },
-  ]
-
+export function PaymentPartnersCarousel({ partners }: PaymentPartnersCarouselProps) {
   return (
-    <div className="relative w-full overflow-hidden py-8">
-      <div className="flex animate-marquee whitespace-nowrap">
+    <Carousel
+      opts={{
+        align: "start",
+        loop: true,
+      }}
+      className="w-full max-w-6xl mx-auto"
+    >
+      <CarouselContent>
         {partners.map((partner, index) => (
-          <div key={index} className="mx-4 inline-block">
-            <Image
-              alt={partner.alt}
-              className="h-12 object-contain"
-              height="48"
-              src={partner.src || "/placeholder.svg"}
-              style={{
-                aspectRatio: "120/48",
-                objectFit: "contain",
-              }}
-              width="120"
-            />
-          </div>
+          <CarouselItem key={index} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+            <div className="p-1">
+              <Card>
+                <CardContent className="flex aspect-square items-center justify-center p-6">
+                  <Image
+                    src={partner.src || "/placeholder.png"}
+                    alt={partner.alt}
+                    width={120}
+                    height={60}
+                    className="object-contain"
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
         ))}
-        {/* Duplicate partners for seamless looping */}
-        {partners.map((partner, index) => (
-          <div key={`duplicate-${index}`} className="mx-4 inline-block">
-            <Image
-              alt={partner.alt}
-              className="h-12 object-contain"
-              height="48"
-              src={partner.src || "/placeholder.svg"}
-              style={{
-                aspectRatio: "120/48",
-                objectFit: "contain",
-              }}
-              width="120"
-            />
-          </div>
-        ))}
-      </div>
-    </div>
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
   )
 }

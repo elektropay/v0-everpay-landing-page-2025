@@ -1,160 +1,158 @@
 {
-  "navigation": {
+  "header": {
     "home": "Inicio",
-    "payments": "Pagos",
-    "onlinePayments": "Pagos en Línea",
-    "fraudPrevention": "Prevención de Fraude",
-    "cardIssuing": "Emisión de Tarjetas",
-    "posSystems": "Sistemas POS",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "careers": "Carreras",
     "solutions": "Soluciones",
     "business": "Negocios",
     "ecommerce": "Comercio Electrónico",
     "marketplace": "Mercado",
     "retail": "Minorista",
-    "developers": "Desarrolladores",
-    "docs": "Documentación",
-    "help": "Ayuda",
-    "company": "Empresa",
-    "about": "Acerca de",
-    "careers": "Carreras",
-    "blog": "Blog",
+    "products": "Productos",
+    "payments": "Pagos",
+    "pos": "TPV",
+    "onlinePayments": "Pagos en Línea",
+    "issuing": "Emisión",
+    "gateway": "Pasarela",
+    "api": "API",
+    "commerce": "Comercio",
     "partners": "Socios",
-    "contact": "Contacto"
+    "help": "Ayuda",
+    "login": "Iniciar Sesión",
+    "signUp": "Registrarse",
+    "developers": "Desarrolladores",
+    "pricing": "Precios",
+    "signIn": "Iniciar Sesión",
+    "businessSolutions": "Soluciones Empresariales",
+    "ecommerceSolutions": "Soluciones de Comercio Electrónico",
+    "marketplaceSolutions": "Soluciones de Mercado",
+    "retailSolutions": "Soluciones Minoristas"
   },
   "hero": {
     "title": "El Futuro de los Pagos, Hoy.",
-    "description": "Everpay ofrece soluciones de pago innovadoras, seguras y sin interrupciones para empresas de todos los tamaños. Impulse su crecimiento con nuestra tecnología de vanguardia.",
+    "description": "Everpay ofrece soluciones de pago fluidas, seguras y escalables para empresas de todos los tamaños. Impulse su crecimiento con nuestra tecnología innovadora.",
     "getStartedButton": "Empezar",
     "contactSalesButton": "Contactar Ventas"
   },
   "features": {
-    "title": "¿Por Qué Elegir Everpay?",
-    "description": "Nuestra plataforma está diseñada para escalar con su negocio, ofreciendo un conjunto de herramientas diseñadas para la eficiencia y el crecimiento.",
-    "feature1Title": "Alcance Global",
-    "feature1Description": "Acepte pagos desde cualquier parte del mundo con soporte para múltiples monedas y métodos de pago.",
-    "feature2Title": "Seguridad Avanzada",
-    "feature2Description": "Proteja sus transacciones y datos de clientes con cifrado líder en la industria y detección de fraude.",
+    "title": "¿Por qué elegir Everpay?",
+    "description": "Nuestra plataforma está diseñada para ayudar a su negocio a prosperar en la economía digital.",
+    "feature1Title": "Transacciones Seguras",
+    "feature1Description": "Cifrado avanzado y prevención de fraude para mantener sus transacciones seguras.",
+    "feature2Title": "Alcance Global",
+    "feature2Description": "Acepte pagos desde cualquier parte del mundo, en cualquier moneda.",
     "feature3Title": "Integración Perfecta",
-    "feature3Description": "Integre fácilmente nuestras APIs en sus sistemas existentes con documentación completa y herramientas para desarrolladores.",
+    "feature3Description": "APIs y SDKs fáciles de usar para una integración rápida con sus sistemas existentes.",
     "feature4Title": "Análisis en Tiempo Real",
-    "feature4Description": "Obtenga información sobre sus ventas y el comportamiento del cliente con paneles potentes y personalizables.",
+    "feature4Description": "Obtenga información sobre sus ventas y el comportamiento del cliente con paneles completos.",
     "feature5Title": "Soporte 24/7",
-    "feature5Description": "Nuestro equipo de soporte dedicado está disponible las 24 horas para ayudarle con cualquier consulta.",
-    "feature6Title": "Infraestructura Escalable",
-    "feature6Description": "Nuestra sólida infraestructura maneja grandes volúmenes de transacciones, garantizando fiabilidad y rendimiento."
+    "feature5Description": "Nuestro equipo dedicado siempre está aquí para ayudarle a tener éxito.",
+    "feature6Title": "Precios Competitivos",
+    "feature6Description": "Tarifas transparentes y asequibles sin cargos ocultos."
   },
   "stats": {
     "title": "Confiado por Empresas en Todo el Mundo",
-    "description": "Únase a miles de comerciantes satisfechos que confían en Everpay para sus necesidades de procesamiento de pagos.",
+    "description": "Únase a miles de comerciantes satisfechos que confían en Everpay para sus necesidades de pago.",
     "transactions": "Transacciones Procesadas",
     "businesses": "Empresas Atendidas",
     "countries": "Países Soportados",
     "growth": "Crecimiento Anual"
   },
   "paymentPartners": {
-    "title": "Acepte Todos los Principales Métodos de Pago",
-    "description": "Everpay soporta una amplia gama de opciones de pago, facilitando que sus clientes paguen como prefieran.",
-    "visa": "Visa",
-    "mastercard": "Mastercard",
-    "amex": "American Express",
-    "paypal": "PayPal",
-    "applePay": "Apple Pay",
-    "googlePay": "Google Pay",
-    "interac": "Interac",
-    "jcb": "JCB"
+    "title": "Nuestros Socios de Pago",
+    "description": "Colaboramos con las principales redes de pago para garantizar una amplia aceptación y fiabilidad."
   },
   "checkoutProtection": {
     "title": "Pago Seguro y Protección contra Fraude",
-    "description": "Proteja su negocio y a sus clientes con las funciones de seguridad avanzadas de Everpay.",
-    "fraudDetection": {
-      "title": "Detección de Fraude Impulsada por IA",
-      "description": "Nuestros algoritmos inteligentes analizan las transacciones en tiempo real para identificar y bloquear actividades fraudulentas, minimizando las devoluciones de cargos y protegiendo sus ingresos."
-    },
-    "dataEncryption": {
-      "title": "Cifrado de Datos de Extremo a Extremo",
-      "description": "Toda la información de pago sensible se cifra desde el momento en que se captura hasta que llega a su destino, garantizando la máxima seguridad y cumplimiento de los datos."
-    },
-    "tokenization": {
-      "title": "Tokenización para Mayor Seguridad",
-      "description": "Reemplace los datos sensibles de la tarjeta con tokens únicos, reduciendo su alcance PCI DSS y protegiendo la información del cliente de las brechas."
-    },
-    "3dSecure": {
-      "title": "Soporte 3D Secure 2.0",
-      "description": "Implemente una capa adicional de seguridad para transacciones en línea con tarjeta de crédito y débito, reduciendo el fraude y los cambios de responsabilidad."
-    }
+    "description": "Asegure cada transacción con las herramientas avanzadas de detección y prevención de fraude de Everpay.",
+    "feature1Title": "Detección de Fraude en Tiempo Real",
+    "feature1Description": "Identifique y bloquee transacciones sospechosas al instante.",
+    "feature2Title": "Cumplimiento PCI DSS",
+    "feature2Description": "Mantenga los más altos estándares de seguridad para los datos de tarjetas.",
+    "feature3Title": "3D Secure 2.0",
+    "feature3Description": "Añada una capa extra de seguridad para transacciones con tarjeta de crédito y débito en línea.",
+    "feature4Title": "Prevención de Contracargos",
+    "feature4Description": "Minimice las disputas y proteja sus ingresos."
   },
   "businessTypes": {
     "title": "Soluciones para Cada Tipo de Negocio",
     "description": "Ya sea una startup o una empresa, Everpay tiene soluciones personalizadas para satisfacer sus necesidades de pago únicas.",
-    "retail": {
-      "title": "Minorista",
-      "description": "Optimice los pagos en tienda con nuestros robustos sistemas POS y terminales de pago integrados."
-    },
-    "ecommerce": {
-      "title": "Comercio Electrónico",
-      "description": "Optimice la experiencia de pago en línea con integraciones perfectas y opciones de pago globales."
-    },
-    "marketplace": {
-      "title": "Mercado",
-      "description": "Gestione flujos de pago complejos para múltiples proveedores con nuestras soluciones de mercado flexibles."
-    },
-    "saas": {
-      "title": "SaaS y Suscripciones",
-      "description": "Automatice la facturación recurrente y la gestión de suscripciones con nuestras potentes herramientas de pago recurrente."
-    }
+    "smallBusiness": "Pequeña Empresa",
+    "mediumBusiness": "Mediana Empresa",
+    "enterprise": "Empresa",
+    "onlineRetail": "Venta Minorista en Línea",
+    "physicalStore": "Tienda Física",
+    "serviceProvider": "Proveedor de Servicios",
+    "ecommerceTitle": "Comercio Electrónico",
+    "ecommerceDescription": "Procesamiento de pagos en línea sin interrupciones para su tienda de comercio electrónico.",
+    "retailTitle": "Minorista",
+    "retailDescription": "Modernice sus pagos en tienda con nuestras versátiles soluciones de TPV.",
+    "marketplaceTitle": "Mercado",
+    "marketplaceDescription": "Gestione flujos de pago complejos para plataformas de múltiples proveedores.",
+    "saasTitle": "SaaS y Suscripciones",
+    "saasDescription": "Automatice la facturación recurrente y la gestión de suscripciones."
   },
   "cta": {
     "title": "¿Listo para Transformar sus Pagos?",
-    "description": "Únase a Everpay hoy y experimente el futuro del procesamiento de pagos seguro y eficiente.",
-    "signUpButton": "Registrarse Ahora",
+    "description": "Únase a Everpay hoy y experimente el futuro de las transacciones seguras y eficientes.",
+    "signUpButton": "Regístrese Ahora",
     "contactSalesButton": "Contactar Ventas"
   },
   "footer": {
-    "company": {
-      "title": "Empresa",
-      "about": "Acerca de Nosotros",
-      "careers": "Carreras",
-      "blog": "Blog",
-      "partners": "Socios"
-    },
-    "products": {
-      "title": "Productos",
-      "payments": "Pagos",
-      "onlinePayments": "Pagos en Línea",
-      "fraudPrevention": "Prevención de Fraude",
-      "cardIssuing": "Emisión de Tarjetas",
-      "posSystems": "Sistemas POS"
-    },
-    "solutions": {
-      "title": "Soluciones",
-      "business": "Negocios",
-      "ecommerce": "Comercio Electrónico",
-      "marketplace": "Mercado",
-      "retail": "Minorista"
-    },
-    "resources": {
-      "title": "Recursos",
-      "docs": "Documentación",
-      "help": "Centro de Ayuda",
-      "api": "Referencia de API"
-    },
-    "legal": {
-      "title": "Legal",
-      "privacyPolicy": "Política de Privacidad",
-      "termsOfService": "Términos de Servicio",
-      "cookiePolicy": "Política de Cookies"
-    },
+    "company": "Empresa",
+    "aboutUs": "Acerca de Nosotros",
+    "careers": "Carreras",
+    "blog": "Blog",
+    "partners": "Socios",
+    "solutions": "Soluciones",
+    "ecommerce": "Comercio Electrónico",
+    "retail": "Minorista",
+    "marketplace": "Mercado",
+    "business": "Empresas",
+    "products": "Productos",
+    "payments": "Pagos",
+    "pos": "TPV",
+    "issuing": "Emisión",
+    "onlinePayments": "Pagos en Línea",
+    "gateway": "Pasarela",
+    "fraudPrevention": "Prevención de Fraude",
+    "security": "Seguridad",
+    "resources": "Recursos",
+    "documentation": "Documentación",
+    "helpCenter": "Centro de Ayuda",
+    "apiReference": "Referencia de API",
+    "contactUs": "Contáctenos",
+    "legal": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "address": "123 Calle del Pago, Ciudad FinTech, FC 12345",
+    "email": "info@everpay.com",
+    "phone": "+1 (800) 123-4567",
     "copyright": "© 2024 Everpay. Todos los derechos reservados."
   },
   "contact": {
     "title": "Contáctenos",
-    "description": "¿Tiene preguntas o necesita ayuda? Rellene el siguiente formulario y nos pondremos en contacto con usted lo antes posible.",
+    "description": "¿Tiene preguntas o necesita ayuda? Rellene el formulario a continuación y nos pondremos en contacto con usted lo antes posible.",
     "nameLabel": "Nombre",
+    "namePlaceholder": "Introduzca su nombre",
     "emailLabel": "Correo Electrónico",
+    "emailPlaceholder": "Introduzca su correo electrónico",
     "subjectLabel": "Asunto",
+    "subjectPlaceholder": "Seleccione un asunto",
+    "generalInquiry": "Consulta General",
+    "salesQuestion": "Pregunta de Ventas",
+    "supportRequest": "Soporte Técnico",
+    "partnershipInquiry": "Oportunidades de Asociación",
     "messageLabel": "Mensaje",
-    "submitButton": "Enviar Mensaje",
-    "successMessage": "¡Su mensaje ha sido enviado con éxito!",
-    "errorMessage": "Hubo un error al enviar su mensaje. Por favor, inténtelo de nuevo más tarde."
+    "messagePlaceholder": "Introduzca su mensaje",
+    "submitButton": "Enviar Mensaje"
+  },
+  "notFound": {
+    "title": "404 - Página No Encontrada",
+    "description": "La página que busca no existe.",
+    "goHome": "Ir a la Página de Inicio"
   }
 }

@@ -1,5 +1,7 @@
-import { Store, ShoppingCart, Users, Repeat } from "lucide-react"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { ShoppingCartIcon, StoreIcon, UsersIcon, CloudIcon } from "lucide-react"
 import type { Messages } from "@/lib/i18n/types"
+import Image from "next/image"
 
 interface BusinessTypesSectionProps {
   dict: Messages
@@ -17,35 +19,52 @@ export function BusinessTypesSection({ dict }: BusinessTypesSectionProps) {
             </p>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-4 lg:gap-12">
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Store className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.businessTypes.retail.title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.retail.description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <ShoppingCart className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.businessTypes.ecommerce.title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.ecommerce.description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Users className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.businessTypes.marketplace.title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.marketplace.description}</p>
-          </div>
-          <div className="flex flex-col items-center space-y-2 text-center">
-            <div className="rounded-full bg-primary p-3 text-primary-foreground">
-              <Repeat className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold">{dict.businessTypes.saas.title}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.businessTypes.saas.description}</p>
-          </div>
+        <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-2 lg:gap-12">
+          <Card>
+            <CardHeader>
+              <ShoppingCartIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.businessTypes.ecommerceTitle}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.businessTypes.ecommerceDescription}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <StoreIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.businessTypes.retailTitle}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.businessTypes.retailDescription}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <UsersIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.businessTypes.marketplaceTitle}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.businessTypes.marketplaceDescription}</CardDescription>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CloudIcon className="h-8 w-8 text-primary" />
+              <CardTitle>{dict.businessTypes.saasTitle}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <CardDescription>{dict.businessTypes.saasDescription}</CardDescription>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="flex justify-center mt-8">
+          <Image
+            src="/placeholder.png?height=300&width=800"
+            width={800}
+            height={300}
+            alt="Business Types"
+            className="rounded-xl object-cover"
+          />
         </div>
       </div>
     </section>
