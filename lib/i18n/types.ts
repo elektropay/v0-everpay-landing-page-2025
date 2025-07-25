@@ -1,4 +1,25 @@
 export type Dictionary = {
+  common: {
+    home: string
+    payments: string
+    solutions: string
+    partners: string
+    developers: string
+    company: string
+    login: string
+    getStarted: string
+    // Add other common keys as needed
+  }
+  contactPage: {
+    title: string
+    description: string
+    form: {
+      name: string
+      email: string
+      message: string
+      submit: string
+    }
+  }
   footer: {
     solutions: {
       title: string
@@ -47,4 +68,4 @@ export type Dictionary = {
   }
 }
 
-export type Locale = keyof typeof import("./dictionaries").dictionaryLoaders
+export type Locale = "en" | "es" | "fr" | "de" | "zh"
