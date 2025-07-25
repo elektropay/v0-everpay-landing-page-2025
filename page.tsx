@@ -8,9 +8,10 @@ import { BusinessTypesSection } from "@/components/business-types-section"
 import { CTASection } from "@/components/cta-section"
 import { SiteFooter } from "@/components/site-footer"
 import { redirect } from "next/navigation"
+import { defaultLocale } from "@/lib/i18n/config"
 
 export default function RootPage() {
-  redirect("/en")
+  redirect(`/${defaultLocale}`)
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />

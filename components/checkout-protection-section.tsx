@@ -13,18 +13,15 @@ export function CheckoutProtectionSection({ dict }: CheckoutProtectionSectionPro
         <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
           <Image
             alt="Checkout Protection"
-            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full"
-            height="310"
-            src="/placeholder.png?height=310&width=550"
-            width="550"
+            className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-first lg:aspect-square"
+            height="400"
+            src="/placeholder.png?height=400&width=600"
+            width="600"
           />
           <div className="flex flex-col justify-center space-y-4">
             <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                {dict.checkoutProtection.tagline}
-              </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.checkoutProtection.title}</h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
                 {dict.checkoutProtection.description}
               </p>
             </div>

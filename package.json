@@ -19,6 +19,7 @@
     "clsx": "^2.1.1",
     "embla-carousel": "latest",
     "embla-carousel-autoplay": "latest",
+    "embla-carousel-react": "latest",
     "lucide-react": "^0.454.0",
     "next": "15.2.4",
     "next-intl": "latest",

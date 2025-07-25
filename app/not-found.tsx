@@ -1,34 +1,18 @@
 import Link from "next/link"
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
+import { defaultLocale } from "@/lib/i18n/config"
 
-export default async function NotFound({
-  params: { lang },
-}: {
-  params: { lang: Locale }
-}) {
-  const dict = await getDictionary(lang)
-
+export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <SiteHeader dict={dict} />
-      <main className="flex-1 flex items-center justify-center py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6 text-center">
-          <h1 className="text-6xl font-bold tracking-tighter sm:text-7xl md:text-8xl">404</h1>
-          <p className="mt-4 text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            {dict.notFound.message}
-          </p>
-          <Link
-            className="mt-8 inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-            href={`/${lang}`}
-          >
-            {dict.notFound.backToHome}
-          </Link>
-        </div>
-      </main>
-      <SiteFooter dict={dict} />
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-64px)] text-center px-4">
+      <h1 className="text-6xl font-bold text-gray-900 dark:text-gray-100">404</h1>
+      <p className="mt-4 text-xl text-gray-600 dark:text-gray-400">Page Not Found</p>
+      <p className="mt-2 text-gray-500 dark:text-gray-500">The page you are looking for does not exist.</p>
+      <Link
+        className="mt-6 inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
+        href={`/${defaultLocale}`}
+      >
+        Go to Homepage
+      </Link>
     </div>
   )
 }
