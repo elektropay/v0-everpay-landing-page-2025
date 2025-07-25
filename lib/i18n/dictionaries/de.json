@@ -25,90 +25,110 @@
     "blog": "Blog",
     "careers": "Karriere",
     "help": "Hilfe",
-    "commerce": "Handel"
+    "commerce": "Handel",
+    "login": "Anmelden",
+    "signup": "Registrieren"
   },
   "hero": {
-    "title": "Die Zukunft des Zahlungsverkehrs, heute.",
-    "description": "Everpay bietet nahtlose, sichere und skalierbare Zahlungslösungen für Unternehmen jeder Größe. Fördern Sie Ihr Wachstum mit unserer innovativen Technologie.",
+    "title": "Die Zukunft der Zahlungen, Heute.",
+    "description": "Integrieren Sie unsere leistungsstarken Zahlungslösungen nahtlos in Ihr Geschäft. Sichere, schnelle und zuverlässige Transaktionen für eine globale Wirtschaft.",
     "getStartedButton": "Loslegen",
-    "contactSalesButton": "Vertrieb kontaktieren"
+    "contactSalesButton": "Vertrieb kontaktieren",
+    "learnMoreButton": "Mehr Erfahren"
   },
   "features": {
     "title": "Warum Everpay wählen?",
-    "description": "Unsere Plattform wurde entwickelt, um Ihrem Unternehmen in der digitalen Wirtschaft zum Erfolg zu verhelfen.",
+    "description": "Unsere Plattform wurde entwickelt, um Ihr Geschäft mit modernster Zahlungstechnologie zu stärken.",
     "feature1Title": "Globale Reichweite",
     "feature1Description": "Akzeptieren Sie Zahlungen von überall auf der Welt, in jeder Währung.",
     "feature2Title": "Erweiterte Sicherheit",
-    "feature2Description": "Schützen Sie Ihre Transaktionen mit modernster Betrugsprävention.",
+    "feature2Description": "Schützen Sie Ihr Geschäft und Ihre Kunden mit branchenführender Betrugsprävention.",
     "feature3Title": "Nahtlose Integration",
-    "feature3Description": "Integrieren Sie unsere APIs einfach in Ihre bestehenden Systeme.",
+    "feature3Description": "Integrieren Sie unsere APIs und SDKs einfach in Ihre bestehenden Systeme.",
     "feature4Title": "Skalierbare Lösungen",
-    "feature4Description": "Erweitern Sie Ihr Geschäft, ohne sich um die Zahlungsinfrastruktur kümmern zu müssen.",
-    "feature5Title": "24/7 Support",
-    "feature5Description": "Unser engagiertes Team ist immer für Sie da, um Ihnen zum Erfolg zu verhelfen.",
-    "feature6Title": "Wettbewerbsfähige Preise",
-    "feature6Description": "Transparente und erschwingliche Tarife für alle Ihre Zahlungsbedürfnisse."
+    "feature4Description": "Erweitern Sie Ihr Geschäft mit Zahlungslösungen, die mit Ihnen skalieren.",
+    "feature5Title": "Echtzeit-Analysen",
+    "feature5Description": "Erhalten Sie Einblicke in Ihre Transaktionen mit umfassenden Dashboards.",
+    "feature6Title": "24/7 Support",
+    "feature6Description": "Unser engagiertes Support-Team ist immer für Sie da, um Ihnen zum Erfolg zu verhelfen."
   },
   "stats": {
     "title": "Von Unternehmen weltweit vertraut",
-    "description": "Schließen Sie sich Tausenden zufriedener Händler an, die sich für die Zahlungsabwicklung auf Everpay verlassen.",
+    "description": "Unsere Zahlen sprechen für sich. Treten Sie der wachsenden Gemeinschaft zufriedener Everpay-Nutzer bei.",
     "transactions": "Verarbeitete Transaktionen",
     "businesses": "Bediente Unternehmen",
     "countries": "Unterstützte Länder",
-    "growth": "Jährliches Wachstum"
+    "growth": "Jährliches Wachstum",
+    "stat1Value": "100M+",
+    "stat1Label": "Verarbeitete Transaktionen",
+    "stat2Value": "50+",
+    "stat2Label": "Unterstützte Länder",
+    "stat3Value": "99.9%",
+    "stat3Label": "Verfügbarkeitsgarantie",
+    "stat4Value": "24/7",
+    "stat4Label": "Kundensupport"
   },
   "paymentPartners": {
-    "title": "Alle gängigen Zahlungsmethoden akzeptieren",
-    "description": "Von Kreditkarten bis zu digitalen Geldbörsen unterstützt Everpay eine breite Palette von Zahlungsoptionen, um Ihre Konversionsraten zu maximieren."
+    "title": "Akzeptieren Sie alle gängigen Zahlungsmethoden",
+    "description": "Bieten Sie Ihren Kunden die Flexibilität, so zu bezahlen, wie sie möchten, sicher und effizient."
   },
   "checkoutProtection": {
-    "title": "Sicherer Checkout & Betrugsprävention",
-    "description": "Schützen Sie Ihr Unternehmen und Ihre Kunden mit unseren erweiterten Sicherheitsfunktionen.",
+    "title": "Sicherer Checkout & Betrugsschutz",
+    "description": "Schützen Sie Ihr Geschäft und Ihre Kunden mit unseren erweiterten Sicherheitsfunktionen und Betrugspräventionstools.",
     "feature1Title": "KI-gestützte Betrugserkennung",
     "feature1Description": "Nutzen Sie maschinelles Lernen, um verdächtige Transaktionen in Echtzeit zu identifizieren und zu blockieren.",
-    "feature2Title": "PCI DSS-Konformität",
-    "feature2Description": "Stellen Sie sicher, dass Ihre Zahlungsabwicklung den höchsten Sicherheitsstandards der Branche entspricht.",
-    "feature3Title": "3D Secure 2.0",
-    "feature3Description": "Fügen Sie eine zusätzliche Sicherheitsebene für Transaktionen ohne physische Karte hinzu.",
-    "feature4Title": "Rückbuchungsschutz",
-    "feature4Description": "Minimieren Sie Verluste durch betrügerische Rückbuchungen mit unserem robusten Streitbeilegungsmanagement."
+    "feature2Title": "PCI DSS Konformität",
+    "feature2Description": "Stellen Sie sicher, dass Ihre Zahlungsabwicklung den höchsten Sicherheitsstandards entspricht.",
+    "feature3Title": "3D Secure",
+    "feature3Description": "Fügen Sie eine zusätzliche Sicherheitsebene für Online-Kredit- und Debitkartentransaktionen hinzu.",
+    "feature4Title": "Betrugsüberwachung",
+    "feature4Description": "Echtzeit-Betrugserkennung und -prävention zur Minimierung von Risiken.",
+    "feature5Title": "Tokenisierung",
+    "feature5Description": "Speichern Sie Kunden Zahlungsinformationen sicher, ohne sensible Daten preiszugeben."
   },
   "businessTypes": {
     "title": "Lösungen für jeden Geschäftstyp",
-    "description": "Egal, ob Sie ein kleines Startup oder ein großes Unternehmen sind, Everpay bietet maßgeschneiderte Lösungen, um Ihre einzigartigen Zahlungsbedürfnisse zu erfüllen.",
+    "description": "Egal, ob Sie ein kleines Startup oder ein großes Unternehmen sind, Everpay hat die richtige Zahlungslösung für Sie.",
     "ecommerceTitle": "E-Commerce",
-    "ecommerceDescription": "Nahtlose Online-Zahlungen für Ihren E-Commerce-Shop.",
+    "ecommerceDescription": "Nahtlose Online-Zahlungsabwicklung für Ihren E-Commerce-Shop.",
     "retailTitle": "Einzelhandel",
-    "retailDescription": "Modernisieren Sie Ihre Zahlungen im Geschäft mit unseren POS-Lösungen.",
+    "retailDescription": "Modernisieren Sie Ihre In-Store-Zahlungen mit unseren flexiblen POS-Lösungen.",
     "marketplaceTitle": "Marktplatz",
-    "marketplaceDescription": "Verwalten Sie komplexe Auszahlungen und Provisionen mit Leichtigkeit.",
+    "marketplaceDescription": "Verwalten Sie komplexe Zahlungsströme für Multi-Vendor-Plattformen.",
     "saasTitle": "SaaS & Abonnements",
     "saasDescription": "Automatisieren Sie die wiederkehrende Abrechnung und das Abonnementmanagement.",
     "servicesTitle": "Dienstleistungsunternehmen",
     "servicesDescription": "Akzeptieren Sie Zahlungen für Termine, Buchungen und mehr.",
     "nonProfitTitle": "Gemeinnützige Organisationen",
-    "nonProfitDescription": "Sichere und einfache Spendenabwicklung für Ihre Sache."
+    "nonProfitDescription": "Sichere und einfache Spendenabwicklung für Ihre Sache.",
+    "businessTitle": "Geschäft",
+    "businessDescription": "Maßgeschneiderte Zahlungslösungen für B2B-Transaktionen und Unternehmensbedürfnisse."
   },
   "cta": {
-    "title": "Bereit, Ihre Zahlungen zu transformieren?",
-    "description": "Treten Sie Everpay noch heute bei und erleben Sie die Zukunft der sicheren und effizienten Zahlungsabwicklung.",
-    "signUpButton": "Jetzt registrieren",
-    "contactSalesButton": "Vertrieb kontaktieren"
+    "title": "Bereit, Ihr Geschäft zu transformieren?",
+    "description": "Schließen Sie sich Tausenden von Unternehmen an, die bereits mit Everpays innovativen Zahlungslösungen erfolgreich sind.",
+    "signUpButton": "Jetzt Registrieren",
+    "contactSalesButton": "Vertrieb Kontaktieren"
   },
   "footer": {
     "company": "Unternehmen",
-    "aboutUs": "Über uns",
+    "aboutUs": "Über Uns",
     "careers": "Karriere",
     "blog": "Blog",
     "partners": "Partner",
     "solutions": "Lösungen",
+    "onlinePayments": "Online-Zahlungen",
+    "posPayments": "POS-Zahlungen",
+    "issuing": "Ausgabe",
+    "gateway": "Zahlungsgateway",
+    "businessTypes": "Geschäftstypen",
     "ecommerce": "E-Commerce",
     "retail": "Einzelhandel",
     "marketplace": "Marktplatz",
     "business": "Geschäft",
     "developers": "Entwickler",
     "apiReference": "API-Referenz",
-    "documentation": "Dokumentation",
+    "documentation": "Dokumente",
     "sdks": "SDKs",
     "support": "Support",
     "helpCenter": "Hilfe-Center",
@@ -119,11 +139,11 @@
     "privacyPolicy": "Datenschutzrichtlinie",
     "termsOfService": "Nutzungsbedingungen",
     "cookiePolicy": "Cookie-Richtlinie",
-    "copyright": "© 2024 Everpay Inc. Alle Rechte vorbehalten."
+    "copyright": "© 2024 Everpay. Alle Rechte vorbehalten."
   },
   "contact": {
-    "title": "Kontaktieren Sie uns",
-    "description": "Haben Sie Fragen oder benötigen Sie Unterstützung? Füllen Sie das untenstehende Formular aus und wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "title": "Kontaktieren Sie Uns",
+    "description": "Haben Sie Fragen oder benötigen Sie Unterstützung? Füllen Sie das untenstehende Formular aus und wir werden uns in Kürze bei Ihnen melden.",
     "nameLabel": "Name",
     "emailLabel": "E-Mail",
     "subjectLabel": "Betreff",
@@ -132,8 +152,8 @@
     "supportRequest": "Support-Anfrage",
     "feedback": "Feedback",
     "messageLabel": "Nachricht",
-    "submitButton": "Senden",
+    "submitButton": "Nachricht Senden",
     "successMessage": "Ihre Nachricht wurde erfolgreich gesendet!",
-    "errorMessage": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+    "errorMessage": "Beim Senden Ihrer Nachricht ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
   }
 }

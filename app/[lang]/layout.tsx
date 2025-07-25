@@ -1,27 +1,29 @@
 import type React from "react"
 import { notFound } from "next/navigation"
 import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "@/lib/i18n"
+import { getMessages, getDictionary } from "@/lib/i18n"
 import { locales } from "@/lib/i18n/config"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
+import type { Locale } from "@/lib/i18n/config"
 
-type Props = {
+interface RootLayoutProps {
   children: React.ReactNode
-  params: { lang: string }
+  params: { lang: Locale }
 }
 
-export default async function LocaleLayout({ children, params: { lang } }: Props) {
-  if (!locales.includes(lang as any)) notFound()
+export default async function LocaleLayout({ children, params: { lang } }: RootLayoutProps) {
+  if (!locales.includes(lang)) notFound()
 
   const messages = await getMessages(lang)
+  const dict = await getDictionary(lang)
 
   return (
     <NextIntlClientProvider locale={lang} messages={messages}>
       <div className="flex min-h-screen flex-col">
-        <SiteHeader lang={lang} />
+        <SiteHeader dict={dict} lang={lang} />
         <main className="flex-1">{children}</main>
-        <SiteFooter lang={lang} />
+        <SiteFooter dict={dict} lang={lang} />
       </div>
     </NextIntlClientProvider>
   )

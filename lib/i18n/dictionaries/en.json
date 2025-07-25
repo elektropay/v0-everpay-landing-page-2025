@@ -25,73 +25,80 @@
     "blog": "Blog",
     "careers": "Careers",
     "help": "Help",
-    "commerce": "Commerce"
+    "commerce": "Commerce",
+    "login": "Login",
+    "signup": "Sign Up"
   },
   "hero": {
     "title": "The Future of Payments, Today.",
-    "description": "Everpay provides seamless, secure, and scalable payment solutions for businesses of all sizes. Empower your growth with our innovative technology.",
+    "description": "Seamlessly integrate our powerful payment solutions into your business. Secure, fast, and reliable transactions for a global economy.",
     "getStartedButton": "Get Started",
-    "contactSalesButton": "Contact Sales"
+    "contactSalesButton": "Contact Sales",
+    "learnMoreButton": "Learn More"
   },
   "features": {
     "title": "Why Choose Everpay?",
-    "description": "Our platform is built to help your business thrive in the digital economy.",
+    "description": "Our platform is built to empower your business with cutting-edge payment technology.",
     "feature1Title": "Global Reach",
     "feature1Description": "Accept payments from anywhere in the world, in any currency.",
     "feature2Title": "Advanced Security",
-    "feature2Description": "Protect your transactions with state-of-the-art fraud prevention.",
+    "feature2Description": "Protect your business and customers with industry-leading fraud prevention.",
     "feature3Title": "Seamless Integration",
-    "feature3Description": "Easily integrate our APIs with your existing systems.",
+    "feature3Description": "Easily integrate our APIs and SDKs into your existing systems.",
     "feature4Title": "Scalable Solutions",
-    "feature4Description": "Grow your business without worrying about payment infrastructure.",
-    "feature5Title": "24/7 Support",
-    "feature5Description": "Our dedicated team is always here to help you succeed.",
-    "feature6Title": "Competitive Pricing",
-    "feature6Description": "Transparent and affordable rates for all your payment needs."
+    "feature4Description": "Grow your business with payment solutions that scale with you.",
+    "feature5Title": "Real-time Analytics",
+    "feature5Description": "Gain insights into your transactions with comprehensive dashboards.",
+    "feature6Title": "24/7 Support",
+    "feature6Description": "Our dedicated support team is always here to help you succeed."
   },
   "stats": {
-    "title": "Trusted by Businesses Worldwide",
-    "description": "Join thousands of satisfied merchants who rely on Everpay for their payment processing.",
-    "transactions": "Transactions Processed",
-    "businesses": "Businesses Served",
-    "countries": "Countries Supported",
-    "growth": "Annual Growth"
+    "title": "Trusted by businesses worldwide",
+    "description": "Our numbers speak for themselves. Join the growing community of satisfied Everpay users.",
+    "transactions": "100M+",
+    "businesses": "50+",
+    "countries": "99.9%",
+    "growth": "24/7"
   },
   "paymentPartners": {
-    "title": "Accept All Major Payment Methods",
-    "description": "From credit cards to digital wallets, Everpay supports a wide range of payment options to maximize your conversion rates."
+    "title": "Accept all major payment methods",
+    "description": "Provide your customers with the flexibility to pay how they want, securely and efficiently."
   },
   "checkoutProtection": {
-    "title": "Secure Checkout & Fraud Prevention",
-    "description": "Protect your business and customers with our advanced security features.",
+    "title": "Secure Checkout & Fraud Protection",
+    "description": "Protect your business and customers with our advanced security features and fraud prevention tools.",
     "feature1Title": "AI-Powered Fraud Detection",
     "feature1Description": "Leverage machine learning to identify and block suspicious transactions in real-time.",
     "feature2Title": "PCI DSS Compliance",
-    "feature2Description": "Ensure your payment processing meets the highest industry security standards.",
-    "feature3Title": "3D Secure 2.0",
-    "feature3Description": "Add an extra layer of security for card-not-present transactions.",
-    "feature4Title": "Chargeback Protection",
-    "feature4Description": "Minimize losses from fraudulent chargebacks with our robust dispute management."
+    "feature2Description": "Ensure your payment processing meets the highest security standards.",
+    "feature3Title": "3D Secure",
+    "feature3Description": "Add an extra layer of security for online credit and debit card transactions.",
+    "feature4Title": "Fraud Monitoring",
+    "feature4Description": "Real-time fraud detection and prevention to minimize risks.",
+    "feature5Title": "Tokenization",
+    "feature5Description": "Securely store customer payment information without exposing sensitive data."
   },
   "businessTypes": {
-    "title": "Solutions for Every Business Type",
-    "description": "Whether you're a small startup or a large enterprise, Everpay has tailored solutions to meet your unique payment needs.",
+    "title": "Solutions for every business type",
+    "description": "Whether you're a small startup or a large enterprise, Everpay has the right payment solution for you.",
     "ecommerceTitle": "E-commerce",
-    "ecommerceDescription": "Seamless online payments for your e-commerce store.",
+    "ecommerceDescription": "Seamless online payment processing for your e-commerce store.",
     "retailTitle": "Retail",
-    "retailDescription": "Modernize your in-store payments with our POS solutions.",
+    "retailDescription": "Modernize your in-store payments with our flexible POS solutions.",
     "marketplaceTitle": "Marketplace",
-    "marketplaceDescription": "Manage complex payouts and commissions with ease.",
+    "marketplaceDescription": "Manage complex payment flows for multi-vendor platforms.",
     "saasTitle": "SaaS & Subscriptions",
     "saasDescription": "Automate recurring billing and subscription management.",
     "servicesTitle": "Service Businesses",
     "servicesDescription": "Accept payments for appointments, bookings, and more.",
     "nonProfitTitle": "Non-Profits",
-    "nonProfitDescription": "Secure and easy donation processing for your cause."
+    "nonProfitDescription": "Secure and easy donation processing for your cause.",
+    "businessTitle": "Business",
+    "businessDescription": "Tailored payment solutions for B2B transactions and corporate needs."
   },
   "cta": {
-    "title": "Ready to Transform Your Payments?",
-    "description": "Join Everpay today and experience the future of secure and efficient payment processing.",
+    "title": "Ready to transform your business?",
+    "description": "Join thousands of businesses already thriving with Everpay's innovative payment solutions.",
     "signUpButton": "Sign Up Now",
     "contactSalesButton": "Contact Sales"
   },
@@ -102,28 +109,32 @@
     "blog": "Blog",
     "partners": "Partners",
     "solutions": "Solutions",
+    "onlinePayments": "Online Payments",
+    "posPayments": "POS Payments",
+    "issuing": "Issuing",
+    "gateway": "Payment Gateway",
+    "businessTypes": "Business Types",
     "ecommerce": "E-commerce",
     "retail": "Retail",
     "marketplace": "Marketplace",
     "business": "Business",
     "developers": "Developers",
     "apiReference": "API Reference",
-    "documentation": "Documentation",
+    "documentation": "Docs",
     "sdks": "SDKs",
     "support": "Support",
     "helpCenter": "Help Center",
-    "contactUs": "Contact Us",
-    "fraudPrevention": "Fraud Prevention",
     "security": "Security",
+    "fraudPrevention": "Fraud Prevention",
     "legal": "Legal",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
     "cookiePolicy": "Cookie Policy",
-    "copyright": "© 2024 Everpay Inc. All rights reserved."
+    "copyright": "© 2024 Everpay. All rights reserved."
   },
   "contact": {
     "title": "Contact Us",
-    "description": "Have questions or need assistance? Fill out the form below and we'll get back to you as soon as possible.",
+    "description": "Have questions or need assistance? Fill out the form below and we'll get back to you shortly.",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "subjectLabel": "Subject",
@@ -132,8 +143,8 @@
     "supportRequest": "Support Request",
     "feedback": "Feedback",
     "messageLabel": "Message",
-    "submitButton": "Submit",
+    "submitButton": "Send Message",
     "successMessage": "Your message has been sent successfully!",
-    "errorMessage": "There was an error sending your message. Please try again later."
+    "errorMessage": "There was an error sending your message. Please try again."
   }
 }

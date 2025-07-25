@@ -8,7 +8,8 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Everpay - The Future of Payments",
-  description: "Seamless, secure, and scalable payment solutions for businesses of all sizes.",
+  description:
+    "Seamlessly integrate our powerful payment solutions into your business. Secure, fast, and reliable transactions for a global economy.",
     generator: 'v0.dev'
 }
 
