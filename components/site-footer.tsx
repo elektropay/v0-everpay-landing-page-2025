@@ -1,116 +1,182 @@
 import Link from "next/link"
-import Image from "next/image"
+import { DollarSign } from "lucide-react"
 import type { Locale } from "@/lib/i18n/config"
 import type { Messages } from "@/lib/i18n/types"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
 
 interface SiteFooterProps {
+  lang: Locale
   dict: Messages
-  lang?: Locale
 }
 
-export function SiteFooter({ dict, lang = "en" }: SiteFooterProps) {
-  const footerNav = [
-    {
-      title: dict.footer.company.title,
-      items: [
-        { href: `/${lang}/about`, label: dict.footer.company.about },
-        { href: `/${lang}/careers`, label: dict.footer.company.careers },
-        { href: `/${lang}/partners`, label: dict.footer.company.partners },
-        { href: `/${lang}/blog`, label: dict.footer.company.blog },
-      ],
-    },
-    {
-      title: dict.footer.solutions.title,
-      items: [
-        { href: `/${lang}/solutions/ecommerce`, label: dict.footer.solutions.ecommerce },
-        { href: `/${lang}/solutions/retail`, label: dict.footer.solutions.retail },
-        { href: `/${lang}/solutions/marketplace`, label: dict.footer.solutions.marketplace },
-        { href: `/${lang}/solutions/business`, label: dict.footer.solutions.business },
-      ],
-    },
-    {
-      title: dict.footer.products.title,
-      items: [
-        { href: `/${lang}/payments`, label: dict.footer.products.payments },
-        { href: `/${lang}/pos`, label: dict.footer.products.pos },
-        { href: `/${lang}/issuing`, label: dict.footer.products.issuing },
-        { href: `/${lang}/online-payments`, label: dict.footer.products.onlinePayments },
-        { href: `/${lang}/gateway`, label: dict.footer.products.gateway },
-        { href: `/${lang}/api`, label: dict.footer.products.api },
-      ],
-    },
-    {
-      title: dict.footer.resources.title,
-      items: [
-        { href: `/${lang}/docs`, label: dict.footer.resources.documentation },
-        { href: `/${lang}/help`, label: dict.footer.resources.helpCenter },
-        { href: `/${lang}/security`, label: dict.footer.resources.security },
-        { href: `/${lang}/fraud-prevention`, label: dict.footer.resources.fraudPrevention },
-      ],
-    },
-    {
-      title: dict.footer.legal.title,
-      items: [
-        { href: `/${lang}/privacy-policy`, label: dict.footer.legal.privacyPolicy },
-        { href: `/${lang}/terms`, label: dict.footer.legal.termsOfService },
-        { href: `/${lang}/cookie-policy`, label: dict.footer.legal.cookiePolicy },
-      ],
-    },
-    {
-      title: dict.footer.contact.title,
-      items: [{ href: `/${lang}/contact`, label: dict.footer.contact.contactUs }],
-    },
-  ]
+export function SiteFooter({ lang, dict }: SiteFooterProps) {
+  const getLocalizedPath = (path: string) => `/${lang}${path}`
 
   return (
-    <footer className="bg-gray-900 text-gray-400 py-12 md:py-16 lg:py-20">
-      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-8">
-        <div className="col-span-full lg:col-span-1 flex flex-col items-start">
-          <Link className="flex items-center gap-2" href={`/${lang}`}>
-            <Image src="/placeholder-logo.png" alt="Everpay Logo" width={32} height={32} className="h-8 w-8" />
-            <span className="text-2xl font-bold text-white">Everpay</span>
+    <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+      <aside className="flex items-center gap-2">
+        <Link href={`/${lang}`} passHref>
+          <div className="flex items-center gap-2">
+            <DollarSign className="h-6 w-6" />
+            <span className="font-semibold">Everpay</span>
+          </div>
+        </Link>
+        <p className="text-xs text-gray-500 dark:text-gray-400">{dict.Footer.copyright}</p>
+      </aside>
+      <nav className="sm:ml-auto flex flex-wrap gap-4 sm:gap-6 text-sm">
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">{dict.Footer.products}</h3>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/payments")}
+          >
+            {dict.Footer.payments}
           </Link>
-          <p className="mt-4 text-sm">{dict.footer.tagline}</p>
-          <div className="flex gap-4 mt-6">
-            <Link className="text-gray-400 hover:text-white" href="#">
-              <Twitter className="h-6 w-6" />
-              <span className="sr-only">Twitter</span>
-            </Link>
-            <Link className="text-gray-400 hover:text-white" href="#">
-              <Facebook className="h-6 w-6" />
-              <span className="sr-only">Facebook</span>
-            </Link>
-            <Link className="text-gray-400 hover:text-white" href="#">
-              <Instagram className="h-6 w-6" />
-              <span className="sr-only">Instagram</span>
-            </Link>
-            <Link className="text-gray-400 hover:text-white" href="#">
-              <Linkedin className="h-6 w-6" />
-              <span className="sr-only">LinkedIn</span>
-            </Link>
-          </div>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/gateway")}
+          >
+            {dict.Footer.gateway}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/issuing")}
+          >
+            {dict.Footer.issuing}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/pos")}
+          >
+            {dict.Footer.pos}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/online-payments")}
+          >
+            {dict.Footer.onlinePayments}
+          </Link>
         </div>
-        {footerNav.map((section, index) => (
-          <div key={index} className="col-span-1">
-            <h3 className="text-lg font-semibold text-white mb-4">{section.title}</h3>
-            <ul className="space-y-2">
-              {section.items.map((item, itemIndex) => (
-                <li key={itemIndex}>
-                  <Link className="text-sm hover:text-white" href={item.href}>
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-      <div className="container px-4 md:px-6 mt-12 border-t border-gray-800 pt-8 text-center text-sm">
-        <p>
-          &copy; {new Date().getFullYear()} Everpay. {dict.footer.copyright}
-        </p>
-      </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">{dict.Footer.solutions}</h3>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/solutions/ecommerce")}
+          >
+            {dict.Footer.ecommerce}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/solutions/retail")}
+          >
+            {dict.Footer.retail}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/solutions/marketplace")}
+          >
+            {dict.Footer.marketplace}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/solutions/business")}
+          >
+            {dict.Footer.business}
+          </Link>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">{dict.Footer.developers}</h3>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/docs")}
+          >
+            {dict.Footer.docs}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/api")}
+          >
+            {dict.Footer.apiReference}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/docs")}
+          >
+            {dict.Footer.sdks}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/help")}
+          >
+            {dict.Footer.community}
+          </Link>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">{dict.Footer.company}</h3>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/about")}
+          >
+            {dict.Footer.aboutUs}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/careers")}
+          >
+            {dict.Footer.careers}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/partners")}
+          >
+            {dict.Footer.partners}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/blog")}
+          >
+            {dict.Footer.blog}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/contact")}
+          >
+            {dict.Footer.contactUs}
+          </Link>
+        </div>
+        <div className="flex flex-col gap-2">
+          <h3 className="font-semibold">{dict.Footer.legal}</h3>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/privacy-policy")}
+          >
+            {dict.Footer.privacyPolicy}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/terms")}
+          >
+            {dict.Footer.termsOfService}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/cookie-policy")}
+          >
+            {dict.Footer.cookiePolicy}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/fraud-prevention")}
+          >
+            {dict.Footer.fraudPrevention}
+          </Link>
+          <Link
+            className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            href={getLocalizedPath("/security")}
+          >
+            {dict.Footer.security}
+          </Link>
+        </div>
+      </nav>
     </footer>
   )
 }

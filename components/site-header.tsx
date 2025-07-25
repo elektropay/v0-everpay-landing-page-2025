@@ -1,150 +1,110 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
-import { usePathname, useRouter } from "next/navigation"
-import { useLocale } from "next-intl"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
-import { Globe } from "lucide-react"
-import type { Locale, Dictionary } from "@/lib/i18n/types"
-import { locales, pathnames } from "@/lib/i18n/config"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { MenuIcon, DollarSign } from "lucide-react"
+import { usePathname } from "next/navigation"
+import { type Locale, locales } from "@/lib/i18n/config"
+import type { Messages } from "@/lib/i18n/types"
 
 interface SiteHeaderProps {
-  dictionary: Dictionary
   lang: Locale
+  dict: Messages
 }
 
-export function SiteHeader({ dictionary, lang }: SiteHeaderProps) {
+export function SiteHeader({ lang, dict }: SiteHeaderProps) {
   const pathname = usePathname()
-  const router = useRouter()
-  const currentLocale = useLocale()
 
-  const headerNav = [
-    {
-      title: dictionary.header.products,
-      links: [
-        { href: "/payments", text: dictionary.footer.payments },
-        { href: "/online-payments", text: dictionary.footer.onlinePayments },
-        { href: "/commerce", text: dictionary.footer.commerce },
-        { href: "/fraud-prevention", text: dictionary.footer.fraudPrevention },
-        { href: "/card-issuing", text: dictionary.footer.cardIssuing },
-        { href: "/pos-systems", text: dictionary.footer.posSystems },
-      ],
-    },
-    {
-      title: dictionary.header.solutions,
-      links: [
-        { href: "/solutions/business", text: dictionary.footer.businessSolutions },
-        { href: "/solutions/ecommerce", text: dictionary.footer.ecommerceSolutions },
-        { href: "/solutions/marketplace", text: dictionary.footer.marketplaceSolutions },
-        { href: "/solutions/retail", text: dictionary.footer.retailSolutions },
-      ],
-    },
-    {
-      title: dictionary.header.resources,
-      links: [
-        { href: "/docs", text: dictionary.footer.documentation },
-        { href: "/help", text: dictionary.footer.helpCenter },
-        { href: "/blog", text: dictionary.footer.blog },
-        { href: "/api", text: dictionary.footer.apiReference },
-      ],
-    },
-    {
-      title: dictionary.header.company,
-      links: [
-        { href: "/about", text: dictionary.footer.aboutUs },
-        { href: "/careers", text: dictionary.footer.careers },
-        { href: "/partners", text: dictionary.footer.partners },
-        { href: "/contact", text: dictionary.footer.contact },
-      ],
-    },
+  const getLocalizedPath = (path: string) => {
+    const parts = pathname.split("/")
+    const currentPathWithoutLocale = parts.length > 2 ? `/${parts.slice(2).join("/")}` : "/"
+    return `/${lang}${path}`
+  }
+
+  const switchLocale = (newLocale: Locale) => {
+    const pathWithoutLocale = pathname.startsWith(`/${lang}`) ? pathname.substring(`/${lang}`.length) : pathname
+    return `/${newLocale}${pathWithoutLocale}`
+  }
+
+  const navLinks = [
+    { href: "/", label: dict.Header.home },
+    { href: "/solutions/business", label: dict.Header.solutions },
+    { href: "/docs", label: dict.Header.developers },
+    { href: "/about", label: dict.Header.company },
+    { href: "/pricing", label: dict.Header.pricing },
+    { href: "/contact", label: dict.Header.contact },
   ]
 
-  const getLocalizedPath = (path: string, locale: Locale) => {
-    const entry = Object.entries(pathnames).find(([, value]) => {
-      if (typeof value === "string") {
-        return value === path
-      }
-      return Object.values(value).includes(path)
-    })
-
-    if (entry) {
-      const [key, value] = entry
-      if (typeof value === "string") {
-        return `/${locale}${value}`
-      }
-      return `/${locale}${value[locale] || value.en}` // Fallback to English if specific locale path not found
-    }
-    return `/${locale}${path}` // Fallback if path not in pathnames
-  }
-
-  const handleLocaleChange = (newLocale: Locale) => {
-    const currentPathWithoutLocale = pathname.replace(`/${currentLocale}`, "") || "/"
-    const newPath = getLocalizedPath(currentPathWithoutLocale, newLocale)
-    router.push(newPath)
-  }
-
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href={`/${lang}`} className="flex items-center">
-          <Image
-            src="https://res.cloudinary.com/lmj6rf6tz/image/upload/v1681518139/img/LogoSqr.png"
-            alt="Everpay Logo"
-            className="h-8 w-auto"
-            width={32}
-            height={32}
-            unoptimized
-          />
-          <span className="text-gray-900 text-2xl font-bold ml-2">everpay</span>
-        </Link>
-
-        <nav className="hidden md:flex space-x-6">
-          {headerNav.map((item) => (
-            <DropdownMenu key={item.title}>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
-                  {item.title}
+    <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6 border-b">
+      <Sheet>
+        <SheetTrigger asChild>
+          <Button className="lg:hidden bg-transparent" size="icon" variant="outline">
+            <MenuIcon className="h-6 w-6" />
+            <span className="sr-only">Toggle navigation menu</span>
+          </Button>
+        </SheetTrigger>
+        <SheetContent side="left">
+          <Link href={`/${lang}`} passHref>
+            <div className="mr-6 flex items-center">
+              <DollarSign className="h-6 w-6" />
+              <span className="sr-only">Everpay</span>
+            </div>
+          </Link>
+          <div className="grid gap-2 py-6">
+            {navLinks.map((link) => (
+              <Link key={link.href} href={getLocalizedPath(link.href)} passHref>
+                <Button className="w-full justify-start" variant="ghost">
+                  {link.label}
                 </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-48">
-                {item.links.map((link) => (
-                  <DropdownMenuItem key={link.href}>
-                    <Link href={getLocalizedPath(link.href, lang)} className="w-full">
-                      {link.text}
-                    </Link>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          ))}
-        </nav>
-
-        <div className="flex items-center space-x-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon">
-                <Globe className="h-5 w-5" />
-                <span className="sr-only">Change language</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
+              </Link>
+            ))}
+            <div className="flex flex-col gap-2 mt-4">
               {locales.map((locale) => (
-                <DropdownMenuItem key={locale} onClick={() => handleLocaleChange(locale)}>
-                  {locale.toUpperCase()}
-                </DropdownMenuItem>
+                <Link key={locale} href={switchLocale(locale)} passHref>
+                  <Button className="w-full justify-start" variant={lang === locale ? "secondary" : "ghost"}>
+                    {locale.toUpperCase()}
+                  </Button>
+                </Link>
               ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          <Link href={`/${lang}/sign-in`}>
-            <Button variant="ghost">{dictionary.header.signIn}</Button>
-          </Link>
-          <Link href={`/${lang}/sign-up`}>
-            <Button>{dictionary.header.signUp}</Button>
-          </Link>
+            </div>
+          </div>
+        </SheetContent>
+      </Sheet>
+      <Link href={`/${lang}`} passHref>
+        <div className="mr-6 flex items-center">
+          <DollarSign className="h-6 w-6" />
+          <span className="sr-only">Everpay</span>
         </div>
+      </Link>
+      <nav className="ml-auto hidden lg:flex gap-6">
+        {navLinks.map((link) => (
+          <Link
+            key={link.href}
+            className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50"
+            href={getLocalizedPath(link.href)}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+      <div className="ml-auto flex items-center gap-4">
+        <div className="hidden lg:flex gap-2">
+          {locales.map((locale) => (
+            <Link key={locale} href={switchLocale(locale)} passHref>
+              <Button variant={lang === locale ? "secondary" : "ghost"} size="sm">
+                {locale.toUpperCase()}
+              </Button>
+            </Link>
+          ))}
+        </div>
+        <Link href={`/${lang}/signin`} passHref>
+          <Button variant="outline">{dict.Header.signIn}</Button>
+        </Link>
+        <Link href={`/${lang}/signup`} passHref>
+          <Button>{dict.Header.signUp}</Button>
+        </Link>
       </div>
     </header>
   )

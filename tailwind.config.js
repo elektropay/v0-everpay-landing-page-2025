@@ -1,5 +1,3 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -54,20 +52,11 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom Everpay colors
-        everpay: {
-          green: "#4CAF50", // A vibrant green for primary buttons and accents
-          dark: "#212121", // Dark text for headings and body
-          lightgray: "#F5F5F5", // Light background for dashboard cards
-          mediumgray: "#E0E0E0", // Border or subtle background
-          red: "#EF4444", // For dashboard dots
-          yellow: "#FACC15", // For dashboard dots
-        },
       },
       borderRadius: {
-        lg: "1.5rem", // More rounded corners for cards and buttons
-        md: "1rem",
-        sm: "0.5rem",
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
         "accordion-down": {
@@ -82,11 +71,6 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
-        display: ["var(--font-display)", ...fontFamily.sans], // For prominent text like hero
-        mono: ["var(--font-mono)", ...fontFamily.mono], // For tabular numbers
       },
     },
   },

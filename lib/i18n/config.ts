@@ -2,30 +2,39 @@ import type { Pathnames } from "next-intl/navigation"
 
 export const locales = ["en", "es", "fr", "de", "zh"] as const
 export const defaultLocale = "en" as const
-export const localePrefix = "always" as const
+export type Locale = (typeof locales)[number]
+
+export const localePrefix = undefined
 
 export const pathnames: Pathnames<typeof locales> = {
   "/": "/",
-  "/contact": {
-    en: "/contact",
-    es: "/contacto",
-    fr: "/contact",
-    de: "/kontakt",
-    zh: "/联系",
+  "/about": {
+    en: "/about",
+    es: "/nosotros",
+    fr: "/a-propos",
+    de: "/ueber-uns",
+    zh: "/关于",
   },
-  "/payments": {
-    en: "/payments",
-    es: "/pagos",
-    fr: "/paiements",
-    de: "/zahlungen",
-    zh: "/支付",
+  "/api": {
+    en: "/api",
+    es: "/api",
+    fr: "/api",
+    de: "/api",
+    zh: "/api",
   },
-  "/online-payments": {
-    en: "/online-payments",
-    es: "/pagos-en-linea",
-    fr: "/paiements-en-ligne",
-    de: "/online-zahlungen",
-    zh: "/在线支付",
+  "/blog": {
+    en: "/blog",
+    es: "/blog",
+    fr: "/blog",
+    de: "/blog",
+    zh: "/博客",
+  },
+  "/careers": {
+    en: "/careers",
+    es: "/carreras",
+    fr: "/carrieres",
+    de: "/karriere",
+    zh: "/职业",
   },
   "/commerce": {
     en: "/commerce",
@@ -34,6 +43,27 @@ export const pathnames: Pathnames<typeof locales> = {
     de: "/handel",
     zh: "/商务",
   },
+  "/contact": {
+    en: "/contact",
+    es: "/contacto",
+    fr: "/contact",
+    de: "/kontakt",
+    zh: "/联系",
+  },
+  "/cookie-policy": {
+    en: "/cookie-policy",
+    es: "/politica-cookies",
+    fr: "/politique-cookies",
+    de: "/cookie-richtlinie",
+    zh: "/cookie政策",
+  },
+  "/docs": {
+    en: "/docs",
+    es: "/docs",
+    fr: "/docs",
+    de: "/docs",
+    zh: "/文档",
+  },
   "/fraud-prevention": {
     en: "/fraud-prevention",
     es: "/prevencion-fraude",
@@ -41,19 +71,68 @@ export const pathnames: Pathnames<typeof locales> = {
     de: "/betrugspraevention",
     zh: "/欺诈预防",
   },
-  "/card-issuing": {
-    en: "/card-issuing",
-    es: "/emision-tarjetas",
-    fr: "/emission-cartes",
-    de: "/kartenausgabe",
-    zh: "/发卡",
+  "/gateway": {
+    en: "/gateway",
+    es: "/gateway",
+    fr: "/gateway",
+    de: "/gateway",
+    zh: "/gateway",
   },
-  "/pos-systems": {
+  "/help": {
+    en: "/help",
+    es: "/ayuda",
+    fr: "/aide",
+    de: "/hilfe",
+    zh: "/帮助",
+  },
+  "/issuing": {
+    en: "/issuing",
+    es: "/issuing",
+    fr: "/issuing",
+    de: "/issuing",
+    zh: "/issuing",
+  },
+  "/online-payments": {
+    en: "/online-payments",
+    es: "/pagos-en-linea",
+    fr: "/paiements-en-ligne",
+    de: "/online-zahlungen",
+    zh: "/在线支付",
+  },
+  "/partners": {
+    en: "/partners",
+    es: "/socios",
+    fr: "/partenaires",
+    de: "/partner",
+    zh: "/合作伙伴",
+  },
+  "/payments": {
+    en: "/payments",
+    es: "/pagos",
+    fr: "/paiements",
+    de: "/zahlungen",
+    zh: "/支付",
+  },
+  "/pos": {
     en: "/pos-systems",
     es: "/sistemas-pos",
     fr: "/systemes-pos",
     de: "/pos-systeme",
     zh: "/pos系统",
+  },
+  "/privacy-policy": {
+    en: "/privacy-policy",
+    es: "/politica-privacidad",
+    fr: "/politique-confidentialite",
+    de: "/datenschutzrichtlinie",
+    zh: "/隐私政策",
+  },
+  "/security": {
+    en: "/security",
+    es: "/security",
+    fr: "/security",
+    de: "/security",
+    zh: "/security",
   },
   "/solutions/business": {
     en: "/solutions/business",
@@ -83,62 +162,6 @@ export const pathnames: Pathnames<typeof locales> = {
     de: "/loesungen/einzelhandel",
     zh: "/解决方案/零售",
   },
-  "/docs": {
-    en: "/docs",
-    es: "/docs",
-    fr: "/docs",
-    de: "/docs",
-    zh: "/文档",
-  },
-  "/help": {
-    en: "/help",
-    es: "/ayuda",
-    fr: "/aide",
-    de: "/hilfe",
-    zh: "/帮助",
-  },
-  "/blog": {
-    en: "/blog",
-    es: "/blog",
-    fr: "/blog",
-    de: "/blog",
-    zh: "/博客",
-  },
-  "/api": {
-    en: "/api",
-    es: "/api",
-    fr: "/api",
-    de: "/api",
-    zh: "/api",
-  },
-  "/about": {
-    en: "/about",
-    es: "/nosotros",
-    fr: "/a-propos",
-    de: "/ueber-uns",
-    zh: "/关于",
-  },
-  "/careers": {
-    en: "/careers",
-    es: "/carreras",
-    fr: "/carrieres",
-    de: "/karriere",
-    zh: "/职业",
-  },
-  "/partners": {
-    en: "/partners",
-    es: "/socios",
-    fr: "/partenaires",
-    de: "/partner",
-    zh: "/合作伙伴",
-  },
-  "/privacy-policy": {
-    en: "/privacy-policy",
-    es: "/politica-privacidad",
-    fr: "/politique-confidentialite",
-    de: "/datenschutzrichtlinie",
-    zh: "/隐私政策",
-  },
   "/terms": {
     en: "/terms",
     es: "/terminos",
@@ -146,11 +169,6 @@ export const pathnames: Pathnames<typeof locales> = {
     de: "/nutzungsbedingungen",
     zh: "/服务条款",
   },
-  "/cookie-policy": {
-    en: "/cookie-policy",
-    es: "/politica-cookies",
-    fr: "/politique-cookies",
-    de: "/cookie-richtlinie",
-    zh: "/cookie政策",
-  },
 }
+
+export type AppPathnames = keyof typeof pathnames

@@ -5,7 +5,9 @@ import { Check } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
 import { getDictionary } from "@/lib/i18n"
+import { getMessages } from "next-intl/server"
 import type { Locale } from "@/lib/i18n/config"
+import Link from "next/link"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
@@ -15,6 +17,7 @@ export default async function PaymentsPage({
   params: { lang: Locale }
 }) {
   const dict = await getDictionary(lang)
+  const messages = await getMessages({ locale: lang })
   const [activeTab, setActiveTab] = useState("overview")
 
   return (
@@ -166,6 +169,37 @@ export default async function PaymentsPage({
                     <p className="text-gray-600">{benefit.description}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Updated Overview Section */}
+          <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
+            <div className="container px-4 md:px-6">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.PaymentsPage.title}</h1>
+                  <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                    {messages.PaymentsPage.description}
+                  </p>
+                </div>
+              </div>
+              <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
+                <p className="mb-6">{messages.PaymentsPage.intro}</p>
+
+                <h2 className="text-2xl font-bold mb-4">{messages.PaymentsPage.featuresTitle}</h2>
+                <ul className="list-disc list-inside mb-6 space-y-2">
+                  <li>{messages.PaymentsPage.feature1}</li>
+                  <li>{messages.PaymentsPage.feature2}</li>
+                  <li>{messages.PaymentsPage.feature3}</li>
+                  <li>{messages.PaymentsPage.feature4}</li>
+                </ul>
+
+                <div className="flex justify-center mt-8">
+                  <Link href={`/${lang}/contact`} passHref>
+                    <Button>{messages.PaymentsPage.getStarted}</Button>
+                  </Link>
+                </div>
               </div>
             </div>
           </section>

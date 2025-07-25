@@ -1,39 +1,45 @@
-import { getDictionary } from "@/lib/i18n"
+import { getMessages } from "next-intl/server"
 import type { Locale } from "@/lib/i18n/config"
 
-export default async function PrivacyPolicyPage({ params: { lang } }: { params: { lang: Locale } }) {
-  const dict = await getDictionary(lang)
+type Props = {
+  params: { lang: Locale }
+}
+
+export default async function PrivacyPolicyPage({ params: { lang } }: Props) {
+  const messages = await getMessages({ locale: lang })
 
   return (
-    <main className="container mx-auto px-4 py-12 md:py-24 lg:py-32">
-      <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-8">{dict.privacyPolicy.title}</h1>
-      <div className="prose dark:prose-invert max-w-none">
-        <p>{dict.privacyPolicy.intro}</p>
-        <h2>{dict.privacyPolicy.informationWeCollect.title}</h2>
-        <p>{dict.privacyPolicy.informationWeCollect.content}</p>
-        <h3>{dict.privacyPolicy.informationWeCollect.personalData.title}</h3>
-        <p>{dict.privacyPolicy.informationWeCollect.personalData.content}</p>
-        <h3>{dict.privacyPolicy.informationWeCollect.usageData.title}</h3>
-        <p>{dict.privacyPolicy.informationWeCollect.usageData.content}</p>
-        <h2>{dict.privacyPolicy.howWeUseInformation.title}</h2>
-        <p>{dict.privacyPolicy.howWeUseInformation.content}</p>
-        <ul>
-          <li>{dict.privacyPolicy.howWeUseInformation.purpose1}</li>
-          <li>{dict.privacyPolicy.howWeUseInformation.purpose2}</li>
-          <li>{dict.privacyPolicy.howWeUseInformation.purpose3}</li>
-          <li>{dict.privacyPolicy.howWeUseInformation.purpose4}</li>
-        </ul>
-        <h2>{dict.privacyPolicy.sharingInformation.title}</h2>
-        <p>{dict.privacyPolicy.sharingInformation.content}</p>
-        <h2>{dict.privacyPolicy.dataSecurity.title}</h2>
-        <p>{dict.privacyPolicy.dataSecurity.content}</p>
-        <h2>{dict.privacyPolicy.yourRights.title}</h2>
-        <p>{dict.privacyPolicy.yourRights.content}</p>
-        <h2>{dict.privacyPolicy.changesToPolicy.title}</h2>
-        <p>{dict.privacyPolicy.changesToPolicy.content}</p>
-        <h2>{dict.privacyPolicy.contactUs.title}</h2>
-        <p>{dict.privacyPolicy.contactUs.content}</p>
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.PrivacyPolicyPage.title}</h1>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {messages.PrivacyPolicyPage.description}
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
+          <p className="mb-6">{messages.PrivacyPolicyPage.intro}</p>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.PrivacyPolicyPage.informationWeCollect}</h2>
+          <ul className="list-disc list-inside mb-6 space-y-2">
+            <li>{messages.PrivacyPolicyPage.info1}</li>
+            <li>{messages.PrivacyPolicyPage.info2}</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.PrivacyPolicyPage.howWeUseInfo}</h2>
+          <ul className="list-disc list-inside mb-6 space-y-2">
+            <li>{messages.PrivacyPolicyPage.use1}</li>
+            <li>{messages.PrivacyPolicyPage.use2}</li>
+            <li>{messages.PrivacyPolicyPage.use3}</li>
+            <li>{messages.PrivacyPolicyPage.use4}</li>
+          </ul>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.PrivacyPolicyPage.dataSecurity}</h2>
+          <p className="mb-6">{messages.PrivacyPolicyPage.dataSecurityContent}</p>
+        </div>
       </div>
-    </main>
+    </section>
   )
 }

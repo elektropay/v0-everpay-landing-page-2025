@@ -1,38 +1,37 @@
-import { getDictionary } from "@/lib/i18n"
+import { getMessages } from "next-intl/server"
 import type { Locale } from "@/lib/i18n/config"
 
-export default async function TermsPage({ params: { lang } }: { params: { lang: Locale } }) {
-  const dict = await getDictionary(lang)
+type Props = {
+  params: { lang: Locale }
+}
+
+export default async function TermsPage({ params: { lang } }: Props) {
+  const messages = await getMessages({ locale: lang })
 
   return (
-    <main className="container mx-auto px-4 py-12 md:py-24 lg:py-32">
-      <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl mb-8">{dict.terms.title}</h1>
-      <div className="prose dark:prose-invert max-w-none">
-        <p>{dict.terms.intro}</p>
-        <h2>{dict.terms.acceptance.title}</h2>
-        <p>{dict.terms.acceptance.content}</p>
-        <h2>{dict.terms.services.title}</h2>
-        <p>{dict.terms.services.content}</p>
-        <h2>{dict.terms.userObligations.title}</h2>
-        <p>{dict.terms.userObligations.content}</p>
-        <ul>
-          <li>{dict.terms.userObligations.obligation1}</li>
-          <li>{dict.terms.userObligations.obligation2}</li>
-          <li>{dict.terms.userObligations.obligation3}</li>
-        </ul>
-        <h2>{dict.terms.intellectualProperty.title}</h2>
-        <p>{dict.terms.intellectualProperty.content}</p>
-        <h2>{dict.terms.disclaimerOfWarranties.title}</h2>
-        <p>{dict.terms.disclaimerOfWarranties.content}</p>
-        <h2>{dict.terms.limitationOfLiability.title}</h2>
-        <p>{dict.terms.limitationOfLiability.content}</p>
-        <h2>{dict.terms.governingLaw.title}</h2>
-        <p>{dict.terms.governingLaw.content}</p>
-        <h2>{dict.terms.changesToTerms.title}</h2>
-        <p>{dict.terms.changesToTerms.content}</p>
-        <h2>{dict.terms.contactInformation.title}</h2>
-        <p>{dict.terms.contactInformation.content}</p>
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.TermsPage.title}</h1>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {messages.TermsPage.description}
+            </p>
+          </div>
+        </div>
+        <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
+          <p className="mb-6">{messages.TermsPage.intro}</p>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.TermsPage.acceptance}</h2>
+          <p className="mb-6">{messages.TermsPage.acceptanceContent}</p>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.TermsPage.changes}</h2>
+          <p className="mb-6">{messages.TermsPage.changesContent}</p>
+
+          <h2 className="text-2xl font-bold mb-4">{messages.TermsPage.userAccounts}</h2>
+          <p className="mb-6">{messages.TermsPage.userAccountsContent}</p>
+        </div>
       </div>
-    </main>
+    </section>
   )
 }

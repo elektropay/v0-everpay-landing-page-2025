@@ -1,78 +1,44 @@
-import { getDictionary } from "@/lib/i18n"
+import { getMessages } from "next-intl/server"
 import type { Locale } from "@/lib/i18n/config"
-import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-export default async function SecurityPage({ params: { lang } }: { params: { lang: Locale } }) {
-  const dict = await getDictionary(lang)
+type Props = {
+  params: { lang: Locale }
+}
+
+export default async function SecurityPage({ params: { lang } }: Props) {
+  const messages = await getMessages({ locale: lang })
 
   return (
-    <main className="flex flex-col items-center justify-center py-12 md:py-24 lg:py-32">
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  {dict.security.hero.title}
-                </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                  {dict.security.hero.description}
-                </p>
-              </div>
-            </div>
-            <Image
-              alt="Security"
-              className="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
-              height="400"
-              src="/placeholder.png?height=400&width=600"
-              width="600"
-            />
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.SecurityPage.title}</h1>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {messages.SecurityPage.description}
+            </p>
           </div>
         </div>
-      </section>
+        <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
+          <p className="mb-6">{messages.SecurityPage.intro}</p>
 
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.security.features.title}</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                {dict.security.features.description}
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-start gap-8 sm:grid-cols-2 md:gap-12 lg:grid-cols-3 mt-8">
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.encryption.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{dict.security.features.encryption.content}</p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.fraudDetection.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                {dict.security.features.fraudDetection.content}
-              </p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.compliance.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{dict.security.features.compliance.content}</p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.accessControl.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{dict.security.features.accessControl.content}</p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.monitoring.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">{dict.security.features.monitoring.content}</p>
-            </div>
-            <div className="grid gap-1">
-              <h3 className="text-lg font-bold">{dict.security.features.incidentResponse.title}</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">
-                {dict.security.features.incidentResponse.content}
-              </p>
-            </div>
+          <h2 className="text-2xl font-bold mb-4">{messages.SecurityPage.measuresTitle}</h2>
+          <ul className="list-disc list-inside mb-6 space-y-2">
+            <li>{messages.SecurityPage.measure1}</li>
+            <li>{messages.SecurityPage.measure2}</li>
+            <li>{messages.SecurityPage.measure3}</li>
+            <li>{messages.SecurityPage.measure4}</li>
+          </ul>
+
+          <div className="flex justify-center mt-8">
+            <Link href={`/${lang}/fraud-prevention`} passHref>
+              <Button>{messages.SecurityPage.learnMore}</Button>
+            </Link>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   )
 }

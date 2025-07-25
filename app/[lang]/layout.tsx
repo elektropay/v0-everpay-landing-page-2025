@@ -1,23 +1,39 @@
 import type React from "react"
+import { notFound } from "next/navigation"
+import { NextIntlClientProvider } from "next-intl"
+import { locales } from "@/lib/i18n/config"
+import getRequestConfig from "@/lib/i18n"
+import { Inter } from "next/font/google"
+import { ThemeProvider } from "@/components/theme-provider"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/types"
+import "../globals.css"
 
-export default async function LangLayout({
-  children,
-  params: { lang },
-}: Readonly<{
+const inter = Inter({ subsets: ["latin"] })
+
+type Props = {
   children: React.ReactNode
-  params: { lang: Locale }
-}>) {
-  const dictionary = await getDictionary(lang)
+  params: { lang: string }
+}
+
+export default async function LocaleLayout({ children, params: { lang } }: Props) {
+  if (!locales.includes(lang as any)) notFound()
+
+  const messages = (await getRequestConfig({ locale: lang })).messages
 
   return (
-    <>
-      <SiteHeader dictionary={dictionary} lang={lang} />
-      <main>{children}</main>
-      <SiteFooter dictionary={dictionary} />
-    </>
+    <html lang={lang} suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <NextIntlClientProvider messages={messages}>
+            <div className="flex flex-col min-h-screen">
+              <SiteHeader lang={lang} dict={messages} />
+              <main className="flex-1">{children}</main>
+              <SiteFooter lang={lang} dict={messages} />
+            </div>
+          </NextIntlClientProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   )
 }

@@ -1,51 +1,44 @@
-import { CtaSection } from "@/components/cta-section"
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/types"
+import { getMessages } from "next-intl/server"
+import type { Locale } from "@/lib/i18n/config"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
-export default async function ApiPage({
-  params: { lang },
-}: {
+type Props = {
   params: { lang: Locale }
-}) {
-  const dictionary = await getDictionary(lang)
+}
+
+export default async function ApiPage({ params: { lang } }: Props) {
+  const messages = await getMessages({ locale: lang })
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  {dictionary.documentation.heroTitle}
-                </h1>
-                <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  {dictionary.documentation.heroDescription}
-                </p>
-              </div>
-            </div>
+    <section className="w-full py-12 md:py-24 lg:py-32">
+      <div className="container px-4 md:px-6">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{messages.ApiPage.title}</h1>
+            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+              {messages.ApiPage.description}
+            </p>
           </div>
-        </section>
+        </div>
+        <div className="mx-auto max-w-3xl py-12 text-gray-700 dark:text-gray-300">
+          <p className="mb-6">{messages.ApiPage.intro}</p>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {dictionary.documentation.sections.map((section, index) => (
-                <div key={index} className="flex flex-col items-start space-y-2">
-                  <h3 className="text-xl font-bold">{section.title}</h3>
-                  <p className="text-gray-500">{section.description}</p>
-                  <Link className="text-primary hover:underline" href={section.link}>
-                    Learn more
-                  </Link>
-                </div>
-              ))}
-            </div>
+          <h2 className="text-2xl font-bold mb-4">{messages.ApiPage.featuresTitle}</h2>
+          <ul className="list-disc list-inside mb-6 space-y-2">
+            <li>{messages.ApiPage.feature1}</li>
+            <li>{messages.ApiPage.feature2}</li>
+            <li>{messages.ApiPage.feature3}</li>
+            <li>{messages.ApiPage.feature4}</li>
+          </ul>
+
+          <div className="flex justify-center mt-8">
+            <Link href={`/${lang}/docs`} passHref>
+              <Button>{messages.ApiPage.getStarted}</Button>
+            </Link>
           </div>
-        </section>
-
-        <CtaSection />
-      </main>
-    </div>
+        </div>
+      </div>
+    </section>
   )
 }
