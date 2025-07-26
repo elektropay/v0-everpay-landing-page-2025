@@ -1,40 +1,67 @@
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
+import { Button } from "@/components/ui/button"
+import { CheckCircle, CreditCard, Smartphone, Wifi } from "lucide-react"
 
-interface PosPageProps {
-  params: { lang: Locale }
-}
-
-export default async function PosPage({ params: { lang } }: PosPageProps) {
-  const dict = await getDictionary(lang)
-
+export default function POSPage() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.header.pos}</h1>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.PosPage.description}
-            </p>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-slate-900 text-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl">
+              <h1 className="text-4xl font-bold mb-6">POS Devices</h1>
+              <p className="text-xl text-gray-300 mb-8">
+                Modern point-of-sale solutions for in-person payments. Accept all payment types with our secure,
+                reliable POS devices.
+              </p>
+              <div className="flex gap-4">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700">
+                  Shop Devices
+                </Button>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  Request Demo
+                </Button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.PosPage.intro}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.PosPage.intro}</p>
+        </section>
+
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                {
+                  icon: CreditCard,
+                  title: "All Payment Types",
+                  description: "Accept cards, contactless, and mobile payments",
+                },
+                {
+                  icon: Wifi,
+                  title: "Always Connected",
+                  description: "WiFi, Ethernet, and cellular connectivity options",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Smart Features",
+                  description: "Built-in receipt printing and inventory management",
+                },
+                {
+                  icon: CheckCircle,
+                  title: "Secure & Reliable",
+                  description: "End-to-end encryption with tamper-resistant hardware",
+                },
+              ].map((feature, index) => (
+                <div key={index} className="text-center p-6">
+                  <feature.icon className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-gray-600">{feature.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.PosPage.featuresTitle}</h3>
-            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-              <li>{dict.PosPage.feature1}</li>
-              <li>{dict.PosPage.feature2}</li>
-              <li>{dict.PosPage.feature3}</li>
-              <li>{dict.PosPage.feature4}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      </main>
+    </div>
   )
 }

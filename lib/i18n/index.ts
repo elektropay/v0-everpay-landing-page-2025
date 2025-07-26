@@ -1,4 +1,4 @@
-import type { Locale, Dictionary } from "./types"
+import type { Locale } from "./types"
 
 const dictionaries = {
   en: () => import("./dictionaries/en.json").then((module) => module.default),
@@ -8,10 +8,4 @@ const dictionaries = {
   zh: () => import("./dictionaries/zh.json").then((module) => module.default),
 }
 
-export const getDictionary = async (locale: Locale): Promise<Dictionary> => {
-  return dictionaries[locale]()
-}
-
-export const getMessages = async (locale: Locale) => {
-  return await getDictionary(locale)
-}
+export const getDictionary = async (locale: Locale) => dictionaries[locale]()

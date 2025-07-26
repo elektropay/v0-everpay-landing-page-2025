@@ -3,17 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-manrope), sans-serif;
-  color: var(--everpay-text); /* Use custom text color */
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-inter), sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -57,12 +47,6 @@ h6 {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Custom Everpay colors as CSS variables */
-    --everpay-green: 120 60% 40%; /* #4CAF50 */
-    --everpay-green-dark: 120 60% 35%; /* #45a049 */
-    --everpay-light-gray: 210 15% 96%; /* #F5F7FA */
-    --everpay-text: 210 10% 20%; /* #333333 */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -97,12 +81,6 @@ h6 {
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Dark mode adjustments for custom Everpay colors if needed */
-    --everpay-green: 120 60% 40%;
-    --everpay-green-dark: 120 60% 35%;
-    --everpay-light-gray: 210 15% 15%;
-    --everpay-text: 210 10% 90%;
   }
 }
 

@@ -3,6 +3,8 @@ export type Locale = "en" | "es" | "fr" | "de" | "zh"
 export interface Dictionary {
   nav: {
     home: string
+    about: string
+    contact: string
     solutions: string
     business: string
     ecommerce: string
@@ -10,21 +12,17 @@ export interface Dictionary {
     retail: string
     products: string
     payments: string
-    gateway: string
+    onlinePayments: string
     pos: string
     issuing: string
-    onlinePayments: string
-    developers: string
+    gateway: string
+    resources: string
     docs: string
     api: string
-    resources: string
     help: string
     blog: string
     partners: string
-    about: string
     careers: string
-    contact: string
-    commerce: string
     security: string
     fraudPrevention: string
   }
@@ -33,6 +31,12 @@ export interface Dictionary {
     subtitle: string
     cta: string
     learnMore: string
+  }
+  stats: {
+    transactions: string
+    countries: string
+    uptime: string
+    customers: string
   }
   features: {
     title: string
@@ -50,65 +54,24 @@ export interface Dictionary {
       description: string
     }
   }
-  stats: {
-    title: string
-    subtitle: string
-    stat1: {
-      value: string
-      label: string
-    }
-    stat2: {
-      value: string
-      label: string
-    }
-    stat3: {
-      value: string
-      label: string
-    }
-    stat4: {
-      value: string
-      label: string
-    }
-  }
-  paymentPartners: {
+  partners: {
     title: string
     subtitle: string
   }
-  checkoutProtection: {
+  protection: {
     title: string
     subtitle: string
-    feature1: {
-      title: string
-      description: string
-    }
-    feature2: {
-      title: string
-      description: string
-    }
-    feature3: {
-      title: string
-      description: string
-    }
+    feature1: string
+    feature2: string
+    feature3: string
   }
-  businessTypes: {
+  business: {
     title: string
     subtitle: string
-    type1: {
-      title: string
-      description: string
-    }
-    type2: {
-      title: string
-      description: string
-    }
-    type3: {
-      title: string
-      description: string
-    }
-    type4: {
-      title: string
-      description: string
-    }
+    type1: string
+    type2: string
+    type3: string
+    type4: string
   }
   cta: {
     title: string
@@ -118,52 +81,12 @@ export interface Dictionary {
   footer: {
     company: string
     solutions: string
-    business: string
-    ecommerce: string
-    marketplace: string
-    retail: string
-    products: string
-    payments: string
-    gateway: string
-    pos: string
-    issuing: string
-    onlinePayments: string
-    developers: string
-    docs: string
-    api: string
     resources: string
-    help: string
-    blog: string
-    partners: string
-    about: string
-    careers: string
-    contact: string
-    commerce: string
-    security: string
-    fraudPrevention: string
     legal: string
-    privacy: string
+    description: string
+    rights: string
     terms: string
+    privacy: string
     cookies: string
-    copyright: string
-  }
-  contact: {
-    title: string
-    subtitle: string
-    form: {
-      name: string
-      email: string
-      company: string
-      subject: string
-      message: string
-      submit: string
-    }
-    info: {
-      title: string
-      address: string
-      phone: string
-      email: string
-      hours: string
-    }
   }
 }

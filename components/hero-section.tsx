@@ -1,32 +1,24 @@
 import { Button } from "@/components/ui/button"
-import { Link } from "@/lib/i18n/navigation"
-import type { Locale } from "@/lib/i18n/config"
-import type { Dictionary } from "@/lib/i18n/types"
+import { ArrowRight, Play } from "lucide-react"
 
-interface HeroSectionProps {
-  dict: Dictionary
-  lang: Locale
-}
-
-export function HeroSection({ dict, lang }: HeroSectionProps) {
+export function HeroSection() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-              {dict.hero.title}
-            </h1>
-            <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">{dict.hero.description}</p>
-          </div>
-          <div className="space-x-4">
-            <Button asChild>
-              <Link href={`/${lang}/signup`}>{dict.hero.getStartedButton}</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link href={`/${lang}/contact`}>{dict.hero.contactSalesButton}</Link>
-            </Button>
-          </div>
+    <section className="space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 lg:py-32">
+      <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center">
+        <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">The Future of Payments is Here</h1>
+        <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+          Accept payments globally with our secure, fast, and reliable payment processing platform. Built for businesses
+          of all sizes.
+        </p>
+        <div className="space-x-4">
+          <Button size="lg" className="h-11 px-8">
+            Get Started
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button variant="outline" size="lg" className="h-11 px-8 bg-transparent">
+            <Play className="mr-2 h-4 w-4" />
+            Watch Demo
+          </Button>
         </div>
       </div>
     </section>

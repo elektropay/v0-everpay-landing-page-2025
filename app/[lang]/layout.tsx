@@ -1,26 +1,29 @@
 import type React from "react"
-import { NextIntlClientProvider } from "next-intl"
-import { getMessages } from "@/lib/i18n"
-import { SiteHeader } from "@/components/site-header"
-import { SiteFooter } from "@/components/site-footer"
-import type { Locale } from "@/lib/i18n/types"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "../globals.css"
 
-export default async function LocaleLayout({
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+})
+
+export const metadata: Metadata = {
+  title: "EverPay - Modern Payment Solutions",
+  description: "Secure, fast, and reliable payment processing for businesses of all sizes",
+}
+
+export default function LangLayout({
   children,
   params,
 }: {
   children: React.ReactNode
-  params: { lang: Locale }
+  params: { lang: string }
 }) {
-  const messages = await getMessages(params.lang)
-
   return (
-    <NextIntlClientProvider messages={messages}>
-      <div className="min-h-screen flex flex-col">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-      </div>
-    </NextIntlClientProvider>
+    <html lang={params.lang} className={inter.variable}>
+      <body className="font-sans">{children}</body>
+    </html>
   )
 }

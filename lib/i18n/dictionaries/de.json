@@ -1,6 +1,8 @@
 {
   "nav": {
     "home": "Startseite",
+    "about": "Über uns",
+    "contact": "Kontakt",
     "solutions": "Lösungen",
     "business": "Unternehmen",
     "ecommerce": "E-Commerce",
@@ -8,160 +10,81 @@
     "retail": "Einzelhandel",
     "products": "Produkte",
     "payments": "Zahlungen",
-    "gateway": "Gateway",
-    "pos": "Kassensystem",
-    "issuing": "Ausgabe",
     "onlinePayments": "Online-Zahlungen",
-    "developers": "Entwickler",
+    "pos": "Kassensystem",
+    "issuing": "Kartenausgabe",
+    "gateway": "Zahlungsgateway",
+    "resources": "Ressourcen",
     "docs": "Dokumentation",
     "api": "API",
-    "resources": "Ressourcen",
-    "help": "Hilfe",
+    "help": "Hilfezentrum",
     "blog": "Blog",
     "partners": "Partner",
-    "about": "Über Uns",
     "careers": "Karriere",
-    "contact": "Kontakt",
-    "commerce": "Handel",
     "security": "Sicherheit",
     "fraudPrevention": "Betrugsprävention"
   },
   "hero": {
-    "title": "Die Zukunft der Zahlungen ist hier",
-    "subtitle": "Akzeptieren Sie Zahlungen weltweit mit unserer sicheren, schnellen und zuverlässigen Zahlungsabwicklungsplattform. Entwickelt für Unternehmen jeder Größe.",
+    "title": "Die Zukunft der Zahlungen ist Hier",
+    "subtitle": "Akzeptieren Sie Zahlungen weltweit mit unserer sicheren, schnellen und zuverlässigen Zahlungsverarbeitungsplattform. Entwickelt für Unternehmen jeder Größe.",
     "cta": "Loslegen",
-    "learnMore": "Mehr Erfahren"
+    "learnMore": "Mehr erfahren"
+  },
+  "stats": {
+    "transactions": "Verarbeitete Transaktionen",
+    "countries": "Unterstützte Länder",
+    "uptime": "Verfügbarkeitsgarantie",
+    "customers": "Zufriedene Kunden"
   },
   "features": {
-    "title": "Warum EverPay wählen?",
-    "subtitle": "Alles was Sie brauchen, um Zahlungen zu akzeptieren und Ihr Geschäft zu erweitern",
+    "title": "Warum EverPay Wählen?",
+    "subtitle": "Wir bieten die Tools und Infrastruktur, die Sie benötigen, um Zahlungen zu akzeptieren und Ihr Unternehmen global zu erweitern.",
     "feature1": {
       "title": "Globale Reichweite",
-      "description": "Akzeptieren Sie Zahlungen von Kunden weltweit mit Unterstützung für über 135 Währungen und lokale Zahlungsmethoden."
+      "description": "Akzeptieren Sie Zahlungen von Kunden weltweit mit Unterstützung für über 150 Währungen und lokale Zahlungsmethoden."
     },
     "feature2": {
       "title": "Erweiterte Sicherheit",
-      "description": "Sicherheit auf Bankniveau mit PCI DSS-Compliance, Betrugserkennung und Echtzeitüberwachung."
+      "description": "Sicherheit auf Bankniveau mit PCI DSS-Konformität, Betrugserkennung und Echtzeitüberwachung."
     },
     "feature3": {
       "title": "Entwicklerfreundlich",
       "description": "Einfache Integration mit umfassenden APIs, SDKs und detaillierter Dokumentation."
     }
   },
-  "stats": {
-    "title": "Vertraut von Unternehmen weltweit",
-    "subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die EverPay für ihre Zahlungsabwicklung vertrauen",
-    "stat1": {
-      "value": "99.9%",
-      "label": "Betriebszeit"
-    },
-    "stat2": {
-      "value": "150+",
-      "label": "Länder"
-    },
-    "stat3": {
-      "value": "50K+",
-      "label": "Unternehmen"
-    },
-    "stat4": {
-      "value": "$10B+",
-      "label": "Verarbeitet"
-    }
+  "partners": {
+    "title": "Vertrauenswürdige Zahlungspartner",
+    "subtitle": "Wir arbeiten mit den weltweit führenden Zahlungsnetzwerken und Finanzinstituten zusammen."
   },
-  "paymentPartners": {
-    "title": "Akzeptieren Sie alle wichtigen Zahlungsmethoden",
-    "subtitle": "Unterstützung für Kreditkarten, digitale Geldbörsen und lokale Zahlungsmethoden"
+  "protection": {
+    "title": "Erweiterte Betrugsprävention",
+    "subtitle": "Schützen Sie Ihr Unternehmen und Ihre Kunden mit unserer umfassenden Sicherheitssuite.",
+    "feature1": "Echtzeit-Betrugserkennung",
+    "feature2": "Machine-Learning-Algorithmen",
+    "feature3": "24/7-Überwachung"
   },
-  "checkoutProtection": {
-    "title": "Checkout-Schutz",
-    "subtitle": "Erweiterte Betrugspräventions- und Sicherheitsfunktionen zum Schutz Ihres Unternehmens und Ihrer Kunden",
-    "feature1": {
-      "title": "Echtzeit-Betrugserkennung",
-      "description": "KI-gestützte Betrugserkennung, die Transaktionen in Echtzeit analysiert, um betrügerische Aktivitäten zu verhindern."
-    },
-    "feature2": {
-      "title": "3D Secure Authentifizierung",
-      "description": "Erweiterte Sicherheit mit 3D Secure 2.0-Authentifizierung für Transaktionen ohne Kartenanwesenheit."
-    },
-    "feature3": {
-      "title": "Risikomanagement",
-      "description": "Umfassende Risikomanagement-Tools mit anpassbaren Regeln und automatisierten Antworten."
-    }
-  },
-  "businessTypes": {
-    "title": "Entwickelt für jedes Unternehmen",
-    "subtitle": "Ob Sie ein Startup oder ein Großunternehmen sind, wir haben die richtige Lösung für Sie",
-    "type1": {
-      "title": "E-Commerce",
-      "description": "Online-Shops und digitale Marktplätze mit nahtlosen Checkout-Erfahrungen."
-    },
-    "type2": {
-      "title": "Einzelhandel",
-      "description": "Physische Geschäfte mit Kassensystemen und Omnichannel-Lösungen."
-    },
-    "type3": {
-      "title": "SaaS",
-      "description": "Abonnement-Unternehmen mit wiederkehrender Abrechnung und Umsatzoptimierung."
-    },
-    "type4": {
-      "title": "Marktplatz",
-      "description": "Multi-Vendor-Plattformen mit geteilten Zahlungen und Verkäuferverwaltung."
-    }
+  "business": {
+    "title": "Für Jedes Unternehmen Entwickelt",
+    "subtitle": "Von Startups bis zu Großunternehmen haben wir Lösungen, die mit Ihrem Unternehmen skalieren.",
+    "type1": "E-Commerce",
+    "type2": "Marktplätze",
+    "type3": "SaaS-Plattformen",
+    "type4": "Einzelhandelsgeschäfte"
   },
   "cta": {
-    "title": "Bereit anzufangen?",
-    "subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die EverPay für ihre Zahlungsabwicklungsbedürfnisse vertrauen.",
-    "button": "Jetzt Starten"
+    "title": "Bereit Anzufangen?",
+    "subtitle": "Schließen Sie sich Tausenden von Unternehmen an, die EverPay für ihre Zahlungsverarbeitungsanforderungen vertrauen.",
+    "button": "Kostenlose Testversion Starten"
   },
   "footer": {
     "company": "Unternehmen",
     "solutions": "Lösungen",
-    "business": "Unternehmen",
-    "ecommerce": "E-Commerce",
-    "marketplace": "Marktplatz",
-    "retail": "Einzelhandel",
-    "products": "Produkte",
-    "payments": "Zahlungen",
-    "gateway": "Gateway",
-    "pos": "Kassensystem",
-    "issuing": "Ausgabe",
-    "onlinePayments": "Online-Zahlungen",
-    "developers": "Entwickler",
-    "docs": "Dokumentation",
-    "api": "API",
     "resources": "Ressourcen",
-    "help": "Hilfe",
-    "blog": "Blog",
-    "partners": "Partner",
-    "about": "Über Uns",
-    "careers": "Karriere",
-    "contact": "Kontakt",
-    "commerce": "Handel",
-    "security": "Sicherheit",
-    "fraudPrevention": "Betrugsprävention",
     "legal": "Rechtliches",
-    "privacy": "Datenschutzrichtlinie",
+    "description": "EverPay bietet sichere, zuverlässige Zahlungsverarbeitungslösungen für Unternehmen weltweit.",
+    "rights": "Alle Rechte vorbehalten.",
     "terms": "Nutzungsbedingungen",
-    "cookies": "Cookie-Richtlinie",
-    "copyright": "© 2025 EverPay. Alle Rechte vorbehalten."
-  },
-  "contact": {
-    "title": "Kontaktieren Sie Uns",
-    "subtitle": "Kontaktieren Sie unser Team, um mehr über unsere Zahlungslösungen zu erfahren",
-    "form": {
-      "name": "Vollständiger Name",
-      "email": "E-Mail-Adresse",
-      "company": "Firmenname",
-      "subject": "Betreff",
-      "message": "Nachricht",
-      "submit": "Nachricht Senden"
-    },
-    "info": {
-      "title": "In Kontakt Treten",
-      "address": "123 Payment Street, Finance District, NY 10001",
-      "phone": "+1 (555) 123-4567",
-      "email": "contact@everpay.com",
-      "hours": "Montag - Freitag: 9:00 AM - 6:00 PM EST"
-    }
+    "privacy": "Datenschutzrichtlinie",
+    "cookies": "Cookie-Richtlinie"
   }
 }

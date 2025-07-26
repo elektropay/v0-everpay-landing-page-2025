@@ -1,39 +1,36 @@
-import type { Dictionary } from "@/lib/i18n/types"
+export function StatsSection() {
+  const stats = [
+    {
+      value: "$50B+",
+      label: "Transactions Processed",
+    },
+    {
+      value: "150+",
+      label: "Countries Supported",
+    },
+    {
+      value: "99.9%",
+      label: "Uptime Guarantee",
+    },
+    {
+      value: "10K+",
+      label: "Happy Customers",
+    },
+  ]
 
-interface StatsSectionProps {
-  dict: Dictionary
-}
-
-export function StatsSection({ dict }: StatsSectionProps) {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-800">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.stats.title}</h2>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.stats.description}
-            </p>
+    <section className="container space-y-6 py-8 dark:bg-transparent md:py-12 lg:py-24">
+      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-4">
+        {stats.map((stat, index) => (
+          <div key={index} className="relative overflow-hidden rounded-lg border bg-background p-2">
+            <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
+              <div className="space-y-2">
+                <h3 className="font-bold text-3xl">{stat.value}</h3>
+                <p className="text-sm text-muted-foreground">{stat.label}</p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-12">
-          <div className="flex flex-col items-center justify-center gap-1">
-            <div className="text-4xl font-bold">{dict.stats.stat1Value}</div>
-            <p className="text-gray-500 dark:text-gray-400">{dict.stats.stat1Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-1">
-            <div className="text-4xl font-bold">{dict.stats.stat2Value}</div>
-            <p className="text-gray-500 dark:text-gray-400">{dict.stats.stat2Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-1">
-            <div className="text-4xl font-bold">{dict.stats.stat3Value}</div>
-            <p className="text-gray-500 dark:text-gray-400">{dict.stats.stat3Label}</p>
-          </div>
-          <div className="flex flex-col items-center justify-center gap-1">
-            <div className="text-4xl font-bold">{dict.stats.stat4Value}</div>
-            <p className="text-gray-500 dark:text-gray-400">{dict.stats.stat4Label}</p>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   )

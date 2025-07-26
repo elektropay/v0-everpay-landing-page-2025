@@ -1,46 +1,35 @@
 "use client"
 
-import * as React from "react"
-import Image from "next/image"
+import { useEffect, useState } from "react"
 
-interface PaymentPartnersCarouselProps {
-  images: { src: string; alt: string }[]
-}
+export function PaymentPartnersCarousel() {
+  const partners = [
+    { name: "Visa", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "Mastercard", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "American Express", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "PayPal", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "Apple Pay", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "Google Pay", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "Stripe", logo: "/placeholder.svg?height=60&width=120" },
+    { name: "Square", logo: "/placeholder.svg?height=60&width=120" },
+  ]
 
-export function PaymentPartnersCarousel({ images }: PaymentPartnersCarouselProps) {
-  const [currentIndex, setCurrentIndex] = React.useState(0)
-  const carouselRef = React.useRef<HTMLDivElement>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000) // Change image every 3 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % partners.length)
+    }, 3000)
 
-    return () => clearInterval(interval)
-  }, [images.length])
-
-  React.useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.style.transform = `translateX(-${currentIndex * 100}%)`
-    }
-  }, [currentIndex])
+    return () => clearInterval(timer)
+  }, [partners.length])
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <div
-        ref={carouselRef}
-        className="flex transition-transform duration-500 ease-in-out"
-        style={{ width: `${images.length * 100}%` }}
-      >
-        {images.map((image, index) => (
-          <div key={index} className="w-full flex-shrink-0 flex items-center justify-center p-4">
-            <Image
-              src={image.src || "/placeholder.svg"}
-              alt={image.alt}
-              width={120}
-              height={60}
-              className="object-contain"
-            />
+    <div className="relative overflow-hidden">
+      <div className="flex space-x-8 animate-pulse">
+        {partners.map((partner, index) => (
+          <div key={index} className="flex-shrink-0 flex items-center justify-center w-32 h-16 bg-muted rounded-lg">
+            <span className="text-sm font-medium text-muted-foreground">{partner.name}</span>
           </div>
         ))}
       </div>

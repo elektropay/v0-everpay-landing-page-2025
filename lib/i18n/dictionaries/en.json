@@ -1,6 +1,8 @@
 {
   "nav": {
     "home": "Home",
+    "about": "About",
+    "contact": "Contact",
     "solutions": "Solutions",
     "business": "Business",
     "ecommerce": "E-commerce",
@@ -8,36 +10,38 @@
     "retail": "Retail",
     "products": "Products",
     "payments": "Payments",
-    "gateway": "Gateway",
-    "pos": "POS",
-    "issuing": "Issuing",
     "onlinePayments": "Online Payments",
-    "developers": "Developers",
-    "docs": "Docs",
-    "api": "API",
+    "pos": "Point of Sale",
+    "issuing": "Card Issuing",
+    "gateway": "Payment Gateway",
     "resources": "Resources",
-    "help": "Help",
+    "docs": "Documentation",
+    "api": "API",
+    "help": "Help Center",
     "blog": "Blog",
     "partners": "Partners",
-    "about": "About",
     "careers": "Careers",
-    "contact": "Contact",
-    "commerce": "Commerce",
     "security": "Security",
     "fraudPrevention": "Fraud Prevention"
   },
   "hero": {
-    "title": "The future of payments is here",
+    "title": "The Future of Payments is Here",
     "subtitle": "Accept payments globally with our secure, fast, and reliable payment processing platform. Built for businesses of all sizes.",
     "cta": "Get Started",
     "learnMore": "Learn More"
   },
+  "stats": {
+    "transactions": "Transactions Processed",
+    "countries": "Countries Supported",
+    "uptime": "Uptime Guarantee",
+    "customers": "Happy Customers"
+  },
   "features": {
-    "title": "Why choose EverPay?",
-    "subtitle": "Everything you need to accept payments and grow your business",
+    "title": "Why Choose EverPay?",
+    "subtitle": "We provide the tools and infrastructure you need to accept payments and grow your business globally.",
     "feature1": {
       "title": "Global Reach",
-      "description": "Accept payments from customers worldwide with support for 135+ currencies and local payment methods."
+      "description": "Accept payments from customers worldwide with support for 150+ currencies and local payment methods."
     },
     "feature2": {
       "title": "Advanced Security",
@@ -48,120 +52,39 @@
       "description": "Easy integration with comprehensive APIs, SDKs, and detailed documentation."
     }
   },
-  "stats": {
-    "title": "Trusted by businesses worldwide",
-    "subtitle": "Join thousands of companies that trust EverPay for their payment processing",
-    "stat1": {
-      "value": "99.9%",
-      "label": "Uptime"
-    },
-    "stat2": {
-      "value": "150+",
-      "label": "Countries"
-    },
-    "stat3": {
-      "value": "50K+",
-      "label": "Businesses"
-    },
-    "stat4": {
-      "value": "$10B+",
-      "label": "Processed"
-    }
+  "partners": {
+    "title": "Trusted Payment Partners",
+    "subtitle": "We work with the world's leading payment networks and financial institutions."
   },
-  "paymentPartners": {
-    "title": "Accept all major payment methods",
-    "subtitle": "Support for credit cards, digital wallets, and local payment methods"
+  "protection": {
+    "title": "Advanced Fraud Protection",
+    "subtitle": "Protect your business and customers with our comprehensive security suite.",
+    "feature1": "Real-time fraud detection",
+    "feature2": "Machine learning algorithms",
+    "feature3": "24/7 monitoring"
   },
-  "checkoutProtection": {
-    "title": "Checkout Protection",
-    "subtitle": "Advanced fraud prevention and security features to protect your business and customers",
-    "feature1": {
-      "title": "Real-time Fraud Detection",
-      "description": "AI-powered fraud detection that analyzes transactions in real-time to prevent fraudulent activities."
-    },
-    "feature2": {
-      "title": "3D Secure Authentication",
-      "description": "Enhanced security with 3D Secure 2.0 authentication for card-not-present transactions."
-    },
-    "feature3": {
-      "title": "Risk Management",
-      "description": "Comprehensive risk management tools with customizable rules and automated responses."
-    }
-  },
-  "businessTypes": {
-    "title": "Built for every business",
-    "subtitle": "Whether you're a startup or enterprise, we have the right solution for you",
-    "type1": {
-      "title": "E-commerce",
-      "description": "Online stores and digital marketplaces with seamless checkout experiences."
-    },
-    "type2": {
-      "title": "Retail",
-      "description": "Physical stores with point-of-sale systems and omnichannel solutions."
-    },
-    "type3": {
-      "title": "SaaS",
-      "description": "Subscription businesses with recurring billing and revenue optimization."
-    },
-    "type4": {
-      "title": "Marketplace",
-      "description": "Multi-vendor platforms with split payments and seller management."
-    }
+  "business": {
+    "title": "Built for Every Business",
+    "subtitle": "From startups to enterprises, we have solutions that scale with your business.",
+    "type1": "E-commerce",
+    "type2": "Marketplaces",
+    "type3": "SaaS Platforms",
+    "type4": "Retail Stores"
   },
   "cta": {
-    "title": "Ready to get started?",
+    "title": "Ready to Get Started?",
     "subtitle": "Join thousands of businesses that trust EverPay for their payment processing needs.",
-    "button": "Start Now"
+    "button": "Start Free Trial"
   },
   "footer": {
     "company": "Company",
     "solutions": "Solutions",
-    "business": "Business",
-    "ecommerce": "E-commerce",
-    "marketplace": "Marketplace",
-    "retail": "Retail",
-    "products": "Products",
-    "payments": "Payments",
-    "gateway": "Gateway",
-    "pos": "POS",
-    "issuing": "Issuing",
-    "onlinePayments": "Online Payments",
-    "developers": "Developers",
-    "docs": "Docs",
-    "api": "API",
     "resources": "Resources",
-    "help": "Help",
-    "blog": "Blog",
-    "partners": "Partners",
-    "about": "About",
-    "careers": "Careers",
-    "contact": "Contact",
-    "commerce": "Commerce",
-    "security": "Security",
-    "fraudPrevention": "Fraud Prevention",
     "legal": "Legal",
-    "privacy": "Privacy Policy",
+    "description": "EverPay provides secure, reliable payment processing solutions for businesses worldwide.",
+    "rights": "All rights reserved.",
     "terms": "Terms of Service",
-    "cookies": "Cookie Policy",
-    "copyright": "© 2025 EverPay. All rights reserved."
-  },
-  "contact": {
-    "title": "Contact Us",
-    "subtitle": "Get in touch with our team to learn more about our payment solutions",
-    "form": {
-      "name": "Full Name",
-      "email": "Email Address",
-      "company": "Company Name",
-      "subject": "Subject",
-      "message": "Message",
-      "submit": "Send Message"
-    },
-    "info": {
-      "title": "Get in Touch",
-      "address": "123 Payment Street, Finance District, NY 10001",
-      "phone": "+1 (555) 123-4567",
-      "email": "contact@everpay.com",
-      "hours": "Monday - Friday: 9:00 AM - 6:00 PM EST"
-    }
+    "privacy": "Privacy Policy",
+    "cookies": "Cookie Policy"
   }
 }

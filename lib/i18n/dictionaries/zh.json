@@ -1,28 +1,26 @@
 {
   "nav": {
     "home": "首页",
+    "about": "关于我们",
+    "contact": "联系我们",
     "solutions": "解决方案",
     "business": "企业",
     "ecommerce": "电子商务",
-    "marketplace": "市场",
+    "marketplace": "市场平台",
     "retail": "零售",
     "products": "产品",
     "payments": "支付",
-    "gateway": "网关",
-    "pos": "收银系统",
-    "issuing": "发行",
     "onlinePayments": "在线支付",
-    "developers": "开发者",
+    "pos": "销售点",
+    "issuing": "卡片发行",
+    "gateway": "支付网关",
+    "resources": "资源",
     "docs": "文档",
     "api": "API",
-    "resources": "资源",
-    "help": "帮助",
+    "help": "帮助中心",
     "blog": "博客",
     "partners": "合作伙伴",
-    "about": "关于我们",
     "careers": "职业",
-    "contact": "联系我们",
-    "commerce": "商务",
     "security": "安全",
     "fraudPrevention": "欺诈预防"
   },
@@ -32,136 +30,61 @@
     "cta": "开始使用",
     "learnMore": "了解更多"
   },
+  "stats": {
+    "transactions": "已处理交易",
+    "countries": "支持的国家",
+    "uptime": "正常运行时间保证",
+    "customers": "满意的客户"
+  },
   "features": {
     "title": "为什么选择 EverPay？",
-    "subtitle": "接受支付和发展业务所需的一切",
+    "subtitle": "我们提供您接受支付和在全球范围内发展业务所需的工具和基础设施。",
     "feature1": {
       "title": "全球覆盖",
-      "description": "支持135+种货币和本地支付方式，接受来自全球客户的支付。"
+      "description": "支持150多种货币和本地支付方式，接受来自世界各地客户的支付。"
     },
     "feature2": {
       "title": "高级安全",
-      "description": "银行级安全，符合PCI DSS标准，具备欺诈检测和实时监控功能。"
+      "description": "银行级安全，符合PCI DSS标准，具有欺诈检测和实时监控功能。"
     },
     "feature3": {
       "title": "开发者友好",
       "description": "通过全面的API、SDK和详细文档轻松集成。"
     }
   },
-  "stats": {
-    "title": "受到全球企业信赖",
-    "subtitle": "加入数千家信赖EverPay进行支付处理的公司",
-    "stat1": {
-      "value": "99.9%",
-      "label": "正常运行时间"
-    },
-    "stat2": {
-      "value": "150+",
-      "label": "国家"
-    },
-    "stat3": {
-      "value": "50K+",
-      "label": "企业"
-    },
-    "stat4": {
-      "value": "$10B+",
-      "label": "已处理"
-    }
+  "partners": {
+    "title": "可信赖的支付合作伙伴",
+    "subtitle": "我们与世界领先的支付网络和金融机构合作。"
   },
-  "paymentPartners": {
-    "title": "接受所有主要支付方式",
-    "subtitle": "支持信用卡、数字钱包和本地支付方式"
+  "protection": {
+    "title": "高级欺诈保护",
+    "subtitle": "使用我们全面的安全套件保护您的业务和客户。",
+    "feature1": "实时欺诈检测",
+    "feature2": "机器学习算法",
+    "feature3": "24/7监控"
   },
-  "checkoutProtection": {
-    "title": "结账保护",
-    "subtitle": "先进的欺诈预防和安全功能，保护您的业务和客户",
-    "feature1": {
-      "title": "实时欺诈检测",
-      "description": "AI驱动的欺诈检测，实时分析交易以防止欺诈活动。"
-    },
-    "feature2": {
-      "title": "3D安全认证",
-      "description": "通过3D Secure 2.0认证增强无卡交易的安全性。"
-    },
-    "feature3": {
-      "title": "风险管理",
-      "description": "具有可定制规则和自动响应的综合风险管理工具。"
-    }
-  },
-  "businessTypes": {
+  "business": {
     "title": "为每个企业而构建",
-    "subtitle": "无论您是初创公司还是企业，我们都有适合您的解决方案",
-    "type1": {
-      "title": "电子商务",
-      "description": "具有无缝结账体验的在线商店和数字市场。"
-    },
-    "type2": {
-      "title": "零售",
-      "description": "具有销售点系统和全渠道解决方案的实体店。"
-    },
-    "type3": {
-      "title": "SaaS",
-      "description": "具有定期计费和收入优化的订阅业务。"
-    },
-    "type4": {
-      "title": "市场",
-      "description": "具有分账支付和卖家管理的多供应商平台。"
-    }
+    "subtitle": "从初创公司到企业，我们拥有随您的业务扩展的解决方案。",
+    "type1": "电子商务",
+    "type2": "市场平台",
+    "type3": "SaaS平台",
+    "type4": "零售店"
   },
   "cta": {
     "title": "准备开始了吗？",
-    "subtitle": "加入数千家信赖EverPay满足支付处理需求的企业。",
-    "button": "立即开始"
+    "subtitle": "加入数千家信任EverPay满足其支付处理需求的企业。",
+    "button": "开始免费试用"
   },
   "footer": {
     "company": "公司",
     "solutions": "解决方案",
-    "business": "企业",
-    "ecommerce": "电子商务",
-    "marketplace": "市场",
-    "retail": "零售",
-    "products": "产品",
-    "payments": "支付",
-    "gateway": "网关",
-    "pos": "收银系统",
-    "issuing": "发行",
-    "onlinePayments": "在线支付",
-    "developers": "开发者",
-    "docs": "文档",
-    "api": "API",
     "resources": "资源",
-    "help": "帮助",
-    "blog": "博客",
-    "partners": "合作伙伴",
-    "about": "关于我们",
-    "careers": "职业",
-    "contact": "联系我们",
-    "commerce": "商务",
-    "security": "安全",
-    "fraudPrevention": "欺诈预防",
     "legal": "法律",
-    "privacy": "隐私政策",
+    "description": "EverPay为全球企业提供安全、可靠的支付处理解决方案。",
+    "rights": "版权所有。",
     "terms": "服务条款",
-    "cookies": "Cookie政策",
-    "copyright": "© 2025 EverPay. 保留所有权利。"
-  },
-  "contact": {
-    "title": "联系我们",
-    "subtitle": "联系我们的团队了解更多关于我们支付解决方案的信息",
-    "form": {
-      "name": "全名",
-      "email": "电子邮件地址",
-      "company": "公司名称",
-      "subject": "主题",
-      "message": "消息",
-      "submit": "发送消息"
-    },
-    "info": {
-      "title": "联系方式",
-      "address": "123 Payment Street, Finance District, NY 10001",
-      "phone": "+1 (555) 123-4567",
-      "email": "contact@everpay.com",
-      "hours": "周一 - 周五: 9:00 AM - 6:00 PM EST"
-    }
+    "privacy": "隐私政策",
+    "cookies": "Cookie政策"
   }
 }

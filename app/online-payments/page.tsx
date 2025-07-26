@@ -1,162 +1,206 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Globe, Smartphone, Shield, Zap, CreditCard, Wallet } from "lucide-react"
+import { Globe, Smartphone, ShieldCheck, CheckCircle } from "lucide-react"
+import Image from "next/image"
+
+const features = [
+  {
+    title: "Global Payment Methods",
+    description: "Accept payments from customers anywhere with support for multiple payment methods and currencies",
+    icon: Globe,
+    items: ["Credit & debit cards", "Digital wallets", "Bank transfers", "Buy now, pay later"],
+  },
+  {
+    title: "Mobile Optimized",
+    description: "Seamless checkout experience across all devices with mobile-first design",
+    icon: Smartphone,
+    items: ["Responsive design", "One-click payments", "Digital wallets", "SMS payments"],
+  },
+  {
+    title: "Advanced Security",
+    description: "Enterprise-grade security with fraud prevention and compliance built-in",
+    icon: ShieldCheck,
+    items: ["PCI DSS compliance", "3D Secure 2.0", "Tokenization", "Fraud detection"],
+  },
+]
+
+const codeExamples = [
+  {
+    title: "Direct API",
+    description: "RESTful APIs with comprehensive documentation",
+    code: "curl -X POST https://api.everpay.com/v1/payments \\\n-d amount=2000 \\\n-d currency=usd",
+  },
+  {
+    title: "SDKs & Libraries",
+    description: "Native SDKs for major programming languages",
+    code: "npm install @everpay/js\n\nconst payment = await everpay.createPayment({\n  amount: 2000,\n  currency: 'usd'\n});",
+  },
+  {
+    title: "No-Code Solutions",
+    description: "Payment links and embeddable checkout",
+    code: '<script src="https://js.everpay.com/v1"></script>\n\n<div id="checkout"></div>',
+  },
+]
+
+const pricingPlans = [
+  {
+    title: "Standard",
+    price: "2.9% + $0.30",
+    description: "Per successful card charge",
+    features: ["All major cards accepted", "Instant setup", "24/7 support", "No monthly fees"],
+  },
+  {
+    title: "Enterprise",
+    price: "Custom",
+    description: "For high-volume businesses",
+    features: ["Volume discounts", "Dedicated support", "Custom integration", "Free fraud prevention"],
+  },
+]
 
 export default function OnlinePaymentsPage() {
-  const features = [
-    {
-      icon: Globe,
-      title: "Global Reach",
-      description: "Accept payments from customers worldwide with local payment methods",
-    },
-    {
-      icon: Smartphone,
-      title: "Mobile Optimized",
-      description: "Seamless checkout experience across all devices and platforms",
-    },
-    {
-      icon: Shield,
-      title: "Secure Processing",
-      description: "Bank-level security with PCI DSS compliance and fraud protection",
-    },
-    {
-      icon: Zap,
-      title: "Fast Settlement",
-      description: "Get paid faster with next-day settlement and real-time reporting",
-    },
-  ]
-
-  const paymentMethods = [
-    { name: "Credit & Debit Cards", icon: CreditCard, description: "Visa, Mastercard, American Express, and more" },
-    { name: "Digital Wallets", icon: Wallet, description: "Apple Pay, Google Pay, PayPal, and local wallets" },
-    { name: "Bank Transfers", icon: Globe, description: "ACH, SEPA, and local bank transfer methods" },
-    { name: "Buy Now, Pay Later", icon: Smartphone, description: "Klarna, Afterpay, and other BNPL options" },
-  ]
-
   return (
-    <div className="container mx-auto px-4 py-16">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-4">Online Payments</h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Accept online payments with our secure, fast, and flexible payment processing solution
-          </p>
-          <div className="mt-8">
-            <Button size="lg" className="mr-4">
-              Start Accepting Payments
-            </Button>
-            <Button variant="outline" size="lg">
-              View Demo
-            </Button>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => (
-            <Card key={index} className="text-center">
-              <CardHeader>
-                <feature.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
-                <CardTitle className="text-lg">{feature.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription>{feature.description}</CardDescription>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">Payment Methods</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            {paymentMethods.map((method, index) => (
-              <Card key={index}>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <method.icon className="h-6 w-6" />
-                    {method.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{method.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          <Card>
-            <CardHeader>
-              <CardTitle>Integration Options</CardTitle>
-              <CardDescription>Choose the integration method that works best for your business</CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-medium mb-2">Checkout Links</h4>
-                  <p className="text-sm text-muted-foreground">No-code solution - create payment links in minutes</p>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-medium mb-2">Hosted Checkout</h4>
-                  <p className="text-sm text-muted-foreground">Pre-built checkout page with customizable branding</p>
-                </div>
-                <div className="p-4 border rounded-lg">
-                  <h4 className="font-medium mb-2">Custom Integration</h4>
-                  <p className="text-sm text-muted-foreground">Full control with our flexible APIs and SDKs</p>
+    <div className="flex flex-col min-h-screen">
+      <main className="flex-1">
+        {/* Hero Section */}
+        <section className="bg-[#0A2F2F] text-white py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h1 className="text-4xl font-bold mb-6">Accept Payments Online</h1>
+                <p className="text-xl text-gray-300 mb-8">
+                  Everything you need to accept payments online. Simple integration, optimized checkout, and powerful
+                  features to grow your business.
+                </p>
+                <div className="flex gap-4">
+                  <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
+                    Start Now
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white bg-transparent text-white hover:bg-white/10"
+                  >
+                    Contact Sales
+                  </Button>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Why Choose Our Online Payments?</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                  <div>
-                    <h4 className="font-medium">Higher Conversion Rates</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Optimized checkout flow increases successful payments
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                  <div>
-                    <h4 className="font-medium">Global Scale</h4>
-                    <p className="text-sm text-muted-foreground">Process millions of transactions with 99.9% uptime</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full mt-2" />
-                  <div>
-                    <h4 className="font-medium">Advanced Analytics</h4>
-                    <p className="text-sm text-muted-foreground">Real-time insights and detailed reporting</p>
-                  </div>
-                </div>
+              <div className="relative h-[400px] rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d"
+                  alt="Online Payments"
+                  fill
+                  className="object-cover"
+                  unoptimized
+                />
               </div>
-            </CardContent>
-          </Card>
-        </div>
+            </div>
+          </div>
+        </section>
 
-        <Card className="text-center">
-          <CardHeader>
-            <CardTitle>Ready to Start Accepting Online Payments?</CardTitle>
-            <CardDescription>Join thousands of businesses that trust our payment platform</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg">Get Started Now</Button>
-              <Button variant="outline" size="lg">
-                Talk to Sales
+        {/* Features Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="space-y-20">
+              {features.map((feature, index) => (
+                <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className={index % 2 === 1 ? "md:order-2" : ""}>
+                    <feature.icon className="h-12 w-12 text-[#4CAF50] mb-6" />
+                    <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
+                    <p className="text-gray-600 mb-6">{feature.description}</p>
+                    <ul className="space-y-3">
+                      {feature.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="flex items-center gap-2">
+                          <CheckCircle className="h-5 w-5 text-[#4CAF50]" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div
+                    className={`relative h-[400px] rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}
+                  >
+                    <Image
+                      src={`https://images.unsplash.com/photo-${1550751827 + index}?auto=format&fit=crop&q=80`}
+                      alt={feature.title}
+                      fill
+                      className="object-cover"
+                      unoptimized
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Integration Section */}
+        <section className="bg-gray-50 py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Simple Integration</h2>
+              <p className="text-gray-600">Get up and running quickly with our developer-friendly APIs and SDKs.</p>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {codeExamples.map((integration, index) => (
+                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2">{integration.title}</h3>
+                  <p className="text-gray-600 mb-4">{integration.description}</p>
+                  <pre className="bg-gray-900 text-gray-100 p-4 rounded-lg text-sm overflow-x-auto">
+                    <code>{integration.code}</code>
+                  </pre>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Pricing Section */}
+        <section className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Simple, Transparent Pricing</h2>
+              <p className="text-gray-600">No hidden fees. Pay only for what you use with our competitive pricing.</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {pricingPlans.map((plan, index) => (
+                <div key={index} className="border rounded-lg p-8">
+                  <h3 className="text-2xl font-bold mb-2">{plan.title}</h3>
+                  <div className="text-4xl font-bold text-[#4CAF50] mb-2">{plan.price}</div>
+                  <p className="text-gray-600 mb-6">{plan.description}</p>
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-2">
+                        <CheckCircle className="h-5 w-5 text-[#4CAF50]" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button className="w-full bg-[#4CAF50] hover:bg-[#45a049]">Get Started</Button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="bg-[#0A2F2F] text-white py-20">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold mb-6">Ready to start accepting payments?</h2>
+            <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Join thousands of businesses using Everpay to power their online payments.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
+                Create Account
+              </Button>
+              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
+                Contact Sales
               </Button>
             </div>
-          </CardContent>
-        </Card>
-      </div>
+          </div>
+        </section>
+      </main>
     </div>
   )
 }
