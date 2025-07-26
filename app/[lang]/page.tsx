@@ -1,13 +1,10 @@
-import { getDictionary } from "@/lib/i18n"
 import { HomePageContent } from "@/components/home-page-content"
-import type { Locale } from "@/lib/i18n/config"
+import type { Locale } from "@/lib/i18n/types"
 
-interface LangHomePageProps {
+export default function HomePage({
+  params,
+}: {
   params: { lang: Locale }
-}
-
-export default async function LangHomePage({ params: { lang } }: LangHomePageProps) {
-  const dict = await getDictionary(lang)
-
-  return <HomePageContent dict={dict} lang={lang} />
+}) {
+  return <HomePageContent />
 }

@@ -1,47 +1,115 @@
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Search, Book, MessageCircle, Phone, Mail, FileText } from "lucide-react"
 
-interface HelpPageProps {
-  params: { lang: Locale }
-}
+export default function HelpPage() {
+  const categories = [
+    {
+      icon: Book,
+      title: "Getting Started",
+      description: "Learn the basics of using EverPay",
+      articles: ["Account Setup", "First Payment", "Integration Guide", "Testing"],
+    },
+    {
+      icon: FileText,
+      title: "API Documentation",
+      description: "Complete API reference and examples",
+      articles: ["Authentication", "Payments API", "Webhooks", "Error Codes"],
+    },
+    {
+      icon: MessageCircle,
+      title: "Common Issues",
+      description: "Solutions to frequently encountered problems",
+      articles: ["Payment Failures", "Webhook Issues", "Integration Problems", "Account Questions"],
+    },
+  ]
 
-export default async function HelpPage({ params: { lang } }: HelpPageProps) {
-  const dict = await getDictionary(lang)
+  const contactOptions = [
+    {
+      icon: MessageCircle,
+      title: "Live Chat",
+      description: "Chat with our support team",
+      action: "Start Chat",
+      available: "Available 24/7",
+    },
+    {
+      icon: Mail,
+      title: "Email Support",
+      description: "Send us a detailed message",
+      action: "Send Email",
+      available: "Response within 24h",
+    },
+    {
+      icon: Phone,
+      title: "Phone Support",
+      description: "Speak directly with our team",
+      action: "Call Now",
+      available: "Mon-Fri 9AM-6PM EST",
+    },
+  ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.header.help}</h1>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.HelpPage.description}
-            </p>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Help Center</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+            Find answers to your questions and get the help you need
+          </p>
+
+          <div className="max-w-md mx-auto relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <Input placeholder="Search for help..." className="pl-10" />
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.HelpPage.faqTitle}</h3>
-            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-              <li>
-                <strong>{dict.HelpPage.faq1Question}</strong> {dict.HelpPage.faq1Answer}
-              </li>
-              <li>
-                <strong>{dict.HelpPage.faq2Question}</strong> {dict.HelpPage.faq2Answer}
-              </li>
-              <li>
-                <strong>{dict.HelpPage.faq3Question}</strong> {dict.HelpPage.faq3Answer}
-              </li>
-            </ul>
-          </div>
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.HelpPage.contactSupport}</h3>
-            <p className="text-gray-500 dark:text-gray-400">
-              {"If you need further assistance, please contact our support team."}
-            </p>
-          </div>
+
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {categories.map((category, index) => (
+            <Card key={index}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <category.icon className="h-6 w-6" />
+                  {category.title}
+                </CardTitle>
+                <CardDescription>{category.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2">
+                  {category.articles.map((article, articleIndex) => (
+                    <li key={articleIndex}>
+                      <a href="#" className="text-sm text-muted-foreground hover:text-foreground">
+                        {article}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center mb-12">
+          <h2 className="text-2xl font-bold mb-4">Still Need Help?</h2>
+          <p className="text-muted-foreground mb-8">Our support team is here to help you with any questions</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {contactOptions.map((option, index) => (
+            <Card key={index} className="text-center">
+              <CardHeader>
+                <option.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <CardTitle>{option.title}</CardTitle>
+                <CardDescription>{option.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Button className="w-full mb-2">{option.action}</Button>
+                <p className="text-xs text-muted-foreground">{option.available}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   )
 }

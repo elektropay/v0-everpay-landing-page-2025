@@ -7,21 +7,21 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Everpay - The Future of Payments",
+  title: "EverPay - The Future of Payments",
   description:
-    "Seamlessly integrate our powerful payment solutions into your business. Secure, fast, and reliable transactions for a global economy.",
+    "Accept payments globally with our secure, fast, and reliable payment processing platform. Built for businesses of all sizes.",
     generator: 'v0.dev'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
       </body>

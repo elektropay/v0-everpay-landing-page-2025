@@ -1,29 +1,71 @@
-import { getDictionary } from "@/lib/i18n"
 import { ContactForm } from "@/components/contact-form"
-import type { Locale } from "@/lib/i18n/config"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Mail, MapPin, Phone, Clock } from "lucide-react"
 
-interface ContactPageProps {
-  params: { lang: Locale }
-}
-
-export default async function ContactPage({ params: { lang } }: ContactPageProps) {
-  const dict = await getDictionary(lang)
-
+export default function ContactPage() {
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.contact.title}</h1>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.contact.description}
-            </p>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Contact Us</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Get in touch with our team to learn more about our payment solutions
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12">
+          <div>
+            <ContactForm />
+          </div>
+
+          <div className="space-y-8">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="h-5 w-5" />
+                  Get in Touch
+                </CardTitle>
+                <CardDescription>
+                  We're here to help you with any questions about our payment solutions.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <MapPin className="h-5 w-5 mt-0.5 text-muted-foreground" />
+                  <div>
+                    <p className="font-medium">Address</p>
+                    <p className="text-muted-foreground">123 Payment Street, Finance District, NY 10001</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Phone className="h-5 w-5 mt-0.5 text-muted-foreground" />
+                  <div>
+                    <p className="font-medium">Phone</p>
+                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Mail className="h-5 w-5 mt-0.5 text-muted-foreground" />
+                  <div>
+                    <p className="font-medium">Email</p>
+                    <p className="text-muted-foreground">contact@everpay.com</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <Clock className="h-5 w-5 mt-0.5 text-muted-foreground" />
+                  <div>
+                    <p className="font-medium">Business Hours</p>
+                    <p className="text-muted-foreground">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
-        <div className="mx-auto w-full max-w-md py-12">
-          <ContactForm dict={dict} />
-        </div>
       </div>
-    </section>
+    </div>
   )
 }

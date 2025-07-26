@@ -1,40 +1,127 @@
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Zap, Globe, Shield, Code, CreditCard, Smartphone } from "lucide-react"
 
-interface GatewayPageProps {
-  params: { lang: Locale }
-}
+export default function GatewayPage() {
+  const features = [
+    {
+      icon: Zap,
+      title: "Lightning Fast",
+      description: "Process payments in under 100ms with our optimized infrastructure",
+    },
+    {
+      icon: Globe,
+      title: "Global Coverage",
+      description: "Accept payments from 150+ countries with local payment methods",
+    },
+    {
+      icon: Shield,
+      title: "Bank-Level Security",
+      description: "PCI DSS Level 1 compliant with advanced fraud protection",
+    },
+    {
+      icon: Code,
+      title: "Developer Friendly",
+      description: "Simple APIs, comprehensive SDKs, and detailed documentation",
+    },
+  ]
 
-export default async function GatewayPage({ params: { lang } }: GatewayPageProps) {
-  const dict = await getDictionary(lang)
+  const paymentMethods = [
+    { name: "Credit Cards", icon: CreditCard },
+    { name: "Digital Wallets", icon: Smartphone },
+    { name: "Bank Transfers", icon: Globe },
+    { name: "Local Methods", icon: Globe },
+  ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.header.gateway}</h1>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.GatewayPage.description}
-            </p>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Payment Gateway</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            A powerful, secure, and flexible payment gateway that scales with your business
+          </p>
+          <div className="mt-8">
+            <Button size="lg" className="mr-4">
+              Get Started
+            </Button>
+            <Button variant="outline" size="lg">
+              View Documentation
+            </Button>
           </div>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.GatewayPage.intro}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.GatewayPage.intro}</p>
-          </div>
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.GatewayPage.featuresTitle}</h3>
-            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-              <li>{dict.GatewayPage.feature1}</li>
-              <li>{dict.GatewayPage.feature2}</li>
-              <li>{dict.GatewayPage.feature3}</li>
-              <li>{dict.GatewayPage.feature4}</li>
-            </ul>
-          </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {features.map((feature, index) => (
+            <Card key={index} className="text-center">
+              <CardHeader>
+                <feature.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
+                <CardTitle className="text-lg">{feature.title}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>{feature.description}</CardDescription>
+              </CardContent>
+            </Card>
+          ))}
         </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+          <Card>
+            <CardHeader>
+              <CardTitle>Payment Methods</CardTitle>
+              <CardDescription>Accept all major payment methods your customers prefer</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-2 gap-4">
+                {paymentMethods.map((method, index) => (
+                  <div key={index} className="flex items-center gap-2 p-3 border rounded-lg">
+                    <method.icon className="h-5 w-5 text-primary" />
+                    <span className="text-sm font-medium">{method.name}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Integration Options</CardTitle>
+              <CardDescription>Choose the integration method that works best for your business</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                <div className="p-3 border rounded-lg">
+                  <h4 className="font-medium mb-1">Hosted Checkout</h4>
+                  <p className="text-sm text-muted-foreground">Quick setup with our pre-built checkout page</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <h4 className="font-medium mb-1">Custom Integration</h4>
+                  <p className="text-sm text-muted-foreground">Full control with our flexible APIs</p>
+                </div>
+                <div className="p-3 border rounded-lg">
+                  <h4 className="font-medium mb-1">Mobile SDKs</h4>
+                  <p className="text-sm text-muted-foreground">Native mobile payment experiences</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        <Card>
+          <CardHeader>
+            <CardTitle>Ready to Get Started?</CardTitle>
+            <CardDescription>Join thousands of businesses that trust our payment gateway</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg">Start Integration</Button>
+              <Button variant="outline" size="lg">
+                Contact Sales
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-    </section>
+    </div>
   )
 }

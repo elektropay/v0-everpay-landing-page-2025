@@ -1,41 +1,89 @@
-import { getDictionary } from "@/lib/i18n"
-import type { Locale } from "@/lib/i18n/config"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Code, Zap, Shield, Globe, Headphones } from "lucide-react"
 
-interface DocsPageProps {
-  params: { lang: Locale }
-}
-
-export default async function DocsPage({ params: { lang } }: DocsPageProps) {
-  const dict = await getDictionary(lang)
+export default function DocsPage() {
+  const sections = [
+    {
+      icon: Zap,
+      title: "Quick Start",
+      description: "Get up and running with EverPay in minutes",
+      items: ["Installation", "Authentication", "First Payment", "Testing"],
+    },
+    {
+      icon: Code,
+      title: "API Reference",
+      description: "Complete API documentation and examples",
+      items: ["Payments API", "Webhooks", "Customers", "Subscriptions"],
+    },
+    {
+      icon: Shield,
+      title: "Security",
+      description: "Learn about our security measures and best practices",
+      items: ["PCI Compliance", "Encryption", "Fraud Prevention", "Best Practices"],
+    },
+    {
+      icon: Globe,
+      title: "Integrations",
+      description: "Connect EverPay with your favorite tools",
+      items: ["E-commerce Platforms", "Accounting Software", "CRM Systems", "Custom Integrations"],
+    },
+  ]
 
   return (
-    <section className="w-full py-12 md:py-24 lg:py-32">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">{dict.header.docs}</h1>
-            <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              {dict.ApiPage.description}
-            </p>
-          </div>
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl font-bold mb-4">Documentation</h1>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            Everything you need to integrate and use EverPay's payment platform
+          </p>
         </div>
-        <div className="mx-auto grid max-w-5xl items-start gap-8 py-12 lg:grid-cols-2 lg:gap-12">
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.ApiPage.intro}</h3>
-            <p className="text-gray-500 dark:text-gray-400">{dict.DocsPage.intro}</p>
-          </div>
-          <div className="grid gap-1">
-            <h3 className="text-xl font-bold">{dict.DocsPage.sectionsTitle}</h3>
-            <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-              <li>{dict.DocsPage.section1}</li>
-              <li>{dict.DocsPage.section2}</li>
-              <li>{dict.DocsPage.section3}</li>
-              <li>{dict.DocsPage.section4}</li>
-              <li>{dict.DocsPage.section5}</li>
-            </ul>
-          </div>
+
+        <div className="grid md:grid-cols-2 gap-8 mb-16">
+          {sections.map((section, index) => (
+            <Card key={index} className="h-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <section.icon className="h-6 w-6" />
+                  {section.title}
+                </CardTitle>
+                <CardDescription>{section.description}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-2 mb-4">
+                  {section.items.map((item, itemIndex) => (
+                    <li key={itemIndex} className="text-sm text-muted-foreground hover:text-foreground cursor-pointer">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <Button variant="outline" size="sm">
+                  View Documentation
+                </Button>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Card className="inline-block">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Headphones className="h-6 w-6" />
+                Need Help?
+              </CardTitle>
+              <CardDescription>Our support team is here to help you get started</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex gap-4 justify-center">
+                <Button>Contact Support</Button>
+                <Button variant="outline">Join Community</Button>
+              </div>
+            </CardContent>
+          </Card>
         </div>
       </div>
-    </section>
+    </div>
   )
 }
