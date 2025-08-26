@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "EverPay - Modern Payment Solutions",
   description: "Secure, fast, and reliable payment processing for businesses of all sizes",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
