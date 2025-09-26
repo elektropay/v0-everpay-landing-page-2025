@@ -100,7 +100,7 @@ export default function FraudPreventionPage() {
                     className={`relative h-[400px] rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}
                   >
                     <Image
-                      src={`https://images.unsplash.com/photo-${1550751827-4bd374c3f1f5 + index}`}
+                      src={`https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?auto=format&fit=crop&q=80`}
                       alt={feature.title}
                       fill
                       className="object-cover"
@@ -178,7 +178,7 @@ export default function FraudPreventionPage() {
                 </div>
                 <div className="relative h-[300px] rounded-lg overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f1f5"
+                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?auto=format&fit=crop&q=80"
                     alt="Fraud Prevention"
                     fill
                     className="object-cover"
