@@ -13,8 +13,9 @@ export function SiteHeader() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
-              Everpay
+          <img src="/favicon.png" alt="Everpay Logo" class="h-8 w-8">
+            <span className="text-3xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
+              everpay
             </span>
           </Link>
 
