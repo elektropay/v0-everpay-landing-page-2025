@@ -29,10 +29,10 @@ export function SiteFooter() {
   }
 
   const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com", label: "GitHub" },
+    { icon: Twitter, href: "https://twitter.com/everpay", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com/everpay", label: "Facebook" },
+    { icon: Linkedin, href: "https://linkedin.com/in/everpay", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/everpay", label: "GitHub" },
   ]
 
   return (
@@ -41,7 +41,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 animate-fade-in-up">
           <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
             <Link href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
-              <span className="text-2xl font-bold text-primary">Everpay</span>
+              <span className="text-2xl font-bold text-primary">everpay</span>
             </Link>
             <p className="mt-4 text-sm text-muted-foreground">
               Secure, scalable payment solutions for modern businesses.
@@ -85,7 +85,7 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in">
+        <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in">
           <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
