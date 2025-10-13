@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
-export default function SiteHeader() {
+export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -95,10 +95,10 @@ export default function SiteHeader() {
               Pricing
             </Link>
             <div className="pt-4 space-y-2">
-              <Button href="//app.everpayinc.com/login" variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
+              <Button variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
                 Sign In
               </Button>
-              <Button href="//app.everpayinc.com/sign-up" className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
+              <Button className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
                 Get Started
               </Button>
             </div>

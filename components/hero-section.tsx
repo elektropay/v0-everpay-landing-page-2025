@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Check } from "lucide-react"
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: "#193638" }}>
       <div className="container mx-auto px-4">

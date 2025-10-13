@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Shield, Lock, CheckCircle } from "lucide-react"
 
-export default function CheckoutProtectionSection() {
+export function CheckoutProtectionSection() {
   const features = [
     {
       icon: Shield,

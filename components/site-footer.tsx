@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
-export default function SiteFooter() {
+export function SiteFooter() {
   return (
     <footer className="py-12" style={{ backgroundColor: "#081b1e" }}>
       <div className="container mx-auto px-4">
