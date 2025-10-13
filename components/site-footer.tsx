@@ -152,6 +152,12 @@ export default function SiteFooter() {
             <Link href="/terms" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
               Terms of Service
             </Link>
+            <Link href="/security" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Security Policy
+            </Link>
+            <Link href="//status.everpayinc.com" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Status
+            </Link>
           </div>
         </div>
       </div>
