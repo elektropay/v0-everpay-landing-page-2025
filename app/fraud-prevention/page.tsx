@@ -35,26 +35,35 @@ const stats = [
   { value: "24/7", label: "Real-time monitoring" },
 ]
 
+const featureImages = [
+  "https://images.unsplash.com/photo-1550751827-4bd374c3f1f5?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+  "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+]
+
 export default function FraudPreventionPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
+        <section className="bg-primary text-primary-foreground py-20 animate-fade-in">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl animate-fade-in-up">
               <h1 className="text-4xl font-bold mb-6">Fraud Prevention & Risk Management</h1>
-              <p className="text-xl text-gray-300 mb-8">
+              <p className="text-xl opacity-90 mb-8 animate-fade-in-up animation-delay-200">
                 Protect your business with advanced fraud detection and prevention systems powered by machine learning.
               </p>
-              <div className="flex gap-4">
-                <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
+              <div className="flex gap-4 animate-fade-in-up animation-delay-400">
+                <Button
+                  size="lg"
+                  className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform"
+                >
                   Start Protection
                 </Button>
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white bg-transparent text-white hover:bg-white/10"
+                  className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-transform"
                 >
                   View Demo
                 </Button>
@@ -64,13 +73,13 @@ export default function FraudPreventionPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 border-b">
+        <section className="py-12 border-b border-border">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center">
-                  <div className="text-4xl font-bold text-[#4CAF50] mb-2">{stat.value}</div>
-                  <div className="text-gray-600">{stat.label}</div>
+                <div key={index} className="text-center animate-zoom-in" style={{ animationDelay: `${index * 100}ms` }}>
+                  <div className="text-4xl font-bold text-accent mb-2">{stat.value}</div>
+                  <div className="text-muted-foreground">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -82,25 +91,33 @@ export default function FraudPreventionPage() {
           <div className="container mx-auto px-4">
             <div className="space-y-20">
               {fraudFeatures.map((feature, index) => (
-                <div key={index} className="grid md:grid-cols-2 gap-12 items-center">
+                <div
+                  key={index}
+                  className="grid md:grid-cols-2 gap-12 items-center animate-fade-in-up"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
                   <div className={index % 2 === 1 ? "md:order-2" : ""}>
-                    <feature.icon className="h-12 w-12 text-[#4CAF50] mb-6" />
+                    <feature.icon className="size-12 text-accent mb-6 animate-bounce-in" />
                     <h2 className="text-3xl font-bold mb-4">{feature.title}</h2>
-                    <p className="text-gray-600 mb-6">{feature.description}</p>
+                    <p className="text-muted-foreground mb-6">{feature.description}</p>
                     <ul className="space-y-3">
                       {feature.features.map((item, itemIndex) => (
-                        <li key={itemIndex} className="flex items-center gap-2">
-                          <CheckCircle className="h-5 w-5 text-[#4CAF50]" />
+                        <li
+                          key={itemIndex}
+                          className="flex items-center gap-2 animate-fade-in-left"
+                          style={{ animationDelay: `${index * 200 + itemIndex * 100}ms` }}
+                        >
+                          <CheckCircle className="size-5 text-accent" />
                           <span>{item}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   <div
-                    className={`relative h-[400px] rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}
+                    className={`relative h-[400px] rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow animate-fade-in ${index % 2 === 1 ? "md:order-1" : ""}`}
                   >
                     <Image
-                      src={`https://images.unsplash.com/photo-${1550751827-4bd374c3f1f5 + index}`}
+                      src={featureImages[index] || "/placeholder.svg?height=400&width=600"}
                       alt={feature.title}
                       fill
                       className="object-cover"
@@ -113,11 +130,11 @@ export default function FraudPreventionPage() {
         </section>
 
         {/* Risk Scoring Section */}
-        <section className="bg-gray-50 py-20">
+        <section className="bg-muted py-20">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-12 animate-fade-in-up">
               <h2 className="text-3xl font-bold mb-4">Intelligent Risk Scoring</h2>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground animate-fade-in-up animation-delay-200">
                 Our advanced risk scoring engine analyzes hundreds of data points in real-time to accurately detect and
                 prevent fraud.
               </p>
@@ -137,13 +154,21 @@ export default function FraudPreventionPage() {
                   items: ["IP reputation", "Proxy detection", "Device networks", "Account linkages"],
                 },
               ].map((category, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
+                <div
+                  key={index}
+                  className="bg-card p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow animate-fade-in-up"
+                  style={{ animationDelay: `${index * 200}ms` }}
+                >
                   <h3 className="text-xl font-semibold mb-4">{category.title}</h3>
                   <ul className="space-y-3">
                     {category.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-[#4CAF50]" />
-                        <span className="text-gray-600">{item}</span>
+                      <li
+                        key={itemIndex}
+                        className="flex items-center gap-2 animate-fade-in-left"
+                        style={{ animationDelay: `${index * 200 + itemIndex * 100}ms` }}
+                      >
+                        <CheckCircle className="size-4 text-accent" />
+                        <span className="text-muted-foreground">{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -156,29 +181,32 @@ export default function FraudPreventionPage() {
         {/* CTA Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <div className="bg-[#0A2F2F] rounded-2xl text-white p-8 md:p-12">
+            <div className="bg-primary rounded-2xl text-primary-foreground p-8 md:p-12 animate-fade-in-up">
               <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
-                  <h2 className="text-3xl font-bold mb-4">Ready to protect your business?</h2>
-                  <p className="text-gray-300 mb-6">
+                  <h2 className="text-3xl font-bold mb-4 animate-fade-in-up">Ready to protect your business?</h2>
+                  <p className="opacity-90 mb-6 animate-fade-in-up animation-delay-200">
                     Start protecting your business with our advanced fraud prevention system today.
                   </p>
-                  <div className="flex gap-4">
-                    <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
+                  <div className="flex gap-4 animate-fade-in-up animation-delay-400">
+                    <Button
+                      size="lg"
+                      className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform"
+                    >
                       Get Started
                     </Button>
                     <Button
                       variant="outline"
                       size="lg"
-                      className="border-white bg-transparent text-white hover:bg-white/10"
+                      className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-transform"
                     >
                       Contact Sales
                     </Button>
                   </div>
                 </div>
-                <div className="relative h-[300px] rounded-lg overflow-hidden">
+                <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg animate-fade-in-right animation-delay-600">
                   <Image
-                    src="https://images.unsplash.com/photo-1550751827-4bd374c3f1f5"
+                    src="/placeholder.svg?height=300&width=500"
                     alt="Fraud Prevention"
                     fill
                     className="object-cover"
