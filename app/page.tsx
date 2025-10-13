@@ -8,9 +8,9 @@ import BusinessTypesSection from "@/components/business-types-section"
 import CTASection from "@/components/cta-section"
 import SiteFooter from "@/components/site-footer"
 
-export default function HomePage() {
+export default function Page() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: "#fbf9f9" }}>
       <SiteHeader />
       <main>
         <HeroSection />

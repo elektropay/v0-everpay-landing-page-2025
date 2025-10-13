@@ -1,109 +1,155 @@
 import Link from "next/link"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#081B1E] text-white py-12">
+    <footer className="py-12" style={{ backgroundColor: "#081b1e" }}>
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-8">
-          {/* Column 1 */}
-          <div className="col-span-2 md:col-span-1 animate-fade-in-up">
-            <h3 className="text-2xl font-bold mb-4 font-[family-name:var(--font-display)]">Digipay</h3>
-            <p className="text-white/60 text-sm mb-4">
-              The trusted way to get paid globally. Design and customize processes for your business.
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+          <div className="lg:col-span-2 animate-fade-in-up">
+            <Link href="/" className="inline-block mb-4">
+              <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
+                Everpay
+              </span>
+            </Link>
+            <p className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The complete payment platform for businesses of all sizes. Accept payments, send payouts, and manage your
+              finances all in one place.
             </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+            </div>
           </div>
 
-          {/* Products */}
-          <div className="animate-fade-in-up animation-delay-200">
-            <h4 className="font-semibold mb-4">Products</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="animate-fade-in-up animate-delay-100">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Products
+            </h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/payments" className="text-white/60 hover:text-white transition-colors">
+                <Link
+                  href="/payments"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   Payments
                 </Link>
               </li>
               <li>
-                <Link href="/commerce" className="text-white/60 hover:text-white transition-colors">
-                  Commerce
+                <Link
+                  href="/checkout"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Checkout
                 </Link>
               </li>
               <li>
-                <Link href="/payouts" className="text-white/60 hover:text-white transition-colors">
-                  Payouts
+                <Link
+                  href="/invoicing"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Invoicing
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Solutions */}
-          <div className="animate-fade-in-up animation-delay-400">
-            <h4 className="font-semibold mb-4">Solutions</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="animate-fade-in-up animate-delay-200">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Solutions
+            </h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/e-commerce" className="text-white/60 hover:text-white transition-colors">
+                <Link
+                  href="/ecommerce"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   E-commerce
                 </Link>
               </li>
               <li>
-                <Link href="/marketplaces" className="text-white/60 hover:text-white transition-colors">
-                  Marketplaces
-                </Link>
-              </li>
-              <li>
-                <Link href="/saas" className="text-white/60 hover:text-white transition-colors">
+                <Link
+                  href="/saas"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   SaaS
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/marketplace"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Marketplace
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div className="animate-fade-in-up animation-delay-600">
-            <h4 className="font-semibold mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
+          <div className="animate-fade-in-up animate-delay-300">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Company
+            </h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-white/60 hover:text-white transition-colors">
-                  About
+                <Link
+                  href="/about"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-white/60 hover:text-white transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-white/60 hover:text-white transition-colors">
+                <Link
+                  href="/blog"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   Blog
                 </Link>
               </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div className="animate-fade-in-up animation-delay-800">
-            <h4 className="font-semibold mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/privacy" className="text-white/60 hover:text-white transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-white/60 hover:text-white transition-colors">
-                  Terms of Service
+                <Link
+                  href="/careers"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Careers
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in-up animation-delay-1000">
-          <p className="text-sm text-white/60">© 2025 Digipay. All rights reserved.</p>
-          <div className="flex gap-6 text-sm text-white/60">
-            <Link href="/privacy" className="hover:text-white transition-colors">
+        <div
+          className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderColor: "rgba(255,255,255,0.1)" }}
+        >
+          <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+            © 2025 Everpay. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-white transition-colors">
+            <Link href="/terms" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
               Terms of Service
             </Link>
           </div>

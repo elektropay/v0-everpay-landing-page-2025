@@ -1,103 +1,136 @@
-import { Shield, Lock, FileCheck } from "lucide-react"
 import { Card } from "@/components/ui/card"
+import { Shield, Lock, CheckCircle } from "lucide-react"
 
 export default function CheckoutProtectionSection() {
-  const protectionFeatures = [
+  const features = [
     {
       icon: Shield,
-      title: "Safeguarded Insights",
-      description: "Get detailed analytics and insights to optimize your payment processes and increase conversions.",
+      title: "Sophisticated Fraud Detection",
+      description:
+        "AI-powered fraud detection monitors every transaction in real-time to identify and prevent suspicious activity.",
     },
     {
       icon: Lock,
-      title: "Advanced Defenses",
-      description: "Protect your business with advanced security measures and fraud prevention tools.",
+      title: "Advanced Checkout Security",
+      description:
+        "Bank-level encryption and PCI DSS compliance ensure your customers' payment data is always protected.",
     },
     {
-      icon: FileCheck,
-      title: "Integrated Authentications",
-      description: "Streamline authentication processes with integrated solutions for secure payments.",
+      icon: CheckCircle,
+      title: "Increased Authentication",
+      description:
+        "Multi-factor authentication and 3D Secure support reduce chargebacks and increase payment success rates.",
     },
   ]
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20" style={{ backgroundColor: "#ffffff" }}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
-          <div className="space-y-6 animate-fade-in-left">
-            <span className="text-sm font-semibold uppercase tracking-wider text-primary">ABSOLUTE PROTECTION</span>
+          <div className="space-y-8">
+            <div>
+              <div
+                className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 animate-fade-in"
+                style={{ backgroundColor: "#e3ffcc", color: "#193638" }}
+              >
+                ADVANCED PROTECTION
+              </div>
+              <h2
+                className="text-3xl lg:text-4xl font-bold mb-4 animate-fade-in-up animate-delay-100"
+                style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+              >
+                Trusted Checkout Protection
+              </h2>
+              <p className="text-lg animate-fade-in-up animate-delay-200" style={{ color: "#6b7280" }}>
+                Keep your business and customers safe with industry-leading security features and fraud prevention
+                tools.
+              </p>
+            </div>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground font-[family-name:var(--font-display)]">
-              Trusted Checkout Protection
-            </h2>
-
-            <p className="text-muted-foreground">
-              Protect your business from payment fraud with our advanced checkout protection system. We provide
-              comprehensive security measures to ensure safe transactions.
-            </p>
-
-            <div className="space-y-4 pt-4">
-              {protectionFeatures.map((feature, index) => (
+            <div className="space-y-6">
+              {features.map((feature, index) => (
                 <div
                   key={index}
-                  className="flex gap-4 animate-fade-in-left"
-                  style={{ animationDelay: `${(index + 2) * 200}ms` }}
+                  className={`flex items-start gap-4 animate-fade-in-up animate-delay-${300 + index * 100}`}
                 >
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="h-5 w-5 text-primary" />
+                  <div
+                    className="flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: "#193638" }}
+                  >
+                    <feature.icon className="w-6 h-6" style={{ color: "#ffffff" }} />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3
+                      className="text-lg font-bold mb-2"
+                      style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm" style={{ color: "#6b7280" }}>
+                      {feature.description}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Right Content - Illustration */}
-          <div className="relative animate-fade-in-right animation-delay-400">
-            <Card className="bg-card p-8 rounded-xl shadow-lg border-2 border-primary/20">
+          <div className="animate-fade-in-right animate-delay-200">
+            <Card className="p-8 shadow-xl" style={{ backgroundColor: "#fbf9f9" }}>
               <div className="space-y-6">
-                <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
-                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                    <Shield className="h-6 w-6 text-primary" />
+                <div className="flex items-center gap-4 p-4 rounded-lg" style={{ backgroundColor: "#ffffff" }}>
+                  <div
+                    className="w-12 h-12 rounded-full flex items-center justify-center"
+                    style={{ backgroundColor: "#1aa478" }}
+                  >
+                    <Shield className="w-6 h-6" style={{ color: "#ffffff" }} />
                   </div>
                   <div className="flex-1">
-                    <div className="h-2 bg-primary/20 rounded-full mb-2">
-                      <div className="h-2 bg-primary rounded-full w-4/5"></div>
+                    <div className="text-sm font-bold" style={{ color: "#193638" }}>
+                      Security Score
                     </div>
-                    <div className="h-2 bg-primary/20 rounded-full">
-                      <div className="h-2 bg-primary rounded-full w-3/5"></div>
+                    <div className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#1aa478" }}>
+                      99.9%
                     </div>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-muted rounded-lg">
-                    <Lock className="h-6 w-6 text-primary mb-2" />
-                    <div className="h-2 bg-primary/20 rounded-full mb-2">
-                      <div className="h-2 bg-primary rounded-full w-full"></div>
-                    </div>
-                    <div className="h-2 bg-primary/20 rounded-full w-2/3"></div>
+                <div className="space-y-3">
+                  <div
+                    className="flex items-center justify-between p-3 rounded-lg"
+                    style={{ backgroundColor: "#ffffff" }}
+                  >
+                    <span className="text-sm" style={{ color: "#193638" }}>
+                      SSL Encryption
+                    </span>
+                    <CheckCircle className="w-5 h-5" style={{ color: "#1aa478" }} />
                   </div>
-                  <div className="p-4 bg-muted rounded-lg">
-                    <FileCheck className="h-6 w-6 text-primary mb-2" />
-                    <div className="h-2 bg-primary/20 rounded-full mb-2">
-                      <div className="h-2 bg-primary rounded-full w-4/5"></div>
-                    </div>
-                    <div className="h-2 bg-primary/20 rounded-full w-3/5"></div>
+                  <div
+                    className="flex items-center justify-between p-3 rounded-lg"
+                    style={{ backgroundColor: "#ffffff" }}
+                  >
+                    <span className="text-sm" style={{ color: "#193638" }}>
+                      PCI DSS Level 1
+                    </span>
+                    <CheckCircle className="w-5 h-5" style={{ color: "#1aa478" }} />
                   </div>
-                </div>
-
-                <div className="p-4 bg-primary/5 rounded-lg border-2 border-primary/20">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-sm font-semibold text-foreground">Security Level</span>
-                    <span className="text-sm font-bold text-primary">99.9%</span>
+                  <div
+                    className="flex items-center justify-between p-3 rounded-lg"
+                    style={{ backgroundColor: "#ffffff" }}
+                  >
+                    <span className="text-sm" style={{ color: "#193638" }}>
+                      3D Secure 2.0
+                    </span>
+                    <CheckCircle className="w-5 h-5" style={{ color: "#1aa478" }} />
                   </div>
-                  <div className="h-3 bg-muted rounded-full">
-                    <div className="h-3 bg-gradient-to-r from-primary to-secondary rounded-full w-[99%]"></div>
+                  <div
+                    className="flex items-center justify-between p-3 rounded-lg"
+                    style={{ backgroundColor: "#ffffff" }}
+                  >
+                    <span className="text-sm" style={{ color: "#193638" }}>
+                      Real-time Monitoring
+                    </span>
+                    <CheckCircle className="w-5 h-5" style={{ color: "#1aa478" }} />
                   </div>
                 </div>
               </div>
