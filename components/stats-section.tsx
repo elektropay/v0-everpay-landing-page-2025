@@ -1,4 +1,4 @@
-export function StatsSection() {
+export default function StatsSection() {
   const stats = [
     { value: "94%", label: "Customer satisfaction", delay: "100" },
     { value: "$105", label: "Avg transaction value", delay: "200" },

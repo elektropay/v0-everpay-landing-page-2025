@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 
-export function SiteHeader() {
+export default function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -13,9 +13,8 @@ export function SiteHeader() {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-          <img src="/favicon.png" alt="Everpay Logo" class="h-8 w-8">
-            <span className="text-3xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
-              everpay
+            <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
+              Everpay
             </span>
           </Link>
 
@@ -96,10 +95,10 @@ export function SiteHeader() {
               Pricing
             </Link>
             <div className="pt-4 space-y-2">
-              <Button variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
+              <Button href="//app.everpayinc.com/login" variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
                 Sign In
               </Button>
-              <Button className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
+              <Button href="//app.everpayinc.com/sign-up" className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
                 Get Started
               </Button>
             </div>
