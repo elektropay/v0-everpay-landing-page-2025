@@ -37,18 +37,24 @@ export function FeaturesSection() {
 
   return (
     <section className="container py-24 md:py-32">
-      <div className="mx-auto max-w-2xl text-center mb-16">
+      <div className="mx-auto max-w-2xl text-center mb-16 animate-fade-in-up">
         <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Everything you need to accept payments
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">Powerful features to help you grow your business faster</p>
+        <p className="mt-4 text-lg text-muted-foreground animate-fade-in-up animation-delay-200">
+          Powerful features to help you grow your business faster
+        </p>
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {features.map((feature, index) => (
-          <Card key={index} className="border-border bg-card">
+          <Card
+            key={index}
+            className="border-border bg-card animate-fade-in-up hover:shadow-lg hover:scale-105 transition-all group"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <CardContent className="pt-6">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors group-hover:scale-110 transition-transform">
                 <feature.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="mb-2 text-xl font-semibold text-card-foreground">{feature.title}</h3>

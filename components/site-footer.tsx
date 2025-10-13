@@ -1,93 +1,103 @@
 import Link from "next/link"
+import { Facebook, Twitter, Linkedin, Github } from "lucide-react"
 
 export function SiteFooter() {
+  const footerLinks = {
+    Product: [
+      { name: "Payment Gateway", href: "/payments" },
+      { name: "E-commerce", href: "/commerce" },
+      { name: "Fraud Prevention", href: "/fraud-prevention" },
+      { name: "Online Payments", href: "/online-payments" },
+    ],
+    Company: [
+      { name: "About Us", href: "/about" },
+      { name: "Careers", href: "/careers" },
+      { name: "Blog", href: "/blog" },
+      { name: "Partners", href: "/partners" },
+    ],
+    Resources: [
+      { name: "Documentation", href: "/docs" },
+      { name: "API Reference", href: "/api" },
+      { name: "Security", href: "/security" },
+      { name: "Contact", href: "/contact" },
+    ],
+    Legal: [
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms" },
+      { name: "Cookie Policy", href: "/cookie-policy" },
+    ],
+  }
+
+  const socialLinks = [
+    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com", label: "GitHub" },
+  ]
+
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="bg-muted/30 border-t border-border">
       <div className="container py-12 md:py-16">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4">Everpay</h3>
-            <p className="text-sm text-muted-foreground">Secure payment solutions for businesses of all sizes.</p>
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 animate-fade-in-up">
+          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
+            <Link href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
+              <span className="text-2xl font-bold text-primary">Everpay</span>
+            </Link>
+            <p className="mt-4 text-sm text-muted-foreground">
+              Secure, scalable payment solutions for modern businesses.
+            </p>
+            <div className="mt-6 flex space-x-4">
+              {socialLinks.map((social, index) => (
+                <Link
+                  key={index}
+                  href={social.href}
+                  className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform"
+                  aria-label={social.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon className="h-5 w-5" />
+                </Link>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Products</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/payments" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Payments
-                </Link>
-              </li>
-              <li>
-                <Link href="/commerce" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Commerce
-                </Link>
-              </li>
-              <li>
-                <Link href="/security" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Security
-                </Link>
-              </li>
-              <li>
-                <Link href="/partners" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Partners
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Company</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-sm font-semibold text-foreground mb-4">Legal</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Cookie Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
+            <div
+              key={category}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${(categoryIndex + 1) * 100}ms` }}
+            >
+              <h3 className="text-sm font-semibold text-foreground mb-4">{category}</h3>
+              <ul className="space-y-3">
+                {links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block transition-transform"
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border">
-          <p className="text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} Everpay. All rights reserved.
-          </p>
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in">
+          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
+          <div className="flex gap-6">
+            <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Privacy
+            </Link>
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Terms
+            </Link>
+            <Link href="/cookie-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Cookies
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
