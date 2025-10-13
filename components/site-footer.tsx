@@ -1,13 +1,25 @@
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Github } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function SiteFooter() {
   const footerLinks = {
-    Product: [
+    Products: [
       { name: "Payment Gateway", href: "/payments" },
-      { name: "E-commerce", href: "/commerce" },
-      { name: "Fraud Prevention", href: "/fraud-prevention" },
-      { name: "Online Payments", href: "/online-payments" },
+      { name: "POS System", href: "/pos" },
+      { name: "Checkout", href: "/checkout" },
+      { name: "Invoicing", href: "/invoicing" },
+    ],
+    Solutions: [
+      { name: "Ecommerce", href: "/ecommerce" },
+      { name: "Marketplace", href: "/marketplace" },
+      { name: "Subscription", href: "/subscription" },
+      { name: "Platform", href: "/platform" },
+    ],
+    Developers: [
+      { name: "Documentation", href: "/docs" },
+      { name: "API Reference", href: "/api" },
+      { name: "Libraries", href: "/libraries" },
+      { name: "Plugins", href: "/plugins" },
     ],
     Company: [
       { name: "About Us", href: "/about" },
@@ -15,67 +27,77 @@ export function SiteFooter() {
       { name: "Blog", href: "/blog" },
       { name: "Partners", href: "/partners" },
     ],
-    Resources: [
-      { name: "Documentation", href: "/docs" },
-      { name: "API Reference", href: "/api" },
-      { name: "Security", href: "/security" },
-      { name: "Contact", href: "/contact" },
-    ],
-    Legal: [
-      { name: "Privacy Policy", href: "/privacy-policy" },
-      { name: "Terms of Service", href: "/terms" },
-      { name: "Cookie Policy", href: "/cookie-policy" },
-    ],
   }
 
-  const socialLinks = [
-    { icon: Twitter, href: "https://twitter.com/everpay", label: "Twitter" },
-    { icon: Facebook, href: "https://facebook.com/everpay", label: "Facebook" },
-    { icon: Linkedin, href: "https://linkedin.com/in/everpay", label: "LinkedIn" },
-    { icon: Github, href: "https://github.com/everpay", label: "GitHub" },
-  ]
-
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="container py-12 md:py-16">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-5 animate-fade-in-up">
-          <div className="col-span-2 md:col-span-4 lg:col-span-1 mb-8 lg:mb-0">
-            <Link href="/" className="flex items-center space-x-2 hover:scale-105 transition-transform">
-              <span className="text-2xl font-bold text-primary">everpay</span>
+    <footer className="bg-[#081B1E] text-white">
+      <div className="container px-6 py-12 md:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+          <div className="col-span-2 md:col-span-1">
+            <Link href="/" className="flex items-center space-x-2 mb-4">
+              <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="text-xl font-semibold">Digipay</span>
             </Link>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Secure, scalable payment solutions for modern businesses.
+            <p className="text-sm text-white/60 mb-6">
+              Secure, scalable payment solutions for modern businesses worldwide.
             </p>
-            <div className="mt-6 flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <Link
-                  key={index}
-                  href={social.href}
-                  className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 transition-transform"
-                  aria-label={social.label}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <social.icon className="h-5 w-5" />
-                </Link>
-              ))}
+            <div className="flex gap-4">
+              <Link
+                href="#"
+                className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <Facebook className="h-4 w-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <Twitter className="h-4 w-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <Linkedin className="h-4 w-4" />
+              </Link>
+              <Link
+                href="#"
+                className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors"
+              >
+                <Instagram className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
-          {Object.entries(footerLinks).map(([category, links], categoryIndex) => (
-            <div
-              key={category}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${(categoryIndex + 1) * 100}ms` }}
-            >
-              <h3 className="text-sm font-semibold text-foreground mb-4">{category}</h3>
+          {Object.entries(footerLinks).map(([category, links]) => (
+            <div key={category}>
+              <h3 className="text-sm font-semibold mb-4">{category}</h3>
               <ul className="space-y-3">
-                {links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <Link
-                      href={link.href}
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors hover:translate-x-1 inline-block transition-transform"
-                    >
+                {links.map((link) => (
+                  <li key={link.name}>
+                    <Link href={link.href} className="text-sm text-white/60 hover:text-white transition-colors">
                       {link.name}
                     </Link>
                   </li>
@@ -85,17 +107,17 @@ export function SiteFooter() {
           ))}
         </div>
 
-        <div className="mt-10 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4 animate-fade-in">
-          <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} Everpay. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Privacy
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-white/60">© 2025 Digipay Inc. All rights reserved.</p>
+          <div className="flex gap-6 text-sm text-white/60">
+            <Link href="/privacy-policy" className="hover:text-white transition-colors">
+              Privacy Policy
             </Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+            <Link href="/terms" className="hover:text-white transition-colors">
               Terms
             </Link>
-            <Link href="/cookie-policy" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-              Cookies
+            <Link href="/cookie-policy" className="hover:text-white transition-colors">
+              Cookie Policy
             </Link>
           </div>
         </div>
