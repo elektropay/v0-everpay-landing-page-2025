@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Check } from "lucide-react"
 
-export default function HeroSection() {
+export function HeroSection() {
   return (
     <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: "#193638" }}>
       <div className="container mx-auto px-4">
@@ -25,12 +25,12 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-lg animate-fade-in-up animate-delay-200" style={{ color: "rgba(255,255,255,0.8)" }}>
-              We provide seamless payment solutions for businesses of all sizes. Easily accept payments globally with our industry-leading security and compliance solutions.
+              We provide seamless payment solutions for businesses of all sizes. Accept payments globally with
+              industry-leading security and compliance.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
               <Button
-                href="//app.everpayinc.com/signup"
                 size="lg"
                 className="text-base font-medium hover:scale-105 transition-transform duration-200"
                 style={{ backgroundColor: "#1aa478", color: "#ffffff" }}
@@ -38,7 +38,6 @@ export default function HeroSection() {
                 Get Started
               </Button>
               <Button
-                href="/contact"
                 size="lg"
                 variant="outline"
                 className="text-base font-medium hover:scale-105 transition-transform duration-200 bg-transparent"

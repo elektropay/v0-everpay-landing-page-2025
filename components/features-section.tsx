@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card"
 import { Globe, Shield, Zap } from "lucide-react"
 
-export default function FeaturesSection() {
+export function FeaturesSection() {
   const features = [
     {
       number: "01",
