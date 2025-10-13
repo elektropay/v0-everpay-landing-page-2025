@@ -8,8 +8,8 @@ export default function SiteFooter() {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
           <div className="lg:col-span-2 animate-fade-in-up">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
-                Everpay
+              <span className="text-3xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}>
+                everpay
               </span>
             </Link>
             <p className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>
@@ -143,7 +143,7 @@ export default function SiteFooter() {
           style={{ borderColor: "rgba(255,255,255,0.1)" }}
         >
           <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
-            © 2025 Everpay. All rights reserved.
+            © 2025 Everpay Corporation. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
