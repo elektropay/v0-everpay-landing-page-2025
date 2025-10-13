@@ -43,7 +43,7 @@ export function SiteHeader() {
               strokeLinejoin="round"
             />
           </svg>
-          <span className="text-xl font-semibold">Digipay</span>
+          <span className="text-xl font-bold">everpay</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -62,10 +62,10 @@ export function SiteHeader() {
 
         <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost" className="text-white hover:text-white hover:bg-white/10" asChild>
-            <Link href="/contact">Contact Us</Link>
+            <Link href="https://app.everpayinc.com/login">Login</Link>
           </Button>
           <Button className="bg-[#1AA478] text-white hover:bg-[#1AA478]/90 rounded-md" asChild>
-            <Link href="/signup">Get Started</Link>
+            <Link href="https://app.everpayinc.com/signup">Get Started</Link>
           </Button>
         </div>
 
@@ -101,14 +101,14 @@ export function SiteHeader() {
                 asChild
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href="/contact">Contact Us</Link>
+                <Link href="https://app.everpayinc.com/login">Contact Us</Link>
               </Button>
               <Button
                 className="w-full bg-[#1AA478] text-white hover:bg-[#1AA478]/90"
                 asChild
                 onClick={() => setMobileMenuOpen(false)}
               >
-                <Link href="/signup">Get Started</Link>
+                <Link href="https://everpayinc.com/signup">Get Started</Link>
               </Button>
             </div>
           </nav>
