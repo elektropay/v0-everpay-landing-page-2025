@@ -13,8 +13,7 @@ export default function SiteFooter() {
               </span>
             </Link>
             <p className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>
-              The complete payment platform for businesses of all sizes. Accept payments, send payouts, and manage your
-              finances all in one place.
+              Accept payments, send payouts, and manage your finances all in one place.
             </p>
             <div className="flex items-center gap-4">
               <a href="#" className="hover:scale-110 transition-transform duration-200">
@@ -27,7 +26,7 @@ export default function SiteFooter() {
                 <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
               <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+                <Github className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
             </div>
           </div>
@@ -101,7 +100,42 @@ export default function SiteFooter() {
               </li>
             </ul>
           </div>
-
+          
+        <div className="animate-fade-in-up animate-delay-200">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Resources
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/developers"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Developers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="//docs.everpayinc.com/"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  API Docs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="//support.everpayinc.com/"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Help & Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+          
           <div className="animate-fade-in-up animate-delay-300">
             <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
               Company
