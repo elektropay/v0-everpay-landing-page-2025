@@ -1,52 +1,52 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
-
-const securityFeatures = [
-  {
-    title: "Sophisticated Login Protection",
-    description: "Multi-factor authentication and advanced security measures.",
-  },
-  {
-    title: "Data-Loss Prevention",
-    description: "Automatic backups and encryption for all sensitive data.",
-  },
-  {
-    title: "Proactive Fraud Prevention",
-    description: "AI-powered fraud detection and prevention systems.",
-  },
-]
+import { Shield, Lock, CheckCircle } from "lucide-react"
 
 export function CheckoutProtectionSection() {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid gap-12 md:grid-cols-2">
+    <section className="bg-muted/50 py-24 md:py-32">
+      <div className="container">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6">Trusted Checkout Protection</h2>
-            <div className="space-y-6">
-              {securityFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="h-8 w-8 rounded-full bg-[#4CAF50]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="h-5 w-5 text-[#4CAF50]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
-                  </div>
+            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl mb-6">
+              Checkout protection that works
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Our advanced fraud detection and prevention system protects every transaction, giving you and your
+              customers peace of mind.
+            </p>
+            <div className="space-y-4">
+              <div className="flex items-start gap-3">
+                <CheckCircle className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">AI-Powered Detection</h3>
+                  <p className="text-muted-foreground">
+                    Machine learning algorithms analyze patterns to identify and prevent fraud in real-time.
+                  </p>
                 </div>
-              ))}
+              </div>
+              <div className="flex items-start gap-3">
+                <Lock className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">3D Secure Authentication</h3>
+                  <p className="text-muted-foreground">
+                    Additional layer of security for card-not-present transactions.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Shield className="h-6 w-6 text-primary flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-semibold text-foreground mb-1">Chargeback Protection</h3>
+                  <p className="text-muted-foreground">
+                    Comprehensive tools to help prevent and manage chargebacks effectively.
+                  </p>
+                </div>
+              </div>
             </div>
-            <Button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049]">Learn About Security</Button>
           </div>
-          <div className="relative h-[300px] md:h-[400px]">
-            <Image
-              src="/placeholder.svg?height=400&width=600"
-              alt="Security Features"
-              width={600}
-              height={400}
-              className="rounded-lg object-cover"
-            />
+          <div className="relative">
+            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 border border-border p-8 flex items-center justify-center">
+              <Shield className="h-32 w-32 text-primary" />
+            </div>
           </div>
         </div>
       </div>

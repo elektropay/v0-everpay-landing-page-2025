@@ -1,55 +1,39 @@
-import { Shield, Lock } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="bg-[#0A2F2F] py-16 text-white">
-      <div className="container mx-auto px-4">
-        {/* Security Features */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 mt-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Shield className="h-5 w-5 text-[#4CAF50]" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium">PCI DSS Level 1</h3>
-              <p className="text-xs text-gray-400">Highest level of payment security certification</p>
-            </div>
+    <section className="bg-primary py-24 md:py-32">
+      <div className="container">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-primary-foreground sm:text-4xl md:text-5xl">
+            Ready to get started?
+          </h2>
+          <p className="mt-6 text-lg text-primary-foreground/90">
+            Join thousands of businesses already using Everpay to process payments securely and efficiently.
+          </p>
+          <div className="mt-10 flex items-center justify-center gap-4">
+            <Button
+              size="lg"
+              variant="secondary"
+              className="bg-background text-foreground hover:bg-background/90"
+              asChild
+            >
+              <Link href="/signup">
+                Create Account
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Link>
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 bg-transparent"
+              asChild
+            >
+              <Link href="/contact">Talk to Sales</Link>
+            </Button>
           </div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Lock className="h-5 w-5 text-[#4CAF50]" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium">End-to-End Encryption</h3>
-              <p className="text-xs text-gray-400">Your data is always protected</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#4CAF50]/10">
-              <Shield className="h-5 w-5 text-[#4CAF50]" />
-            </div>
-            <div>
-              <h3 className="text-sm font-medium">Fraud Prevention</h3>
-              <p className="text-xs text-gray-400">AI-powered fraud detection and prevention</p>
-            </div>
-          </div>
-        </div>
-
-        {/* CTA Content */}
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Ready to Get Started?</h2>
-            <p className="text-gray-300 mb-8">Join thousands of businesses transforming their payment experience</p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex h-12 items-center justify-center rounded-full bg-[#4CAF50] px-8 text-base font-medium text-white transition-colors hover:bg-[#45a049] focus:outline-none focus:ring-2 focus:ring-[#4CAF50] focus:ring-offset-2">
-                Get Started
-              </button>
-              <button className="inline-flex h-12 items-center justify-center rounded-full border-2 border-white bg-transparent px-8 text-base font-medium text-white transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2">
-                Contact Us
-              </button>
-            </div>
-          </div>
-          <div className="hidden md:block">{/* You can add an illustration or image here if needed */}</div>
         </div>
       </div>
     </section>

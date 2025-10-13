@@ -1,51 +1,61 @@
-import { Button } from "@/components/ui/button"
+import { Shield, Zap, Globe, TrendingUp, Lock, Smartphone } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, ChevronRight } from "lucide-react"
-
-const features = [
-  {
-    title: "Instant Onboarding Process",
-    description: "Get started quickly with our streamlined onboarding process.",
-    icon: <ArrowRight className="h-6 w-6 text-[#4CAF50]" />,
-  },
-  {
-    title: "Seamless Integration",
-    description: "Easy integration with your existing systems and workflows.",
-    icon: <ArrowRight className="h-6 w-6 text-[#4CAF50]" />,
-  },
-  {
-    title: "Real-time Analytics",
-    description: "Track and analyze your payment data in real-time.",
-    icon: <ArrowRight className="h-6 w-6 text-[#4CAF50]" />,
-  },
-]
 
 export function FeaturesSection() {
+  const features = [
+    {
+      icon: Shield,
+      title: "Bank-Level Security",
+      description: "PCI DSS Level 1 certified with end-to-end encryption and fraud prevention.",
+    },
+    {
+      icon: Zap,
+      title: "Lightning Fast",
+      description: "Process payments in milliseconds with our optimized infrastructure.",
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Accept payments from customers anywhere in the world, in any currency.",
+    },
+    {
+      icon: TrendingUp,
+      title: "Smart Analytics",
+      description: "Real-time insights and reporting to help grow your business.",
+    },
+    {
+      icon: Lock,
+      title: "Fraud Protection",
+      description: "Advanced AI-powered fraud detection keeps your transactions secure.",
+    },
+    {
+      icon: Smartphone,
+      title: "Mobile Optimized",
+      description: "Seamless payment experience across all devices and platforms.",
+    },
+  ]
+
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Rapidly Penetrate New Markets</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Scale your business globally with our comprehensive payment solutions
-          </p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature, index) => (
-            <Card key={index} className="border-2 border-gray-100">
-              <CardContent className="p-6">
-                <div className="mb-4 h-12 w-12 rounded-lg bg-[#4CAF50]/10 flex items-center justify-center">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-                <Button variant="link" className="mt-4 p-0 h-auto text-[#4CAF50] hover:text-[#45a049]">
-                  Learn more <ChevronRight className="ml-1 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <section className="container py-24 md:py-32">
+      <div className="mx-auto max-w-2xl text-center mb-16">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Everything you need to accept payments
+        </h2>
+        <p className="mt-4 text-lg text-muted-foreground">Powerful features to help you grow your business faster</p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {features.map((feature, index) => (
+          <Card key={index} className="border-border bg-card">
+            <CardContent className="pt-6">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                <feature.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-card-foreground">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   )

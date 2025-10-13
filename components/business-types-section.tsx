@@ -1,54 +1,51 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Store, ShoppingCart, Briefcase, Laptop } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
-import { ChevronRight } from "lucide-react"
-
-const businessTypes = [
-  {
-    title: "Enterprise",
-    description: "Scalable solutions for large organizations",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    title: "Small Business",
-    description: "Perfect for growing companies",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    title: "Startups",
-    description: "Launch fast and scale with confidence",
-    image: "/placeholder.svg?height=200&width=300",
-  },
-]
 
 export function BusinessTypesSection() {
+  const businessTypes = [
+    {
+      icon: Store,
+      title: "Retail",
+      description: "Point-of-sale solutions for brick-and-mortar stores",
+    },
+    {
+      icon: ShoppingCart,
+      title: "E-commerce",
+      description: "Online checkout integration for digital storefronts",
+    },
+    {
+      icon: Briefcase,
+      title: "Enterprise",
+      description: "Custom solutions for large-scale operations",
+    },
+    {
+      icon: Laptop,
+      title: "SaaS",
+      description: "Subscription billing and recurring payments",
+    },
+  ]
+
   return (
-    <section className="py-16">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">We Drive Growth for All Business Types</h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {businessTypes.map((business, index) => (
-            <Card key={index} className="overflow-hidden">
-              <CardContent className="p-0">
-                <div className="relative h-48">
-                  <Image
-                    src={business.image || "/placeholder.svg"}
-                    alt={business.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{business.title}</h3>
-                  <p className="text-gray-600 mb-4">{business.description}</p>
-                  <Button variant="link" className="p-0 h-auto text-[#4CAF50] hover:text-[#45a049]">
-                    Learn more <ChevronRight className="ml-1 h-4 w-4" />
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+    <section className="container py-24 md:py-32">
+      <div className="mx-auto max-w-2xl text-center mb-16">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">Built for every business type</h2>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Whether you're just starting or already established, we have the right solution for you
+        </p>
+      </div>
+
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        {businessTypes.map((type, index) => (
+          <Card key={index} className="border-border bg-card hover:shadow-lg transition-shadow">
+            <CardContent className="pt-6 text-center">
+              <div className="mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
+                <type.icon className="h-8 w-8 text-primary" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold text-card-foreground">{type.title}</h3>
+              <p className="text-muted-foreground">{type.description}</p>
+            </CardContent>
+          </Card>
+        ))}
       </div>
     </section>
   )
