@@ -95,10 +95,10 @@ export default function SiteHeader() {
               Pricing
             </Link>
             <div className="pt-4 space-y-2">
-              <Button variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
+              <Button href="//app.everpayinc.com/login" variant="ghost" className="w-full" style={{ color: "#ffffff" }}>
                 Sign In
               </Button>
-              <Button className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
+              <Button href="//app.everpayinc.com/sign-up" className="w-full" style={{ backgroundColor: "#1aa478", color: "#ffffff" }}>
                 Get Started
               </Button>
             </div>
