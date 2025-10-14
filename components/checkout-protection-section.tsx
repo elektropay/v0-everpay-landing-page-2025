@@ -40,7 +40,7 @@ export function CheckoutProtectionSection() {
            Trusted Checkout Protection
           </h2>
           <p className="text-lg max-w-2xl mx-auto animate-fade-in-up animate-delay-200" style={{ color: "#6b7280" }}>
-            Keep safe with our industry-leading security features and fraud prevention tools.
+            Keep safe with our industry-leading security and fraud prevention tools.
           </p>
         </div>
 
