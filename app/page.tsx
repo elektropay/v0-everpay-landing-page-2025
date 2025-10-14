@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { HeroSection } from "@/components/hero-section"
 import { StatsSection } from "@/components/stats-section"
-import { PaymentPartnersSection } from "@/components/payment-partners-section"
+import { PaymentPartnersSection } from "@/components/payment-partners-carousel1"
 import { FeaturesSection } from "@/components/features-section"
 import { CheckoutProtectionSection } from "@/components/checkout-protection-section"
 import { BusinessTypesSection } from "@/components/business-types-section"
