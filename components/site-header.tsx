@@ -10,11 +10,11 @@ export function SiteHeader() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-via-green-50 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-          <span className="text-3xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <span className="text-2xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
             everpay
           </span>
         </Link>
@@ -24,7 +24,7 @@ export function SiteHeader() {
           {/* Solutions Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("solutions")}
             >
               <span>Solutions</span>
@@ -32,7 +32,7 @@ export function SiteHeader() {
             </button>
             {activeMegaMenu === "solutions" && (
               <div
-                className="absolute left-0 top-full pt-2 w-screen max-w-4xl"
+                className="absolute left-0 top-full pt-2 w-screen max-w-3xl"
                 onMouseLeave={() => setActiveMegaMenu(null)}
               >
                 <div className="bg-white rounded-lg shadow-xl p-8">
@@ -116,7 +116,7 @@ export function SiteHeader() {
           {/* Products Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("products")}
             >
               <span>Products</span>
@@ -124,7 +124,7 @@ export function SiteHeader() {
             </button>
             {activeMegaMenu === "products" && (
               <div
-                className="absolute left-0 top-full pt-2 w-screen max-w-4xl"
+                className="absolute left-0 top-full pt-2 w-screen max-w-3xl"
                 onMouseLeave={() => setActiveMegaMenu(null)}
               >
                 <div className="bg-white rounded-lg shadow-xl p-8">
@@ -196,7 +196,7 @@ export function SiteHeader() {
           {/* Resources Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("resources")}
             >
               <span>Resources</span>
@@ -236,14 +236,14 @@ export function SiteHeader() {
           {/* Company Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("company")}
             >
               <span>Company</span>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "company" && (
-              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
+              <div className="absolute left-0 top-full pt-2 w-42" onMouseLeave={() => setActiveMegaMenu(null)}>
                 <div className="bg-white rounded-lg shadow-xl p-4">
                   <div className="space-y-2">
                     <Link
@@ -274,7 +274,7 @@ export function SiteHeader() {
           </div>
 
           {/* Plans Link */}
-          <Link href="/pricing" className="text-sm font-medium text-black hover:text-black/80 transition-colors">
+          <Link href="/pricing" className="text-sm font-medium text-black hover:text-grey/80 transition-colors">
             Plans
           </Link>
         </nav>
