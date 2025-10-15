@@ -30,6 +30,11 @@ export function PaymentPartnersCarousel() {
   return (
     <section className="bg-muted/30 py-12 overflow-hidden animate-fade-in">
       <div className="container mb-8">
+        <div className="text-center mb-12">
+          <p className="text-sm font-medium mb-8" style={{ color: "#6b7280" }}>
+            TRUSTED BY LEADING COMPANIES WORLDWIDE
+          </p>
+        </div>
         <h2 className="text-center text-sm font-semibold text-muted-foreground uppercase tracking-wider animate-fade-in-up">
           Trusted Payment Partners
         </h2>
