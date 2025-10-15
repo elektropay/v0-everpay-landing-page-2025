@@ -4,7 +4,6 @@ import { Globe, Shield, Zap } from "lucide-react"
 export function FeaturesSection() {
   const features = [
     {
-      number: "01",
       icon: Globe,
       title: "Global Payment Optimization",
       description:
@@ -12,7 +11,6 @@ export function FeaturesSection() {
       delay: "100",
     },
     {
-      number: "02",
       icon: Shield,
       title: "Enhanced Verification Payments",
       description:
@@ -20,7 +18,6 @@ export function FeaturesSection() {
       delay: "200",
     },
     {
-      number: "03",
       icon: Zap,
       title: "Instant Payment System",
       description:
@@ -65,9 +62,6 @@ export function FeaturesSection() {
                   <feature.icon className="w-6 h-6" style={{ color: "#ffffff" }} />
                 </div>
                 <div className="flex-1">
-                  <div className="text-xs font-bold mb-2" style={{ color: "#1aa478" }}>
-                    {feature.number}
-                  </div>
                   <h3
                     className="text-xl font-bold mb-3"
                     style={{ fontFamily: "var(--font-display)", color: "#193638" }}
