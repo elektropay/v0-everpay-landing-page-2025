@@ -9,17 +9,13 @@ export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
 
-  const toggleMegaMenu = (menu: string) => {
-    setActiveMegaMenu(activeMegaMenu === menu ? null : menu)
-  }
-
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FFFFFF]/95 backdrop-blur supports-[backdrop-filter]:bg-[#FFFFFF]/80">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
           <span className="text-2xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
-            everpay
+            Everpay
           </span>
         </Link>
 
@@ -240,7 +236,7 @@ export function SiteHeader() {
           {/* Company Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("company")}
             >
               <span>Company</span>
@@ -289,7 +285,7 @@ export function SiteHeader() {
             href="https://app.everpayinc.com/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-white hover:text-gray-900 transition-colors px-4 py-2 rounded-full hover:bg-white/10"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors px-4 py-2 rounded-full hover:bg-gray-100"
           >
             Log in
           </a>
@@ -300,41 +296,41 @@ export function SiteHeader() {
 
         {/* Mobile Menu Button */}
         <button className="lg:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-          {isMenuOpen ? <X className="h-6 w-6 text-white" /> : <Menu className="h-6 w-6 text-white" />}
+          {isMenuOpen ? <X className="h-6 w-6 text-gray-900" /> : <Menu className="h-6 w-6 text-gray-900" />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-[#193638]">
+        <div className="lg:hidden border-t border-gray-200 bg-white">
           <nav className="container mx-auto flex flex-col space-y-4 px-4 py-4">
             {/* Solutions */}
             <div>
-              <p className="text-xs font-semibold text-white/60 mb-2">SOLUTIONS</p>
+              <p className="text-xs font-semibold text-gray-500 mb-2">SOLUTIONS</p>
               <Link
                 href="/solutions/retail"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Retail & E-commerce
               </Link>
               <Link
                 href="/solutions/saas"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 SaaS & Subscriptions
               </Link>
               <Link
                 href="/solutions/marketplace"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Marketplaces
               </Link>
               <Link
                 href="/solutions/enterprise"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Enterprise Solutions
@@ -343,38 +339,38 @@ export function SiteHeader() {
 
             {/* Products */}
             <div>
-              <p className="text-xs font-semibold text-white/60 mb-2">PRODUCTS</p>
+              <p className="text-xs font-semibold text-gray-500 mb-2">PRODUCTS</p>
               <Link
                 href="/online-payments"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Online Payments
               </Link>
               <Link
                 href="/commerce"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Commerce
               </Link>
               <Link
                 href="/payments"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Payment Methods
               </Link>
               <Link
                 href="/fraud-prevention"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Fraud Prevention
               </Link>
               <Link
                 href="/security"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Security
@@ -383,17 +379,17 @@ export function SiteHeader() {
 
             {/* Resources */}
             <div>
-              <p className="text-xs font-semibold text-white/60 mb-2">RESOURCES</p>
+              <p className="text-xs font-semibold text-gray-500 mb-2">RESOURCES</p>
               <Link
                 href="/blog"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Blog
               </Link>
               <Link
                 href="/contact"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Support
@@ -402,24 +398,24 @@ export function SiteHeader() {
 
             {/* Company */}
             <div>
-              <p className="text-xs font-semibold text-white/60 mb-2">COMPANY</p>
+              <p className="text-xs font-semibold text-gray-500 mb-2">COMPANY</p>
               <Link
                 href="/about"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </Link>
               <Link
                 href="/careers"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Careers
               </Link>
               <Link
                 href="/contact"
-                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
@@ -428,18 +424,18 @@ export function SiteHeader() {
 
             <Link
               href="/pricing"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors py-2"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Plans
             </Link>
 
-            <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
+            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
               <a
                 href="https://app.everpayinc.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-center px-4 py-2 text-sm font-medium text-white hover:bg-white/10 rounded-full transition-colors"
+                className="text-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
               >
                 Log in
               </a>
