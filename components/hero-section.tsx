@@ -1,190 +1,73 @@
-"use client"
-
 import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Check } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden py-20 lg:py-32" style={{ backgroundColor: "#193638" }}>
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 animate-fade-in-up">
-            <div
-              className="inline-block px-3 py-1 rounded-full text-xs font-medium animate-fade-in"
-              style={{ backgroundColor: "#1aa478", color: "#ffffff" }}
-            >
-              PAYMENT SOLUTIONS
-            </div>
-
-            <h1
-              className="text-4xl lg:text-6xl font-bold leading-tight animate-fade-in-up animate-delay-100"
-              style={{ fontFamily: "var(--font-display)", color: "#ffffff" }}
-            >
-              Global Shift With Digital Payments
-            </h1>
-
-            <p className="text-lg animate-fade-in-up animate-delay-200" style={{ color: "rgba(255,255,255,0.8)" }}>
-              We provide seamless payment solutions for businesses of all sizes. Accept payments globally with
-              industry-leading security and compliance.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up animate-delay-300">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            style={{ fontFamily: "Manrope, sans-serif" }}
+          >
+            Payment infrastructure for the internet
+          </h1>
+          <p
+            className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
+            style={{ fontFamily: "Inter, sans-serif" }}
+          >
+            Millions of businesses of all sizes—from startups to Fortune 500s—use Everpay's software and APIs to accept
+            payments, send payouts, and manage their businesses online.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                className="text-base font-medium hover:scale-105 transition-transform duration-200"
-                style={{ backgroundColor: "#1aa478", color: "#ffffff" }}
+                className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl min-w-[200px]"
               >
                 Get Started
+                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
+            </a>
+            <a href="/contact">
               <Button
                 size="lg"
                 variant="outline"
-                className="text-base font-medium hover:scale-105 transition-transform duration-200 bg-transparent"
-                style={{ borderColor: "#ffffff", color: "#ffffff" }}
+                className="border-2 border-gray-900 bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white rounded-full min-w-[200px]"
               >
                 Contact Sales
               </Button>
-            </div>
-
-            <div className="flex items-center gap-6 animate-fade-in-up animate-delay-400">
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5" style={{ color: "#1aa478" }} />
-                <span className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
-                  No setup fees
-                </span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-5 h-5" style={{ color: "#1aa478" }} />
-                <span className="text-sm" style={{ color: "rgba(255,255,255,0.8)" }}>
-                  No credit card required
-                </span>
-              </div>
-            </div>
+            </a>
           </div>
 
-          <div className="relative animate-fade-in-right animate-delay-200">
-            <Card className="p-6 shadow-2xl animate-float" style={{ backgroundColor: "#ffffff" }}>
-              <div className="space-y-4">
-                <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium" style={{ color: "#193638" }}>
-                    Payment Dashboard
-                  </span>
-                  <span className="text-xs px-2 py-1 rounded" style={{ backgroundColor: "#e3ffcc", color: "#193638" }}>
-                    Live
-                  </span>
-                </div>
-
-                <div className="space-y-3">
-                  <div
-                    className="flex items-center justify-between p-3 rounded-lg"
-                    style={{ backgroundColor: "#fbf9f9" }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "#1aa478" }}
-                      >
-                        <span className="text-white font-bold">$</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium" style={{ color: "#193638" }}>
-                          Transaction #12345
-                        </div>
-                        <div className="text-xs" style={{ color: "#6b7280" }}>
-                          2 minutes ago
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm font-bold" style={{ color: "#193638" }}>
-                        $2,450.00
-                      </div>
-                      <div className="text-xs" style={{ color: "#1aa478" }}>
-                        Completed
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="flex items-center justify-between p-3 rounded-lg"
-                    style={{ backgroundColor: "#fbf9f9" }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "#1aa478" }}
-                      >
-                        <span className="text-white font-bold">$</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium" style={{ color: "#193638" }}>
-                          Transaction #12344
-                        </div>
-                        <div className="text-xs" style={{ color: "#6b7280" }}>
-                          5 minutes ago
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm font-bold" style={{ color: "#193638" }}>
-                        $1,250.00
-                      </div>
-                      <div className="text-xs" style={{ color: "#1aa478" }}>
-                        Completed
-                      </div>
-                    </div>
-                  </div>
-
-                  <div
-                    className="flex items-center justify-between p-3 rounded-lg"
-                    style={{ backgroundColor: "#fbf9f9" }}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-10 h-10 rounded-full flex items-center justify-center"
-                        style={{ backgroundColor: "#1aa478" }}
-                      >
-                        <span className="text-white font-bold">$</span>
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium" style={{ color: "#193638" }}>
-                          Transaction #12343
-                        </div>
-                        <div className="text-xs" style={{ color: "#6b7280" }}>
-                          10 minutes ago
-                        </div>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm font-bold" style={{ color: "#193638" }}>
-                        $3,750.00
-                      </div>
-                      <div className="text-xs" style={{ color: "#1aa478" }}>
-                        Completed
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t" style={{ borderColor: "#e5e7eb" }}>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm font-medium" style={{ color: "#6b7280" }}>
-                      Total Volume
-                    </span>
-                    <span
-                      className="text-2xl font-bold"
-                      style={{ fontFamily: "var(--font-display)", color: "#193638" }}
-                    >
-                      $7,450.00
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </Card>
+          <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-[#1aa478]" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>No setup fees</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <svg className="w-5 h-5 text-[#1aa478]" fill="currentColor" viewBox="0 0 20 20">
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <span>Cancel anytime</span>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#1aa478]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-[#1aa478]/10 rounded-full blur-3xl" />
     </section>
   )
 }
