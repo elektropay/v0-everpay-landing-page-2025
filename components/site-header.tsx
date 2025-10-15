@@ -218,14 +218,14 @@ export function SiteHeader() {
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
                       onClick={() => setActiveMegaMenu(null)}
                     >
-                      Documentation
+                      API Documentation
                     </Link>
                     <Link
                       href="/contact"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
                       onClick={() => setActiveMegaMenu(null)}
                     >
-                      Support
+                      Help & Support
                     </Link>
                   </div>
                 </div>
@@ -254,18 +254,18 @@ export function SiteHeader() {
                       About Us
                     </Link>
                     <Link
+                      href="/contact"
+                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
                       href="/careers"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
                       onClick={() => setActiveMegaMenu(null)}
                     >
                       Careers
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Contact
                     </Link>
                   </div>
                 </div>
