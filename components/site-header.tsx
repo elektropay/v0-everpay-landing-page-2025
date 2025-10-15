@@ -14,12 +14,12 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#193638]/95 backdrop-blur supports-[backdrop-filter]:bg-[#193638]/80">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#FFFFFF]/95 backdrop-blur supports-[backdrop-filter]:bg-[#FFFFFF]/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-          <span className="text-2xl font-bold text-white" style={{ fontFamily: "Manrope, sans-serif" }}>
-            Everpay
+          <span className="text-2xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
+            everpay
           </span>
         </Link>
 
@@ -28,7 +28,7 @@ export function SiteHeader() {
           {/* Solutions Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("solutions")}
             >
               <span>Solutions</span>
@@ -120,7 +120,7 @@ export function SiteHeader() {
           {/* Products Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("products")}
             >
               <span>Products</span>
@@ -200,14 +200,14 @@ export function SiteHeader() {
           {/* Resources Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-white hover:text-white/80 transition-colors"
+              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-black/80 transition-colors"
               onMouseEnter={() => setActiveMegaMenu("resources")}
             >
               <span>Resources</span>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "resources" && (
-              <div className="absolute left-0 top-full pt-2 w-64" onMouseLeave={() => setActiveMegaMenu(null)}>
+              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
                 <div className="bg-white rounded-lg shadow-xl p-4">
                   <div className="space-y-2">
                     <Link
@@ -247,7 +247,7 @@ export function SiteHeader() {
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "company" && (
-              <div className="absolute left-0 top-full pt-2 w-64" onMouseLeave={() => setActiveMegaMenu(null)}>
+              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
                 <div className="bg-white rounded-lg shadow-xl p-4">
                   <div className="space-y-2">
                     <Link
@@ -278,7 +278,7 @@ export function SiteHeader() {
           </div>
 
           {/* Plans Link */}
-          <Link href="/pricing" className="text-sm font-medium text-white hover:text-white/80 transition-colors">
+          <Link href="/pricing" className="text-sm font-medium text-black hover:text-black/80 transition-colors">
             Plans
           </Link>
         </nav>
