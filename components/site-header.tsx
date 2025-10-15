@@ -10,7 +10,7 @@ export function SiteHeader() {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-br from-white via-green-50 to-white backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 w-full bg-via-green-50 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
