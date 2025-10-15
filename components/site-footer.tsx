@@ -34,34 +34,43 @@ export function SiteFooter() {
 
           <div className="animate-fade-in-up animate-delay-100">
             <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
-              Products
+              Solutions
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/payments"
+                  href="/solutions/retail"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  Payments
+                  Retail & E-commerce
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/checkout"
+                  href="/solutions/saas"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  Checkout
+                  SaaS & Subscriptions
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/invoicing"
+                  href="/solutions/marketplace"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  Invoicing
+                  Marketplaces
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/enterprise"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Enterprise Solutions
                 </Link>
               </li>
             </ul>
@@ -69,34 +78,52 @@ export function SiteFooter() {
 
           <div className="animate-fade-in-up animate-delay-200">
             <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
-              Solutions
+              Products
             </h3>
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/ecommerce"
+                  href="/online-payments"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  E-commerce
+                  Online Payments
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/saas"
+                  href="/commerce"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  SaaS
+                  Commerce
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/marketplace"
+                  href="/payments"
                   className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
                   style={{ color: "rgba(255,255,255,0.7)" }}
                 >
-                  Marketplace
+                  Payment Methods
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/fraud-prevention"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Fraud Prevention
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/security"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Security
                 </Link>
               </li>
             </ul>
@@ -134,6 +161,24 @@ export function SiteFooter() {
                   Careers
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pricing"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Plans
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -146,11 +191,14 @@ export function SiteFooter() {
             © 2025 Everpay. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+            <Link href="/privacy-policy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
               Privacy Policy
             </Link>
             <Link href="/terms" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
               Terms of Service
+            </Link>
+            <Link href="/cookie-policy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Cookie Policy
             </Link>
           </div>
         </div>

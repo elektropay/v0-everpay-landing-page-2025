@@ -14,11 +14,11 @@ export function SiteHeader() {
   }
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#1aa478]/95 backdrop-blur supports-[backdrop-filter]:bg-[#1aa478]/80">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#193638]/95 backdrop-blur supports-[backdrop-filter]:bg-[#193638]/80">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-          <span className="text-xl font-bold text-white" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <span className="text-2xl font-bold text-white" style={{ fontFamily: "Manrope, sans-serif" }}>
             Everpay
           </span>
         </Link>
@@ -44,12 +44,13 @@ export function SiteHeader() {
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-4">For Individual Locations</h3>
                       <p className="text-xs text-gray-500 mb-4">
-                        Attract, retain and engage patients — all on one easy-to-use platform.
+                        Attract, retain and engage customers — all on one easy-to-use platform.
                       </p>
                       <div className="space-y-3">
                         <Link
                           href="/solutions/retail"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🛍️</span>
                           <span>Retail & E-commerce</span>
@@ -57,6 +58,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/saas"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>💻</span>
                           <span>SaaS & Subscriptions</span>
@@ -64,6 +66,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/marketplace"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🏪</span>
                           <span>Marketplaces</span>
@@ -71,6 +74,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/fintech"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>💳</span>
                           <span>Fintech</span>
@@ -84,6 +88,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/enterprise"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🏢</span>
                           <span>Enterprise Solutions</span>
@@ -91,6 +96,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/global"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🌍</span>
                           <span>Global Payments</span>
@@ -98,6 +104,7 @@ export function SiteHeader() {
                         <Link
                           href="/solutions/platform"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>⚡</span>
                           <span>Platform Payments</span>
@@ -132,6 +139,7 @@ export function SiteHeader() {
                         <Link
                           href="/online-payments"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>💳</span>
                           <span>Online Payments</span>
@@ -139,6 +147,7 @@ export function SiteHeader() {
                         <Link
                           href="/commerce"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🛒</span>
                           <span>Commerce</span>
@@ -146,6 +155,7 @@ export function SiteHeader() {
                         <Link
                           href="/payments"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>📱</span>
                           <span>Payment Methods</span>
@@ -158,6 +168,7 @@ export function SiteHeader() {
                         <Link
                           href="/fraud-prevention"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🛡️</span>
                           <span>Fraud Prevention</span>
@@ -165,6 +176,7 @@ export function SiteHeader() {
                         <Link
                           href="/security"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🔒</span>
                           <span>Security</span>
@@ -172,6 +184,7 @@ export function SiteHeader() {
                         <Link
                           href="/partners"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🤝</span>
                           <span>Partners</span>
@@ -200,18 +213,21 @@ export function SiteHeader() {
                     <Link
                       href="/blog"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       Blog
                     </Link>
                     <Link
                       href="/about"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       Documentation
                     </Link>
                     <Link
                       href="/contact"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       Support
                     </Link>
@@ -237,18 +253,21 @@ export function SiteHeader() {
                     <Link
                       href="/about"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       About Us
                     </Link>
                     <Link
                       href="/careers"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       Careers
                     </Link>
                     <Link
                       href="/contact"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                     >
                       Contact
                     </Link>
@@ -287,58 +306,135 @@ export function SiteHeader() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-white/10 bg-[#1aa478]">
+        <div className="lg:hidden border-t border-white/10 bg-[#193638]">
           <nav className="container mx-auto flex flex-col space-y-4 px-4 py-4">
-            <Link
-              href="/online-payments"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Online Payments
-            </Link>
-            <Link
-              href="/commerce"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Commerce
-            </Link>
-            <Link
-              href="/payments"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Payments
-            </Link>
-            <Link
-              href="/fraud-prevention"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Fraud Prevention
-            </Link>
-            <Link
-              href="/security"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Security
-            </Link>
-            <Link
-              href="/partners"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Partners
-            </Link>
+            {/* Solutions */}
+            <div>
+              <p className="text-xs font-semibold text-white/60 mb-2">SOLUTIONS</p>
+              <Link
+                href="/solutions/retail"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Retail & E-commerce
+              </Link>
+              <Link
+                href="/solutions/saas"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                SaaS & Subscriptions
+              </Link>
+              <Link
+                href="/solutions/marketplace"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Marketplaces
+              </Link>
+              <Link
+                href="/solutions/enterprise"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Enterprise Solutions
+              </Link>
+            </div>
+
+            {/* Products */}
+            <div>
+              <p className="text-xs font-semibold text-white/60 mb-2">PRODUCTS</p>
+              <Link
+                href="/online-payments"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Online Payments
+              </Link>
+              <Link
+                href="/commerce"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Commerce
+              </Link>
+              <Link
+                href="/payments"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Payment Methods
+              </Link>
+              <Link
+                href="/fraud-prevention"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Fraud Prevention
+              </Link>
+              <Link
+                href="/security"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Security
+              </Link>
+            </div>
+
+            {/* Resources */}
+            <div>
+              <p className="text-xs font-semibold text-white/60 mb-2">RESOURCES</p>
+              <Link
+                href="/blog"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+              <Link
+                href="/contact"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Support
+              </Link>
+            </div>
+
+            {/* Company */}
+            <div>
+              <p className="text-xs font-semibold text-white/60 mb-2">COMPANY</p>
+              <Link
+                href="/about"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
+              <Link
+                href="/careers"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Careers
+              </Link>
+              <Link
+                href="/contact"
+                className="block text-sm font-medium text-white hover:text-white/80 transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+            </div>
+
             <Link
               href="/pricing"
-              className="text-sm font-medium text-white hover:text-white/80 transition-colors"
+              className="text-sm font-medium text-white hover:text-white/80 transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Plans
             </Link>
-            <div className="flex flex-col space-y-2 pt-4">
+
+            <div className="flex flex-col space-y-2 pt-4 border-t border-white/10">
               <a
                 href="https://app.everpayinc.com/login"
                 target="_blank"
