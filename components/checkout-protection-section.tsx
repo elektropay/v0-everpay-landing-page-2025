@@ -25,26 +25,28 @@ export function CheckoutProtectionSection() {
 
   return (
     <section className="py-20" style={{ backgroundColor: "#ffffff" }}>
-     <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div
-            className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 animate-fade-in"
-            style={{ backgroundColor: "#e3ffcc", color: "#193638" }}
-          >
-            ADVANCED PROTECTION
-          </div>
-          <h2
-            className="text-3xl lg:text-4xl font-bold mb-4 animate-fade-in-up animate-delay-100"
-            style={{ fontFamily: "var(--font-display)", color: "#193638" }}
-          >
-           Trusted Checkout Protection
-          </h2>
-          <p className="text-lg max-w-2xl mx-auto animate-fade-in-up animate-delay-200" style={{ color: "#6b7280" }}>
-            Keep safe with our industry-leading security and fraud prevention tools.
-          </p>
-        </div>
-
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <div>
+              <div
+                className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 animate-fade-in"
+                style={{ backgroundColor: "#e3ffcc", color: "#193638" }}
+              >
+                ADVANCED PROTECTION
+              </div>
+              <h2
+                className="text-3xl lg:text-4xl font-bold mb-4 animate-fade-in-up animate-delay-100"
+                style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+              >
+                Trusted Checkout Protection
+              </h2>
+              <p className="text-lg animate-fade-in-up animate-delay-200" style={{ color: "#6b7280" }}>
+                Keep your business and customers safe with industry-leading security features and fraud prevention
+                tools.
+              </p>
+            </div>
+
             <div className="space-y-6">
               {features.map((feature, index) => (
                 <div
