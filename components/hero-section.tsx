@@ -10,7 +10,7 @@ export function HeroSection() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
-            Payment infrastructure for the internet
+            Payment infrastructure for the next-generation
           </h1>
           <p
             className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
