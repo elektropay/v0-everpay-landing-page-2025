@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
@@ -8,9 +8,19 @@ import { Menu, X, ChevronDown } from "lucide-react"
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   return (
-     <header
+    <header
       className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
           ? "border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
@@ -19,8 +29,11 @@ export function SiteHeader() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-          <span className="text-2xl font-bold text-black" style={{ fontFamily: "Manrope, sans-serif" }}>
+          <img src="/favicon.png" alt="everpay Logo" className="h-8 w-8 rounded-lg" />
+          <span
+            className={`text-2xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
+            style={{ fontFamily: "Manrope, sans-serif" }}
+          >
             everpay
           </span>
         </Link>
@@ -30,7 +43,9 @@ export function SiteHeader() {
           {/* Solutions Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
+              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
+                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
+              }`}
               onMouseEnter={() => setActiveMegaMenu("solutions")}
             >
               <span>Solutions</span>
@@ -122,7 +137,9 @@ export function SiteHeader() {
           {/* Products Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
+              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
+                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
+              }`}
               onMouseEnter={() => setActiveMegaMenu("products")}
             >
               <span>Products</span>
@@ -202,7 +219,9 @@ export function SiteHeader() {
           {/* Resources Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
+              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
+                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
+              }`}
               onMouseEnter={() => setActiveMegaMenu("resources")}
             >
               <span>Resources</span>
@@ -242,7 +261,9 @@ export function SiteHeader() {
           {/* Company Dropdown */}
           <div className="relative group">
             <button
-              className="flex items-center space-x-1 text-sm font-medium text-black hover:text-grey/80 transition-colors"
+              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
+                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
+              }`}
               onMouseEnter={() => setActiveMegaMenu("company")}
             >
               <span>Company</span>
@@ -280,7 +301,12 @@ export function SiteHeader() {
           </div>
 
           {/* Plans Link */}
-          <Link href="/pricing" className="text-sm font-medium text-black hover:text-grey/80 transition-colors">
+          <Link
+            href="/pricing"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
+            }`}
+          >
             Plans
           </Link>
         </nav>
@@ -291,7 +317,11 @@ export function SiteHeader() {
             href="https://app.everpayinc.com/login"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors px-4 py-2 rounded-full hover:bg-gray-100"
+            className={`text-sm font-medium transition-colors px-4 py-2 rounded-full ${
+              scrolled
+                ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+            }`}
           >
             Log in
           </a>
