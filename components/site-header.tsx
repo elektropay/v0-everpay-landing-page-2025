@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export function SiteHeader() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -19,326 +19,168 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-white"
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+        scrolled
+          ? "border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
+          : "border-transparent bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-            <span className="text-2xl font-bold text-[#193638]">Everpay</span>
+      <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        <Link href="/" className="flex items-center space-x-2">
+          <img src="/favicon.png" alt="everpay Logo" className="h-8 w-8 rounded-lg" />
+          <span
+            className={`text-2xl font-bold transition-colors ${scrolled ? "text-gray-900" : "text-white"}`}
+            style={{ fontFamily: "Manrope, sans-serif" }}
+          >
+            everpay
+          </span>
+        </Link>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link
+            href="/online-payments"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Online Payments
           </Link>
+          <Link
+            href="/commerce"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Commerce
+          </Link>
+          <Link
+            href="/payments"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Payments
+          </Link>
+          <Link
+            href="/fraud-prevention"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Fraud Prevention
+          </Link>
+          <Link
+            href="/security"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Security
+          </Link>
+          <Link
+            href="/partners"
+            className={`text-sm font-medium transition-colors ${
+              scrolled ? "text-gray-700 hover:text-[#1aa478]" : "text-white hover:text-white/80"
+            }`}
+          >
+            Partners
+          </Link>
+        </nav>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {/* Solutions Dropdown */}
-            <div className="group relative">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-[#1aa478] transition-colors">
-                <span>Solutions</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[600px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6 grid grid-cols-2 gap-6">
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-500 mb-3">For Individual Locations</h3>
-                    <ul className="space-y-2">
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Dental
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Eye Care
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Medical
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Veterinary
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Medical Spa
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Plastic Surgery
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Physical Therapy
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Mental Health
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Primary Care
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-500 mb-3">For Enterprises</h3>
-                    <ul className="space-y-2">
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Dental Service Organizations (DSO)
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Vision Groups
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/commerce" className="text-gray-700 hover:text-[#1aa478]">
-                          Medical Groups
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Products Dropdown */}
-            <div className="group relative">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-[#1aa478] transition-colors">
-                <span>Products</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[400px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-6">
-                  <ul className="space-y-2">
-                    <li>
-                      <Link href="/online-payments" className="text-gray-700 hover:text-[#1aa478]">
-                        Online Payments
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/payments" className="text-gray-700 hover:text-[#1aa478]">
-                        Payment Processing
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/fraud-prevention" className="text-gray-700 hover:text-[#1aa478]">
-                        Fraud Prevention
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/security" className="text-gray-700 hover:text-[#1aa478]">
-                        Security & Compliance
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Resources Dropdown */}
-            <div className="group relative">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-[#1aa478] transition-colors">
-                <span>Resources</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[200px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-4">
-                  <ul className="space-y-2">
-                    <li>
-                      <Link href="/blog" className="text-gray-700 hover:text-[#1aa478]">
-                        Blog
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/partners" className="text-gray-700 hover:text-[#1aa478]">
-                        Partners
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Company Dropdown */}
-            <div className="group relative">
-              <button className="flex items-center space-x-1 text-gray-700 hover:text-[#1aa478] transition-colors">
-                <span>Company</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div className="absolute left-0 mt-2 w-[200px] bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-                <div className="p-4">
-                  <ul className="space-y-2">
-                    <li>
-                      <Link href="/about" className="text-gray-700 hover:text-[#1aa478]">
-                        About
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/careers" className="text-gray-700 hover:text-[#1aa478]">
-                        Careers
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/contact" className="text-gray-700 hover:text-[#1aa478]">
-                        Contact
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            {/* Plans Link */}
-            <Link href="/pricing" className="text-gray-700 hover:text-[#1aa478] transition-colors">
-              Plans
-            </Link>
-          </div>
-
-          {/* Right Side Buttons */}
-          <div className="hidden lg:flex items-center space-x-4">
-            <a
-              href="https://app.everpayinc.com/login"
-              className="text-gray-700 hover:text-black transition-colors font-medium"
-            >
-              Log in
-            </a>
-            <Button asChild className="rounded-full bg-gray-900 hover:bg-gray-800 text-white shadow-lg">
-              <a href="https://app.everpayinc.com/sign-up">Get started</a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
+        {/* Desktop CTA Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+          <a
+            href="https://app.everpayinc.com/login"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-sm font-medium transition-colors px-4 py-2 rounded-full ${
+              scrolled
+                ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
+                : "text-white hover:text-white/80 hover:bg-white/10"
+            }`}
+          >
+            Log in
+          </a>
+          <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
+            <Button className="bg-[#1aa478] hover:bg-[#158f64] text-white rounded-full shadow-lg">Get Started</Button>
+          </a>
         </div>
 
-        {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden pb-4">
-            <div className="space-y-4">
-              {/* Solutions */}
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">SOLUTIONS</h3>
-                <div className="pl-4 space-y-2">
-                  <p className="text-sm text-gray-500">For Individual Locations</p>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Dental
-                  </Link>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Eye Care
-                  </Link>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Medical
-                  </Link>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Veterinary
-                  </Link>
-                  <p className="text-sm text-gray-500 mt-3">For Enterprises</p>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    DSO
-                  </Link>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Vision Groups
-                  </Link>
-                  <Link href="/commerce" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Medical Groups
-                  </Link>
-                </div>
-              </div>
+        {/* Mobile Menu Button */}
+        <button className="md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+          {isMenuOpen ? (
+            <X className={`h-6 w-6 ${scrolled ? "text-gray-700" : "text-white"}`} />
+          ) : (
+            <Menu className={`h-6 w-6 ${scrolled ? "text-gray-700" : "text-white"}`} />
+          )}
+        </button>
+      </div>
 
-              {/* Products */}
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">PRODUCTS</h3>
-                <div className="pl-4 space-y-2">
-                  <Link
-                    href="/online-payments"
-                    className="block text-gray-700"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Online Payments
-                  </Link>
-                  <Link href="/payments" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Payment Processing
-                  </Link>
-                  <Link
-                    href="/fraud-prevention"
-                    className="block text-gray-700"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Fraud Prevention
-                  </Link>
-                  <Link href="/security" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Security
-                  </Link>
-                </div>
-              </div>
-
-              {/* Resources */}
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">RESOURCES</h3>
-                <div className="pl-4 space-y-2">
-                  <Link href="/blog" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Blog
-                  </Link>
-                  <Link href="/partners" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Partners
-                  </Link>
-                </div>
-              </div>
-
-              {/* Company */}
-              <div>
-                <h3 className="font-semibold text-gray-900 mb-2">COMPANY</h3>
-                <div className="pl-4 space-y-2">
-                  <Link href="/about" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    About
-                  </Link>
-                  <Link href="/careers" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Careers
-                  </Link>
-                  <Link href="/contact" className="block text-gray-700" onClick={() => setMobileMenuOpen(false)}>
-                    Contact
-                  </Link>
-                </div>
-              </div>
-
-              {/* Plans */}
-              <Link
-                href="/pricing"
-                className="block font-semibold text-gray-900"
-                onClick={() => setMobileMenuOpen(false)}
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="md:hidden border-t border-gray-200 bg-white">
+          <nav className="container mx-auto flex flex-col space-y-4 px-4 py-4">
+            <Link
+              href="/online-payments"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Online Payments
+            </Link>
+            <Link
+              href="/commerce"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Commerce
+            </Link>
+            <Link
+              href="/payments"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Payments
+            </Link>
+            <Link
+              href="/fraud-prevention"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Fraud Prevention
+            </Link>
+            <Link
+              href="/security"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Security
+            </Link>
+            <Link
+              href="/partners"
+              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Partners
+            </Link>
+            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
+              <a
+                href="https://app.everpayinc.com/login"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
               >
-                PLANS
-              </Link>
-
-              {/* Mobile Buttons */}
-              <div className="pt-4 space-y-2">
-                <a href="https://app.everpayinc.com/login" className="block text-center py-2 text-gray-700">
-                  Log in
-                </a>
-                <Button asChild className="w-full rounded-full bg-gray-900 hover:bg-gray-800 text-white shadow-lg">
-                  <a href="https://app.everpayinc.com/sign-up">Get started</a>
+                Log in
+              </a>
+              <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
+                <Button className="bg-[#1aa478] hover:bg-[#158f64] text-white rounded-full w-full shadow-lg">
+                  Get Started
                 </Button>
-              </div>
+              </a>
             </div>
-          </div>
-        )}
-      </nav>
+          </nav>
+        </div>
+      )}
     </header>
   )
 }

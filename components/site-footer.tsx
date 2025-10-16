@@ -1,133 +1,158 @@
 import Link from "next/link"
+import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#193638] text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Solutions */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Solutions</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/commerce" className="text-gray-300 hover:text-white">
-                  Dental
-                </Link>
-              </li>
-              <li>
-                <Link href="/commerce" className="text-gray-300 hover:text-white">
-                  Eye Care
-                </Link>
-              </li>
-              <li>
-                <Link href="/commerce" className="text-gray-300 hover:text-white">
-                  Medical
-                </Link>
-              </li>
-              <li>
-                <Link href="/commerce" className="text-gray-300 hover:text-white">
-                  Veterinary
-                </Link>
-              </li>
-              <li>
-                <Link href="/commerce" className="text-gray-300 hover:text-white">
-                  Medical Spa
-                </Link>
-              </li>
-            </ul>
+    <footer className="py-12" style={{ backgroundColor: "#081b1e" }}>
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
+          <div className="lg:col-span-2 animate-fade-in-up">
+            <Link href="/" className="inline-block mb-4">
+              <span className="text-2xl font-bold" style={{ fontFamily: "Manrope, sans-serif", color: "#ffffff" }}>
+                everpay
+              </span>
+            </Link>
+            <p className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.7)" }}>
+              The complete payment platform for businesses of all sizes. Accept payments, send payouts, and manage your
+              finances all in one place.
+            </p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+            </div>
           </div>
 
-          {/* Products */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Products</h3>
+          <div className="animate-fade-in-up animate-delay-100">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Products
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/online-payments" className="text-gray-300 hover:text-white">
+                <Link
+                  href="/online-payments"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   Online Payments
                 </Link>
               </li>
               <li>
-                <Link href="/payments" className="text-gray-300 hover:text-white">
-                  Payment Processing
+                <Link
+                  href="/commerce"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Commerce
                 </Link>
               </li>
               <li>
-                <Link href="/fraud-prevention" className="text-gray-300 hover:text-white">
-                  Fraud Prevention
-                </Link>
-              </li>
-              <li>
-                <Link href="/security" className="text-gray-300 hover:text-white">
-                  Security
+                <Link
+                  href="/payments"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Payments
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Resources */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Resources</h3>
+          <div className="animate-fade-in-up animate-delay-200">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Solutions
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog" className="text-gray-300 hover:text-white">
-                  Blog
+                <Link
+                  href="/fraud-prevention"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Fraud Prevention
                 </Link>
               </li>
               <li>
-                <Link href="/partners" className="text-gray-300 hover:text-white">
+                <Link
+                  href="/security"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Security
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/partners"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   Partners
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Company</h3>
+          <div className="animate-fade-in-up animate-delay-300">
+            <h3 className="text-sm font-bold mb-4" style={{ color: "#ffffff" }}>
+              Company
+            </h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-white">
-                  About
+                <Link
+                  href="/about"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  About Us
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-300 hover:text-white">
+                <Link
+                  href="/blog"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/careers"
+                  className="text-sm hover:translate-x-1 inline-block transition-transform duration-200"
+                  style={{ color: "rgba(255,255,255,0.7)" }}
+                >
                   Careers
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-300 hover:text-white">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/privacy-policy" className="text-gray-300 hover:text-white">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link href="/terms" className="text-gray-300 hover:text-white">
-                  Terms of Service
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookie-policy" className="text-gray-300 hover:text-white">
-                  Cookie Policy
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Everpay. All rights reserved.</p>
+        <div
+          className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderColor: "rgba(255,255,255,0.1)" }}
+        >
+          <p className="text-sm" style={{ color: "rgba(255,255,255,0.5)" }}>
+            © 2025 everpay. All rights reserved.
+          </p>
+          <div className="flex items-center gap-6">
+            <Link href="/privacy-policy" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-sm hover:underline" style={{ color: "rgba(255,255,255,0.5)" }}>
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
