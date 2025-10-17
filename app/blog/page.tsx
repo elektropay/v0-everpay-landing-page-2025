@@ -1,3 +1,5 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -30,14 +32,24 @@ const categories = ["All", "Industry Insights", "Technical", "Best Practices", "
 
 export default function BlogPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen bg-white">
+      <SiteHeader />
+
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
+        <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl">
-              <h1 className="text-4xl font-bold mb-6">Everpay Blog</h1>
-              <p className="text-xl text-gray-300">
+            <div className="max-w-4xl mx-auto text-center">
+              <h1
+                className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 animate-fade-in-up"
+                style={{ fontFamily: "Manrope, sans-serif" }}
+              >
+                everpay Blog
+              </h1>
+              <p
+                className="text-lg md:text-xl text-gray-600 animate-fade-in-up animation-delay-200"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
                 Insights, updates, and expert perspectives on payments and fintech.
               </p>
             </div>
@@ -47,27 +59,47 @@ export default function BlogPage() {
         {/* Featured Posts */}
         <section className="py-20">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-12">Featured Articles</h2>
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-12 animate-fade-in-up"
+              style={{ fontFamily: "Manrope, sans-serif" }}
+            >
+              Featured Articles
+            </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredPosts.map((post, index) => (
-                <Link key={index} href="#" className="group">
+                <Link
+                  key={index}
+                  href="#"
+                  className={`group animate-fade-in-up`}
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <article className="space-y-4">
-                    <div className="relative h-60 overflow-hidden rounded-lg">
+                    <div className="relative h-60 overflow-hidden rounded-2xl">
                       <Image
                         src={post.image || "/placeholder.svg"}
                         alt={post.title}
                         fill
-                        className="object-cover transition-transform group-hover:scale-105"
+                        className="object-cover transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                      <div
+                        className="flex items-center gap-4 text-sm text-gray-600"
+                        style={{ fontFamily: "Inter, sans-serif" }}
+                      >
                         <span>{post.category}</span>
                         <span>•</span>
                         <span>{post.date}</span>
                       </div>
-                      <h3 className="text-xl font-semibold group-hover:text-[#4CAF50]">{post.title}</h3>
-                      <p className="text-gray-600">{post.excerpt}</p>
+                      <h3
+                        className="text-xl font-semibold group-hover:text-[#1aa478] transition-colors"
+                        style={{ fontFamily: "Manrope, sans-serif" }}
+                      >
+                        {post.title}
+                      </h3>
+                      <p className="text-gray-600" style={{ fontFamily: "Inter, sans-serif" }}>
+                        {post.excerpt}
+                      </p>
                     </div>
                   </article>
                 </Link>
@@ -76,94 +108,37 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Categories & Latest Posts */}
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-wrap gap-4 mb-12">
-              {categories.map((category, index) => (
-                <Button
-                  key={index}
-                  variant={index === 0 ? "default" : "outline"}
-                  className={index === 0 ? "bg-[#4CAF50] hover:bg-[#45a049]" : ""}
-                >
-                  {category}
-                </Button>
-              ))}
-            </div>
-
-            <div className="grid gap-8">
-              {[1, 2, 3, 4, 5].map((post) => (
-                <article key={post} className="bg-white p-6 rounded-lg shadow-sm">
-                  <div className="grid md:grid-cols-[2fr_1fr] gap-8">
-                    <div className="space-y-4">
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
-                        <span>Industry Insights</span>
-                        <span>•</span>
-                        <span>Oct {post}, 2023</span>
-                      </div>
-                      <h3 className="text-xl font-semibold">
-                        <Link href="#" className="hover:text-[#4CAF50]">
-                          Understanding the Impact of Real-time Payments
-                        </Link>
-                      </h3>
-                      <p className="text-gray-600">
-                        An in-depth look at how real-time payments are transforming the financial landscape and what it
-                        means for businesses...
-                      </p>
-                      <div className="flex items-center gap-4">
-                        <div className="relative w-10 h-10 rounded-full overflow-hidden">
-                          <Image
-                            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80"
-                            alt="Author"
-                            fill
-                            className="object-cover"
-                          />
-                        </div>
-                        <div>
-                          <div className="font-medium">John Smith</div>
-                          <div className="text-sm text-gray-600">Payment Expert</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="relative h-48 md:h-full rounded-lg overflow-hidden">
-                      <Image
-                        src="https://images.unsplash.com/photo-1554774853-719586f82d77?auto=format&fit=crop&q=80"
-                        alt="Blog post"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
-
-            <div className="mt-12 text-center">
-              <Button size="lg" variant="outline">
-                Load More Articles
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* Newsletter */}
-        <section className="py-20">
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-4 max-w-2xl text-center">
-            <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
-            <p className="text-gray-600 mb-8">
+            <h2
+              className="text-3xl md:text-4xl font-bold mb-6 animate-fade-in-up"
+              style={{ fontFamily: "Manrope, sans-serif" }}
+            >
+              Stay Updated
+            </h2>
+            <p
+              className="text-gray-600 mb-8 text-lg animate-fade-in-up animation-delay-200"
+              style={{ fontFamily: "Inter, sans-serif" }}
+            >
               Subscribe to our newsletter for the latest insights and updates in the payments industry.
             </p>
-            <form className="flex gap-4">
+            <form className="flex gap-4 animate-fade-in-up animation-delay-400">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-2 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
+                className="flex-1 px-6 py-3 rounded-full border-2 border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#1aa478] focus:border-transparent"
+                style={{ fontFamily: "Inter, sans-serif" }}
               />
-              <Button className="bg-[#4CAF50] hover:bg-[#45a049]">Subscribe</Button>
+              <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-lg px-8">
+                Subscribe
+              </Button>
             </form>
           </div>
         </section>
       </main>
+
+      <SiteFooter />
     </div>
   )
 }
