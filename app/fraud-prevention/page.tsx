@@ -65,7 +65,7 @@ export default function FraudPreventionPage() {
                   size="lg"
                   className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-transform"
                 >
-                  <a href="/demo">Book a Demo</a>
+                  View Demo
                 </Button>
               </div>
             </div>
@@ -195,15 +195,13 @@ export default function FraudPreventionPage() {
                     >
                       Get Started
                     </Button>
-                    <a href="/demo">
-                      <Button
-                        variant="outline"
-                        size="lg"
-                        className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-transform"
-                      >
-                        Book a Demo
-                      </Button>
-                    </a>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="border-primary-foreground/20 bg-transparent text-primary-foreground hover:bg-primary-foreground/10 hover:scale-105 transition-transform"
+                    >
+                      Contact Sales
+                    </Button>
                   </div>
                 </div>
                 <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg animate-fade-in-right animation-delay-600">

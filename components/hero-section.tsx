@@ -29,13 +29,13 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href="/demo">
+            <a href="/contact">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-gray-900 bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white rounded-full min-w-[200px]"
               >
-                Book a Demo
+                Contact Sales
               </Button>
             </a>
           </div>

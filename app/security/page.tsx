@@ -91,15 +91,13 @@ export default function SecurityPage() {
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Security Whitepaper
                 </Button>
-                <a href="/demo">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-white bg-transparent text-white hover:bg-white/10"
-                  >
-                    Book a Demo
-                  </Button>
-                </a>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white bg-transparent text-white hover:bg-white/10"
+                >
+                  Contact Security Team
+                </Button>
               </div>
             </div>
           </div>
@@ -186,15 +184,9 @@ export default function SecurityPage() {
               <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                 Trust Center
               </Button>
-              <a href="/demo">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white bg-transparent text-white hover:bg-white/10"
-                >
-                  Book a Demo
-                </Button>
-              </a>
+              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
+                Security FAQ
+              </Button>
             </div>
           </div>
         </section>

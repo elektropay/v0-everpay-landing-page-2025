@@ -41,15 +41,13 @@ export default function OnlinePaymentsPage() {
                   <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                     Start Now
                   </Button>
-                  <a href="/demo">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="border-white bg-transparent text-white hover:bg-white/10"
-                    >
-                      Book a Demo
-                    </Button>
-                  </a>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white bg-transparent text-white hover:bg-white/10"
+                  >
+                    Contact Sales
+                  </Button>
                 </div>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
@@ -88,7 +86,7 @@ export default function OnlinePaymentsPage() {
                     className={`relative h-[400px] rounded-lg overflow-hidden ${index % 2 === 1 ? "md:order-1" : ""}`}
                   >
                     <Image
-                      src={`/placeholder.png?height=400&width=600&text=${feature.title}`}
+                      src={`/placeholder.svg?height=400&width=600&text=${feature.title}`}
                       alt={feature.title}
                       width={600}
                       height={400}
@@ -190,15 +188,9 @@ export default function OnlinePaymentsPage() {
               <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                 Create Account
               </Button>
-              <a href="/demo">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white bg-transparent text-white hover:bg-white/10"
-                >
-                  Book a Demo
-                </Button>
-              </a>
+              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
+                Contact Sales
+              </Button>
             </div>
           </div>
         </section>

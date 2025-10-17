@@ -270,7 +270,7 @@ export function SiteHeader() {
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "company" && (
-              <div className="absolute left-0 top-full pt-2 w-42" onMouseLeave={() => setActiveMegaMenu(null)}>
+              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
                 <div className="bg-white rounded-lg shadow-xl p-4">
                   <div className="space-y-2">
                     <Link
@@ -307,7 +307,7 @@ export function SiteHeader() {
               scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
             }`}
           >
-            Plans
+            Pricing
           </Link>
         </nav>
 
@@ -388,7 +388,7 @@ export function SiteHeader() {
                 className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Commerce
+                Omni-Commerce
               </Link>
               <Link
                 href="/payments"
@@ -454,7 +454,7 @@ export function SiteHeader() {
                 className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                Contact Us
               </Link>
             </div>
 
@@ -463,7 +463,7 @@ export function SiteHeader() {
               className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-2"
               onClick={() => setIsMenuOpen(false)}
             >
-              Plans
+              Pricing
             </Link>
 
             <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">

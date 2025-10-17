@@ -33,9 +33,7 @@ export default function PaymentsPage() {
                     size="lg"
                     className="border-2 border-white bg-transparent text-white hover:bg-white/10 w-full sm:w-[180px] h-[48px] rounded-lg text-base font-medium"
                   >
-                    <a href="/demo" className="w-full h-full flex items-center justify-center">
-                      Book a Demo
-                    </a>
+                    Contact sales
                   </Button>
                 </div>
               </div>
@@ -280,15 +278,9 @@ export default function PaymentsPage() {
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Create account
                 </Button>
-                <a href="/demo">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-white text-white hover:bg-white/10 bg-transparent"
-                  >
-                    Book a Demo
-                  </Button>
-                </a>
+                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
+                  Talk to sales
+                </Button>
               </div>
             </div>
           </div>

@@ -16,13 +16,13 @@ export function CTASection() {
               Get Started
             </Button>
           </a>
-          <a href="/demo">
+          <a href="/contact">
             <Button
               size="lg"
               variant="outline"
               className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#1aa478] rounded-full min-w-[200px]"
             >
-              Book a Demo
+              Contact Sales
             </Button>
           </a>
         </div>
