@@ -188,6 +188,16 @@ export default function PricingPage() {
                   transaction fees.
                 </p>
               </div>
+              <div>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  How can I book a demo?
+                </h3>
+                <a href="/demo">
+                  <Button size="lg" variant="outline" className="border-2 border-gray-900 bg-transparent">
+                    Book a Demo
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>

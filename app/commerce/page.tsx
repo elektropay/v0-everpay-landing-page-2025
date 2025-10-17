@@ -21,9 +21,15 @@ export default function CommercePage() {
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Get started
                 </Button>
-                <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                  Contact sales
-                </Button>
+                <a href="/demo">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white text-white hover:bg-white/10 bg-transparent"
+                  >
+                    Book a Demo
+                  </Button>
+                </a>
               </div>
             </div>
           </div>
@@ -158,9 +164,15 @@ export default function CommercePage() {
               <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                 Get started
               </Button>
-              <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
-                Talk to sales
-              </Button>
+              <a href="/demo">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-white text-white hover:bg-white/10 bg-transparent"
+                >
+                  Book a Demo
+                </Button>
+              </a>
             </div>
           </div>
         </section>
