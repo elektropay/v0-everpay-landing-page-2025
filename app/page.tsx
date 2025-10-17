@@ -8,9 +8,9 @@ import { BusinessTypesSection } from "@/components/business-types-section"
 import { CTASection } from "@/components/cta-section"
 import { SiteFooter } from "@/components/site-footer"
 
-export default function Page() {
+export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <SiteHeader />
       <main>
         <HeroSection />
