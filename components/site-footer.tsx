@@ -46,7 +46,7 @@ export function SiteFooter() {
                   href="/pos-solutions"
                   className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
                 >
-                  Marketplaces
+                  POS Solutions
                 </Link>
               </li>
               <li>
