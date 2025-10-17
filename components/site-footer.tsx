@@ -43,10 +43,18 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link
+                  href="/pos-solutions"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  Marketplaces
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/solutions/fintech"
                   className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
                 >
-                  Fintech
+                  Fintechs 
                 </Link>
               </li>
               <li>
