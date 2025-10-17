@@ -89,7 +89,7 @@ export function SiteHeader() {
                           <span>Marketplaces</span>
                         </Link>
                         <Link
-                          href="/pos-solutions"
+                          href="/solutions/pos"
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
@@ -373,7 +373,7 @@ export function SiteHeader() {
                 Marketplaces
               </Link>
               <Link
-                href="/pos-solutions"
+                href="/solutions/pos"
                 className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
