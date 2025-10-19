@@ -303,7 +303,7 @@ export function SiteHeader() {
                           className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>Partners</span>
+                      Partners
                     </Link>
                   </div>
                 </div>
