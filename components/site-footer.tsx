@@ -115,7 +115,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/commerce" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Commerce
+                  Omni-Commerce
                 </Link>
               </li>
               <li>
@@ -131,11 +131,6 @@ export function SiteFooter() {
               <li>
                 <Link href="/security" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Security
-                </Link>
-              </li>              
-              <li>
-                <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Plans & Pricing
                 </Link>
               </li>
             </ul>
@@ -159,6 +154,11 @@ export function SiteFooter() {
                 <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Help & Support
                 </Link>
+              </li>              
+              <li>
+                <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Plans & Pricing
+                </Link>
               </li>
             </ul>
           </div>
@@ -179,7 +179,7 @@ export function SiteFooter() {
               </li>
               <li>
                 <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Contact
+                  Contact Us
                 </Link>
               </li>
               <li>
