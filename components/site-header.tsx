@@ -70,7 +70,31 @@ export function SiteHeader() {
                           onClick={() => setActiveMegaMenu(null)}
                         >
                           <span>🛍️</span>
-                          <span>Retail & E-commerce</span>
+                          <span>Retail</span>
+                        </Link>
+                        <Link
+                          href="/solutions/restaurant"
+                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <span>🍽️</span>
+                          <span>Restaurant</span>
+                        </Link>
+                        <Link
+                          href="/solutions/ecommerce"
+                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <span>🛒</span>
+                          <span>E-commerce</span>
+                        </Link>
+                        <Link
+                          href="/solutions/pos"
+                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <span>🖥️</span>
+                          <span>POS Solutions</span>
                         </Link>
                         <Link
                           href="/solutions/saas"
@@ -87,22 +111,6 @@ export function SiteHeader() {
                         >
                           <span>🏪</span>
                           <span>Marketplaces</span>
-                        </Link>
-                        <Link
-                          href="/solutions/pos"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <span>🖥️</span>
-                          <span>POS Solutions</span>
-                        </Link>
-                        <Link
-                          href="/solutions/fintech"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <span>💳</span>
-                          <span>Fintech</span>
                         </Link>
                       </div>
                     </div>
@@ -356,7 +364,28 @@ export function SiteHeader() {
                 className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Retail & E-commerce
+                Retail
+              </Link>
+              <Link
+                href="/solutions/restaurant"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Restaurant
+              </Link>
+              <Link
+                href="/solutions/ecommerce"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                E-commerce
+              </Link>
+              <Link
+                href="/solutions/pos"
+                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                POS Solutions
               </Link>
               <Link
                 href="/solutions/saas"
@@ -371,13 +400,6 @@ export function SiteHeader() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Marketplaces
-              </Link>
-              <Link
-                href="/solutions/pos"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                POS Solutions
               </Link>
               <Link
                 href="/solutions/enterprise"
