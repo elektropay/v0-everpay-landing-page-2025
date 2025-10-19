@@ -1,6 +1,4 @@
 import Link from "next/link"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
 import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 export function SiteFooter() {
@@ -17,6 +15,20 @@ export function SiteFooter() {
               </span>
             </Link>
             <p className="text-sm text-gray-600 mb-4">Modern payment solutions for businesses of all sizes.</p>
+            <div className="flex items-center gap-4">
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Facebook className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Twitter className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Linkedin className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Instagram className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
+              </a>
+            </div>
           </div>
 
           {/* Solutions */}
@@ -25,36 +37,47 @@ export function SiteFooter() {
             <ul className="space-y-3">
               <li>
                 <Link href="/solutions/retail" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Retail & E-commerce
-                </Link>
-              </li>
-              <li>
-                <Link href="/solutions/saas" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  SaaS & Subscriptions
+                  Retail
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/solutions/marketplace"
+                  href="/solutions/restaurant"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  Restaurant
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/ecommerce"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  E-commerce
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/mobile-payments"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  Mobile Payments
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/saas-platforms"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  SaaS & Platforms
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/solutions/marketplaces"
                   className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
                 >
                   Marketplaces
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/pos-solutions"
-                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
-                >
-                  POS Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/solutions/fintech"
-                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
-                >
-                  Fintechs 
                 </Link>
               </li>
               <li>
@@ -75,6 +98,19 @@ export function SiteFooter() {
               <li>
                 <Link href="/online-payments" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Online Payments
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/products/payment-gateway"
+                  className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors"
+                >
+                  Payment Gateway
+                </Link>
+              </li>
+              <li>
+                <Link href="/solutions/pos" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  POS & Kiosks
                 </Link>
               </li>
               <li>
@@ -105,6 +141,28 @@ export function SiteFooter() {
             </ul>
           </div>
 
+          {/* Resources */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">Resources</h3>
+            <ul className="space-y-3">
+              <li>
+                <Link href="/blog" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  API Documentation
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Help & Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Company */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Company</h3>
@@ -125,47 +183,20 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Blog
-                </Link>
-              </li>
-              <li>
                 <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Pricing
                 </Link>
               </li>
             </ul>
           </div>
-
-          {/* Newsletter */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-4">Stay Updated</h3>
-            <p className="text-sm text-gray-600 mb-4">Subscribe to our newsletter for the latest updates.</p>
-            <form className="space-y-2">
-              <Input type="email" placeholder="Enter your email" className="rounded-full" />
-              <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full">Subscribe</Button>
-            </form>
-          </div>
-           <div className="flex items-center gap-4">
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-            </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-600">© {new Date().getFullYear()} Everpay Corporation. All rights reserved.</p>
+            <p className="text-sm text-gray-600">
+              © {new Date().getFullYear()} Everpay Corporation. All rights reserved.
+            </p>
             <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                 Privacy Policy
