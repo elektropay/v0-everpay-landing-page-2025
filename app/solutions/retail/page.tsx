@@ -9,7 +9,7 @@ import Image from "next/image"
 export default function RetailPage() {
   return (
     <div className="flex min-h-screen flex-col">
-
+      <SiteHeader />
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-purple-600 to-white-800 py-20 text-black">
         <div className="container mx-auto px-4">
@@ -348,6 +348,7 @@ export default function RetailPage() {
         </div>
       </section>
 
+      <SiteFooter />
     </div>
   )
 }
