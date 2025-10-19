@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
+import { Facebook, Twitter, Linkedin, Github } from "lucide-react"
 
 export function SiteFooter() {
   return (
@@ -169,17 +171,17 @@ export function SiteFooter() {
             </form>
           </div>
            <div className="flex items-center gap-4">
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
+              <a href="https://facebook.com/everpay/" className="hover:scale-110 transition-transform duration-200">
                 <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
+              <a href="https://twitter.com/everpay/" className="hover:scale-110 transition-transform duration-200">
                 <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
+              <a href="https://linkedin.com/in/everpay/" className="hover:scale-110 transition-transform duration-200">
                 <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              <a href="https://github.com/everpay/" className="hover:scale-110 transition-transform duration-200">
+                <Github className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
               </a>
             </div>
         </div>
