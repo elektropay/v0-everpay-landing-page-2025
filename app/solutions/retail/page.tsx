@@ -9,23 +9,22 @@ import Image from "next/image"
 export default function RetailPage() {
   return (
     <div className="flex min-h-screen flex-col">
-      <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-600 to-purple-800 py-20 text-white">
+      <section className="relative bg-gradient-to-br from-purple-600 to-white-800 py-20 text-black">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Modern Payment Solutions for Retail
               </h1>
-              <p className="text-xl text-purple-50">
+              <p className="text-xl text-black-50">
                 Unify your in-store and online sales with seamless payment processing. Accept every payment type your
                 customers prefer.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/demo">
-                  <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
+                  <Button size="lg" className="border-grey bg-white text-purple-600 hover:bg-purple-50">
                     Book a Demo
                   </Button>
                 </Link>
@@ -33,7 +32,7 @@ export default function RetailPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white/10 bg-transparent"
+                    className="border-grey text-grey hover:bg-white/10 bg-transparent"
                   >
                     View Pricing
                   </Button>
@@ -61,7 +60,7 @@ export default function RetailPage() {
               <div className="text-sm text-gray-600 mt-2">Retail Stores</div>
             </div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-purple-600">$30B+</div>
+              <div className="text-4xl font-bold text-purple-600">$3B+</div>
               <div className="text-sm text-gray-600 mt-2">Processed</div>
             </div>
             <div className="text-center">
@@ -349,7 +348,6 @@ export default function RetailPage() {
         </div>
       </section>
 
-      <SiteFooter />
     </div>
   )
 }
