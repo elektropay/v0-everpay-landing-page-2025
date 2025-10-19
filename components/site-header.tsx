@@ -212,14 +212,6 @@ export function SiteHeader() {
                           <span>🔒</span>
                           <span>Security</span>
                         </Link>
-                        <Link
-                          href="/partners"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <span>🤝</span>
-                          <span>Partners</span>
-                        </Link>
                       </div>
                     </div>
                   </div>
@@ -255,7 +247,7 @@ export function SiteHeader() {
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
                       onClick={() => setActiveMegaMenu(null)}
                     >
-                      API Documentation
+                      API Docs
                     </Link>
                     <Link
                       href="/contact"
@@ -305,6 +297,13 @@ export function SiteHeader() {
                       onClick={() => setActiveMegaMenu(null)}
                     >
                       Careers
+                    </Link>
+                    <Link
+                          href="/partners"
+                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          onClick={() => setActiveMegaMenu(null)}
+                        >
+                          <span>Partners</span>
                     </Link>
                   </div>
                 </div>
