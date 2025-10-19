@@ -6,32 +6,7 @@ export function SiteFooter() {
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
-              <span className="text-xl font-bold text-gray-900" style={{ fontFamily: "Manrope, sans-serif" }}>
-                everpay
-              </span>
-            </Link>
-            <p className="text-sm text-gray-600 mb-4">Modern payment solutions for businesses of all sizes.</p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Facebook className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Twitter className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Linkedin className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
-              </a>
-              <a href="#" className="hover:scale-110 transition-transform duration-200">
-                <Instagram className="w-5 h-5 text-gray-600 hover:text-[#1aa478]" />
-              </a>
-            </div>
-          </div>
-
-          {/* Solutions */}
+       {/* Solutions */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Solutions</h3>
             <ul className="space-y-3">
@@ -184,6 +159,30 @@ export function SiteFooter() {
               </li>
             </ul>
           </div>
+          {/* Newsletter */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 mb-4">Stay Updated</h3>
+            <p className="text-sm text-gray-600 mb-4">Subscribe to our newsletter for the latest updates.</p>
+            <form className="space-y-2">
+              <Input type="email" placeholder="Enter your email" className="rounded-full" />
+              <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full">Subscribe</Button>
+            </form>
+          </div>
+           <div className="flex items-center gap-4">
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+              <a href="#" className="hover:scale-110 transition-transform duration-200">
+                <Instagram className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+              </a>
+            </div>
+        </div>
         </div>
 
         {/* Bottom Bar */}
