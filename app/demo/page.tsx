@@ -1,10 +1,52 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CheckCircle } from "lucide-react"
+import { submitDemoRequest } from "@/app/actions"
 
 export default function DemoPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; message: string } | null>(null)
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage(null)
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      first_name: formData.get("firstName") as string,
+      last_name: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      phone: formData.get("phone") as string,
+      country: formData.get("country") as string,
+      company_size: formData.get("companySize") as string,
+      monthly_volume: formData.get("volume") as string,
+      use_case: (formData.get("useCase") as string) || undefined,
+      message: (formData.get("message") as string) || undefined,
+    }
+
+    const result = await submitDemoRequest(data)
+
+    setSubmitMessage({
+      type: result.success ? "success" : "error",
+      message: result.message,
+    })
+
+    setIsSubmitting(false)
+
+    if (result.success) {
+      e.currentTarget.reset()
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
@@ -104,7 +146,15 @@ export default function DemoPage() {
                       Request a demo
                     </h2>
 
-                    <form className="space-y-5">
+                    {submitMessage && (
+                      <div
+                        className={`mb-6 p-4 rounded-lg ${submitMessage.type === "success" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}
+                      >
+                        {submitMessage.message}
+                      </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className="space-y-5">
                       {/* Name Fields */}
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
@@ -226,6 +276,11 @@ export default function DemoPage() {
                           <option value="IT">Italy</option>
                           <option value="NL">Netherlands</option>
                           <option value="SE">Sweden</option>
+                          <option value="BR">Brazil</option>
+                          <option value="MX">Mexico</option>
+                          <option value="AR">Argentina</option>
+                          <option value="CL">Chile</option>
+                          <option value="CO">Colombia</option>
                           <option value="other">Other</option>
                         </select>
                       </div>
@@ -299,6 +354,7 @@ export default function DemoPage() {
                           <option value="saas">SaaS & Subscriptions</option>
                           <option value="marketplace">Marketplace</option>
                           <option value="retail">Retail / POS</option>
+                          <option value="restaurant">Restaurant</option>
                           <option value="fintech">Fintech</option>
                           <option value="other">Other</option>
                         </select>
@@ -349,9 +405,10 @@ export default function DemoPage() {
                       <Button
                         type="submit"
                         size="lg"
-                        className="w-full bg-[#1aa478] hover:bg-[#158f64] text-white rounded-full shadow-lg text-base font-semibold"
+                        disabled={isSubmitting}
+                        className="w-full bg-[#1aa478] hover:bg-[#158f64] text-white rounded-full shadow-lg text-base font-semibold disabled:opacity-50"
                       >
-                        Request Demo
+                        {isSubmitting ? "Submitting..." : "Request Demo"}
                       </Button>
 
                       <p className="text-xs text-center text-gray-500" style={{ fontFamily: "Inter, sans-serif" }}>

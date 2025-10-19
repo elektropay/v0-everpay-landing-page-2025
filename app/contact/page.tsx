@@ -1,3 +1,8 @@
+"use client"
+
+import type React from "react"
+
+import { useState } from "react"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
@@ -5,8 +10,43 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Mail, Phone, MapPin } from "lucide-react"
+import { submitContactRequest } from "@/app/actions"
 
 export default function ContactPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState<{ type: "success" | "error"; message: string } | null>(null)
+  const [inquiryType, setInquiryType] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitMessage(null)
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      first_name: formData.get("firstName") as string,
+      last_name: formData.get("lastName") as string,
+      email: formData.get("email") as string,
+      company: (formData.get("company") as string) || undefined,
+      inquiry_type: inquiryType,
+      message: formData.get("message") as string,
+    }
+
+    const result = await submitContactRequest(data)
+
+    setSubmitMessage({
+      type: result.success ? "success" : "error",
+      message: result.message,
+    })
+
+    setIsSubmitting(false)
+
+    if (result.success) {
+      e.currentTarget.reset()
+      setInquiryType("")
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
       <SiteHeader />
@@ -92,38 +132,47 @@ export default function ContactPage() {
               >
                 Send Us a Message
               </h2>
-              <form className="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
+
+              {submitMessage && (
+                <div
+                  className={`mb-6 p-4 rounded-lg ${submitMessage.type === "success" ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"}`}
+                >
+                  {submitMessage.message}
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6 bg-gray-50 p-8 rounded-2xl shadow-lg">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                      First Name
+                      First Name *
                     </label>
-                    <Input type="text" placeholder="John" className="rounded-full" />
+                    <Input type="text" name="firstName" placeholder="John" required className="rounded-full" />
                   </div>
                   <div className="space-y-2">
                     <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                      Last Name
+                      Last Name *
                     </label>
-                    <Input type="text" placeholder="Doe" className="rounded-full" />
+                    <Input type="text" name="lastName" placeholder="Doe" required className="rounded-full" />
                   </div>
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                    Email
+                    Email *
                   </label>
-                  <Input type="email" placeholder="john@example.com" className="rounded-full" />
+                  <Input type="email" name="email" placeholder="john@example.com" required className="rounded-full" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
                     Company
                   </label>
-                  <Input type="text" placeholder="Your company name" className="rounded-full" />
+                  <Input type="text" name="company" placeholder="Your company name" className="rounded-full" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                    Inquiry Type
+                    Inquiry Type *
                   </label>
-                  <Select>
+                  <Select value={inquiryType} onValueChange={setInquiryType} required>
                     <SelectTrigger className="rounded-full">
                       <SelectValue placeholder="Select an inquiry type" />
                     </SelectTrigger>
@@ -137,16 +186,17 @@ export default function ContactPage() {
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                    Message
+                    Message *
                   </label>
-                  <Textarea placeholder="How can we help you?" className="h-32 rounded-2xl" />
+                  <Textarea name="message" placeholder="How can we help you?" className="h-32 rounded-2xl" required />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-lg"
+                  disabled={isSubmitting}
+                  className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-lg disabled:opacity-50"
                   size="lg"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </div>
