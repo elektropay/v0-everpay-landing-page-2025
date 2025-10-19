@@ -128,11 +128,6 @@ export function SiteFooter() {
                   Fraud Prevention
                 </Link>
               </li>
-              <li>
-                <Link href="/security" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Security
-                </Link>
-              </li>
             </ul>
           </div>
 
