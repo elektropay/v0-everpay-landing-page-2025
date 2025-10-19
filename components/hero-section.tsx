@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 export function HeroSection() {
   return (
@@ -29,15 +30,15 @@ export function HeroSection() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </a>
-            <a href="/contact">
+            <Link href="/demo">
               <Button
                 size="lg"
                 variant="outline"
                 className="border-2 border-gray-900 bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white rounded-full min-w-[200px]"
               >
-                Contact Sales
+                Book a Demo
               </Button>
-            </a>
+            </Link>
           </div>
 
           <div className="mt-12 flex items-center justify-center gap-8 text-sm text-gray-500">

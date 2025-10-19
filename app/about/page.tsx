@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function AboutPage() {
   return (
@@ -133,13 +134,15 @@ export default function AboutPage() {
               <Button size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl">
                 Get Started
               </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#1aa478] rounded-full"
-              >
-                Contact Sales
-              </Button>
+              <Link href="/demo">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#1aa478] rounded-full"
+                >
+                  Book a Demo
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
