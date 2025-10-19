@@ -132,10 +132,10 @@ export function SiteFooter() {
                 <Link href="/security" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Security
                 </Link>
-              </li>
+              </li>              
               <li>
-                <Link href="/partners" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Partners
+                <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Plans & Pricing
                 </Link>
               </li>
             </ul>
@@ -183,8 +183,8 @@ export function SiteFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                  Pricing
+                <Link href="/partners" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Partners
                 </Link>
               </li>
             </ul>
@@ -194,21 +194,21 @@ export function SiteFooter() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-600">
+            <p className="text-xs text-gray-600">
               © {new Date().getFullYear()} Everpay Corporation. All rights reserved.
             </p>
             <div className="flex space-x-6">
-              <Link href="/privacy-policy" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+              <Link href="/privacy-policy" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+              <Link href="/terms" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/cookie-policy" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+              <Link href="/cookie-policy" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Cookie Policy
               </Link>
-              <Link href="/security" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
-                Security Policy
+              <Link href="/security" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
+                Security
               </Link>
             </div>
           </div>
