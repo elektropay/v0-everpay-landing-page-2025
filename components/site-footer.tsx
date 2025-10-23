@@ -47,7 +47,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-8 border-t border-gray-200 pt-6">
-          <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
+          <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Everpay Holding Company. All rights reserved.</p>
         </div>
       </div>
     </footer>
