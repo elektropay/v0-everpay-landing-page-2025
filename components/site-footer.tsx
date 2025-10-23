@@ -122,12 +122,12 @@ export function SiteFooter() {
                   API Documentation
                 </Link>
               </li>
-              <li>
                <li>
                 <Link href="/demo" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Request Demo
                 </Link>
               </li>
+              <li>
                 <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Help & Support
                 </Link>
