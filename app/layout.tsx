@@ -5,8 +5,8 @@ import "./globals.css"
 export const metadata: Metadata = {
   title: "Everpay - Global Payment Solutions",
   description: "Accept payments globally with industry-leading security and compliance",
-  generator: 'everpay.app'
-  google-analytics: 'UA-20603888-1'  
+  generator: 'everpay.app',
+  content: "UA-20603888-1"  
 }
 
 export default function RootLayout({
@@ -32,7 +32,7 @@ export default function RootLayout({
   </script>
 <script type="text/javascript" src="https://secure.lack4skip.com/js/203566.js" ></script>
 <noscript><img alt="" src="https://secure.lack4skip.com/203566.png" style="display:none;" /></noscript>
-<meta name="google-analytics" content="UA-20603888-1">  
+ 
     <link rel="shortcut icon" 
       href="%PUBLIC_URL%/favicon.ico" 
       />
