@@ -17,22 +17,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-38V2EJWSF6"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-38V2EJWSF6');
-</script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'UA-20603888-1');
-  </script>
-<script type="text/javascript" src="https://secure.lack4skip.com/js/203566.js" ></script>
-<noscript><img alt="" src="https://secure.lack4skip.com/203566.png" style="display:none;" /></noscript>
- 
     <link rel="shortcut icon" 
       href="%PUBLIC_URL%/favicon.ico" 
       />
