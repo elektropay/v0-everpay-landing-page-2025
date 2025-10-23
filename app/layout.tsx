@@ -17,12 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-    <link rel="shortcut icon" 
-      href="%PUBLIC_URL%/favicon.ico" 
+    <link 
+      rel="shortcut icon" 
+      href="favicon.ico" 
       />
       
-      <link rel="apple-touch-icon" 
-          href="logo192.png" 
+      <link 
+        rel="apple-touch-icon" 
+        href="logo192.png" 
        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap"
