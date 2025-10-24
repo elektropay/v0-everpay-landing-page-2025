@@ -222,6 +222,9 @@ export function SiteFooter() {
               </Link>
             </div>
           </div>
+            <p className="text-xs text-gray-400">Everpay is a technology company, banking services are provided by Everpay BaaS providers, Members FDIC. The Everpay Card is issued by Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and Mastercard International.</p>
+            <p className="text-xs text-gray-400">Everpay services are regulated as a Money Services Business by FinCEN through partnerships. Everpay is PCI DSS Level 1 certified, the highest level of security certification in the payments industry.</p>
+          </div>
         </div>
         
       </div>
