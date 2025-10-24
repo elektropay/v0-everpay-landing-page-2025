@@ -7,7 +7,12 @@ export function SiteFooter() {
   return (
     <footer className="border-t border-gray-200 bg-gray-50">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+         {/* Branding */}
+          <div>
+
+            </div>
+          
           {/* Solutions */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Solutions</h3>
@@ -122,12 +127,12 @@ export function SiteFooter() {
                   API Documentation
                 </Link>
               </li>
-              <li>
                <li>
                 <Link href="/demo" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Request Demo
                 </Link>
               </li>
+              <li>
                 <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Help & Support
                 </Link>
@@ -211,6 +216,9 @@ export function SiteFooter() {
               </Link>
               <Link href="/security" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Security
+              </Link>
+              <Link href="https://status.everpayinc.com" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
+                System Status
               </Link>
             </div>
           </div>
