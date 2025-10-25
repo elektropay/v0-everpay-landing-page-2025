@@ -334,7 +334,7 @@ export default function PaymentGatewayPage() {
         </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
+      <section className="py-20 bg-[#0A2F2F] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
             Ready to Optimize Your Payment Processing?
