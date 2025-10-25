@@ -11,8 +11,8 @@ export default function PaymentsPage() {
   const [activeTab, setActiveTab] = useState("overview")
 
   return (
-    <div className="min-h-screen">
-      <siteHeader />
+    <div className="min-h-screen bg-white">
+      <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 text-grey-900 overflow-hidden animate-fade-in">
