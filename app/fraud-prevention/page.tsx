@@ -1,3 +1,5 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Shield, LineChart, Brain, CheckCircle } from "lucide-react"
 import Image from "next/image"
@@ -44,9 +46,10 @@ const featureImages = [
 export default function FraudPreventionPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <siteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-primary text-primary-foreground py-20 animate-fade-in">
+        <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl animate-fade-in-up">
               <h1 className="text-4xl font-bold mb-6">Fraud Prevention & Risk Management</h1>
@@ -189,12 +192,15 @@ export default function FraudPreventionPage() {
                     Start protecting your business with our advanced fraud prevention system today.
                   </p>
                   <div className="flex gap-4 animate-fade-in-up animation-delay-400">
+                   <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
                     <Button
                       size="lg"
                       className="bg-accent text-accent-foreground hover:bg-accent/90 hover:scale-105 transition-transform"
                     >
                       Get Started
                     </Button>
+                     </a>
+                    <Link href="/contact">
                     <Button
                       variant="outline"
                       size="lg"
@@ -202,6 +208,7 @@ export default function FraudPreventionPage() {
                     >
                       Contact Sales
                     </Button>
+                    </Link>
                   </div>
                 </div>
                 <div className="relative h-[300px] rounded-lg overflow-hidden shadow-lg animate-fade-in-right animation-delay-600">
@@ -217,6 +224,7 @@ export default function FraudPreventionPage() {
           </div>
         </section>
       </main>
+    <SiteFooter />
     </div>
   )
 }
