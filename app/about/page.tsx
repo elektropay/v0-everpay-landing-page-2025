@@ -131,9 +131,11 @@ export default function AboutPage() {
               Whether you're a small business or a large enterprise, we have the solutions to help you grow.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up animation-delay-400">
+            <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl">
                 Get Started
               </Button>
+              </a>
               <Link href="/demo">
                 <Button
                   variant="outline"
