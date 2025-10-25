@@ -171,7 +171,7 @@ export function SiteHeader() {
                         <Code2 className="h-5 w-5 text-[#4CAF50]" />
                         <div>
                           <div className="font-medium">Payment Gateway</div>
-                          <div className="text-sm text-muted-foreground">Fully integrated global payment platform</div>
+                          <div className="text-sm text-muted-foreground">A fully integrated global payments platform</div>
                         </div>
                         </Link>
                         <Link
@@ -193,7 +193,7 @@ export function SiteHeader() {
                         <Globe className="h-5 w-5 text-[#4CAF50]" />
                         <div>
                           <div className="font-medium">Payment Methods</div>
-                          <div className="text-sm text-muted-foreground">Benefit from offering Alternative Payment Methods</div>
+                          <div className="text-sm text-muted-foreground">Offer customers Alternative Payment Methods</div>
                         </div>
                         </Link>
                       </div>
