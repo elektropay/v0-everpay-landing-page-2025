@@ -12,14 +12,14 @@ export default function MobilePaymentsPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-cyan-600 to-cyan-800 py-20 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in text-grey-900">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Accept Payments Anywhere with Mobile POS
               </h1>
-              <p className="text-xl text-cyan-50">
+              <p className="text-xl text-grey-500">
                 Transform your smartphone or tablet into a powerful point of sale. Accept payments on-the-go with our
                 secure mobile payment solutions.
               </p>
@@ -77,7 +77,7 @@ export default function MobilePaymentsPage() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-20">
+      <section className="py-20 animate-fade-in">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Complete Mobile Payment Solution</h2>
@@ -168,7 +168,7 @@ export default function MobilePaymentsPage() {
       </section>
 
       {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 animate-fade-in">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Perfect For Every Mobile Business</h2>
@@ -289,7 +289,7 @@ export default function MobilePaymentsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 animate-fade-in">
             {[
               {
                 name: "Card Reader",
@@ -332,7 +332,7 @@ export default function MobilePaymentsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-cyan-600 to-cyan-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-cyan-600 to-cyan-800 text-white animate-fade-in">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">Ready to Go Mobile with Your Payments?</h2>
           <p className="text-xl text-cyan-50 mb-8 max-w-2xl mx-auto">
