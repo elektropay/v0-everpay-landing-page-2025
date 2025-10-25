@@ -19,13 +19,13 @@ export default function PaymentGatewayPage() {
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Intelligent Payments Orchestration
               </h1>
-              <p className="text-xl text-emerald-50">
+              <p className="text-xl text-gray-900">
                 Optimize payment routing, maximize authorization rates, and reduce costs with our AI powered
                 payments orchestration platform.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/demo">
-                  <Button size="lg" className="bg-white text-emerald-600 hover:bg-emerald-50">
+                  <Button size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl min-w-[200px]">
                     Book a Demo
                   </Button>
                 </Link>
@@ -33,14 +33,14 @@ export default function PaymentGatewayPage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-white text-white hover:bg-white/10 bg-transparent"
+                    className="border-2 border-gray-900 bg-transparent text-gray-900 hover:bg-gray-900 hover:text-white rounded-full min-w-[200px]"
                   >
                     View Pricing
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="relative h-[400px] lg:h-[500px]">
+            <div className="relative h-[380px] lg:h-[480px]">
               <Image
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop&q=80"
                 alt="Payment gateway orchestration"
