@@ -24,7 +24,7 @@ export function CheckoutProtectionSection() {
   ]
 
   return (
-    <section className="py-20" style={{ backgroundColor: "#ffffff" }}>
+    <section className="animate-fade-in py-20" style={{ backgroundColor: "#ffffff" }}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
