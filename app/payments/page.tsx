@@ -298,7 +298,7 @@ export default function PaymentsPage() {
           </div>
         </section>
       </main>
-      <siteFooter />
+     <SiteFooter />
     </div>
   )
 }
