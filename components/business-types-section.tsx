@@ -25,7 +25,7 @@ export function BusinessTypesSection() {
   ]
 
   return (
-    <section className="py-20" style={{ backgroundColor: "#fbf9f9" }}>
+    <section className="animate-fade-in py-20" style={{ backgroundColor: "#fbf9f9" }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <div
