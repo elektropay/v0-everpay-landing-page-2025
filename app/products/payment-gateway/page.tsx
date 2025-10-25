@@ -13,7 +13,7 @@ export default function PaymentGatewayPage() {
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 text-gray-900">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-3">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
