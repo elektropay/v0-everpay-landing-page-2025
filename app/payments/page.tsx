@@ -1,10 +1,12 @@
 "use client"
+import type React from "react"
+import { useState } from "react"
+
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import Image from "next/image"
-import { useState } from "react"
 import Link from "next/link"
 
 export default function PaymentsPage() {
