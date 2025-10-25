@@ -1,5 +1,6 @@
 "use client"
-
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import Image from "next/image"
@@ -10,6 +11,7 @@ export default function PaymentsPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <siteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-[#0A2F2F] text-white overflow-hidden">
@@ -275,17 +277,21 @@ export default function PaymentsPage() {
                 Join thousands of businesses using Everpay to process millions in payments every day.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Create account
                 </Button>
+                  </a>
+                <Link href="/contact">
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                   Talk to sales
                 </Button>
-              </div>
+                  </Link>           
             </div>
           </div>
         </section>
       </main>
+      <siteFooter />
     </div>
   )
 }
