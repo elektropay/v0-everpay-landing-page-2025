@@ -10,12 +10,12 @@ export default function PrivacyPolicyPage() {
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
             <div className="prose prose-lg">
-              <p className="text-gray-600 mb-6">Last updated: October 20, 2023</p>
+              <p className="text-gray-600 mb-6">Last updated: August 20, 2025</p>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
                 <p className="text-gray-600">
-                  Everpay ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
+                  Everpay Corporation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
                   how we collect, use, disclose, and safeguard your information when you use our payment processing
                   services and visit our website.
                 </p>
