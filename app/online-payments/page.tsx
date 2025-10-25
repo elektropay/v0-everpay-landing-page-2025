@@ -27,7 +27,8 @@ const features = [
 
 export default function OnlinePaymentsPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#0A2F2F]">
+      <SiteHeader />
       
       <main className="flex-1">
         {/* Hero Section */}
@@ -188,16 +189,21 @@ export default function OnlinePaymentsPage() {
               Join thousands of businesses using Everpay to power their online payments.
             </p>
             <div className="flex justify-center gap-4">
+               <Link href="https://app.everpayinc.com/sign-up">
               <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                 Create Account
               </Button>
+                 </Link>
+               <Link href="/contact">
               <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
                 Contact Sales
               </Button>
+                 </Link>
             </div>
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }
