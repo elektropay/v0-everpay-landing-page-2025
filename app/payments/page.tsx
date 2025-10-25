@@ -11,7 +11,7 @@ export default function PaymentsPage() {
   const [activeTab, setActiveTab] = useState("overview")
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="min-h-screen">
       <siteHeader />
       <main className="flex-1">
         {/* Hero Section */}
