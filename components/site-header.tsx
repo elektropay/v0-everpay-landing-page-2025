@@ -160,7 +160,7 @@ export function SiteHeader() {
                         <CreditCard className="h-5 w-5 text-[#4CAF50]" />
                         <div>
                           <div className="font-medium">Online Payments</div>
-                          <div className="text-sm text-muted-foreground">Accept your customers payments online</div>
+                          <div className="text-sm text-muted-foreground">Accept online payments in +120 currencies</div>
                         </div>
                         </Link>
                         <Link
@@ -168,8 +168,10 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🔀</span>
-                          <span>Payment Gateway</span>
+                        <Code2 className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Payment Gateway</div>
+                          <div className="text-sm text-muted-foreground">Fully integrated global payment platform</div>
                         </Link>
                         <Link
                           href="/solutions/pos"
@@ -189,14 +191,14 @@ export function SiteHeader() {
                         >
                         <Globe className="h-5 w-5 text-[#4CAF50]" />
                         <div>
-                          <div className="font-medium">Global Payments</div>
-                          <div className="text-sm text-muted-foreground">Accept payments in +120 currencies</div>
+                          <div className="font-medium">Payment Methods</div>
+                          <div className="text-sm text-muted-foreground">Benefit from offering Alternative Payment Methods</div>
                         </div>
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Financial Tools</h3>
+                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Business Tools</h3>
                       <div className="grid gap-2">
                         <Link
                           href="/fraud-prevention"
@@ -206,7 +208,7 @@ export function SiteHeader() {
                         <ShieldCheck className="h-5 w-5 text-[#4CAF50]" />
                         <div>
                           <div className="font-medium">Fraud prevention</div>
-                          <div className="text-sm text-muted-foreground">Advanced AI protection for your business</div>
+                          <div className="text-sm text-muted-foreground">AI fraud protection for your business</div>
                         </div>
                         </Link>
                         <Link
@@ -307,11 +309,11 @@ export function SiteHeader() {
                       Careers
                     </Link>
                     <Link
-                          href="/partners"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
+                      href="/partners"
+                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] transition-colors"
+                      onClick={() => setActiveMegaMenu(null)}
                         >
-                      Partners
+                      Partnerships
                     </Link>
                   </div>
                 </div>
