@@ -7,7 +7,7 @@ export function StatsSection() {
   ]
 
   return (
-    <section className="py-16" style={{ backgroundColor: "#fbf9f9" }}>
+    <section className="animate-fade-in py-16" style={{ backgroundColor: "#fbf9f9" }}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
