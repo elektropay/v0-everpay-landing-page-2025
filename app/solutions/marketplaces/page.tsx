@@ -12,14 +12,14 @@ export default function MarketplacesPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-indigo-600 to-indigo-800 py-20 text-white">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in text-grey-900">
         <div className="container mx-auto px-4">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Power Your Marketplace with Seamless Payments
               </h1>
-              <p className="text-xl text-indigo-50">
+              <p className="text-xl text-grey-500">
                 Enable multi-party transactions, automate payouts, and scale globally with our comprehensive marketplace
                 payment platform.
               </p>
