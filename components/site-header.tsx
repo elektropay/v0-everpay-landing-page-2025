@@ -172,6 +172,7 @@ export function SiteHeader() {
                         <div>
                           <div className="font-medium">Payment Gateway</div>
                           <div className="text-sm text-muted-foreground">Fully integrated global payment platform</div>
+                        </div>
                         </Link>
                         <Link
                           href="/solutions/pos"
