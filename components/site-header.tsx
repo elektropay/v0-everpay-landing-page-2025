@@ -31,7 +31,7 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center space-x-2">
           <img src="/favicon.png" alt="everpay Logo" className="h-8 w-8 rounded-lg" />
           <span
-            className={`text-2xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
+            className={`text-3xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             everpay
