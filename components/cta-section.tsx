@@ -3,9 +3,9 @@ import Link from "next/link"
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#1aa478] to-[#158f64]">
+    <section className="py-20 bg-[#0A2F2F] text-white">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4" style={{ fontFamily: "Manrope, sans-serif" }}>
           Ready to get started?
         </h2>
         <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
