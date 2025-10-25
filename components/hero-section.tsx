@@ -4,7 +4,7 @@ import Link from "next/link"
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1
