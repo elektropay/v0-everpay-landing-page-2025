@@ -12,7 +12,7 @@ export default function PaymentGatewayPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 text-gray-900">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 text-gray-900 animate-fade-in">
         <div className="container mx-auto px-3">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
