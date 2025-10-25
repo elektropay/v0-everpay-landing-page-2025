@@ -19,7 +19,7 @@ export default function PaymentGatewayPage() {
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Intelligent Payments Orchestration
               </h1>
-              <p className="text-xl text-gray-900">
+              <p className="text-xl text-gray-600">
                 Optimize payment routing, maximize authorization rates, and reduce costs with our AI powered
                 payments orchestration platform.
               </p>
