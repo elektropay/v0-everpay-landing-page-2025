@@ -169,42 +169,6 @@ export default function PaymentGatewayPage() {
         </div>
       </section>
 
-       {/* Integration Section */}
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Seamlessly integrate with your existing tools</h2>
-                <p className="text-gray-600 mb-8">
-                  Connect your commerce platform with the tools you already use. From accounting software to marketing
-                  tools, we make it easy to run your entire business from one place.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    "Accounting software integration",
-                    "Marketing automation tools",
-                    "Inventory management systems",
-                    "Customer relationship management",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-[#4CAF50]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-                  alt="Integration dashboard"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
       {/* How It Works Section */}
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -333,6 +297,41 @@ export default function PaymentGatewayPage() {
           </div>
         </div>
       </section>
+{/* Integration Section */}
+        <section className="bg-gray-50 py-20">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Seamlessly integrate with your existing tools</h2>
+                <p className="text-gray-600 mb-8">
+                  Connect your commerce platform with the tools you already use. From accounting software to marketing
+                  tools, we make it easy to run your entire business from one place.
+                </p>
+                <ul className="space-y-4">
+                  {[
+                    "Accounting software integration",
+                    "Marketing automation tools",
+                    "Inventory management systems",
+                    "Customer relationship management",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center gap-2">
+                      <div className="h-2 w-2 rounded-full bg-[#4CAF50]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="relative h-[400px] rounded-lg overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                  alt="Integration dashboard"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-emerald-600 to-emerald-800 text-white">
