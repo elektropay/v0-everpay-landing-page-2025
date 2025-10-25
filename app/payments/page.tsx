@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Check } from "lucide-react"
 import Image from "next/image"
 import { useState } from "react"
+import Link from "next/link"
 
 export default function PaymentsPage() {
   const [activeTab, setActiveTab] = useState("overview")
@@ -14,22 +15,26 @@ export default function PaymentsPage() {
       <siteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-[#0A2F2F] text-white overflow-hidden">
+        <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 text-grey-900 overflow-hidden animate-fade-in">
           <div className="container mx-auto px-4 py-12 md:py-20">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
                 <h1 className="text-4xl md:text-5xl font-bold mb-6">Intelligent payments for the modern business</h1>
-                <p className="text-xl text-gray-300 mb-8">
+                <p className="text-xl text-gray-600 mb-8">
                   Accept payments anywhere, analyze transactions in real-time, and accelerate your business growth with
                   our comprehensive payment solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                  <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
                   <Button
                     size="lg"
                     className="bg-[#4CAF50] hover:bg-[#45a049] w-full sm:w-[180px] h-[48px] rounded-lg text-base font-medium"
                   >
                     Get started
                   </Button>
+                    </a>
+                  
+              <Link href="/contact">
                   <Button
                     variant="outline"
                     size="lg"
@@ -37,6 +42,7 @@ export default function PaymentsPage() {
                   >
                     Contact sales
                   </Button>
+                </Link>
                 </div>
               </div>
               <div className="relative h-[300px] md:h-[400px] rounded-lg overflow-hidden">
@@ -79,7 +85,7 @@ export default function PaymentsPage() {
           {/* Features Grid */}
           <section className="py-12 md:py-20">
             <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="flex-row justify-center grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
                 {[
                   {
                     title: "In-Person Payments",
@@ -118,7 +124,7 @@ export default function PaymentsPage() {
           </section>
 
           {/* Benefits Section */}
-          <section className="bg-gray-50 py-12 md:py-20">
+          <section className="bg-gray-50 py-12 md:py-20 animate-fade-in">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto text-center mb-12">
                 <h2 className="text-3xl font-bold mb-4">Everything you need to succeed</h2>
@@ -167,7 +173,7 @@ export default function PaymentsPage() {
         </div>
 
         <div className={activeTab === "features" ? "block" : "hidden"}>
-          <section className="py-12 md:py-20">
+          <section className="py-12 md:py-20 animate-fade-in">
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 <h2 className="text-3xl font-bold mb-12">Payment Features</h2>
