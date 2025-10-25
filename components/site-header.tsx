@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, CreditCard, Building2, Store, Globe, Wallet, ShieldCheck, Code2, BookOpen, BarChart3, Settings, Users, Smartphone, } from "lucide-react"
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -29,9 +29,9 @@ export function SiteHeader() {
     >
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <Link href="/" className="flex items-center space-x-2">
-          <img src="/favicon.png" alt="everpay Logo" className="h-8 w-8 rounded-lg" />
+          <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
           <span
-            className={`text-3xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
+            className={`text-xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             everpay
@@ -48,7 +48,8 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("solutions")}
             >
-              <span>Solutions</span>
+           <h3 className="font-semibold">Solutions</h3>
+              
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "solutions" && (
@@ -63,35 +64,35 @@ export function SiteHeader() {
                       <div className="space-y-3">
                         <Link
                           href="/solutions/retail"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🛍️</span>
-                          <span>Retail</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🛍️</span>
+                          <span className="font-medium">Retail</span>
                         </Link>
                         <Link
                           href="/solutions/restaurant"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🍽️</span>
-                          <span>Restaurant</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🍽️</span>
+                          <span className="font-medium">Restaurant</span>
                         </Link>
                         <Link
                           href="/solutions/ecommerce"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🛒</span>
-                          <span>E-commerce</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🛒</span>
+                          <span className="font-medium">E-commerce</span>
                         </Link>
                         <Link
                           href="/solutions/mobile-payments"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>📱</span>
-                          <span>Mobile Payments</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">📱</span>
+                          <span className="font-medium">Mobile Payments</span>
                         </Link>
                       </div>
                     </div>
@@ -100,27 +101,27 @@ export function SiteHeader() {
                       <div className="space-y-3">
                         <Link
                           href="/solutions/saas-platforms"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>💻</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">💻</span>
                           <span>SaaS & Platforms</span>
                         </Link>
                         <Link
                           href="/solutions/marketplaces"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🏪</span>
-                          <span>Marketplaces</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🏪</span>
+                          <span className="font-medium">Marketplaces</span>
                         </Link>
                         <Link
                           href="/solutions/enterprise"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🏢</span>
-                          <span>Enterprise</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🏢</span>
+                          <span className="font-medium">Enterprise</span>
                         </Link>
                       </div>
                     </div>
@@ -138,7 +139,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("products")}
             >
-              <span>Products</span>
+               <h3 className="font-semibold">Products</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "products" && (
@@ -150,67 +151,74 @@ export function SiteHeader() {
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-4">Payment Processing</h3>
-                      <div className="space-y-3">
+                      <div className="grid gap-2">
                         <Link
                           href="/online-payments"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>💳</span>
-                          <span>Online Payments</span>
+                        <CreditCard className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Online Payments</div>
+                          <div className="text-sm text-muted-foreground">Accept your customers payments online</div>
+                        </div>
                         </Link>
                         <Link
                           href="/products/payment-gateway"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🔀</span>
+                          <span className="h-5 w-5 text-[#4CAF50]">🔀</span>
                           <span>Payment Gateway</span>
                         </Link>
                         <Link
                           href="/solutions/pos"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🖥️</span>
-                          <span>POS & Kiosks</span>
+                          <Store className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Point of Sale</div>
+                          <div className="text-sm text-muted-foreground">Complete POS, tablet and Kiosk solutions</div>
+                        </div>
                         </Link>
                         <Link
                           href="/commerce"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🛒</span>
-                          <span>Commerce</span>
-                        </Link>
-                        <Link
-                          href="/payments"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <span>💰</span>
-                          <span>Payment Methods</span>
+                        <Globe className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Global Payments</div>
+                          <div className="text-sm text-muted-foreground">Accept payments in +120 currencies</div>
+                        </div>
                         </Link>
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Business Operations</h3>
-                      <div className="space-y-3">
+                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Financial Tools</h3>
+                      <div className="grid gap-2">
                         <Link
                           href="/fraud-prevention"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🛡️</span>
-                          <span>Fraud Prevention</span>
+                        <ShieldCheck className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Fraud prevention</div>
+                          <div className="text-sm text-muted-foreground">Advanced AI protection for your business</div>
+                        </div>
                         </Link>
                         <Link
                           href="/security"
-                          className="flex items-center space-x-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span>🔒</span>
-                          <span>Security</span>
+                        <ShieldCheck className="h-5 w-5 text-[#4CAF50]" />
+                        <div>
+                          <div className="font-medium">Security</div>
+                            <div className="text-sm text-muted-foreground">Bank grade protection for your business</div>
+                        </div>
                         </Link>
                       </div>
                     </div>
@@ -228,7 +236,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("resources")}
             >
-              <span>Resources</span>
+               <h3 className="font-semibold">Resources</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "resources" && (
@@ -270,7 +278,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("company")}
             >
-              <span>Company</span>
+               <h3 className="font-semibold">Company</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "company" && (
