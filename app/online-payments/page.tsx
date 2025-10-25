@@ -3,6 +3,7 @@ import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Globe, Smartphone, ShieldCheck, CheckCircle } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const features = [
   {
