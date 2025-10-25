@@ -56,7 +56,7 @@ export default function CareersPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32">
+        <section className="relative bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h1
