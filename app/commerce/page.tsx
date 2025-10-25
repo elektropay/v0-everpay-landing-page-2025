@@ -1,3 +1,5 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Globe, ShoppingCart, CreditCard, BarChart } from "lucide-react"
 import Image from "next/image"
@@ -6,9 +8,10 @@ import Link from "next/link"
 export default function CommercePage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <siteHeader />
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white">
+        <section className="bg-[#0A2F2F] text-white animate-fade-in">
           <div className="container mx-auto px-4 py-20">
             <div className="max-w-4xl">
               <h1 className="text-5xl font-bold mb-6">Commerce</h1>
@@ -30,7 +33,7 @@ export default function CommercePage() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-8">
               {[
@@ -93,7 +96,7 @@ export default function CommercePage() {
         </section>
 
         {/* Integration Section */}
-        <section className="bg-gray-50 py-20">
+        <section className="bg-gray-50 py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -129,7 +132,7 @@ export default function CommercePage() {
         </section>
 
         {/* Testimonial Section */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center">
               <div className="mb-8">
@@ -140,8 +143,8 @@ export default function CommercePage() {
                 multiple channels while managing everything from one place has been game-changing."
               </blockquote>
               <div>
-                <div className="font-semibold">Sarah Johnson</div>
-                <div className="text-gray-600">CEO, The Retail Company</div>
+                <div className="font-semibold">Stan Sterling</div>
+                <div className="text-gray-600">CEO, Sterling Capital LLC.</div>
               </div>
             </div>
           </div>
@@ -154,17 +157,22 @@ export default function CommercePage() {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Join thousands of businesses using Everpay's commerce platform to reach more customers and increase sales.
             </p>
-            <div className="flex justify-center gap-4">
+            <div className="flex justify-center gap-4">            
+              <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                 Get started
               </Button>
+                </a>
+            <Link href="/contact">
               <Button variant="outline" size="lg" className="border-white text-white hover:bg-white/10">
                 Talk to sales
               </Button>
+              </Link>
             </div>
           </div>
         </section>
       </main>
+      <siteFooter />
     </div>
   )
 }
