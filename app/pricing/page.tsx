@@ -56,7 +56,7 @@ export default function PricingPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-white via-green-50 to-white">
+        <section className="py-20 bg-gradient-to-br from-white via-green-50 to-white animate-fade-in">
           <div className="container mx-auto px-4 text-center">
             <h1
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6"
@@ -74,7 +74,7 @@ export default function PricingPage() {
         </section>
 
         {/* Pricing Cards */}
-        <section className="py-20">
+        <section className="py-20 animate-fade-in">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {plans.map((plan, index) => (
@@ -153,7 +153,7 @@ export default function PricingPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-50 animate-fade-in">
           <div className="container mx-auto px-4 max-w-3xl">
             <h2
               className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12"
