@@ -33,7 +33,7 @@ export default function OnlinePaymentsPage() {
       
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="bg-[#0A2F2F] text-white py-20">
+        <section className="bg- bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in text-gray-900">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
@@ -43,16 +43,20 @@ export default function OnlinePaymentsPage() {
                   features to grow your business.
                 </p>
                 <div className="flex gap-4">
+            <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">    
                   <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                     Start Now
                   </Button>
+                  </a>
+              <Link href="/contact">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-white bg-transparent text-white hover:bg-white/10"
+                    className="border-green bg-transparent text-green hover:bg-white/10"
                   >
                     Contact Sales
                   </Button>
+                </Link>
                 </div>
               </div>
               <div className="relative h-[400px] rounded-lg overflow-hidden">
