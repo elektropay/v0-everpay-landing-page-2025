@@ -5,14 +5,21 @@ import { Facebook, Twitter, Linkedin, Github } from "lucide-react"
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-gray-200 bg-gray-50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
-         {/* Branding */}
-          <div>
+    <footer
+      className="border-t border-gray-200 bg-gray-50 relative bg-no-repeat bg-center"
+      style={{
+        backgroundImage: "url(/footer-bg.png)",
+        backgroundSize: "contain",
+        backgroundPosition: "center top",
+      }}
+    >
+      <div className="absolute inset-0 bg-gray-50/80" />
 
-            </div>
-          
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+          {/* Branding */}
+          <div></div>
+
           {/* Solutions */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Solutions</h3>
@@ -73,7 +80,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-{/* Products */}
+          {/* Products */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Products</h3>
             <ul className="space-y-3">
@@ -127,7 +134,7 @@ export function SiteFooter() {
                   API Documentation
                 </Link>
               </li>
-               <li>
+              <li>
                 <Link href="/demo" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Request Demo
                 </Link>
@@ -136,7 +143,7 @@ export function SiteFooter() {
                 <Link href="/contact" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Help & Support
                 </Link>
-              </li>              
+              </li>
               <li>
                 <Link href="/pricing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
                   Plans & Pricing
@@ -172,7 +179,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
- {/* Newsletter */}
+          {/* Newsletter */}
           <div>
             <h3 className="text-sm font-semibold text-gray-900 mb-4">Stay Updated</h3>
             <p className="text-sm text-gray-600 mb-4">Subscribe to our newsletter for the latest updates.</p>
@@ -181,24 +188,24 @@ export function SiteFooter() {
               <Button className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-full">Subscribe</Button>
             </form>
           </div>
-          
-           <div className="flex items-center gap-4">
-              <a href="https://facebook.com/everpay/" className="hover:scale-110 transition-transform duration-200">
-                <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="https://twitter.com/everpay/" className="hover:scale-110 transition-transform duration-200">
-                <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="https://linkedin.com/in/everpay/" className="hover:scale-110 transition-transform duration-200">
-                <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-              <a href="https://github.com/everpay/" className="hover:scale-110 transition-transform duration-200">
-                <Github className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
-              </a>
-            </div>
+
+          <div className="flex items-center gap-4">
+            <a href="https://facebook.com/everpay/" className="hover:scale-110 transition-transform duration-200">
+              <Facebook className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+            </a>
+            <a href="https://twitter.com/everpay/" className="hover:scale-110 transition-transform duration-200">
+              <Twitter className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+            </a>
+            <a href="https://linkedin.com/in/everpay/" className="hover:scale-110 transition-transform duration-200">
+              <Linkedin className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+            </a>
+            <a href="https://github.com/everpay/" className="hover:scale-110 transition-transform duration-200">
+              <Github className="w-5 h-5" style={{ color: "rgba(255,255,255,0.7)" }} />
+            </a>
+          </div>
         </div>
 
-{/* Bottom Bar */}
+        {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-xs text-gray-600">
@@ -217,21 +224,29 @@ export function SiteFooter() {
               <Link href="/security" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Security
               </Link>
-              <Link href="https://status.everpayinc.com" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
+              <Link
+                href="https://status.everpayinc.com"
+                className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors"
+              >
                 System Status
               </Link>
             </div>
-            </div>
-            <div className="mt-10 pt-2">
-             <p className="text-xs text-gray-600">Everpay is a technology company, banking services are provided by Everpay BaaS providers, Members FDIC. The Everpay Card is issued by Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and Mastercard International.</p>
-            <p className="text-xs text-gray-600">Everpay services are regulated as a Money Services Business by FinCEN through partnerships. Everpay is PCI DSS Level 1 certified, the highest level of security certification in the payments industry.</p>
           </div>
-
+          <div className="mt-10 pt-2">
+            <p className="text-xs text-gray-600">
+              Everpay is a technology company, banking services are provided by Everpay BaaS providers, Members FDIC.
+              The Everpay Card is issued by Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and
+              Mastercard International.
+            </p>
+            <p className="text-xs text-gray-600">
+              Everpay services are regulated as a Money Services Business by FinCEN through partnerships. Everpay is PCI
+              DSS Level 1 certified, the highest level of security certification in the payments industry.
+            </p>
+          </div>
         </div>
-        
       </div>
     </footer>
-  );
+  )
 }
 
-export default SiteFooter;
+export default SiteFooter
