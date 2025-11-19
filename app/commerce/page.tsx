@@ -1,14 +1,14 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Globe, ShoppingCart, CreditCard, BarChart } from "lucide-react"
+import { ChevronRight, Globe, ShoppingCart, CreditCard, BarChart } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 
 export default function CommercePage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <siteHeader />
+      <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-[#0A2F2F] text-white animate-fade-in">
@@ -172,7 +172,7 @@ export default function CommercePage() {
           </div>
         </section>
       </main>
-      <siteFooter />
+      <SiteFooter />
     </div>
   )
 }

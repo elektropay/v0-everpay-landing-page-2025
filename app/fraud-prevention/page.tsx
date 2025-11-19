@@ -1,7 +1,7 @@
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { Shield, LineChart, Brain, CheckCircle } from "lucide-react"
+import { Shield, LineChart, Brain, CheckCircle } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 
@@ -47,7 +47,7 @@ const featureImages = [
 export default function FraudPreventionPage() {
   return (
     <div className="flex flex-col min-h-screen">
-      <siteHeader />
+      <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in">
@@ -225,7 +225,7 @@ export default function FraudPreventionPage() {
           </div>
         </section>
       </main>
-    <SiteFooter />
+      <SiteFooter />
     </div>
   )
 }
