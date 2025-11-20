@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown, CreditCard, Building2, Store, Globe, Wallet, ShieldCheck, Code2, BookOpen, BarChart3, Settings, Users, Smartphone, } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -48,8 +48,8 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("solutions")}
             >
-           <h3 className="font-semibold">Solutions</h3>
-              
+              <h3 className="font-semibold">Solutions</h3>
+
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "solutions" && (
@@ -139,7 +139,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("products")}
             >
-               <h3 className="font-semibold">Products</h3>
+              <h3 className="font-semibold">Products</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "products" && (
@@ -151,77 +151,59 @@ export function SiteHeader() {
                   <div className="grid grid-cols-2 gap-8">
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-4">Payment Processing</h3>
-                      <div className="grid gap-2">
+                      <div className="space-y-3">
                         <Link
                           href="/online-payments"
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                        <CreditCard className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Online Payments</div>
-                          <div className="text-sm text-muted-foreground">Accept online payments in +120 currencies</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">💳</span>
+                          <span className="font-medium">Online Payments</span>
                         </Link>
                         <Link
                           href="/products/payment-gateway"
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                        <Code2 className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Payment Gateway</div>
-                          <div className="text-sm text-muted-foreground">A fully integrated global payments platform</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">🔌</span>
+                          <span className="font-medium">Payment Gateway</span>
                         </Link>
                         <Link
                           href="/solutions/pos"
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <Store className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Point of Sale</div>
-                          <div className="text-sm text-muted-foreground">Complete POS, tablet and Kiosk solutions</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">🏪</span>
+                          <span className="font-medium">Point of Sale</span>
                         </Link>
                         <Link
-                          href="/commerce"
+                          href="/alternative-payment-methods"
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                        <Globe className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Payment Methods</div>
-                          <div className="text-sm text-muted-foreground">Offer customers Alternative Payment Methods</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">🌐</span>
+                          <span className="font-medium">Alternative Payment Methods</span>
                         </Link>
                       </div>
                     </div>
                     <div>
                       <h3 className="text-sm font-semibold text-gray-900 mb-4">Business Tools</h3>
-                      <div className="grid gap-2">
+                      <div className="space-y-3">
                         <Link
                           href="/fraud-prevention"
-                          className="group flex items-center gap-3 rounded-lg p-2 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
+                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                        <ShieldCheck className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Fraud prevention</div>
-                          <div className="text-sm text-muted-foreground">AI fraud protection for your business</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">🛡️</span>
+                          <span className="font-medium">Fraud Prevention</span>
                         </Link>
                         <Link
                           href="/security"
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                        <ShieldCheck className="h-5 w-5 text-[#4CAF50]" />
-                        <div>
-                          <div className="font-medium">Security</div>
-                            <div className="text-sm text-muted-foreground">Bank grade protection for your business</div>
-                        </div>
+                          <span className="h-5 w-5 text-[#4CAF50]">🔒</span>
+                          <span className="font-medium">Security</span>
                         </Link>
                       </div>
                     </div>
@@ -239,7 +221,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("resources")}
             >
-               <h3 className="font-semibold">Resources</h3>
+              <h3 className="font-semibold">Resources</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "resources" && (
@@ -281,7 +263,7 @@ export function SiteHeader() {
               }`}
               onMouseEnter={() => setActiveMegaMenu("company")}
             >
-               <h3 className="font-semibold">Company</h3>
+              <h3 className="font-semibold">Company</h3>
               <ChevronDown className="h-4 w-4" />
             </button>
             {activeMegaMenu === "company" && (
@@ -313,7 +295,7 @@ export function SiteHeader() {
                       href="/partners"
                       className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] transition-colors"
                       onClick={() => setActiveMegaMenu(null)}
-                        >
+                    >
                       Partnerships
                     </Link>
                   </div>
@@ -441,18 +423,11 @@ export function SiteHeader() {
                 POS & Kiosks
               </Link>
               <Link
-                href="/commerce"
+                href="/alternative-payment-methods"
                 className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Commerce
-              </Link>
-              <Link
-                href="/payments"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Payment Methods
+                Alternative Payment Methods
               </Link>
               <Link
                 href="/fraud-prevention"
