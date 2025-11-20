@@ -1,9 +1,25 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import {
+  ChevronDown,
+  Menu,
+  X,
+  ShoppingBag,
+  UtensilsCrossed,
+  ShoppingCart,
+  Smartphone,
+  Laptop,
+  Store,
+  Building2,
+  CreditCard,
+  Plug,
+  Globe,
+  Shield,
+  Lock,
+} from "lucide-react"
+import { useState, useEffect } from "react"
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -67,7 +83,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🛍️</span>
+                          <ShoppingBag className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Retail</span>
                         </Link>
                         <Link
@@ -75,7 +91,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🍽️</span>
+                          <UtensilsCrossed className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Restaurant</span>
                         </Link>
                         <Link
@@ -83,7 +99,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🛒</span>
+                          <ShoppingCart className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">E-commerce</span>
                         </Link>
                         <Link
@@ -91,7 +107,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">📱</span>
+                          <Smartphone className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Mobile Payments</span>
                         </Link>
                       </div>
@@ -104,7 +120,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">💻</span>
+                          <Laptop className="h-5 w-5 text-[#4CAF50]" />
                           <span>SaaS & Platforms</span>
                         </Link>
                         <Link
@@ -112,7 +128,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🏪</span>
+                          <Store className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Marketplaces</span>
                         </Link>
                         <Link
@@ -120,7 +136,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🏢</span>
+                          <Building2 className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Enterprise</span>
                         </Link>
                       </div>
@@ -157,7 +173,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">💳</span>
+                          <CreditCard className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Online Payments</span>
                         </Link>
                         <Link
@@ -165,7 +181,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🔌</span>
+                          <Plug className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Payment Gateway</span>
                         </Link>
                         <Link
@@ -173,7 +189,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🏪</span>
+                          <Store className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Point of Sale</span>
                         </Link>
                         <Link
@@ -181,7 +197,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🌐</span>
+                          <Globe className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Alternative Payment Methods</span>
                         </Link>
                       </div>
@@ -194,7 +210,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🛡️</span>
+                          <Shield className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Fraud Prevention</span>
                         </Link>
                         <Link
@@ -202,7 +218,7 @@ export function SiteHeader() {
                           className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
                           onClick={() => setActiveMegaMenu(null)}
                         >
-                          <span className="h-5 w-5 text-[#4CAF50]">🔒</span>
+                          <Lock className="h-5 w-5 text-[#4CAF50]" />
                           <span className="font-medium">Security</span>
                         </Link>
                       </div>
