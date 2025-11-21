@@ -5,6 +5,10 @@ import type { DemoRequest, ContactRequest } from "@/lib/supabase"
 
 export async function submitDemoRequest(data: DemoRequest) {
   try {
+    if (!supabase) {
+      throw new Error("Supabase client is not configured")
+    }
+
     const { error } = await supabase.from("demo_requests").insert([data])
 
     if (error) throw error
@@ -18,6 +22,10 @@ export async function submitDemoRequest(data: DemoRequest) {
 
 export async function submitContactRequest(data: ContactRequest) {
   try {
+    if (!supabase) {
+      throw new Error("Supabase client is not configured")
+    }
+
     const { error } = await supabase.from("contact_requests").insert([data])
 
     if (error) throw error
