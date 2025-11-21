@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Utensils, CreditCard, Smartphone, Users, BarChart, Clock } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { MetaballsBackground } from "@/components/metaballs-background"
 
 export default function RestaurantPage() {
   return (
@@ -12,8 +13,10 @@ export default function RestaurantPage() {
       <SiteHeader />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 to-orange-800 py-20 text-white">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-orange-600 to-orange-800 py-20 text-white overflow-hidden">
+        <MetaballsBackground count={5} className="opacity-20" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">

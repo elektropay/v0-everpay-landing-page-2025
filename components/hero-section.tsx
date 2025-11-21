@@ -1,11 +1,14 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { MetaballsBackground } from "@/components/metaballs-background"
 
 export function HeroSection() {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 animate-fade-in">
-      <div className="container mx-auto px-4">
+      <MetaballsBackground count={6} className="opacity-30" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h1
             className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"

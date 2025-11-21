@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, GitBranch, Shield, TrendingUp, Zap, Globe, BarChart } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { MetaballsBackground } from "@/components/metaballs-background"
 
 export default function PaymentGatewayPage() {
   return (
@@ -13,19 +14,24 @@ export default function PaymentGatewayPage() {
 
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-green-50 to-white py-20 md:py-32 text-gray-900 animate-fade-in">
-        <div className="container mx-auto px-3">
+        <MetaballsBackground count={6} className="opacity-30" />
+
+        <div className="container mx-auto px-3 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                 Intelligent Payments Orchestration
               </h1>
               <p className="text-xl text-gray-600">
-                Optimize payment routing, maximize authorization rates, and reduce costs with our AI powered
-                payments orchestration platform.
+                Optimize payment routing, maximize authorization rates, and reduce costs with our AI powered payments
+                orchestration platform.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Link href="/demo">
-                  <Button size="lg" className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl min-w-[200px]">
+                  <Button
+                    size="lg"
+                    className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-xl min-w-[200px]"
+                  >
                     Book a Demo
                   </Button>
                 </Link>
@@ -297,41 +303,42 @@ export default function PaymentGatewayPage() {
           </div>
         </div>
       </section>
-{/* Integration Section */}
-        <section className="bg-gray-50 py-20">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Seamlessly integrate with your existing tools</h2>
-                <p className="text-gray-600 mb-8">
-                  Connect your commerce platform with the tools you already use. From accounting software to marketing
-                  tools, we make it easy to run your entire business from one place.
-                </p>
-                <ul className="space-y-4">
-                  {[
-                    "Accounting software integration",
-                    "Marketing automation tools",
-                    "Inventory management systems",
-                    "Customer relationship management",
-                  ].map((item, index) => (
-                    <li key={index} className="flex items-center gap-2">
-                      <div className="h-2 w-2 rounded-full bg-[#4CAF50]" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="relative h-[400px] rounded-lg overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
-                  alt="Integration dashboard"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+
+      {/* Integration Section */}
+      <section className="bg-gray-50 py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold mb-6">Seamlessly integrate with your existing tools</h2>
+              <p className="text-gray-600 mb-8">
+                Connect your commerce platform with the tools you already use. From accounting software to marketing
+                tools, we make it easy to run your entire business from one place.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "Accounting software integration",
+                  "Marketing automation tools",
+                  "Inventory management systems",
+                  "Customer relationship management",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-center gap-2">
+                    <div className="h-2 w-2 rounded-full bg-[#4CAF50]" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="relative h-[400px] rounded-lg overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
+                alt="Integration dashboard"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-[#0A2F2F] text-white">

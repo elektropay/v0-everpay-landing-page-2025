@@ -5,14 +5,17 @@ import { Card, CardContent } from "@/components/ui/card"
 import { CheckCircle, Store, ShoppingBag, Smartphone, BarChart, Users, Zap } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { MetaballsBackground } from "@/components/metaballs-background"
 
 export default function RetailPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <SiteHeader />
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-600 to-white-800 py-20 text-black">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-purple-600 to-white-800 py-20 text-black overflow-hidden">
+        <MetaballsBackground count={5} className="opacity-20" />
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
