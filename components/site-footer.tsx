@@ -10,7 +10,7 @@ export function SiteFooter() {
       style={{
         backgroundImage: "url(/footer-bg.png)",
         backgroundSize: "contain",
-        backgroundPosition: "center top",
+        backgroundPosition: "center bottom",
       }}
     >
       <div className="absolute inset-0 bg-gray-50/80" />
