@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CheckCircle } from "lucide-react"
 import { submitDemoRequest } from "@/app/actions"
+import { countries } from "@/lib/countries"
 
 export default function DemoPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -266,22 +267,11 @@ export default function DemoPage() {
                           className="w-full rounded-lg border border-gray-300 px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#1aa478] focus:border-transparent"
                         >
                           <option value="">Select a country</option>
-                          <option value="US">United States</option>
-                          <option value="CA">Canada</option>
-                          <option value="GB">United Kingdom</option>
-                          <option value="AU">Australia</option>
-                          <option value="DE">Germany</option>
-                          <option value="FR">France</option>
-                          <option value="ES">Spain</option>
-                          <option value="IT">Italy</option>
-                          <option value="NL">Netherlands</option>
-                          <option value="SE">Sweden</option>
-                          <option value="BR">Brazil</option>
-                          <option value="MX">Mexico</option>
-                          <option value="AR">Argentina</option>
-                          <option value="CL">Chile</option>
-                          <option value="CO">Colombia</option>
-                          <option value="other">Other</option>
+                          {countries.map((country) => (
+                            <option key={country.code} value={country.code}>
+                              {country.name}
+                            </option>
+                          ))}
                         </select>
                       </div>
 
