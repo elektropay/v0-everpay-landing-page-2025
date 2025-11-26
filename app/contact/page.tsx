@@ -85,11 +85,11 @@ export default function ContactPage() {
                   For general inquiries and support
                 </p>
                 <a
-                  href="mailto:support@everpay.com"
+                  href="mailto:hello@everpayinc.com"
                   className="text-[#1aa478] hover:underline font-medium"
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
-                  support@everpay.com
+                  hello@everpayinc.com
                 </a>
               </div>
               <div className="text-center p-8 rounded-2xl border-2 border-gray-200 hover:border-[#1aa478] transition-all duration-300 hover:shadow-xl animate-fade-in-up animation-delay-200">
@@ -101,11 +101,11 @@ export default function ContactPage() {
                   Mon-Fri, 9am-6pm EST
                 </p>
                 <a
-                  href="tel:+18001234567"
+                  href="tel:+18765254398"
                   className="text-[#1aa478] hover:underline font-medium"
                   style={{ fontFamily: "Inter, sans-serif" }}
                 >
-                  1-800-123-4567
+                  1-876-525-4398
                 </a>
               </div>
               <div className="text-center p-8 rounded-2xl border-2 border-gray-200 hover:border-[#1aa478] transition-all duration-300 hover:shadow-xl animate-fade-in-up animation-delay-400">
@@ -117,9 +117,9 @@ export default function ContactPage() {
                   Our headquarters
                 </p>
                 <address className="text-[#1aa478] not-italic font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
-                  123 Payment Street
+                  4711 Yonge Street, 10th Floor
                   <br />
-                  New York, NY 10001
+                  Toronto, ON, M2N 6K8, CA
                 </address>
               </div>
             </div>

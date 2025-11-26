@@ -70,7 +70,7 @@ export function PaymentPartnersSection() {
               key={`${method.name}-${index}`}
               className="flex-shrink-0 flex items-center justify-center hover:scale-110 transition-transform duration-300"
             >
-              <div className="relative w-32 h-16 grayscale hover:grayscale-0 transition-all duration-300">
+              <div className="relative w-32 h-16 transition-all duration-300">
                 <Image
                   src={method.image || "/placeholder.svg"}
                   alt={method.name}
