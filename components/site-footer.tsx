@@ -209,7 +209,7 @@ export function SiteFooter() {
         <div className="mt-12 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-xs text-gray-600">
-              © {new Date().getFullYear()} Everpay Corporation. All rights reserved.
+              © 2026 Everpay Corporation. All rights reserved.
             </p>
             <div className="flex space-x-6">
               <Link href="/privacy-policy" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">

@@ -31,17 +31,19 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Mission Section */}
+        {/* Who We Are Section */}
         <section className="py-20">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="animate-fade-in-left">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6" style={{ fontFamily: "Manrope, sans-serif" }}>
-                  Our Mission
+                  Who We Are
                 </h2>
                 <p className="text-gray-600 mb-6 text-lg" style={{ fontFamily: "Inter, sans-serif" }}>
-                  To empower businesses of all sizes with innovative payment solutions that drive growth and enable
-                  seamless commerce across borders.
+                  Everpay is a global payments platform that helps businesses accept and manage payments across cards, bank transfers, wallets, and local payment methods — all through one unified system.
+                </p>
+                <p className="text-gray-600 mb-6 text-lg" style={{ fontFamily: "Inter, sans-serif" }}>
+                  Built for scale, Everpay simplifies complex payment operations while delivering secure, compliant, and high-performance payment experiences across markets.
                 </p>
                 <div className="grid grid-cols-2 gap-8">
                   <div className="animate-zoom-in animation-delay-300">
