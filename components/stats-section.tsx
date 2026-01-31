@@ -1,33 +1,28 @@
 export function StatsSection() {
   const stats = [
-    { value: "94%", label: "Customer satisfaction" },
-    { value: "$105", label: "Avg. transaction" },
-    { value: "1K+", label: "Active businesses" },
-    { value: "18%", label: "Annual growth rate" },
+    { value: "94%", label: "Customer satisfaction", delay: "100" },
+    { value: "$105", label: "Avg transaction value", delay: "200" },
+    { value: "1K+", label: "Active merchants", delay: "300" },
+    { value: "18%", label: "Revenue growth rate", delay: "400" },
   ]
 
   return (
-    <section className="py-16 border-b">
+    <section className="animate-fade-in py-16" style={{ backgroundColor: "#fbf9f9" }}>
       <div className="container mx-auto px-4">
-        <div className="mb-8 grid gap-16 md:grid-cols-2">
-          <div className="space-y-6">
-            <div className="text-sm font-medium text-[#4CAF50] tracking-wide">DIGITAL EXCHANGE</div>
-            <h2 className="text-4xl font-bold text-[#0A2F2F] leading-tight lg:text-5xl">
-              Linking Commerce Via Transactions
-            </h2>
-            <p className="text-gray-600 text-lg">
-              Efficiently facilitating transactions, our platform seamlessly connects consumers and businesses for
-              digital commerce.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-8 md:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold text-[#0A2F2F] lg:text-5xl">{stat.value}</div>
-                <p className="text-gray-600">{stat.label}</p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {stats.map((stat, index) => (
+            <div key={index} className={`text-center animate-zoom-in animate-delay-${stat.delay}`}>
+              <div
+                className="text-4xl lg:text-5xl font-bold mb-2"
+                style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+              >
+                {stat.value}
               </div>
-            ))}
-          </div>
+              <div className="text-sm" style={{ color: "#6b7280" }}>
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
