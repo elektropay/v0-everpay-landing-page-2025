@@ -1,17 +1,21 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
+
 export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SiteHeader />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
             <div className="prose prose-lg">
-              <p className="text-gray-600 mb-6">Last updated: October 20, 2023</p>
+              <p className="text-gray-600 mb-6">Last updated: August 20, 2025</p>
 
               <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
                 <p className="text-gray-600">
-                  Everpay ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
+                  Everpay Corporation ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains
                   how we collect, use, disclose, and safeguard your information when you use our payment processing
                   services and visit our website.
                 </p>
@@ -43,6 +47,7 @@ export default function PrivacyPolicyPage() {
           </div>
         </div>
       </main>
+      <SiteFooter />
     </div>
   )
 }

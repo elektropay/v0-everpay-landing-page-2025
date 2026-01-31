@@ -1,6 +1,9 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
 import { Shield, Lock, CheckCircle, FileCheck } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 const certifications = [
   {
@@ -77,6 +80,7 @@ const complianceStandards = [
 export default function SecurityPage() {
   return (
     <div className="flex flex-col min-h-screen">
+     <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-[#0A2F2F] text-white py-20">
@@ -91,6 +95,7 @@ export default function SecurityPage() {
                 <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
                   Security Whitepaper
                 </Button>
+                <Link href="/contact">
                 <Button
                   variant="outline"
                   size="lg"
@@ -98,6 +103,7 @@ export default function SecurityPage() {
                 >
                   Contact Security Team
                 </Button>
+                </Link>
               </div>
             </div>
           </div>
@@ -191,6 +197,7 @@ export default function SecurityPage() {
           </div>
         </section>
       </main>
+    <SiteFooter />
     </div>
   )
 }
