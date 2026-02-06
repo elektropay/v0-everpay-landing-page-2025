@@ -1,24 +1,24 @@
 export function StatsSection() {
   const stats = [
-    { value: "94%", label: "Customer satisfaction", delay: "100" },
-    { value: "$105", label: "Avg transaction value", delay: "200" },
-    { value: "1K+", label: "Active merchants", delay: "300" },
-    { value: "18%", label: "Revenue growth rate", delay: "400" },
+    { value: "99.99%", label: "Uptime guarantee" },
+    { value: "135+", label: "Currencies supported" },
+    { value: "1K+", label: "Active merchants" },
+    { value: "<200ms", label: "Average response time" },
   ]
 
   return (
-    <section className="animate-fade-in py-16" style={{ backgroundColor: "#fbf9f9" }}>
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-16 bg-white border-y border-gray-100">
+      <div className="container mx-auto px-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
           {stats.map((stat, index) => (
-            <div key={index} className={`text-center animate-zoom-in animate-delay-${stat.delay}`}>
+            <div key={index} className="text-center">
               <div
-                className="text-4xl lg:text-5xl font-bold mb-2"
-                style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+                className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-1"
+                style={{ fontFamily: "Manrope, sans-serif" }}
               >
                 {stat.value}
               </div>
-              <div className="text-sm" style={{ color: "#6b7280" }}>
+              <div className="text-sm text-gray-500" style={{ fontFamily: "Inter, sans-serif" }}>
                 {stat.label}
               </div>
             </div>

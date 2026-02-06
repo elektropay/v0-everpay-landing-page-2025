@@ -28,242 +28,122 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 10)
     }
-
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60"
-          : "border-transparent bg-transparent"
+          ? "bg-white/95 backdrop-blur-md shadow-sm"
+          : "bg-white"
       }`}
     >
-      <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2">
+      <div className="container mx-auto flex h-[72px] items-center justify-between px-6">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-2.5">
           <img src="/favicon.png" alt="Everpay Logo" className="h-8 w-8 rounded-lg" />
           <span
-            className={`text-xl font-bold transition-colors ${scrolled ? "text-black" : "text-black"}`}
+            className="text-[22px] font-bold text-gray-900 tracking-tight"
             style={{ fontFamily: "Manrope, sans-serif" }}
           >
             everpay
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          {/* Solutions Dropdown */}
-          <div className="relative group">
-            <button
-              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
-                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
-              }`}
-              onMouseEnter={() => setActiveMegaMenu("solutions")}
-            >
-              <h3 className="font-semibold">Solutions</h3>
-
-              <ChevronDown className="h-4 w-4" />
+        {/* Desktop Navigation - Centered */}
+        <nav className="hidden lg:flex items-center gap-1">
+          {/* Solutions */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMegaMenu("solutions")}
+            onMouseLeave={() => setActiveMegaMenu(null)}
+          >
+            <button className="flex items-center gap-1 px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
+              Solutions
+              <ChevronDown className="h-3.5 w-3.5 opacity-50" />
             </button>
             {activeMegaMenu === "solutions" && (
-              <div
-                className="absolute left-0 top-full pt-2 w-screen max-w-3xl"
-                onMouseLeave={() => setActiveMegaMenu(null)}
-              >
-                <div className="bg-white rounded-lg shadow-xl p-8">
-                  <div className="grid grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">By Business Type</h3>
-                      <div className="space-y-3">
-                        <Link
-                          href="/solutions/retail"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <ShoppingBag className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Retail</span>
-                        </Link>
-                        <Link
-                          href="/solutions/restaurant"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <UtensilsCrossed className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Restaurant</span>
-                        </Link>
-                        <Link
-                          href="/solutions/ecommerce"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <ShoppingCart className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">E-commerce</span>
-                        </Link>
-                        <Link
-                          href="/solutions/mobile-payments"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Smartphone className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Mobile Payments</span>
-                        </Link>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">By Platform Type</h3>
-                      <div className="space-y-3">
-                        <Link
-                          href="/solutions/saas-platforms"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Laptop className="h-5 w-5 text-[#4CAF50]" />
-                          <span>SaaS & Platforms</span>
-                        </Link>
-                        <Link
-                          href="/solutions/marketplaces"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Store className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Marketplaces</span>
-                        </Link>
-                        <Link
-                          href="/solutions/enterprise"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Building2 className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Enterprise</span>
-                        </Link>
-                      </div>
-                    </div>
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[520px]">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                  <div className="grid grid-cols-2 gap-1">
+                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">By Business Type</p>
+                    <Link href="/solutions/retail" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <ShoppingBag className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Retail</span>
+                    </Link>
+                    <Link href="/solutions/restaurant" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <UtensilsCrossed className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Restaurant</span>
+                    </Link>
+                    <Link href="/solutions/ecommerce" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <ShoppingCart className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">E-commerce</span>
+                    </Link>
+                    <Link href="/solutions/mobile-payments" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Smartphone className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Mobile Payments</span>
+                    </Link>
+                    <div className="col-span-2 border-t border-gray-100 my-2" />
+                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">By Platform</p>
+                    <Link href="/solutions/saas-platforms" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Laptop className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">{"SaaS & Platforms"}</span>
+                    </Link>
+                    <Link href="/solutions/marketplaces" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Store className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Marketplaces</span>
+                    </Link>
+                    <Link href="/solutions/enterprise" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Building2 className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Enterprise</span>
+                    </Link>
                   </div>
                 </div>
               </div>
             )}
           </div>
 
-          {/* Products Dropdown */}
-          <div className="relative group">
-            <button
-              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
-                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
-              }`}
-              onMouseEnter={() => setActiveMegaMenu("products")}
-            >
-              <h3 className="font-semibold">Products</h3>
-              <ChevronDown className="h-4 w-4" />
+          {/* Products */}
+          <div
+            className="relative"
+            onMouseEnter={() => setActiveMegaMenu("products")}
+            onMouseLeave={() => setActiveMegaMenu(null)}
+          >
+            <button className="flex items-center gap-1 px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
+              Products
+              <ChevronDown className="h-3.5 w-3.5 opacity-50" />
             </button>
             {activeMegaMenu === "products" && (
-              <div
-                className="absolute left-0 top-full pt-2 w-screen max-w-3xl"
-                onMouseLeave={() => setActiveMegaMenu(null)}
-              >
-                <div className="bg-white rounded-lg shadow-xl p-8">
-                  <div className="grid grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Payment Processing</h3>
-                      <div className="space-y-3">
-                        <Link
-                          href="/online-payments"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <CreditCard className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Online Payments</span>
-                        </Link>
-                        <Link
-                          href="/products/payment-gateway"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Plug className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Payment Gateway</span>
-                        </Link>
-                        <Link
-                          href="/solutions/pos"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Store className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Point of Sale</span>
-                        </Link>
-                        <Link
-                          href="/alternative-payment-methods"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Globe className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Alternative Payment Methods</span>
-                        </Link>
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-sm font-semibold text-gray-900 mb-4">Business Tools</h3>
-                      <div className="space-y-3">
-                        <Link
-                          href="/fraud-prevention"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Shield className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Fraud Prevention</span>
-                        </Link>
-                        <Link
-                          href="/security"
-                          className="group flex items-center gap-3 rounded-lg p-2 text-sm text-gray-700 hover:text-[#1aa478] transition-colors"
-                          onClick={() => setActiveMegaMenu(null)}
-                        >
-                          <Lock className="h-5 w-5 text-[#4CAF50]" />
-                          <span className="font-medium">Security</span>
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Resources Dropdown */}
-          <div className="relative group">
-            <button
-              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
-                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
-              }`}
-              onMouseEnter={() => setActiveMegaMenu("resources")}
-            >
-              <h3 className="font-semibold">Resources</h3>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-            {activeMegaMenu === "resources" && (
-              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
-                <div className="bg-white rounded-lg shadow-xl p-4">
-                  <div className="space-y-2">
-                    <Link
-                      href="/blog"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Blog
+              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[440px]">
+                <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
+                  <div className="grid grid-cols-2 gap-1">
+                    <Link href="/online-payments" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <CreditCard className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Online Payments</span>
                     </Link>
-                    <Link
-                      href="/about"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      API Docs
+                    <Link href="/products/payment-gateway" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Plug className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Payment Gateway</span>
                     </Link>
-                    <Link
-                      href="/contact"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Help & Support
+                    <Link href="/solutions/pos" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Store className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Point of Sale</span>
+                    </Link>
+                    <Link href="/fraud-prevention" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Shield className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Fraud Prevention</span>
+                    </Link>
+                    <Link href="/security" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Lock className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Security</span>
+                    </Link>
+                    <Link href="/payments" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <Globe className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Payment Methods</span>
                     </Link>
                   </div>
                 </div>
@@ -271,83 +151,33 @@ export function SiteHeader() {
             )}
           </div>
 
-          {/* Company Dropdown */}
-          <div className="relative group">
-            <button
-              className={`flex items-center space-x-1 text-sm font-medium transition-colors ${
-                scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
-              }`}
-              onMouseEnter={() => setActiveMegaMenu("company")}
-            >
-              <h3 className="font-semibold">Company</h3>
-              <ChevronDown className="h-4 w-4" />
-            </button>
-            {activeMegaMenu === "company" && (
-              <div className="absolute left-0 top-full pt-2 w-48" onMouseLeave={() => setActiveMegaMenu(null)}>
-                <div className="bg-white rounded-lg shadow-xl p-4">
-                  <div className="space-y-2">
-                    <Link
-                      href="/about"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      About Us
-                    </Link>
-                    <Link
-                      href="/contact"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Contact Us
-                    </Link>
-                    <Link
-                      href="/careers"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] rounded transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Careers
-                    </Link>
-                    <Link
-                      href="/partners"
-                      className="block px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-[#1aa478] transition-colors"
-                      onClick={() => setActiveMegaMenu(null)}
-                    >
-                      Partnerships
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Plans Link */}
-          <Link
-            href="/pricing"
-            className={`text-sm font-medium transition-colors ${
-              scrolled ? "text-black hover:text-gray-700" : "text-black hover:text-gray-700"
-            }`}
-          >
+          {/* Simple links */}
+          <Link href="/pricing" className="px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
             Pricing
+          </Link>
+          <Link href="/about" className="px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
+            About
+          </Link>
+          <Link href="/blog" className="px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
+            Blog
           </Link>
         </nav>
 
-        {/* Desktop CTA Buttons */}
-        <div className="hidden lg:flex items-center space-x-4">
+        {/* Desktop CTA */}
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="https://app.everpayinc.com/login"
             target="_blank"
             rel="noopener noreferrer"
-            className={`text-sm font-medium transition-colors px-4 py-2 rounded-full ${
-              scrolled
-                ? "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-                : "text-gray-700 hover:text-gray-900 hover:bg-gray-100"
-            }`}
+            className="text-[15px] font-medium text-gray-600 hover:text-gray-900 px-4 py-2 transition-colors"
           >
-            Log in
+            Login
           </a>
-          <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
-            <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full shadow-lg">Get Started</Button>
-          </a>
+          <Link href="/demo">
+            <Button className="bg-[#1aa478] hover:bg-[#158f68] text-white rounded-full px-6 h-10 text-[15px] font-semibold shadow-none">
+              Get a free demo
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -358,183 +188,67 @@ export function SiteHeader() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-gray-200 bg-white">
-          <nav className="container mx-auto flex flex-col space-y-4 px-4 py-4">
-            {/* Solutions */}
-            <div>
-              <p className="text-xs font-semibold text-gray-500 mb-2">SOLUTIONS</p>
-              <Link
-                href="/solutions/retail"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Retail
-              </Link>
-              <Link
-                href="/solutions/restaurant"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Restaurant
-              </Link>
-              <Link
-                href="/solutions/ecommerce"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                E-commerce
-              </Link>
-              <Link
-                href="/solutions/mobile-payments"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Mobile Payments
-              </Link>
-              <Link
-                href="/solutions/saas-platforms"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                SaaS & Platforms
-              </Link>
-              <Link
-                href="/solutions/marketplaces"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Marketplaces
-              </Link>
-              <Link
-                href="/solutions/enterprise"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Enterprise
-              </Link>
+        <div className="lg:hidden border-t border-gray-100 bg-white">
+          <nav className="container mx-auto flex flex-col px-6 py-6">
+            <div className="space-y-1">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Solutions</p>
+              {[
+                { href: "/solutions/retail", label: "Retail" },
+                { href: "/solutions/restaurant", label: "Restaurant" },
+                { href: "/solutions/ecommerce", label: "E-commerce" },
+                { href: "/solutions/mobile-payments", label: "Mobile Payments" },
+                { href: "/solutions/saas-platforms", label: "SaaS & Platforms" },
+                { href: "/solutions/marketplaces", label: "Marketplaces" },
+                { href: "/solutions/enterprise", label: "Enterprise" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="block py-2 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Products */}
-            <div>
-              <p className="text-xs font-semibold text-gray-500 mb-2">PRODUCTS</p>
-              <Link
-                href="/online-payments"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Online Payments
-              </Link>
-              <Link
-                href="/products/payment-gateway"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Payment Gateway
-              </Link>
-              <Link
-                href="/solutions/pos"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                POS & Kiosks
-              </Link>
-              <Link
-                href="/alternative-payment-methods"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Alternative Payment Methods
-              </Link>
-              <Link
-                href="/fraud-prevention"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Fraud Prevention
-              </Link>
-              <Link
-                href="/security"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Security
-              </Link>
-              <Link
-                href="/partners"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Partners
-              </Link>
+            <div className="border-t border-gray-100 mt-4 pt-4 space-y-1">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Products</p>
+              {[
+                { href: "/online-payments", label: "Online Payments" },
+                { href: "/products/payment-gateway", label: "Payment Gateway" },
+                { href: "/solutions/pos", label: "Point of Sale" },
+                { href: "/fraud-prevention", label: "Fraud Prevention" },
+                { href: "/security", label: "Security" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="block py-2 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Resources */}
-            <div>
-              <p className="text-xs font-semibold text-gray-500 mb-2">RESOURCES</p>
-              <Link
-                href="/blog"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Blog
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Support
-              </Link>
+            <div className="border-t border-gray-100 mt-4 pt-4 space-y-1">
+              {[
+                { href: "/pricing", label: "Pricing" },
+                { href: "/about", label: "About" },
+                { href: "/blog", label: "Blog" },
+                { href: "/contact", label: "Contact" },
+              ].map((item) => (
+                <Link key={item.href} href={item.href} className="block py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                  {item.label}
+                </Link>
+              ))}
             </div>
 
-            {/* Company */}
-            <div>
-              <p className="text-xs font-semibold text-gray-500 mb-2">COMPANY</p>
-              <Link
-                href="/about"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About Us
-              </Link>
-              <Link
-                href="/careers"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Careers
-              </Link>
-              <Link
-                href="/contact"
-                className="block text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-1"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact Us
-              </Link>
-            </div>
-
-            <Link
-              href="/pricing"
-              className="text-sm font-medium text-gray-700 hover:text-[#1aa478] transition-colors py-2"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Pricing
-            </Link>
-
-            <div className="flex flex-col space-y-2 pt-4 border-t border-gray-200">
+            <div className="border-t border-gray-100 mt-4 pt-6 flex flex-col gap-3">
               <a
                 href="https://app.everpayinc.com/login"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-center px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-100 rounded-full transition-colors"
+                className="text-center text-[15px] font-medium text-gray-600 py-2.5"
               >
-                Log in
+                Login
               </a>
-              <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
-                <Button className="bg-gray-900 hover:bg-gray-800 text-white rounded-full w-full shadow-lg">
-                  Get Started
+              <Link href="/demo" onClick={() => setIsMenuOpen(false)}>
+                <Button className="w-full bg-[#1aa478] hover:bg-[#158f68] text-white rounded-full h-11 text-[15px] font-semibold">
+                  Get a free demo
                 </Button>
-              </a>
+              </Link>
             </div>
           </nav>
         </div>

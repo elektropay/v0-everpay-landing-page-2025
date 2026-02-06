@@ -1,85 +1,80 @@
-import { Card } from "@/components/ui/card"
-import { ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { CreditCard, Globe, Smartphone, ShieldCheck, BarChart3, Repeat } from "lucide-react"
+
+const products = [
+  {
+    icon: CreditCard,
+    title: "Online Payments",
+    description: "Accept credit cards, debit cards, and digital wallets with a single integration. Optimized checkout that converts.",
+    href: "/online-payments",
+  },
+  {
+    icon: Globe,
+    title: "Global Payment Methods",
+    description: "Support 135+ currencies and local payment methods like PIX, Boleto, OXXO, Alipay, and more.",
+    href: "/payments",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile & In-App Payments",
+    description: "Apple Pay, Google Pay, and native SDKs for iOS and Android. Seamless mobile checkout experiences.",
+    href: "/solutions/mobile-payments",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Fraud Prevention",
+    description: "AI-powered fraud detection with real-time scoring. Block bad actors without slowing down good customers.",
+    href: "/fraud-prevention",
+  },
+  {
+    icon: BarChart3,
+    title: "Analytics & Reporting",
+    description: "Real-time dashboards, transaction insights, and settlement reports. Full visibility into your payment operations.",
+    href: "/about",
+  },
+  {
+    icon: Repeat,
+    title: "Recurring Billing",
+    description: "Subscriptions, invoicing, and smart retry logic. Maximize recurring revenue and reduce churn.",
+    href: "/solutions/saas-platforms",
+  },
+]
 
 export function BusinessTypesSection() {
-  const businessTypes = [
-    {
-      title: "E-commerce",
-      revenue: "$60k",
-      description: "Perfect for online stores and marketplaces",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
-    },
-    {
-      title: "SaaS",
-      revenue: "$80k",
-      description: "Ideal for subscription-based businesses",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-    },
-    {
-      title: "Marketplace",
-      revenue: "$120k",
-      description: "Built for multi-vendor platforms",
-      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
-    },
-  ]
-
   return (
-    <section className="animate-fade-in py-20" style={{ backgroundColor: "#fbf9f9" }}>
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <div
-            className="inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 animate-fade-in"
-            style={{ backgroundColor: "#e3ffcc", color: "#193638" }}
-          >
-            BUSINESS TYPES
-          </div>
+    <section className="py-20 md:py-28 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-16">
           <h2
-            className="text-3xl lg:text-4xl font-bold mb-4 animate-fade-in-up animate-delay-100"
-            style={{ fontFamily: "var(--font-display)", color: "#193638" }}
+            className="text-3xl md:text-[40px] font-extrabold text-gray-900 leading-tight mb-4"
+            style={{ fontFamily: "Manrope, sans-serif" }}
           >
-            We Drive Growth for All Business Types
+            Everything you need to get paid
           </h2>
-          <p className="text-lg max-w-2xl mx-auto animate-fade-in-up animate-delay-200" style={{ color: "#6b7280" }}>
-            Whether you're a startup or an enterprise, we have the right solution for your business
+          <p className="text-gray-500 text-lg max-w-xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
+            One platform with all the tools to accept payments, prevent fraud, and grow your business globally.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {businessTypes.map((type, index) => (
-            <Card
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {products.map((product, index) => (
+            <a
               key={index}
-              className={`overflow-hidden group hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in-up animate-delay-${300 + index * 100}`}
-              style={{ backgroundColor: "#ffffff", borderColor: "#e5e7eb" }}
+              href={product.href}
+              className="group block rounded-2xl border border-gray-100 bg-white p-7 hover:shadow-lg hover:border-[#1aa478]/20 transition-all duration-200"
             >
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={type.image || "/placeholder.svg"}
-                  alt={type.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
-                />
+              <div className="w-11 h-11 rounded-xl bg-[#1aa478]/10 flex items-center justify-center mb-5">
+                <product.icon className="w-5 h-5 text-[#1aa478]" />
               </div>
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#193638" }}>
-                    {type.title}
-                  </h3>
-                  <span className="text-2xl font-bold" style={{ fontFamily: "var(--font-display)", color: "#1aa478" }}>
-                    {type.revenue}
-                  </span>
-                </div>
-                <p className="text-sm mb-4" style={{ color: "#6b7280" }}>
-                  {type.description}
-                </p>
-                <button
-                  className="flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all duration-200"
-                  style={{ color: "#1aa478" }}
-                >
-                  Learn more <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </Card>
+              <h3
+                className="text-lg font-bold text-gray-900 mb-2 group-hover:text-[#1aa478] transition-colors"
+                style={{ fontFamily: "Manrope, sans-serif" }}
+              >
+                {product.title}
+              </h3>
+              <p className="text-sm text-gray-500 leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+                {product.description}
+              </p>
+            </a>
           ))}
         </div>
       </div>
