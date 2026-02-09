@@ -234,13 +234,12 @@ export function SiteFooter() {
           </div>
           <div className="mt-10 pt-2">
             <p className="text-xs text-gray-600">
-              Everpay is a technology company, banking services are provided by Everpay BaaS providers, Members FDIC.
-              The Everpay Card is issued by Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and
+              Everpay Aspect is a financial technology company, not a bank. Banking services are provided by licensed Banking As A Service providers, partner institutions and are FDIC-insured up to applicable limits.
+              The Everpay Card is issued by Everpay card-issuing technology providers pursuant to licenses from Visa U.S.A. Inc. and
               Mastercard International.
             </p>
             <p className="text-xs text-gray-600">
-              Everpay services are regulated as a Money Services Business by FinCEN through partnerships. Everpay is PCI
-              DSS Level 1 certified, the highest level of security certification in the payments industry.
+              Everpay is PCI DSS Level 1 certified, the highest level of security certification in the payments industry.
             </p>
           </div>
         </div>
