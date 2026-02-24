@@ -20,12 +20,13 @@ import {
   Lock,
   DollarSign,
 } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,12 +36,24 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleMenuEnter = (menu: string) => {
+    if (closeTimeoutRef.current) {
+      clearTimeout(closeTimeoutRef.current)
+      closeTimeoutRef.current = null
+    }
+    setActiveMegaMenu(menu)
+  }
+
+  const handleMenuLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setActiveMegaMenu(null)
+    }, 150)
+  }
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm"
-          : "bg-white"
+        scrolled ? "bg-white/95 backdrop-blur-md shadow-sm" : "bg-white"
       }`}
     >
       <div className="container mx-auto flex h-[72px] items-center justify-between px-6">
@@ -55,23 +68,27 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        {/* Desktop Navigation - Centered */}
+        {/* Desktop Navigation */}
         <nav className="hidden lg:flex items-center gap-1">
           {/* Solutions */}
           <div
             className="relative"
-            onMouseEnter={() => setActiveMegaMenu("solutions")}
-            onMouseLeave={() => setActiveMegaMenu(null)}
+            onMouseEnter={() => handleMenuEnter("solutions")}
+            onMouseLeave={handleMenuLeave}
           >
             <button className="flex items-center gap-1 px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
               Solutions
-              <ChevronDown className="h-3.5 w-3.5 opacity-50" />
+              <ChevronDown className={`h-3.5 w-3.5 opacity-50 transition-transform ${activeMegaMenu === "solutions" ? "rotate-180" : ""}`} />
             </button>
             {activeMegaMenu === "solutions" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[520px]">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[520px]">
+                {/* Invisible bridge to prevent gap-close */}
+                <div className="h-2" />
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
                   <div className="grid grid-cols-2 gap-1">
-                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">By Business Type</p>
+                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">
+                      By Business Type
+                    </p>
                     <Link href="/solutions/retail" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
                       <ShoppingBag className="h-4 w-4 text-[#1aa478]" />
                       <span className="font-medium">Retail</span>
@@ -89,7 +106,9 @@ export function SiteHeader() {
                       <span className="font-medium">Mobile Payments</span>
                     </Link>
                     <div className="col-span-2 border-t border-gray-100 my-2" />
-                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">By Platform</p>
+                    <p className="col-span-2 text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3 px-3">
+                      By Platform
+                    </p>
                     <Link href="/solutions/saas-platforms" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
                       <Laptop className="h-4 w-4 text-[#1aa478]" />
                       <span className="font-medium">{"SaaS & Platforms"}</span>
@@ -111,15 +130,16 @@ export function SiteHeader() {
           {/* Products */}
           <div
             className="relative"
-            onMouseEnter={() => setActiveMegaMenu("products")}
-            onMouseLeave={() => setActiveMegaMenu(null)}
+            onMouseEnter={() => handleMenuEnter("products")}
+            onMouseLeave={handleMenuLeave}
           >
             <button className="flex items-center gap-1 px-4 py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900 rounded-lg hover:bg-gray-50 transition-colors">
               Products
-              <ChevronDown className="h-3.5 w-3.5 opacity-50" />
+              <ChevronDown className={`h-3.5 w-3.5 opacity-50 transition-transform ${activeMegaMenu === "products" ? "rotate-180" : ""}`} />
             </button>
             {activeMegaMenu === "products" && (
-              <div className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[440px]">
+              <div className="absolute left-1/2 -translate-x-1/2 top-full w-[440px]">
+                <div className="h-2" />
                 <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6">
                   <div className="grid grid-cols-2 gap-1">
                     <Link href="/online-payments" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
@@ -193,7 +213,7 @@ export function SiteHeader() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white">
+        <div className="lg:hidden border-t border-gray-100 bg-white max-h-[calc(100vh-72px)] overflow-y-auto">
           <nav className="container mx-auto flex flex-col px-6 py-6">
             <div className="space-y-1">
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-3">Solutions</p>
@@ -206,7 +226,7 @@ export function SiteHeader() {
                 { href: "/solutions/marketplaces", label: "Marketplaces" },
                 { href: "/solutions/enterprise", label: "Enterprise" },
               ].map((item) => (
-                <Link key={item.href} href={item.href} className="block py-2 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                <Link key={item.href} href={item.href} className="block py-2.5 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
                   {item.label}
                 </Link>
               ))}
@@ -220,9 +240,10 @@ export function SiteHeader() {
                 { href: "/solutions/pos", label: "Point of Sale" },
                 { href: "/fraud-prevention", label: "Fraud Prevention" },
                 { href: "/security", label: "Security" },
+                { href: "/payments", label: "Payment Methods" },
                 { href: "/funding", label: "Funding" },
               ].map((item) => (
-                <Link key={item.href} href={item.href} className="block py-2 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                <Link key={item.href} href={item.href} className="block py-2.5 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
                   {item.label}
                 </Link>
               ))}
@@ -235,7 +256,7 @@ export function SiteHeader() {
                 { href: "/blog", label: "Blog" },
                 { href: "/contact", label: "Contact" },
               ].map((item) => (
-                <Link key={item.href} href={item.href} className="block py-2 text-[15px] font-medium text-gray-700 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
+                <Link key={item.href} href={item.href} className="block py-2.5 text-[15px] font-medium text-gray-700 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
                   {item.label}
                 </Link>
               ))}
