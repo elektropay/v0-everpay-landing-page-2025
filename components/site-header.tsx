@@ -18,6 +18,7 @@ import {
   Globe,
   Shield,
   Lock,
+  DollarSign,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
@@ -145,6 +146,10 @@ export function SiteHeader() {
                       <Globe className="h-4 w-4 text-[#1aa478]" />
                       <span className="font-medium">Payment Methods</span>
                     </Link>
+                    <Link href="/funding" className="flex items-center gap-3 rounded-xl p-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors" onClick={() => setActiveMegaMenu(null)}>
+                      <DollarSign className="h-4 w-4 text-[#1aa478]" />
+                      <span className="font-medium">Funding</span>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -215,6 +220,7 @@ export function SiteHeader() {
                 { href: "/solutions/pos", label: "Point of Sale" },
                 { href: "/fraud-prevention", label: "Fraud Prevention" },
                 { href: "/security", label: "Security" },
+                { href: "/funding", label: "Funding" },
               ].map((item) => (
                 <Link key={item.href} href={item.href} className="block py-2 text-[15px] text-gray-600 hover:text-gray-900" onClick={() => setIsMenuOpen(false)}>
                   {item.label}

@@ -117,6 +117,11 @@ export function SiteFooter() {
                   Fraud Prevention
                 </Link>
               </li>
+              <li>
+                <Link href="/funding" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Funding
+                </Link>
+              </li>
             </ul>
           </div>
 
