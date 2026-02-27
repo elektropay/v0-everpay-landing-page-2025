@@ -239,11 +239,10 @@ export function SiteFooter() {
           </div>
           <div className="mt-10 pt-2">
             <p className="text-xs text-gray-600">
-              Everpay Aspect is a financial technology company, not a bank. Banking services are provided by licensed Banking As A Service providers, partner institutions and are FDIC-insured up to applicable limits.
-              The Everpay Card is issued by Everpay card-issuing technology providers pursuant to licenses from Visa U.S.A. Inc. and
-              Mastercard International.
+              Everpay Corporation is a financial technology company and not a bank. Banking services are provided by Everpay's bank partners, Members FDIC. Visa® virtual debit cards are issued by Everpay's bank partners pursuant to a license from Visa U.S.A. Inc. and may be used everywhere Visa debit cards are accepted.
             </p>
             <p className="text-xs text-gray-600">
+              Deposit sweep networks may be offered through select Everpay bank partners. Please refer to the applicable bank partner’s deposit sweep network disclosures for more information.
               Everpay is PCI DSS Level 1 certified, the highest level of security certification in the payments industry.
             </p>
           </div>
