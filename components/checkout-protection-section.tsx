@@ -1,53 +1,79 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Check } from "lucide-react"
+"use client"
 
-const securityFeatures = [
+import { Star } from "lucide-react"
+
+const testimonials = [
   {
-    title: "Sophisticated Login Protection",
-    description: "Multi-factor authentication and advanced security measures.",
+    quote: "Everpay transformed our payment operations. We've seen a 40% increase in successful transactions since switching.",
+    name: "Sarah Chen",
+    title: "CTO, UrbanMarket",
   },
   {
-    title: "Data-Loss Prevention",
-    description: "Automatic backups and encryption for all sensitive data.",
+    quote: "The fraud protection alone has saved us over $200K. And the integration was incredibly smooth.",
+    name: "Marcus Rivera",
+    title: "Head of Payments, FlowCommerce",
   },
   {
-    title: "Proactive Fraud Prevention",
-    description: "AI-powered fraud detection and prevention systems.",
+    quote: "We went from 3 payment providers to just Everpay. Simpler, cheaper, and our conversion rate is up 18%.",
+    name: "Aisha Patel",
+    title: "VP Operations, ShopWave",
+  },
+  {
+    quote: "Their support team is incredible. Available 24/7 and deeply knowledgeable about global payment regulations.",
+    name: "James O'Brien",
+    title: "CEO, QuickShip Logistics",
+  },
+  {
+    quote: "Expanding into Latin America was seamless with Everpay. PIX, Boleto, OXXO - all just worked from day one.",
+    name: "Lucia Fernandez",
+    title: "Growth Lead, Tienda Digital",
+  },
+  {
+    quote: "The dashboard gives us real-time visibility into every transaction across 12 countries. Game changer.",
+    name: "David Kim",
+    title: "CFO, NexGen Retail",
   },
 ]
 
 export function CheckoutProtectionSection() {
   return (
-    <section className="bg-gray-50 py-16">
-      <div className="container mx-auto px-4">
-        <div className="grid gap-12 md:grid-cols-2">
-          <div>
-            <h2 className="text-3xl font-bold mb-6">Trusted Checkout Protection</h2>
-            <div className="space-y-6">
-              {securityFeatures.map((feature, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="h-8 w-8 rounded-full bg-[#4CAF50]/10 flex items-center justify-center flex-shrink-0">
-                    <Check className="h-5 w-5 text-[#4CAF50]" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold mb-1">{feature.title}</h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
-                  </div>
-                </div>
-              ))}
+    <section className="py-20 md:py-28 bg-gray-50">
+      <div className="container mx-auto px-6">
+        <div className="text-center mb-14">
+          <h2
+            className="text-3xl md:text-[40px] font-extrabold text-gray-900 leading-tight mb-4"
+            style={{ fontFamily: "Manrope, sans-serif" }}
+          >
+            See why businesses trust Everpay
+          </h2>
+          <p className="text-gray-500 text-lg max-w-xl mx-auto" style={{ fontFamily: "Inter, sans-serif" }}>
+            Over 500 businesses have switched to Everpay for faster, more reliable payment processing.
+          </p>
+        </div>
+
+        {/* Testimonial grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-5xl mx-auto">
+          {testimonials.map((t, i) => (
+            <div
+              key={i}
+              className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow"
+            >
+              <div className="flex gap-0.5 mb-4">
+                {[...Array(5)].map((_, j) => (
+                  <Star key={j} className="w-4 h-4 fill-[#1aa478] text-[#1aa478]" />
+                ))}
+              </div>
+              <p className="text-gray-700 text-[15px] leading-relaxed mb-5" style={{ fontFamily: "Inter, sans-serif" }}>
+                {`"${t.quote}"`}
+              </p>
+              <div>
+                <p className="text-sm font-semibold text-gray-900" style={{ fontFamily: "Manrope, sans-serif" }}>
+                  {t.name}
+                </p>
+                <p className="text-sm text-gray-400">{t.title}</p>
+              </div>
             </div>
-            <Button className="mt-8 bg-[#4CAF50] hover:bg-[#45a049]">Learn About Security</Button>
-          </div>
-          <div className="relative">
-            <Image
-              src="https://images.unsplash.com/photo-1563986768609-322da13575f3"
-              alt="Security Features"
-              width={600}
-              height={400}
-              className="rounded-lg object-cover"
-            />
-          </div>
+          ))}
         </div>
       </div>
     </section>
