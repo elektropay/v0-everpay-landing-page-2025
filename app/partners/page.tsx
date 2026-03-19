@@ -1,5 +1,7 @@
+import { SiteHeader } from "@/components/site-header"
+import { SiteFooter } from "@/components/site-footer"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Users, Building, Globe } from "lucide-react"
+import { ArrowRight, CheckCircle, Users, Building, Globe } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 
@@ -48,6 +50,7 @@ const featuredPartners = [
 export default function PartnersPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <SiteHeader />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="bg-[#0A2F2F] text-white py-20">
@@ -186,16 +189,21 @@ export default function PartnersPage() {
               Join our partner ecosystem and let's build the future of payments together.
             </p>
             <div className="flex justify-center gap-4">
-              <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
-                Apply Now
-              </Button>
-              <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
-                Contact Partner Team
-              </Button>
+              <a href="https://app.everpayinc.com/sign-up" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-[#4CAF50] hover:bg-[#45a049]">
+                  Apply Now
+                </Button>
+              </a>
+              <Link href="/contact">
+                <Button variant="outline" size="lg" className="border-white bg-transparent text-white hover:bg-white/10">
+                  Contact Partner Team
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
       </main>
+      <SiteFooter />
     </div>
   )
 }
