@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { CookieNotice } from "@/components/cookie-notice"
 import "./globals.css"
 
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="antialiased">
         {children}
         <CookieNotice />
+        <SpeedInsights />
       </body>
     </html>
   )
