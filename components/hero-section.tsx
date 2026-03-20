@@ -57,6 +57,10 @@ export function HeroSection() {
           </div>
         </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#1aa478]/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-72 h-72 bg-[#1aa478]/10 rounded-full blur-3xl" />
     </section>
   )
 }

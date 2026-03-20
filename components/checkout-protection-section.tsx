@@ -36,6 +36,27 @@ const testimonials = [
 ]
 
 export function CheckoutProtectionSection() {
+  const features = [
+    {
+      icon: Shield,
+      title: "Sophisticated Fraud Detection",
+      description:
+        "AI-powered fraud detection monitors every transaction in real-time to identify and prevent suspicious activity.",
+    },
+    {
+      icon: Lock,
+      title: "Advanced Checkout Security",
+      description:
+        "Bank-level encryption and PCI DSS compliance ensure your customers' payment data is always protected.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Increased Authentication",
+      description:
+        "Multi-factor authentication and 3D Secure support reduce chargebacks and increase payment success rates.",
+    },
+  ]
+
   return (
     <section className="py-20 md:py-28 bg-gray-50">
       <div className="container mx-auto px-6">

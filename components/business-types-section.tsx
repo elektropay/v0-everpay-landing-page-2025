@@ -40,6 +40,27 @@ const products = [
 ]
 
 export function BusinessTypesSection() {
+  const businessTypes = [
+    {
+      title: "E-commerce",
+      revenue: "$60k",
+      description: "Perfect for online stores and marketplaces",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop",
+    },
+    {
+      title: "SaaS",
+      revenue: "$80k",
+      description: "Ideal for subscription-based businesses",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+    },
+    {
+      title: "Marketplace",
+      revenue: "$120k",
+      description: "Built for multi-vendor platforms",
+      image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
+    },
+  ]
+
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-6">
