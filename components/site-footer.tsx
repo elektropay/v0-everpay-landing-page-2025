@@ -122,6 +122,11 @@ export function SiteFooter() {
                   Funding
                 </Link>
               </li>
+              <li>
+                <Link href="/card-issuing" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Card Issuing
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -225,6 +230,9 @@ export function SiteFooter() {
               </Link>
               <Link href="/cookie-policy" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Cookie Policy
+              </Link>
+              <Link href="/aml-policy" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
+                AML Policy
               </Link>
               <Link href="/security" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
                 Security & Trust

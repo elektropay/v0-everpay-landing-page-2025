@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { CookieNotice } from "@/components/cookie-notice"
+import { ResizeObserverSuppressor } from "@/components/resize-observer-suppressor"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -33,6 +34,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased">
+        <ResizeObserverSuppressor />
         {children}
         <CookieNotice />
       </body>
