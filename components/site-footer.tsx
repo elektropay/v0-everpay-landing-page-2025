@@ -117,6 +117,11 @@ export function SiteFooter() {
                   Fraud Prevention
                 </Link>
               </li>
+              <li>
+                <Link href="/funding" className="text-sm text-gray-600 hover:text-[#1aa478] transition-colors">
+                  Funding
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -222,7 +227,7 @@ export function SiteFooter() {
                 Cookie Policy
               </Link>
               <Link href="/security" className="text-xs text-gray-600 hover:text-[#1aa478] transition-colors">
-                Security
+                Security & Trust
               </Link>
               <Link
                 href="https://status.everpayinc.com"
@@ -234,13 +239,11 @@ export function SiteFooter() {
           </div>
           <div className="mt-10 pt-2">
             <p className="text-xs text-gray-600">
-              Everpay is a technology company, banking services are provided by Everpay BaaS providers, Members FDIC.
-              The Everpay Card is issued by Everpay Banking Partners pursuant to licenses from Visa U.S.A. Inc. and
-              Mastercard International.
+              Everpay Corporation is a financial technology company and not a bank. Banking services are provided by Everpay's bank partners, Members FDIC. Visa® virtual debit cards are issued by Everpay's bank partners pursuant to a license from Visa U.S.A. Inc. and may be used everywhere Visa debit cards are accepted.
             </p>
             <p className="text-xs text-gray-600">
-              Everpay services are regulated as a Money Services Business by FinCEN through partnerships. Everpay is PCI
-              DSS Level 1 certified, the highest level of security certification in the payments industry.
+              Deposit sweep networks may be offered through select Everpay bank partners. Please refer to the applicable bank partner’s deposit sweep network disclosures for more information.
+              Everpay is PCI DSS Level 1 certified, the highest level of security certification in the payments industry.
             </p>
           </div>
         </div>
